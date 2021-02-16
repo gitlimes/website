@@ -1,0 +1,23 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "My website I guess",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/montylion/website.git"
+  },
+  "author": "Monty",
+  "license": "idk",
+  "bugs": {
+    "url": "https://github.com/montylion/website/issues"
+  },
+  "homepage": "https://github.com/montylion/website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
