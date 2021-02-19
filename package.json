@@ -1,23 +1,16 @@
 {
-  "name": "website",
-  "version": "0.0.1",
-  "description": "My website I guess",
-  "main": "app.js",
+  "name": "monty.exe",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/montylion/website.git"
-  },
-  "author": "Monty",
-  "license": "idk",
-  "bugs": {
-    "url": "https://github.com/montylion/website/issues"
-  },
-  "homepage": "https://github.com/montylion/website#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "98.css": "^0.1.16",
+    "next": "^10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   }
 }

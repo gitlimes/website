@@ -1,0 +1,45 @@
+html,
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+
+body {
+    cursor: url("https://montylion.github.io/stuff/img/cur/9x/def.png"), auto;
+    background-color: #969acf;
+    position: relative;
+    height: 100vh;
+}
+
+.window.monty {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #cbcce7 !important;
+}
+
+.window.survey {
+    margin: 0;
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    background: #cbcce7 !important;
+}
+
+button {
+    background-color: #cbcce7 !important;
+    cursor: url("https://montylion.github.io/stuff/img/cur/9x/point.png"), auto;
+}
+
+*[type=radio] {
+    cursor: url("https://montylion.github.io/stuff/img/cur/9x/point.png"), not-allowed !important;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, rgba(98, 104, 183, 1) 0%, rgba(168, 171, 215, 1) 100%) !important;
+}
