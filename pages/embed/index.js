@@ -4,19 +4,13 @@ import React, { useState } from "react";
 
 export default function Home() {
   const [showMe, setShowMe] = useState(true);
-  function toggle() {
+  function toggle(){
     setShowMe(!showMe);
   }
   return (
     <home>
       <Head>
         <title>monty.exe</title>
-        <meta property="og:site_name" content="site_name"></meta>
-        <meta property="og:url" content="https://youtu.be/cfiPB8omuQQ"></meta>
-        <meta property="og:title" content="title"></meta>
-        <meta property="og:description" content="description"></meta>
-        <meta property="og:type" content="website"></meta>
-        <meta name="og:image" itemprop="image" content="https://media.discordapp.net/attachments/806560110902116353/819281353869623386/unknown.png"></meta>
       </Head>
       <section>
         <div style={{ width: 300 }} className="window monty">
@@ -39,7 +33,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ display: showMe ? "block" : "none", width: 400 }} className="window survey">
+        <div style={{ display: showMe?"block":"none", width: 400 }} className="window survey">
           <div className="title-bar">
             <div className="title-bar-text">survey.exe</div>
             <div className="title-bar-controls">
@@ -50,8 +44,8 @@ export default function Home() {
           </div>
 
           <div className="window-body" style={{
-            display: showMe ? "block" : "none"
-          }}>
+        display: showMe?"block":"none"
+      }}>
             <p style={{ textAlign: "center" }}>Feel free to rate my website!</p>
             <div class="field-row">
               <label for="range22">Very unsatisfied</label>
