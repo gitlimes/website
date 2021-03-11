@@ -23,21 +23,13 @@ body {
     background: #cbcce7 !important;
 }
 
-.window.survey {
-    margin: 0;
-    position: absolute;
-    bottom:0px;
-    right:0px;
-    background: #cbcce7 !important;
-}
-
 button {
     background-color: #cbcce7 !important;
     cursor: url("https://montylion.github.io/stuff/img/cur/9x/point.png"), auto;
 }
 
-*[type=radio] {
-    cursor: url("https://montylion.github.io/stuff/img/cur/9x/point.png"), not-allowed !important;
+.dsblbtn {
+    cursor: url("https://montylion.github.io/stuff/img/cur/9x/nou.png"), auto !important;
 }
 
 .title-bar {

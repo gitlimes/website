@@ -1,62 +1,55 @@
 import Head from 'next/head'
 import "98.css";
-import React, { useState } from "react";
+const atob = require('atob');
+import Router from 'next/router'
 
-export default function Home() {
-  const [showMe, setShowMe] = useState(true);
-  function toggle(){
-    setShowMe(!showMe);
+export async function getServerSideProps({ query }) {
+
+  const decodedQuery = atob(query.q)
+  let ogQuery = decodeURI(decodedQuery);
+
+
+  let queryObject = {};
+  let pairs = ogQuery.replace(/^\?/, '').split('&')
+  for (var i = 0; i < pairs.length; i++) {
+    let pair = pairs[i].split('=');
+    queryObject[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
   }
+
+  console.log(queryObject)
+
+  return { props: { v: queryObject.v, title: queryObject.title, desc: queryObject.desc, url: queryObject.url, img: queryObject.img, vid: queryObject.vid } }
+}
+
+export default function Embed({ props }) {
+
+  Router.push(queryObject.url)
   return (
+
     <home>
       <Head>
-        <title>monty.exe</title>
+        <title>redirecting...</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#603cba" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <meta property="og:site_name" content={props.title} />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta property='og:title' content={props.desc} />
+        <meta property="og:image" content={props.image} />
+        <meta property="og:video" content={props.video} />
+        <meta property="og:video:url" content={props.video} />
+        <meta name="twitter:player:width" content="1920" />
+        <meta name="twitter:player:height" content="1080" />
+        <meta name="twitter:player" content={props.video} />
+        <meta name="twitter:player:stream" content={props.video} />
+        <meta property='og:type' content='video.other' />
       </Head>
-      <section>
-        <div style={{ width: 300 }} className="window monty">
-          <div className="title-bar">
-            <div className="title-bar-text">monty.exe</div>
-            <div className="title-bar-controls">
-              <button aria-label="Minimize" />
-              <button aria-label="Maximize" />
-              <button aria-label="Close" />
-            </div>
-          </div>
-
-          <div className="window-body">
-            <p style={{ textAlign: "center" }}>Hi! Welcome to my website!</p>
-            <div className="field-row" style={{ justifyContent: "center" }}>
-              <button onClick={() => setCount(count + 1)}>+</button>
-              <button onClick={() => setCount(count - 1)}>-</button>
-              <button onClick={() => setCount(0)}>0</button>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ display: showMe?"block":"none", width: 400 }} className="window survey">
-          <div className="title-bar">
-            <div className="title-bar-text">survey.exe</div>
-            <div className="title-bar-controls">
-              <button aria-label="Minimize" />
-              <button aria-label="Maximize" />
-              <button aria-label="Close" />
-            </div>
-          </div>
-
-          <div className="window-body" style={{
-        display: showMe?"block":"none"
-      }}>
-            <p style={{ textAlign: "center" }}>Feel free to rate my website!</p>
-            <div class="field-row">
-              <label for="range22">Very unsatisfied</label>
-              <input id="range22" type="range" min="1" max="11" value="11" />
-              <label for="range23">Very satisfied</label>
-            </div>
-            <p style={{ textAlign: "center" }}>ha you can't change it I am very funny</p>
-            <button onClick={toggle} style={{ float: 'right' }}>Submit</button>
-          </div>
-        </div>
-      </section>
     </home>
   )
 }
