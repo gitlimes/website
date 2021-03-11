@@ -23,7 +23,8 @@ export async function getServerSideProps({ query }) {
 
 export default function Embed({ props }) {
 
-  Router.push(queryObject.url)
+  Router.push(props.url)
+
   return (
 
     <home>
