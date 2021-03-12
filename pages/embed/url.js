@@ -7,6 +7,7 @@ import React from "react";
 export async function getServerSideProps({ query }) {
   const fullUrl = 'https://www.monty.ga/embed?q=' + query.q
   return { props: { url: fullUrl } }
+  
 }
 
 export default function Url({ url }) {
@@ -37,8 +38,8 @@ export default function Url({ url }) {
           </div>
           <div className="window-body">
             <h4 style={{ textAlign: "center" }}>Discord embed generator</h4>
-            <div class="field-row-stacked" style={{maxWidth: "100%"}}>
-              <label for="url">Here's the URL:</label>
+            <div className="field-row-stacked" style={{maxWidth: "100%"}}>
+              <label htmlFor="url">Here's the URL:</label>
               <textarea  id="url" type="text" rows="6" readOnly value={url} style={{wordWrap: "break-word" }}/>
             </div>
           </div>
