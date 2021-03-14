@@ -45,7 +45,7 @@ export default function Generator() {
           <div className="title-bar">
             <div className="title-bar-text">embed.dll</div>
             <div className="title-bar-controls" >
-              <button style={{ textAlign: "center", fontWeight: "bold" }} onClick={toggleInfo}>&nbsp;i</button>
+              <button style={{ textAlign: "center", fontWeight: "bold" }} onClick={toggleInfo}>i</button>
               <Link href="/">
                 <button aria-label="Close" />
               </Link>
