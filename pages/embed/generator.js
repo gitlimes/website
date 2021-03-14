@@ -12,7 +12,7 @@ export default function Generator() {
   const generateURL = async event => {
     event.preventDefault()
 
-    rawEmbedQuery = '?v=1&title=' + event.target.title.value + '&desc=' + event.target.desc.value + '&url=' + event.target.url.value + '&img=' + event.target.img.value + '&vid=' + event.target.vid.value
+    rawEmbedQuery = '?genv=1&header=' + event.target.header.value + '&title=' + event.target.title.value + '&url=' + event.target.url.value + '&img=' + event.target.img.value + '&vid=' + event.target.vid.value
     let encodedQuery = encodeURI(rawEmbedQuery);
     const embedQuery = btoa(encodedQuery)
     Router.push('/embed/url?q=' + embedQuery)
@@ -44,6 +44,7 @@ export default function Generator() {
               <Link href="/">
                 <button aria-label="Close" />
               </Link>
+
             </div>
           </div>
 
@@ -52,15 +53,15 @@ export default function Generator() {
             <p style={{ textAlign: "center" }}>(all parameters are optional)</p>
             <form onSubmit={generateURL}>
               <div className="field-row-stacked">
+                <label htmlFor="header">Header</label>
+                <input id="header" type="text" />
+              </div>
+              <div className="field-row-stacked">
                 <label htmlFor="title">Title</label>
-                <input id="title" type="text" />
+                <textarea id="title" rows="3" />
               </div>
               <div className="field-row-stacked">
-                <label htmlFor="desc">Description</label>
-                <textarea id="desc" rows="3" />
-              </div>
-              <div className="field-row-stacked">
-                <label htmlFor="url">Redirect URL</label>
+                <label htmlFor="url">Redirect URL (for YouTube links, use the youtu.be/ link, not <br/> www.youtube.com/watch?v=, otherwise it's not gonna work)</label>
                 <input id="url" type="text" />
               </div>
               <div className="field-row-stacked">

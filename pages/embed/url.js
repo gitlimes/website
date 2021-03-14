@@ -40,7 +40,7 @@ export default function Url({ url }) {
             <h4 style={{ textAlign: "center" }}>Discord embed generator</h4>
             <div className="field-row-stacked" style={{maxWidth: "100%"}}>
               <label htmlFor="url">Here's the URL:</label>
-              <textarea  id="url" type="text" rows="6" readOnly value={url} style={{wordWrap: "break-word" }}/>
+              <textarea  id="url" type="text" rows="15" readOnly value={url} style={{wordWrap: "break-word" }}/>
             </div>
           </div>
         </div>

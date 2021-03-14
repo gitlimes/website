@@ -1,32 +1,35 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import "98.css";
 const atob = require('atob');
-import redirect from 'nextjs-redirect'
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-//localhost:3000/embed?q=P3Y9MSZ0aXRsZT10aXRsZSUyMENPTlRFTlQmZGVzYz1kZXNjcmlwdGlvbiUyMENPTlRFTlQmdXJsPXVybCUyMCUyMENPTlRFTlQmaW1nPWltYWdlJTIwQ09OVEVOVCZ2aWQ9VklERU8lMjBjb250ZW50
+
 
 export async function getServerSideProps({ query }) {
-
+  console.log(query)
 
   const decodedQuery = atob(query.q)
   let ogQuery = decodeURI(decodedQuery);
 
 
   let queryObject = {};
-  let pairs = ogQuery.replace(/^\?/, '').split('&') 
+  let pairs = ogQuery.replace(/^\?/, '').split('&')
   for (var i = 0; i < pairs.length; i++) {
     let pair = pairs[i].split('=')
     queryObject[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '')
   }
 
-  return { props: { v: queryObject.v, title: queryObject.title, desc: queryObject.desc, url: queryObject.url, img: queryObject.img, vid: queryObject.vid } }
+  return { props: { genv: queryObject.genv, header: queryObject.header, title: queryObject.title, url: queryObject.url, img: queryObject.img, vid: queryObject.vid } }
 }
 
-export default function Embed({ v, title, desc, url, img, vid }) {
-  
-
+export default function Embed({ genv, header, title, url, img, vid }) {
+  const router = useRouter()
+  useEffect(() => {
+    router.push(url)
+  })
   return (
-    
+
     <home>
       <Head>
         <title>redirecting... maybe idfk</title>
@@ -39,9 +42,9 @@ export default function Embed({ v, title, desc, url, img, vid }) {
         <meta name="msapplication-TileColor" content="#603cba" />
         <meta name="theme-color" content="#ffffff" />
 
-        <meta property="og:site_name" content={title} />
+        <meta property="og:site_name" content={header} />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta property='og:title' content={desc} />
+        <meta property='og:title' content={title} />
         <meta property="og:image" content={img} />
         <meta property="og:video" content={vid} />
         <meta property="og:video:url" content={vid} />
@@ -50,12 +53,13 @@ export default function Embed({ v, title, desc, url, img, vid }) {
         <meta name="twitter:player" content={vid} />
         <meta name="twitter:player:stream" content={vid} />
         <meta property='og:type' content='video.other' />
-        
-        
-      </Head> 
-      
+
+      </Head>
+
+
       <section>
-        <p>redirecting... maybe idfk</p>
+        <p>redirecting...</p>
+
       </section>
     </home>
   )
