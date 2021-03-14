@@ -1,11 +1,16 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import "98.css";
-import React from "react";
 import Router from 'next/router'
 const btoa = require('btoa');
+import React, { useState } from "react";
 
 export default function Generator() {
+
+  const [showInfo, setShowInfo] = useState(true);
+  function toggleInfo() {
+    setShowInfo(!showInfo);
+  }
 
   let rawEmbedQuery
 
@@ -18,7 +23,6 @@ export default function Generator() {
     Router.push('/embed/url?q=' + embedQuery)
     console.log(embedQuery)
     return embedQuery
-
   }
 
   return (
@@ -41,10 +45,10 @@ export default function Generator() {
           <div className="title-bar">
             <div className="title-bar-text">embed.dll</div>
             <div className="title-bar-controls" >
+              <button style={{ textAlign: "center", fontWeight: "bold" }} onClick={toggleInfo}>&nbsp;i</button>
               <Link href="/">
                 <button aria-label="Close" />
               </Link>
-
             </div>
           </div>
 
@@ -61,7 +65,7 @@ export default function Generator() {
                 <textarea id="title" rows="3" />
               </div>
               <div className="field-row-stacked">
-                <label htmlFor="url">Redirect URL (for YouTube links, use the youtu.be/ link, not <br/> www.youtube.com/watch?v=, otherwise it's not gonna work)</label>
+                <label htmlFor="url">Redirect URL (for YouTube links, use the youtu.be/ link, not <br /> www.youtube.com/watch?v=, otherwise it's not gonna work)</label>
                 <input id="url" type="text" />
               </div>
               <div className="field-row-stacked">
@@ -76,8 +80,31 @@ export default function Generator() {
             </form>
           </div>
         </div>
+
+        <div style={{
+          width: 300,
+          display: showInfo ? "none" : "block"
+        }} className="window monty" >
+          <div className="title-bar">
+            <div className="title-bar-text">monty.exe</div>
+            <div className="title-bar-controls" >
+              <button aria-label="Close" onClick={toggleInfo} />
+            </div>
+          </div>
+
+          <div className="window-body" style={{
+            display: showInfo ? "none" : "block"
+          }}>
+            <div className="field-row" style={{ justifyContent: "center" }}>
+              <p style={{ textAlign: "center" }} >Inspired by&nbsp;
+              <Link href="https://erdbeerbaerlp.de/DCEmbedMaker/">
+                  ErdbeerbaerLP's Discord Embed Maker
+              </Link>
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </home >
   )
-
 }
