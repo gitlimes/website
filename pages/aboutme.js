@@ -55,7 +55,7 @@ export default function AboutMe() {
           <div className="window-body">
             <h3 style={{ textAlign: "center" }}>Hi! I'm Monty!</h3>
             <p style={{ textAlign: "center" }}>I'm {age()}, and I live in Piedmont, Italy.</p>
-            <p style={{ textAlign: "center" }}>I make spaghetti code (probably because I'm italian)</p>
+            <p style={{ textAlign: "center" }}>I make spaghetti code (probably because I'm Italian)</p>
             <p style={{ textAlign: "center" }}>That's it I guess</p>
             <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="https://github.com/montylion">
