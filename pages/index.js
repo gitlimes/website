@@ -39,12 +39,17 @@ export default function Home() {
               </Link>
             </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="https://github.com/BotSauce/BotSauce">
-                <button style={{ width: "100%" }}>BotSauce</button>
+              <Link href="https://croissant.ga">
+                <button style={{ width: "100%" }}>croissant.ga</button>
               </Link>
             </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
               <button disabled className="dsblbtn" style={{ width: "100%" }}>A WIP</button>
+            </div>
+            <div className="field-row" style={{ justifyContent: "center" }}>
+              <Link href="https://github.com/BotSauce/BotSauce">
+                <button style={{ width: "100%" }}>BotSauce</button>
+              </Link>
             </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="/aboutme">
