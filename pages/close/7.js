@@ -30,7 +30,7 @@ export default function Close1() {
           </div>
           <div className="window-body" >
             <h3 style={{ textAlign: "center" }}>Ha.</h3>
-            <p style={{ textAlign: "center" }}>You got rickrolled. Dow do you feel now, huh?</p>
+            <p style={{ textAlign: "center" }}>You got rickrolled. How do you feel now, huh?</p>
           </div>
         </div>
 
