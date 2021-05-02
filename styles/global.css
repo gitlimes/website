@@ -7,7 +7,7 @@ body {
 
 
 body {
-    cursor: url("https://montylion.github.io/stuff/img/cur/9x/def.png"), auto;
+    cursor: url("cur/def.png"), default;
     background-color: #969acf;
     position: relative;
     height: 100vh;
@@ -25,11 +25,11 @@ body {
 
 button {
     background-color: #cbcce7 !important;
-    cursor: url("https://montylion.github.io/stuff/img/cur/9x/point.png"), auto;
+    cursor: url("cur/point.png"), pointer;
 }
 
 .dsblbtn {
-    cursor: url("https://montylion.github.io/stuff/img/cur/9x/nou.png"), auto !important;
+    cursor: url("cur/nou.png"), not-allowed;
 }
 
 .title-bar {
