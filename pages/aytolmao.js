@@ -10,7 +10,7 @@ export default function Generator() {
     let textToLmao = event.target.value;
 
     if (ayRegex.test(textToLmao)) {
-      let textArray = textToLmao.split(ayRegex);F
+      let textArray = textToLmao.split(ayRegex);
       textArray.forEach((entry, index) => {
         if (!ayRegex.test(entry)) return;
         textArray[index] = textArray[index]
