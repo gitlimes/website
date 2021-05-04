@@ -1,10 +1,67 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
-import React, { useEffect } from "react";
 import "98.css";
+const btoa = require("btoa");
+import React, { useState } from "react";
+import { useEffect } from "react";
 
-export default function Home() {
+export default function Generator() {
+  const [showInfo, setShowInfo] = useState(true);
+  function toggleInfo() {
+    setShowInfo(!showInfo);
+  }
+
+  let formFields = {
+    header: "",
+    title: "",
+    desc: "",
+    url: "",
+    img: "",
+    bigImg: false,
+    vid: "",
+  };
+
+  const generateURL = async (event) => {
+    event.preventDefault();
+
+    formFields[event.target.id] = event.target.value;
+    formFields.bigImg = document.getElementById("bigImg").checked;
+    if (document.getElementById("vid").value) {
+      document.getElementById("bigImg").checked = true;
+      document.getElementById("bigImg").readOnly = true;
+    } else {
+      document.getElementById("bigImg").readOnly = false;
+    }
+
+    //Build embed query
+    let embedQuery = "ver=2";
+
+    if (formFields.header) {
+      embedQuery += "&header=" + btoa(encodeURI(formFields.header));
+    }
+    if (formFields.title) {
+      embedQuery += "&title=" + btoa(encodeURI(formFields.title));
+    }
+    if (formFields.desc) {
+      embedQuery += "&desc=" + btoa(encodeURI(formFields.desc));
+    }
+    if (formFields.url) {
+      embedQuery += "&url=" + btoa(encodeURI(formFields.url));
+    }
+    if (formFields.img) {
+      embedQuery += "&img=" + btoa(encodeURI(formFields.img));
+    }
+    if (formFields.bigImg) {
+      embedQuery += "&bigImg=" + btoa(encodeURI(formFields.bigImg));
+    }
+    if (formFields.vid) {
+      embedQuery += "&vid=" + btoa(encodeURI(formFields.vid));
+    }
+
+    document.getElementById("embedUrl").value =
+      "https://dc.monty.ga/e?e=" + btoa(encodeURI(embedQuery));
+  };
+
   useEffect(() => {
     dragElement(document.getElementById("mainWindow"));
 
@@ -51,7 +108,8 @@ export default function Home() {
   return (
     <home>
       <Head>
-        <title>monty.exe</title>
+        <title>embed.dll</title>
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -83,124 +141,112 @@ export default function Home() {
       </Head>
       <section>
         <div
-          style={{
-            width: 300,
-          }}
           className="window monty"
+          style={{ maxWidth: "500px", width: "95%" }}
           id="mainWindow"
         >
-          <div className="title-bar" id="mainWindowHeader">
-            <div className="title-bar-text">monty.exe</div>
+          <div className="title-bar" id="mainWindowheader">
+            <div className="title-bar-text">embed.dll</div>
             <div className="title-bar-controls">
-              <Link href="/close">
+              <button
+                style={{ textAlign: "center", fontWeight: "bold" }}
+                onClick={toggleInfo}
+              >
+                i
+              </button>
+              <Link href="/">
                 <button aria-label="Close" />
               </Link>
             </div>
           </div>
 
           <div className="window-body">
-            <h3 style={{ textAlign: "center" }}>Welcome!</h3>
-            <p style={{ textAlign: "center" }}>Here's some of my projects:</p>
+            <h4 style={{ textAlign: "center" }}>Discord embed generator</h4>
+            <p style={{ textAlign: "center" }}>(all parameters are optional)</p>
+            <form onInput={generateURL}>
+              <div className="field-row-stacked">
+                <label htmlFor="header">Header</label>
+                <input
+                  id="header"
+                  type="text"
+                  placeholder="The smaller uppermost text"
+                />
+                <label htmlFor="title">Title</label>
+                <textarea
+                  id="title"
+                  rows="2"
+                  placeholder="The blue text below the header"
+                />
+                <label htmlFor="description">Description</label>
+                <textarea
+                  id="desc"
+                  rows="3"
+                  placeholder="The text below the title"
+                />
+                <label htmlFor="url">Redirect URL</label>
+                <input
+                  id="url"
+                  type="text"
+                  placeholder="The URL of the website"
+                />
+                <label htmlFor="img">Image URL</label>
+                <input
+                  id="img"
+                  type="text"
+                  placeholder="A direct URL to the image to display on the embed"
+                />
+                <input type="checkbox" id="bigImg" />
+                <label htmlFor="bigImg">
+                  Show big image (automatically checked if you added a video)
+                </label>
+                <label htmlFor="vid">Video URL</label>
+                <input
+                  id="vid"
+                  type="text"
+                  placeholder="Direct URL to the video file to display on the embed"
+                />
+                <label htmlFor="vid" style={{ "marginTop": "20px" }}>
+                  Final URL
+                </label>
+                <textarea
+                  readOnly
+                  id="embedUrl"
+                  rows="3"
+                  placeholder="The final URL to send on Discord"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
 
-            <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="https://croissant.ga">
-                <button style={{ width: "350%", height: "35px" }}>
-                  croissant.ga
-                </button>
-              </Link>
-              <Link href="https://github.com/montylion/croissant">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="Source code"
-                >
-                  <Image
-                    src="/icons/net-drive.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
-                </button>
-              </Link>
+        <div
+          style={{
+            width: 300,
+            display: showInfo ? "none" : "block",
+          }}
+          className="window monty"
+        >
+          <div className="title-bar">
+            <div className="title-bar-text">credits.dll</div>
+            <div className="title-bar-controls">
+              <button aria-label="Close" onClick={toggleInfo} />
             </div>
+          </div>
+
+          <div
+            className="window-body"
+            style={{
+              display: showInfo ? "none" : "block",
+            }}
+          >
             <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="/aytolmao">
-                <button style={{ width: "350%", height: "35px" }}>
-                  ay to lmao
-                </button>
-              </Link>
-              <Link href="https://github.com/montylion/website/blob/main/pages/aytolmao.js">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="Source code"
-                >
-                  <Image
-                    src="/icons/net-drive.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
-                </button>
-              </Link>
-            </div>
-            <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="/embed/generator">
-                <button style={{ width: "350%", height: "35px" }}>
-                  Discord Embed Generator
-                </button>
-              </Link>
-              <Link href="https://github.com/montylion/website/blob/main/pages/embed/generator.js">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="Source code"
-                >
-                  <Image
-                    src="/icons/net-drive.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
-                </button>
-              </Link>
-            </div>
-            <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="https://github.com/BotSauce/BotSauce">
-                <button style={{ width: "350%", height: "35px" }}>
-                  BotSauce (no longer in development)
-                </button>
-              </Link>
-              <Link href="https://github.com/BotSauce/BotSauce">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="Source code"
-                >
-                  <Image
-                    src="/icons/net-drive.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
-                </button>
-              </Link>
-            </div>
-            <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="/aboutme">
-                <button style={{ width: "350%", height: "35px" }}>
-                  About me
-                </button>
-              </Link>
-              <Link href="https://github.com/montylion">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="My GitHub profile"
-                >
-                  <Image
-                    src="/icons/user.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
-                </button>
-              </Link>
+              <p style={{ textAlign: "center" }}>
+                Inspired by&nbsp;
+                <Link href="https://dc.erdbeerbaerlp.de/">
+                  ErdbeerbaerLP's Discord Embed Maker
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </div>
