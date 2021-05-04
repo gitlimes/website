@@ -40,7 +40,6 @@ export default function Embed({ genv, header, title, url, img, vid }) {
     <home>
       <Head>
         <title>redirecting... maybe idfk</title>
-
         <link
           rel="apple-touch-icon"
           sizes="180x180"

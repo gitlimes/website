@@ -35,6 +35,11 @@ export default function Url({ url }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#603cba" />
         <meta name="theme-color" content="#ffffff" />
+
+        <meta property="og:image" content="/og_image.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="monty.exe" />
+        <meta property="og:url" content="https://monty.ga" />
       </Head>
       <section>
         <div className="window monty" style={{ minWidth: "300px" }}>
