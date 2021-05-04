@@ -57,6 +57,8 @@ export default function Generator() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="monty.exe" />
         <meta property="og:url" content="https://monty.ga" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/og_image.png" />
       </Head>
       <section>
         <div className="window monty" style={{ minWidth: "300px" }}>
