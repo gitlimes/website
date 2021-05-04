@@ -1,9 +1,53 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import React, { useEffect } from "react";
 import "98.css";
 
 export default function Home() {
+  useEffect(() => {
+    dragElement(document.getElementById("mainWindow"));
+
+    function dragElement(elmnt) {
+      let pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        document.getElementById(
+          elmnt.id + "header"
+        ).onmousedown = dragMouseDown;
+      } else {
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  });
+
   return (
     <home>
       <Head>
@@ -43,8 +87,9 @@ export default function Home() {
             width: 300,
           }}
           className="window monty"
+          id="mainWindow"
         >
-          <div className="title-bar">
+          <div className="title-bar" id="mainWindowHeader">
             <div className="title-bar-text">monty.exe</div>
             <div className="title-bar-controls">
               <Link href="/close">
@@ -69,7 +114,7 @@ export default function Home() {
                   title="Source code"
                 >
                   <Image
-                    src="https://win98icons.alexmeub.com/icons/png/network_drive_cool-5.png"
+                    src="/icons/net-drive.png"
                     height="25px"
                     width="25px"
                     alt="GitHub"
@@ -89,7 +134,7 @@ export default function Home() {
                   title="Source code"
                 >
                   <Image
-                    src="https://win98icons.alexmeub.com/icons/png/network_drive_cool-5.png"
+                    src="/icons/net-drive.png"
                     height="25px"
                     width="25px"
                     alt="GitHub"
@@ -109,7 +154,7 @@ export default function Home() {
                   title="Source code"
                 >
                   <Image
-                    src="https://win98icons.alexmeub.com/icons/png/network_drive_cool-5.png"
+                    src="/icons/net-drive.png"
                     height="25px"
                     width="25px"
                     alt="GitHub"
@@ -129,7 +174,7 @@ export default function Home() {
                   title="Source code"
                 >
                   <Image
-                    src="https://win98icons.alexmeub.com/icons/png/network_drive_cool-5.png"
+                    src="/icons/net-drive.png"
                     height="25px"
                     width="25px"
                     alt="GitHub"
@@ -149,7 +194,7 @@ export default function Home() {
                   title="My GitHub profile"
                 >
                   <Image
-                    src="https://win98icons.alexmeub.com/icons/png/address_book_user.png"
+                    src="/icons/user.png"
                     height="25px"
                     width="25px"
                     alt="GitHub"

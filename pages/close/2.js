@@ -1,8 +1,51 @@
 import Head from "next/head";
 import Link from "next/link";
+import React, { useEffect } from "react";
 import "98.css";
 
 export default function Close1() {
+    useEffect(() => {
+    dragElement(document.getElementById("mainWindow"));
+
+    function dragElement(elmnt) {
+      let pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        document.getElementById(
+          elmnt.id + "header"
+        ).onmousedown = dragMouseDown;
+      } else {
+        elmnt.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+  });
   return (
     <home>
       <Head>
@@ -37,8 +80,8 @@ export default function Close1() {
         <meta name="twitter:image" content="/og_image.png" />
       </Head>
       <section>
-        <div style={{ width: 300 }} className="window monty">
-          <div className="title-bar">
+        <div style={{ width: 300 }} className="window monty" id="mainWindow">
+          <div className="title-bar" id="mainWindowHeader">
             <div className="title-bar-text">monty.exe</div>
             <div className="title-bar-controls">
               <Link href="/close/3">

@@ -56,6 +56,7 @@ export default function Url({ url }) {
           <div className="window-body">
             <h4 style={{ textAlign: "center" }}>Discord embed generator</h4>
             <div className="field-row-stacked" style={{ maxWidth: "100%" }}>
+            <p style={{ textAlign: "center" }}>(you can't drag this 'cause I can't be bothered to implement it here 'cause I'm gonna rewrite this page anyways)</p>
               <label htmlFor="url">Here's the URL:</label>
               <textarea
                 id="url"
