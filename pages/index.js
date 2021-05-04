@@ -186,13 +186,13 @@ export default function Generator() {
                 <label htmlFor="url">Redirect URL</label>
                 <input
                   id="url"
-                  type="url"
+                  type="text"
                   placeholder="The URL of the website"
                 />
                 <label htmlFor="img">Image URL</label>
                 <input
                   id="img"
-                  type="url"
+                  type="text"
                   placeholder="A direct URL to the image to display on the embed"
                 />
                 <input type="checkbox" id="bigImg" />
@@ -202,7 +202,7 @@ export default function Generator() {
                 <label htmlFor="vid">Video URL</label>
                 <input
                   id="vid"
-                  type="url"
+                  type="text"
                   placeholder="Direct URL to the video file to display on the embed"
                 />
                 <label htmlFor="vid" style={{ "marginTop": "20px" }}>
