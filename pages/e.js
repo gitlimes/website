@@ -16,25 +16,39 @@ export async function getServerSideProps({ query }) {
   }
   queryObject.bigImg = queryObject.bigImg == "true";
 
-  let props = {};
-  props.url = queryObject.url || "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; //Defaults to Never Gonna Give You Up
-  props.head = queryObject.header;
-  props.title = queryObject.title;
-  props.desc = queryObject.desc;
-  props.vid = queryObject.vid;
+  let props = {
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    head: " ",
+    title: " ",
+    desc: " ",
+    vid: " ",
+    img: " ",
+    twitter: " ",
+    twitterImage: " ",
+    imgW: " ",
+    imgH: " ",
+  };
+
+  console.log(queryObject.img);
+  if (props.url) {
+    props.url = queryObject.url;
+  }
+  props.head = queryObject.header || " ";
+  props.title = queryObject.title || " ";
+  props.desc = queryObject.desc || " ";
+  props.vid = queryObject.vid || " ";
   if (queryObject.img) {
     props.img = queryObject.img;
     props.twitter = "summary";
   }
-
   if (queryObject.bigImg) {
-    props.bigImg = queryObject.img;
-    props.img = "";
     props.twitter = "summary_large_image";
     props.twitterImage = queryObject.img;
     let imgInfo = await probe(queryObject.img);
     props.imgW = imgInfo.width;
     props.imgH = imgInfo.height;
+    console.log(imgInfo.width);
+    console.log(imgInfo.height);
   }
   return { props };
 }
@@ -89,7 +103,7 @@ export default function Embed({
         <meta name="twitter:card" content={twitter} />
         <meta property="twitter:player:width" content={imgW} />
         <meta name="twitter:player:height" content={imgH} />
-        return <meta name="twitter:player" content={vid} />;
+        <meta name="twitter:player" content={vid} />;
         <meta name="twitter:player:stream" content={vid} />
       </Head>
 
