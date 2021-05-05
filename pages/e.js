@@ -44,7 +44,7 @@ export async function getServerSideProps({ query }) {
   }
   if (queryObject.vid) {
     props.vid = queryObject.vid;
-    props.twitter = "summary_large_image";
+    props.twitter = "player";
     props.w = "1920";
     props.h = "1080";
   }
