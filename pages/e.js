@@ -36,12 +36,11 @@ export async function getServerSideProps({ query }) {
   props.head = queryObject.header || " ";
   props.title = queryObject.title || " ";
   props.desc = queryObject.desc || " ";
-  props.vid = queryObject.vid || " ";
+
   if (queryObject.img) {
     props.img = queryObject.img;
     props.twitter = "summary";
   }
-
   if (queryObject.bigImg) {
     props.twitter = "summary_large_image";
     props.twitterImage = queryObject.img;
@@ -50,6 +49,10 @@ export async function getServerSideProps({ query }) {
     props.imgH = imgInfo.height;
     console.log(imgInfo.width);
     console.log(imgInfo.height);
+  }
+  if (queryObject.vid) {
+    props.vid = queryObject.vid;
+    props.twitter = "player";
   }
   return { props };
 }
@@ -105,7 +108,7 @@ export default function Embed({
         <meta property="twitter:player:width" content={imgW} />
         <meta name="twitter:player:height" content={imgH} />
         <meta name="twitter:player" content={vid} />;
-        <meta name="twitter:player:stream" content={vid} />
+        {/*<meta name="twitter:player:stream" content={vid} />*/}
       </Head>
 
       <section>

@@ -62,6 +62,15 @@ export default function Generator() {
       "https://dc.monty.ga/e?e=" + btoa(encodeURI(embedQuery));
   };
 
+  const copyURL = async (event) => {
+    event.preventDefault();
+
+    const copyText = document.getElementById("embedUrl");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+  };
+
   useEffect(() => {
     dragElement(document.getElementById("mainWindow"));
 
@@ -205,14 +214,15 @@ export default function Generator() {
                   type="text"
                   placeholder="Direct URL to the video file to display on the embed"
                 />
-                <label htmlFor="vid" style={{ "marginTop": "20px" }}>
-                  Final URL
+                <label htmlFor="vid" style={{ marginTop: "20px" }}>
+                  Final URL (click to copy)
                 </label>
                 <textarea
                   readOnly
                   id="embedUrl"
                   rows="3"
                   placeholder="The final URL to send on Discord"
+                  onClick={copyURL}
                 />
               </div>
             </form>
