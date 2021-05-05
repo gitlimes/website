@@ -24,9 +24,7 @@ export async function getServerSideProps({ query }) {
     vid: " ",
     img: " ",
     twitter: " ",
-    twitterImage: " ",
-    imgW: " ",
-    imgH: " ",
+    twitterImage: " "
   };
 
   console.log(queryObject.img);
@@ -44,17 +42,10 @@ export async function getServerSideProps({ query }) {
   if (queryObject.bigImg) {
     props.twitter = "summary_large_image";
     props.twitterImage = queryObject.img;
-    let imgInfo = await probe(queryObject.img);
-    props.imgW = imgInfo.width;
-    props.imgH = imgInfo.height;
-    console.log(imgInfo.width);
-    console.log(imgInfo.height);
   }
   if (queryObject.vid) {
     props.vid = queryObject.vid;
-    props.twitter = "player";
-    props.imgW = "1600";
-    props.imgH = "900";
+    props.twitter = "summary_large_image";
   }
   return { props };
 }
@@ -65,8 +56,6 @@ export default function Embed({
   title,
   desc,
   img,
-  imgW,
-  imgH,
   twitter,
   twitterImage,
   vid,
@@ -107,10 +96,7 @@ export default function Embed({
         <meta property="og:image" content={img} />
         <meta name="twitter:image" content={twitterImage} />
         <meta name="twitter:card" content={twitter} />
-        <meta property="twitter:player:width" content={imgW} />
-        <meta name="twitter:player:height" content={imgH} />
-        <meta name="twitter:player" content={vid} />;
-        {/*<meta name="twitter:player:stream" content={vid} />*/}
+        <meta name="og:video" content={vid} />;
       </Head>
 
       <section>
