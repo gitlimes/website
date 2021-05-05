@@ -1,7 +1,6 @@
 import Head from "next/head";
 import "98.css";
 const atob = require("atob");
-const probe = require("probe-image-size");
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
