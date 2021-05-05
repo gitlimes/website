@@ -24,9 +24,10 @@ export async function getServerSideProps({ query }) {
     img: " ",
     twitter: " ",
     twitterImage: " ",
+    w: " ",
+    h: " ",
   };
 
-  console.log(queryObject.img);
   if (props.url) {
     props.url = queryObject.url;
   }
@@ -99,9 +100,13 @@ export default function Embed({
         <meta property="og:image" content={img} />
         <meta name="twitter:image" content={twitterImage} />
         <meta name="twitter:card" content={twitter} />
+
         <meta name="twitter:player:width" content={w} />
         <meta name="twitter:player:height" content={h} />
         <meta name="twitter:player" content={vid} />
+        <meta name="twitter:player:stream" content={vid} />
+        <meta property="og:type" content="video.other" />
+
         <meta property="og:video" content={vid} />;
         <meta property="og:video:url" content={vid} />
       </Head>
