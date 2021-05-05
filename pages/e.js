@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "98.css";
 const atob = require("atob");
+const probe = require("probe-image-size");
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -30,10 +31,11 @@ export async function getServerSideProps({ query }) {
     props.bigImg = queryObject.img;
     props.img = "";
     props.twitter = "summary_large_image";
-    props.img = "";
     props.twitterImage = queryObject.img;
+    let imgInfo = await probe(queryObject.img);
+    props.imgW = imgInfo.width;
+    props.imgH = imgInfo.height;
   }
-  console.log(props);
   return { props };
 }
 
@@ -43,6 +45,8 @@ export default function Embed({
   title,
   desc,
   img,
+  imgW,
+  imgH,
   twitter,
   twitterImg,
   vid,
@@ -83,8 +87,8 @@ export default function Embed({
         <meta property="og:image" content={img} />
         <meta name="twitter:image" content={twitterImg} />
         <meta name="twitter:card" content={twitter} />
-        <meta property="twitter:player:width" content="1920" />
-        <meta name="twitter:player:height" content="1080" />
+        <meta property="twitter:player:width" content={imgW} />
+        <meta name="twitter:player:height" content={imgH} />
         return <meta name="twitter:player" content={vid} />;
         <meta name="twitter:player:stream" content={vid} />
       </Head>
