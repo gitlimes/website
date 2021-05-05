@@ -95,7 +95,8 @@ export default function Embed({
         <meta property="og:image" content={img} />
         <meta name="twitter:image" content={twitterImage} />
         <meta name="twitter:card" content={twitter} />
-        <meta name="og:video" content={vid} />;
+        <meta property="og:video" content={vid} />;
+        <meta property="og:video:url" content={vid} />
       </Head>
 
       <section>
