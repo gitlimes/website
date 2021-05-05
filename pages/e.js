@@ -53,6 +53,8 @@ export async function getServerSideProps({ query }) {
   if (queryObject.vid) {
     props.vid = queryObject.vid;
     props.twitter = "player";
+    props.imgW = "1600";
+    props.imgH = "900";
   }
   return { props };
 }
