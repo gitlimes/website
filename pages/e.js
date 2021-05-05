@@ -23,7 +23,7 @@ export async function getServerSideProps({ query }) {
     vid: " ",
     img: " ",
     twitter: " ",
-    twitterImage: " "
+    twitterImage: " ",
   };
 
   console.log(queryObject.img);
@@ -45,6 +45,8 @@ export async function getServerSideProps({ query }) {
   if (queryObject.vid) {
     props.vid = queryObject.vid;
     props.twitter = "summary_large_image";
+    props.w = "1920";
+    props.h = "1080";
   }
   return { props };
 }
@@ -58,6 +60,8 @@ export default function Embed({
   twitter,
   twitterImage,
   vid,
+  w,
+  h,
 }) {
   const router = useRouter();
   useEffect(() => {
@@ -95,6 +99,9 @@ export default function Embed({
         <meta property="og:image" content={img} />
         <meta name="twitter:image" content={twitterImage} />
         <meta name="twitter:card" content={twitter} />
+        <meta name="twitter:player:width" content={w} />
+        <meta name="twitter:player:height" content={h} />
+        <meta name="twitter:player" content={vid} />
         <meta property="og:video" content={vid} />;
         <meta property="og:video:url" content={vid} />
       </Head>
