@@ -187,7 +187,7 @@ export default function Generator() {
                 <input
                   id="url"
                   type="text"
-                  placeholder="The URL of the website"
+                  placeholder="The URL of the website to open on click (defaults to Never Gonna Give You Up)"
                 />
                 <label htmlFor="img">Image URL</label>
                 <input

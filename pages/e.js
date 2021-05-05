@@ -15,29 +15,38 @@ export async function getServerSideProps({ query }) {
   }
   queryObject.bigImg = queryObject.bigImg == "true";
 
-  let propsStuff = {};
-  propsStuff.url = queryObject.url || "";
-  if (queryObject.header) {
-    propsStuff.head = <meta property="og:site_name" content={queryObject.header} />;
-  }
-  if (queryObject.title) {
-    propsStuff.title = <meta property="twitter:title" content={queryObject.title} />;
-  }
-  if (queryObject.desc) {
-    propsStuff.desc = <meta name="twitter:description" content={queryObject.desc} />;
-  }
+  let props = {};
+  props.url = queryObject.url || "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; //Defaults to Never Gonna Give You Up
+  props.head = queryObject.header;
+  props.title = queryObject.title;
+  props.desc = queryObject.desc;
+  props.vid = queryObject.vid;
   if (queryObject.img) {
-    propsStuff.img = <meta property="og:image" content={queryObject.img} />;
+    props.img = queryObject.img;
+    props.twitter = "summary";
   }
+
   if (queryObject.bigImg) {
-    propsStuff.bigImg = <meta name="twitter:card" content="summary_large_image" />;
-    propsStuff.img = <meta name="twitter:image" content={queryObject.img} />;
+    props.bigImg = queryObject.img;
+    props.img = "";
+    props.twitter = "summary_large_image";
+    props.img = "";
+    props.twitterImage = queryObject.img;
   }
-  console.log(propsStuff);
-  return { props: { propsStuff } };
+  console.log(props);
+  return { props };
 }
 
-export default function Embed({ url, head, title, desc, img, bigImg, vid }) {
+export default function Embed({
+  url,
+  head,
+  title,
+  desc,
+  img,
+  twitter,
+  twitterImg,
+  vid,
+}) {
   const router = useRouter();
   useEffect(() => {
     router.push(url);
@@ -67,30 +76,16 @@ export default function Embed({ url, head, title, desc, img, bigImg, vid }) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#603cba" />
         <meta name="theme-color" content="#ffffff" />
-
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        {head || " "}
-        {title || " "}
-        {desc || " "}
-        {img || " "}
-        {bigImg || " "}
-        {{
-          if(vid) {
-            return <meta property="twitter:player:width" content="1920" />;
-          },
-        }}
-        {{
-          if(vid) {
-            return <meta property="twitter:player:width" content="1920" />;
-          },
-        }}
-
+        <meta property="og:site_name" content={head} />
+        <meta property="twitter:title" content={title} />
+        <meta name="twitter:description" content={desc} />
+        <meta property="og:image" content={img} />
+        <meta name="twitter:image" content={twitterImg} />
+        <meta name="twitter:card" content={twitter} />
+        <meta property="twitter:player:width" content="1920" />
         <meta name="twitter:player:height" content="1080" />
-        {{
-          if(vid) {
-            return <meta name="twitter:player" content={vid} />;
-          },
-        }}
+        return <meta name="twitter:player" content={vid} />;
         <meta name="twitter:player:stream" content={vid} />
       </Head>
 
