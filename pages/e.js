@@ -41,6 +41,7 @@ export async function getServerSideProps({ query }) {
     props.img = queryObject.img;
     props.twitter = "summary";
   }
+
   if (queryObject.bigImg) {
     props.twitter = "summary_large_image";
     props.twitterImage = queryObject.img;
@@ -62,7 +63,7 @@ export default function Embed({
   imgW,
   imgH,
   twitter,
-  twitterImg,
+  twitterImage,
   vid,
 }) {
   const router = useRouter();
@@ -99,7 +100,7 @@ export default function Embed({
         <meta property="twitter:title" content={title} />
         <meta name="twitter:description" content={desc} />
         <meta property="og:image" content={img} />
-        <meta name="twitter:image" content={twitterImg} />
+        <meta name="twitter:image" content={twitterImage} />
         <meta name="twitter:card" content={twitter} />
         <meta property="twitter:player:width" content={imgW} />
         <meta name="twitter:player:height" content={imgH} />
