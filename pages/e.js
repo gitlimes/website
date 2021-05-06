@@ -61,8 +61,11 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
     imgElement,
     twitterCardElement,
     twitterPlayer,
+    twitterPlayerStream,
     twitterPlayerW,
-    twitterPlayerH;
+    twitterPlayerH,
+    vidElement,
+    vidElementUrl
 
   if (header) {
     headerElement = <meta property="og:site_name" content={header} />;
@@ -87,6 +90,11 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
   if (vid) {
     twitterCardElement = <meta name="twitter:card" content="player" />;
     twitterPlayer = <meta property="twitter:player" content={vid} />;
+    twitterPlayerStream = <meta name="twitter:player:stream" content={vid} />;
+    twitterPlayerW = <meta name="twitter:player:width" content="1600" />;
+    twitterPlayerH = <meta name="twitter:player:height" content="900" />;
+    vidElement = <meta property="og:video" content={vid} />
+    vidElementUrl = <meta property="og:video:url" content={vid} />
   }
 
   const router = useRouter();
@@ -127,12 +135,16 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
         {titleElement}
         {descElement}
         {imgElement}
+
         {twitterPlayer}
+        {twitterPlayerStream}
+        {twitterPlayerW}
+        {twitterPlayerH}
+        {vidElement}
+        {vidElementUrl}
+
         {twitterCardElement}
-        {/*<meta name="twitter:player:width" content={w} />
-        <meta name="twitter:player:height" content={h} />*/}
-        {/*<meta name="twitter:player" content={vid} />*/}
-        {/*<meta name="twitter:player:stream" content={vid} />*/}
+        
 
         {/*<meta property="og:video:url" content={vid} />*/}
       </Head>
