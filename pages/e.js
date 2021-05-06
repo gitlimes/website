@@ -61,6 +61,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
     imgElement,
     twitterCardElement,
     vidElement,
+    vidElementUrl,
     ogTypeElement;
 
   if (header) {
@@ -85,6 +86,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
   }
   if (vid) {
     vidElement = <meta property="og:video" content={vid} />;
+    twitterCardElement = ""
   }
 
   const router = useRouter();
