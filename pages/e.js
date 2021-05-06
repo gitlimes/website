@@ -84,7 +84,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
     }
   }
   if (vid) {
-    vidElement = <meta property="og:video" content={vid} />;
+    vidElement = <meta property="og:video:url" content={vid} />;
   }
 
   const router = useRouter();
