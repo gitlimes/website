@@ -17,61 +17,81 @@ export async function getServerSideProps({ query }) {
 
   let props = {
     url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    head: " ",
-    title: " ",
-    desc: " ",
-    vid: " ",
-    img: " ",
-    twitter: " ",
-    twitterImage: " ",
-    w: " ",
-    h: " ",
   };
 
-  if (props.url) {
+  if (queryObject.url) {
     props.url = queryObject.url;
   }
-  props.head = queryObject.header || " ";
-  props.title = queryObject.title || " ";
-  props.desc = queryObject.desc || " ";
+  if (queryObject.header) {
+    props.header = queryObject.header;
+  }
+  if (queryObject.title) {
+    props.title = queryObject.title;
+  }
+  if (queryObject.desc) {
+    props.desc = queryObject.desc;
+  }
 
   if (queryObject.img) {
     props.img = queryObject.img;
-    props.twitter = "summary";
+    //props.twitter = "summary";
   }
+
   if (queryObject.bigImg) {
+    props.bigImg = true;
+  }
+
+  /*if (queryObject.bigImg) {
     props.twitter = "summary_large_image";
     props.twitterImage = queryObject.img;
-  }
+  }*/
+
   if (queryObject.vid) {
     props.vid = queryObject.vid;
-    props.twitter = "player";
-    props.w = "1920";
-    props.h = "1080";
+    //props.twitter = "player";
   }
   return { props };
 }
 
-export default function Embed({
-  url,
-  head,
-  title,
-  desc,
-  img,
-  twitter,
-  twitterImage,
-  vid,
-  w,
-  h,
-}) {
+export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
+  //hope you enjoy big lists
+  let headerElement,
+    titleElement,
+    descElement,
+    imgElement,
+    twitterCardElement,
+    twitterPlayerElements,
+    ogTypeElement;
+
+  if (header) {
+    headerElement = <meta property="og:site_name" content={header} />;
+  }
+  if (title) {
+    titleElement = <meta property="twitter:title" content={title} />;
+  }
+  if (desc) {
+    descElement = <meta name="twitter:description" content={desc} />;
+  }
+  if (img) {
+    if (bigImg) {
+      imgElement = <meta name="twitter:image" content={img} />;
+      twitterCardElement = (
+        <meta name="twitter:card" content="summary_large_image" />
+      );
+    } else {
+      imgElement = <meta name="twitter:image" content={img} />;
+      twitterCardElement = <meta name="twitter:card" content="summary" />;
+    }
+  }
+
   const router = useRouter();
   useEffect(() => {
     router.push(url);
   });
+
   return (
     <main>
       <Head>
-        <title>Loading...</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -94,21 +114,21 @@ export default function Embed({
         <meta name="msapplication-TileColor" content="#603cba" />
         <meta name="theme-color" content="#ffffff" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta property="og:site_name" content={head} />
-        <meta property="twitter:title" content={title} />
-        <meta name="twitter:description" content={desc} />
-        <meta property="og:image" content={img} />
-        <meta name="twitter:image" content={twitterImage} />
-        <meta name="twitter:card" content={twitter} />
+        <title>Loading...</title>
 
-        <meta name="twitter:player:width" content={w} />
-        <meta name="twitter:player:height" content={h} />
+        {/*This is all the stuff*/}
+
+        {headerElement}
+        {titleElement}
+        {descElement}
+        {imgElement}
+        {twitterCardElement}
+        {/*<meta name="twitter:player:width" content={w} />
+        <meta name="twitter:player:height" content={h} />*
         <meta name="twitter:player" content={vid} />
         <meta name="twitter:player:stream" content={vid} />
-        <meta property="og:type" content="video.other" />
-
-        <meta property="og:video" content={vid} />;
-        <meta property="og:video:url" content={vid} />
+        <meta property="og:video" content={vid} />
+  <meta property="og:video:url" content={vid} />*/}
       </Head>
 
       <section>
