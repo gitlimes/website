@@ -127,7 +127,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
         {titleElement}
         {descElement}
         {imgElement}
-        {vidElement}
+        {twitterPlayer}
         {twitterCardElement}
         {/*<meta name="twitter:player:width" content={w} />
         <meta name="twitter:player:height" content={h} />*/}
