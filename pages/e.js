@@ -79,7 +79,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
         <meta name="twitter:card" content="summary_large_image" />
       );
     } else {
-      imgElement = <meta name="twitter:image" content={img} />;
+      imgElement = <meta name="og:image" content={img} />;
       twitterCardElement = <meta name="twitter:card" content="summary" />;
     }
   }
