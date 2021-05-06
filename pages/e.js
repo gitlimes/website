@@ -84,7 +84,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
     }
   }
   if (vid) {
-    vidElement = <meta property="og:video:url" content={vid} />;
+    vidElement = <meta property="og:video" content={vid} />;
   }
 
   const router = useRouter();
@@ -125,6 +125,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
         {titleElement}
         {descElement}
         {imgElement}
+        {vidElement}
         {twitterCardElement}
         {/*<meta name="twitter:player:width" content={w} />
         <meta name="twitter:player:height" content={h} />*/}
