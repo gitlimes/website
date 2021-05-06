@@ -60,7 +60,7 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
     descElement,
     imgElement,
     twitterCardElement,
-    twitterPlayerElements,
+    vidElement,
     ogTypeElement;
 
   if (header) {
@@ -82,6 +82,9 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
       imgElement = <meta name="og:image" content={img} />;
       twitterCardElement = <meta name="twitter:card" content="summary" />;
     }
+  }
+  if (vid) {
+    vidElement = <meta property="og:video" content={vid} />;
   }
 
   const router = useRouter();
@@ -124,11 +127,11 @@ export default function Embed({ url, header, title, desc, img, bigImg, vid }) {
         {imgElement}
         {twitterCardElement}
         {/*<meta name="twitter:player:width" content={w} />
-        <meta name="twitter:player:height" content={h} />*
-        <meta name="twitter:player" content={vid} />
-        <meta name="twitter:player:stream" content={vid} />
-        <meta property="og:video" content={vid} />
-  <meta property="og:video:url" content={vid} />*/}
+        <meta name="twitter:player:height" content={h} />*/}
+        {/*<meta name="twitter:player" content={vid} />*/}
+        {/*<meta name="twitter:player:stream" content={vid} />*/}
+
+        {/*<meta property="og:video:url" content={vid} />*/}
       </Head>
 
       <section>
