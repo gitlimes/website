@@ -143,7 +143,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="/embed/generator">
+              <Link href="https://dc.monty.ga">
                 <button style={{ width: "350%", height: "35px" }}>
                   Discord Embed Generator
                 </button>
