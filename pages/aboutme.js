@@ -38,9 +38,8 @@ export default function AboutMe() {
         pos3 = 0,
         pos4 = 0;
       if (document.getElementById(elmnt.id + "header")) {
-        document.getElementById(
-          elmnt.id + "header"
-        ).onmousedown = dragMouseDown;
+        document.getElementById(elmnt.id + "header").onmousedown =
+          dragMouseDown;
       } else {
         elmnt.onmousedown = dragMouseDown;
       }
@@ -128,7 +127,14 @@ export default function AboutMe() {
               I'm a dumb {age()} year old who localizes stuff in Italian and
               writes trash code.
             </p>
-            <p style={{ textAlign: "center" }}>That's it I guess</p>
+
+            <div className="field-row" style={{ justifyContent: "center" }}>
+              <Link href="/time">
+                <button style={{ width: "100%", height: "35px" }}>
+                  Check the time where I live and my Discord status
+                </button>
+              </Link>
+            </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="https://github.com/montylion">
                 <button

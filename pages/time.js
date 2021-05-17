@@ -135,7 +135,7 @@ export default function amIOnline({ presence }) {
           </div>
 
           <div className="window-body" style={{ textAlign: "center" }}>
-            <h5>Time in Italy (where I live):</h5>
+            <h5>Time in Italy:</h5>
             <h3 id="timeElmt">{getTimeOrDate(timeOpt)}</h3>
             <h5 id="dateElmt">{getTimeOrDate(dateOpt)}</h5>
             <p>I'm {presence} on Discord (Monty#3581)</p>
