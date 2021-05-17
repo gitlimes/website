@@ -3,7 +3,16 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import "98.css";
 
-export default function amIOnline() {
+export async function getServerSideProps(context) {
+  let fetched = await fetch("https://api.monty.ga/api/discord/presence");
+  let res = await fetched.json();
+  let presence = await res.presence;
+  return {
+    props: { presence },
+  };
+}
+
+export default function amIOnline({ presence }) {
   const timeOpt = {
     timeZone: "Europe/Rome",
     hour: "numeric",
@@ -120,14 +129,11 @@ export default function amIOnline() {
             </div>
           </div>
 
-          <div className="window-body">
-            <h5 style={{ textAlign: "center" }}>Time in Italy (where I live):</h5>
-            <h3 style={{ textAlign: "center" }} id="timeElmt">
-              {getTimeOrDate(timeOpt)}!
-            </h3>
-            <h5 style={{ textAlign: "center", margin: 0 }} id="dateElmt">
-              {getTimeOrDate(dateOpt)}
-            </h5>
+          <div className="window-body" style={{ textAlign: "center" }}>
+            <h5>Time in Italy (where I live):</h5>
+            <h3 id="timeElmt">{getTimeOrDate(timeOpt)}!</h3>
+            <h5 id="dateElmt">{getTimeOrDate(dateOpt)}</h5>
+            <p>I'm {presence} on Discord (Monty#3581)</p>
           </div>
         </div>
       </section>
