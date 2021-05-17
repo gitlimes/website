@@ -128,9 +128,9 @@ export default function amIOnline({ presence }) {
           <div className="title-bar" id="mainWindowheader">
             <div className="title-bar-text">W32Time.dll</div>
             <div className="title-bar-controls">
-              <Link href="/">
+              <a href="/">
                 <button aria-label="Close" />
-              </Link>
+              </a>
             </div>
           </div>
 
