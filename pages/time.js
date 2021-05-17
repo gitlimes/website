@@ -4,16 +4,23 @@ import React, { useEffect } from "react";
 import "98.css";
 
 export async function getServerSideProps(context) {
-  let fetched = await fetch("https://api.monty.ga/api/discord/presence");
-  let res = await fetched.json();
-  let presence = await res.presence;
+  try {
+    let fetched = await fetch("https://api.monty.ga/api/discord/presence");
+    let res = await fetched.json();
+    let presence = await res.presence;
 
-  if (presence === "dnd") {
-    presence = "in Do Not Disturb mode"
+    if (presence === "dnd") {
+      presence = "in Do Not Disturb mode";
+    }
+
+    return {
+      props: { presence },
+    };
+  } catch {
+    return {
+      props: { presence: "error" },
+    };
   }
-  return {
-    props: { presence },
-  };
 }
 
 export default function amIOnline({ presence }) {
@@ -22,7 +29,6 @@ export default function amIOnline({ presence }) {
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
-    
   };
 
   const dateOpt = {
