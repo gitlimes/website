@@ -1,6 +1,5 @@
 import "98.css";
 import styles from "../styles/Custom404.module.css";
-import Link from "next/link";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -9,6 +8,7 @@ export default function Custom404() {
   useEffect(() => {
     document.addEventListener("keydown", pushToHome);
     function pushToHome() {
+      document.removeEventListener("keydown", pushToHome);
       router.push("/");
     }
   });
@@ -16,7 +16,7 @@ export default function Custom404() {
   return (
     <home>
       <section>
-        <Link href="/">
+        <a href="/">
           <div className={styles.blbg}>
             <div className={styles.yeet}>
               <p className={styles.header}>404</p>
@@ -36,7 +36,7 @@ export default function Custom404() {
               </div>
             </div>
           </div>
-        </Link>
+        </a>
       </section>
     </home>
   );
