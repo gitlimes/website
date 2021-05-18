@@ -30,8 +30,8 @@ export default function Custom404() {
                 <div className={styles.pressDiv}>
                   <p className={styles.pressText}>
                     Press any key to continue&nbsp;
+                    <p className={styles.blink}>_</p>
                   </p>
-                  <p className={styles.blink}>_</p>
                 </div>
               </div>
             </div>
