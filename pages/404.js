@@ -26,7 +26,7 @@ export default function Custom404() {
                   Click/tap anywhere or press any key to return to the home
                   page.
                 </p>
-                <p>Error: 404 : PAGE : NOTFOUND</p>
+                <p>Error: 404 : P4G3 : N07F0UND</p>
                 <div className={styles.pressDiv}>
                   <p className={styles.pressText}>
                     Press any key to continue&nbsp;
