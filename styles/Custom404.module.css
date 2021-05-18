@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "perfect_dos_vga_437_winRg";
+  src: url("perfect_dos_vga_437_win-webfont.woff2") format("woff2"),
+    url("perfect_dos_vga_437_win-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes blink {
+  0% {
+    color: white;
+  }
+  49% {
+    color: white;
+  }
+  50% {
+    color: #0000aa;
+  }
+  99% {
+    color: #0000aa;
+  }
+}
+
+.blbg {
+  background: #0000aa;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  font-family: "perfect_dos_vga_437_winRg", Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.yeet {
+  width: 100vw;
+}
+
+.header {
+  text-align: center;
+  background: #aaaaaa;
+  color: #0000aa;
+  font-size: x-large;
+  width: 80px;
+  margin: auto;
+}
+
+.textcontainer {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: x-large;
+  color: white;
+}
+
+.pressDiv {
+  text-align: center;
+}
+
+.pressText {
+  display: inline-block;
+}
+
+.blink {
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
