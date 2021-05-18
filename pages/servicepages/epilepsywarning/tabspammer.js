@@ -12,9 +12,14 @@ export default function Generator() {
       <Head>
         <title>Why</title>
       </Head>
-      <div style={{background: "white", width: "500vh", height: "500vw", position:"relative"}}>
-
-      </div>
+      <div
+        style={{
+          background: "white",
+          width: "100vw",
+          height: "100vh",
+          position: "absolute"
+        }}
+      ></div>
     </home>
   );
 }
