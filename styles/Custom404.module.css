@@ -48,8 +48,8 @@
 
 .textcontainer {
   width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  min-width: 330px;
+  margin: auto;
   font-size: x-large;
   color: white;
 }
