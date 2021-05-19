@@ -14,9 +14,8 @@ export default function Home() {
         pos3 = 0,
         pos4 = 0;
       if (document.getElementById(elmnt.id + "header")) {
-        document.getElementById(
-          elmnt.id + "header"
-        ).onmousedown = dragMouseDown;
+        document.getElementById(elmnt.id + "header").onmousedown =
+          dragMouseDown;
       } else {
         elmnt.onmousedown = dragMouseDown;
       }
@@ -163,26 +162,16 @@ export default function Home() {
               </Link>
             </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="https://github.com/BotSauce/BotSauce">
+              <Link href="/archive">
                 <button style={{ width: "350%", height: "35px" }}>
-                  BotSauce (no longer in development)
-                </button>
-              </Link>
-              <Link href="https://github.com/BotSauce/BotSauce">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="Source code"
-                >
-                  <Image
-                    src="/icons/net-drive.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
+                  The archive
                 </button>
               </Link>
             </div>
-            <div className="field-row" style={{ justifyContent: "center" }}>
+            <div
+              className="field-row"
+              style={{ justifyContent: "center", paddingTop: "15px" }}
+            >
               <Link href="/aboutme">
                 <button style={{ width: "350%", height: "35px" }}>
                   About me
