@@ -171,7 +171,7 @@ export default function Generator() {
 
           <div className="window-body">
             <h4 style={{ textAlign: "center" }}>Discord embed generator</h4>
-            <p style={{ textAlign: "center" }}>(all parameters are optional)</p>
+            <p style={{ textAlign: "center" }}>(all parameters are optional, embeds with videos are not guaranteed to work)</p>
             <form onInput={generateURL}>
               <div className="field-row-stacked">
                 <label htmlFor="header">Header</label>
