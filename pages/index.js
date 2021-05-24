@@ -162,6 +162,26 @@ export default function Home() {
               </Link>
             </div>
             <div className="field-row" style={{ justifyContent: "center" }}>
+              <Link href="https://github.com/montylion/neofetch-but-its-always-arch#readme">
+                <button style={{ width: "350%", height: "35px", textDecoration: "line-through" }}>
+                  I use Arch btw
+                </button>
+              </Link>
+              <Link href="https://github.com/montylion/neofetch-but-its-always-arch">
+                <button
+                  style={{ width: "100%", height: "35px" }}
+                  title="Source code"
+                >
+                  <Image
+                    src="/icons/net-drive.png"
+                    height="25px"
+                    width="25px"
+                    alt="GitHub"
+                  />
+                </button>
+              </Link>
+            </div>
+            <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="/archive">
                 <button style={{ width: "350%", height: "35px" }}>
                   The archive
