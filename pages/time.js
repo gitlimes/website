@@ -5,7 +5,7 @@ import "98.css";
 
 export async function getServerSideProps(context) {
   try {
-    let fetched = await fetch("https://api.monty.ga/api/discord/presence");
+    let fetched = await fetch("https://api.monty.ga/api/discord/presence?ref=time-page-in-website");
     let res = await fetched.json();
     let presence = await res.presence;
 
