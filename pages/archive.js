@@ -99,12 +99,32 @@ export default function Home() {
 
           <div className="window-body">
             <p style={{ textAlign: "center" }}>
-              Here's some projects I no longer work on (currently only one):
+              Here's some projects I no longer work on:
             </p>
             <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="https://github.com/BotSauce/BotSauce">
                 <button style={{ width: "350%", height: "35px" }}>
                   BotSauce
+                </button>
+              </Link>
+            </div>
+            <div className="field-row" style={{ justifyContent: "center" }}>
+              <Link href="https://dc.monty.ga">
+                <button style={{ width: "350%", height: "35px" }}>
+                  Discord Embed Generator
+                </button>
+              </Link>
+              <Link href="https://github.com/montylion/website/blob/main/pages/embed/generator.js">
+                <button
+                  style={{ width: "100%", height: "35px" }}
+                  title="Source code"
+                >
+                  <Image
+                    src="/icons/net-drive.png"
+                    height="25px"
+                    width="25px"
+                    alt="GitHub"
+                  />
                 </button>
               </Link>
             </div>

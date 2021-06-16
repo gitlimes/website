@@ -102,6 +102,32 @@ export default function Home() {
             <p style={{ textAlign: "center" }}>Here's some of my projects:</p>
 
             <div className="field-row" style={{ justifyContent: "center" }}>
+              <Link href="https://github.com/montylion/discord-md-badge#readme">
+                <button
+                  style={{
+                    width: "350%",
+                    height: "35px",
+                  }}
+                >
+                  Discord Profile Markdown Badge
+                </button>
+              </Link>
+              <Link href="https://github.com/montylion/discord-md-badge">
+                <button
+                  style={{ width: "100%", height: "35px" }}
+                  title="Source code"
+                >
+                  <Image
+                    src="/icons/net-drive.png"
+                    height="25px"
+                    width="25px"
+                    alt="GitHub"
+                  />
+                </button>
+              </Link>
+            </div>
+
+            <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="https://croissant.ga">
                 <button style={{ width: "350%", height: "35px" }}>
                   croissant.ga
@@ -141,29 +167,16 @@ export default function Home() {
                 </button>
               </Link>
             </div>
-            <div className="field-row" style={{ justifyContent: "center" }}>
-              <Link href="https://dc.monty.ga">
-                <button style={{ width: "350%", height: "35px" }}>
-                  Discord Embed Generator
-                </button>
-              </Link>
-              <Link href="https://github.com/montylion/website/blob/main/pages/embed/generator.js">
-                <button
-                  style={{ width: "100%", height: "35px" }}
-                  title="Source code"
-                >
-                  <Image
-                    src="/icons/net-drive.png"
-                    height="25px"
-                    width="25px"
-                    alt="GitHub"
-                  />
-                </button>
-              </Link>
-            </div>
+
             <div className="field-row" style={{ justifyContent: "center" }}>
               <Link href="https://github.com/montylion/neofetch-but-its-always-arch#readme">
-                <button style={{ width: "350%", height: "35px", textDecoration: "line-through" }}>
+                <button
+                  style={{
+                    width: "350%",
+                    height: "35px",
+                    textDecoration: "line-through",
+                  }}
+                >
                   I use Arch btw
                 </button>
               </Link>
