@@ -1,2 +1,4 @@
 # website
-My website at www.monty.ga I guess
+Check [Redesign](https://github.com/montylion/website/projects/1) for redesign progress.
+
+https://redesign.monty.ga
