@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
-// import React, { useEffect } from "react";
 
 import styles from "../styles/Home.module.css";
 
@@ -56,16 +54,101 @@ export default function Home() {
               Italian and vice versa.
             </p>
           </div>
+
           <div className={styles.stuffSection} id="stuff">
             <h1 className={styles.stuffHeader}>Stuff&#8482;</h1>
             <p className={styles.stuffParagraph}>
               Here's the aforementioned stuff&#8482;:
             </p>
             <div className={styles.stuffList}>
-              <div className={styles.stuffCard}>test</div>
-              <div className={styles.stuffCard}>bean</div>
-              <div className={styles.stuffCard}>test2</div>
-              <div className={styles.stuffCard}>bean2</div>
+              <div className={styles.stuffCard}>
+                <h2 className={styles.stuffCardHeader}>
+                  Discord Markdown Badge
+                </h2>
+                <div className={styles.stuffCardIconFlex}>
+                  <Link href="https://github.com/montylion/discord-md-badge">
+                    <img
+                      src="/github.svg"
+                      alt="GitHub"
+                      className={styles.stuffCardIcon}
+                    />
+                  </Link>
+                </div>
+                <p className={styles.stuffCardParagraph}>
+                  Add to your GitHub readme a badge that shows your Discord
+                  username and presence!
+                </p>
+                <p className={styles.stuffLang}>JavaScript, Next.js</p>
+              </div>
+              <div className={styles.stuffCard}>
+                <h2 className={styles.stuffCardHeader}>Website</h2>
+                <div className={styles.stuffCardIconFlex}>
+                  <Link href="https://github.com/montylion/website">
+                    <img
+                      src="/github.svg"
+                      alt="GitHub"
+                      className={styles.stuffCardIcon}
+                    />
+                  </Link>
+                </div>
+                <p className={styles.stuffCardParagraph}>
+                  The very website you're currently browsing!
+                </p>
+                <p className={styles.stuffLang}>JavaScript, Next.js</p>
+              </div>
+              <div className={styles.stuffCard}>
+                <h2 className={styles.stuffCardHeader}>
+                  Neofetch but it's always Arch
+                </h2>
+                <div className={styles.stuffCardIconFlex}>
+                  <Link href="https://github.com/montylion/neofetch-but-its-always-arch">
+                    <img
+                      src="/github.svg"
+                      alt="GitHub"
+                      className={styles.stuffCardIcon}
+                    />
+                  </Link>
+                </div>
+                <p className={styles.stuffCardParagraph}>
+                  This is exactly what it sounds like: this version of Neofetch
+                  always returns Arch.
+                </p>
+                <p className={styles.stuffLang}>Shell</p>
+              </div>
+              <div className={styles.stuffCard}>
+                <h2 className={styles.stuffCardHeader}>croissant.ga</h2>
+                <div className={styles.stuffCardIconFlex}>
+                  <Link href="https://github.com/montylion/croissant">
+                    <img
+                      src="/github.svg"
+                      alt="GitHub"
+                      className={styles.stuffCardIcon}
+                    />
+                  </Link>
+                  <Link href="https://croissant.ga">
+                    <img
+                      src="/globe.svg"
+                      alt="Website"
+                      className={styles.stuffCardIcon}
+                    />
+                  </Link>
+                </div>
+                <p className={styles.stuffCardParagraph}>
+                  A website that shows random pictures of croissants. Don't ask
+                  me why.
+                </p>
+                <p className={styles.stuffLang}>JavaScript, Next.js</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.contactSection} id="contact">
+            <h1 className={styles.aboutHeader}>Contact me</h1>
+            <p className={styles.aboutParagraph}>
+              Feel free to reach out to me here!
+            </p>
+            <div className={styles.contactCard}>
+
             </div>
           </div>
         </div>

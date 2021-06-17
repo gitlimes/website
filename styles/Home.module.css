@@ -43,15 +43,22 @@
   width: 225px;
   height: 225px;
   border-radius: 20px;
-  filter: drop-shadow(20px 20px 0px var(--accent-color));
+  /*filter: drop-shadow(20px 20px 0px var(--accent-color));*/
+  filter: drop-shadow(0px 0px 20px #cacbcc);
   margin: auto;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .imageText {
   padding-top: 20px;
   text-align: center;
   font-size: xxx-large;
+}
+
+.aboutSection {
+  margin: 10px;
+  padding-top: 40px;
+
 }
 
 .aboutHeader {
@@ -70,7 +77,12 @@
   text-align: center;
 }
 
+.stuffSection {
+  padding-top: 60px;
+}
+
 .stuffList {
+  margin: auto;
   padding-top: 20px;
   display: flex;
   flex-flow: row wrap;
@@ -79,9 +91,51 @@
 }
 
 .stuffCard {
-  width: 40%;
-  margin-bottom: 20px;
-  border: 2px solid #e1e4e8;
+  margin: 10px;
+  /*border: 2px solid #e1e4e8;*/
+  background-color: var(--background-color);
   border-radius: 20px;
   padding: 20px;
+  flex: 380px;
+  filter: drop-shadow(0px 0px 15px #dedfe0);
+}
+
+.stuffCardHeader {
+  margin: 0;
+  font-size: large;
+}
+
+.stuffLang {
+  color: var(--grey-text);
+  margin: 0;
+  height: 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.stuffCardParagraph {
+  margin-bottom: 40px;
+}
+
+.stuffCardIconFlex {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.stuffCardIcon {
+  padding-left: 10px;
+}
+
+.stuffSection {
+  padding-top: 60px;
+}
+
+.contactCard {
+  
 }
