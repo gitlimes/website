@@ -171,3 +171,9 @@
   color: var(--grey-text);
   height: 60px;
 }
+
+@media screen and (max-width: 500px) {
+  .navbarBg {
+    display: none;
+  }
+}
