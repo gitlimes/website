@@ -1,15 +1,14 @@
 .navbarBg {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   width: 100vw;
   height: 60px;
   box-shadow: 0px 10px 15px #e9eaec;
-
 }
 
 .navbarList {
   width: 90vw;
-  max-width: 1600px;
+  max-width: var(--width);
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -20,13 +19,42 @@
   margin-right: 40px;
 }
 
-.link {
-    text-decoration: none;
-    color:tomato !important;
-}
-
 .navbarMainItem {
   font-size: large;
   margin-right: 40px;
   font-weight: bold;
+}
+
+.main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.me {
+  padding-top: 80px;
+  width: 90vw;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: var(--width);
+  justify-content: center;
+}
+
+.meImage {
+  border-radius: 20px;
+  flex: 0 0 300px;
+}
+
+.meText {
+  margin-left: 40px;
+  flex: 50%;
+}
+
+.meHeader {
+  font-size: xx-large;
+  padding-top: 20px;
+}
+
+.meParagraph {
+  font-size: large;
 }

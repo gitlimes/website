@@ -2,6 +2,7 @@
   --accent-color: #ae81ce;
   --background-color: #ffffff;
   --font-family: "Inter", sans-serif;
+  --width: 1200px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
