@@ -57,7 +57,16 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.stuffSection} id="stuff">
-            <h1 className={styles.aboutHeader}>About me</h1>
+            <h1 className={styles.stuffHeader}>Stuff&#8482;</h1>
+            <p className={styles.stuffParagraph}>
+              Here's the aforementioned stuff&#8482;:
+            </p>
+            <div className={styles.stuffList}>
+              <div className={styles.stuffCard}>test</div>
+              <div className={styles.stuffCard}>bean</div>
+              <div className={styles.stuffCard}>test2</div>
+              <div className={styles.stuffCard}>bean2</div>
+            </div>
           </div>
         </div>
       </section>
