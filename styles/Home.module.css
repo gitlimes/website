@@ -58,7 +58,6 @@
 .aboutSection {
   margin: 10px;
   padding-top: 40px;
-
 }
 
 .aboutHeader {
@@ -136,6 +135,38 @@
   padding-top: 60px;
 }
 
+.contactSection {
+  padding-top: 60px;
+}
+
+.contactCardList {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
 .contactCard {
-  
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 15px;
+  background-color: var(--background-color);
+  filter: drop-shadow(0px 0px 15px #dedfe0);
+}
+
+.contactCardIcon {
+  padding-right: 10px;
+  width: 24px;
+}
+
+.footer {
+  width: 100vw;
+  display: flex;
+  padding-top: 60px;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-text);
+  height: 60px;
 }
