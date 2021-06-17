@@ -17,6 +17,7 @@
 .navbarItem {
   font-size: large;
   margin-right: 40px;
+  color: var(--grey-text);
 }
 
 .navbarMainItem {
@@ -25,36 +26,30 @@
   font-weight: bold;
 }
 
-.main {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
-
-.me {
-  padding-top: 80px;
+.mainWrapper {
   width: 90vw;
-  display: flex;
-  flex-flow: row wrap;
   max-width: var(--width);
+  margin: auto;
+}
+
+.imageSection {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
   justify-content: center;
 }
 
-.meImage {
+.imageImage {
+  width: 225px;
+  height: 225px;
   border-radius: 20px;
-  flex: 0 0 300px;
+  filter: drop-shadow(20px 20px 0px var(--accent-color));
+  margin: auto;
+  margin-top: 80px;
 }
 
-.meText {
-  margin-left: 40px;
-  flex: 50%;
-}
-
-.meHeader {
+.imageText {
+  padding-top: 40px;
+  text-align: center;
   font-size: xx-large;
-  padding-top: 20px;
-}
-
-.meParagraph {
-  font-size: large;
 }

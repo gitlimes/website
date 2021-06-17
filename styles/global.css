@@ -3,6 +3,7 @@
   --background-color: #ffffff;
   --font-family: "Inter", sans-serif;
   --width: 1200px;
+  --grey-text: rgb(129, 129, 129);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
