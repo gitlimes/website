@@ -45,6 +45,8 @@ export default function Home() {
         <meta property="og:url" content="https://monty.ga/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/opengraph.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/opengraph.png" />
 
         <meta
           name="description"
