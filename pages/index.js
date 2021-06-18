@@ -35,6 +35,22 @@ export default function Home() {
         <link rel="shortcut icon" href="/favicon.ico?v=180621" />
         <meta name="msapplication-TileColor" content="#969acf" />
         <meta name="theme-color" content="#ffffff" />
+
+        <meta property="og:site_name" content="Monty (montylion)" />
+        <meta property="og:title" content="Monty (montylion)" />
+        <meta
+          property="og:description"
+          content="I make stuff™ in JavaScript & Node.js as a hobby."
+        />
+        <meta property="og:url" content="https://monty.ga/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/opengraph.png" />
+
+        <meta
+          name="description"
+          content="I make stuff™ in JavaScript & Node.js as a hobby."
+        />
+        <meta name="robots" content="index, follow" />
       </Head>
       <section>
         <header className={styles.navbarBg}>
