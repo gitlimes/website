@@ -1,9 +1,17 @@
 import Head from "next/head";
 import Link from "next/link";
+import parse from "html-react-parser";
 
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const localeJSON = require(`../locales/${context.locale}.json`);
+  return {
+    props: { localeJSON },
+  };
+}
+
+export default function Home({ localeJSON }) {
   return (
     <home>
       <Head>
@@ -59,75 +67,78 @@ export default function Home() {
           <ul className={styles.navbarList}>
             <li className={styles.navbarMainItem}>Monty</li>
             <li className={styles.navbarItem}>
-              <Link href="#about">About</Link>
+              <Link href="#about">{localeJSON.navbar.about}</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="#stuff">Stuff&#8482;</Link>
+              <Link href="#stuff">{localeJSON.navbar.stuff}</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="#contact">Contact</Link>
+              <Link href="#contact">{localeJSON.navbar.contact}</Link>
             </li>
           </ul>
         </header>
         <div className={styles.mainWrapper}>
-          <div className={styles.imageSection}>
+          <div className={styles.heroSection}>
             <img
               src="/this_is_temporary_and_should_not_be_used_in_the_official_website.jpg"
               alt="Me"
-              className={styles.imageImage}
+              className={styles.heroImage}
             />
-            <h1 className={styles.imageText}>Hi, I'm Monty!</h1>
+            <h1 className={styles.heroText}>
+              {localeJSON.imageSection.paragraph}
+            </h1>
           </div>
 
           <div className={styles.aboutSection} id="about">
-            <h1 className={styles.aboutHeader}>About me</h1>
-            <p className={styles.aboutParagraph}>
-              I make stuff&#8482; in JavaScript & Node.js as a hobby.
-            </p>
-            <p className={styles.aboutParagraph}>
-              Sometimes it's useful stuff&#8482;, sometimes it's just random
-              stuff&#8482; made for fun.
-              <i> Mostly the latter though.</i>
-            </p>
-            <p className={styles.aboutParagraph}>
-              My go to for making websites/APIs is Next.js, a React framework.
-              This website is in fact made using that.
-            </p>
-            <p className={styles.aboutParagraph}>
-              I also like localizing open source projects from English to
-              Italian and vice versa (some examples:{" "}
-              <Link href="https://pretendo.network">Pretendo Network</Link>,{" "}
-              <Link href="https://github.com/Akilesh-T/ACC">ACC</Link>,{" "}
-              <Link href="https://github.com/Bobrobot1/Suicide-Prevention-Bot">
-                SPB
-              </Link>
-              ).
-            </p>
-            <p className={styles.aboutParagraph}>
-              I also enjoy{" "}
-              <Link href="https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f">
-                listening to music
-              </Link>{" "}
-              and playing the piano. Lately I've also been trying to learn to
-              play the guitar, <i>with mixed results.</i>
-            </p>
+            <div className={styles.aboutText}>
+              <h1 className={styles.aboutHeader}>{localeJSON.about.header}</h1>
+              <p className={styles.aboutParagraph}>
+                {parse(localeJSON.about.paragraphs.a)}
+              </p>
+              <p className={styles.aboutParagraph}>
+                {parse(localeJSON.about.paragraphs.b)}
+              </p>
+              <p className={styles.aboutParagraph}>
+                {localeJSON.about.paragraphs.c}
+              </p>
+              <p className={styles.aboutParagraph}>
+                {parse(localeJSON.about.paragraphs.d)}
+              </p>
+              <p className={styles.aboutParagraph}>
+                {parse(localeJSON.about.paragraphs.e)}
+              </p>
+            </div>
+            <div className={styles.aboutImageContainer}>
+              <img
+                src="/spaghetti.jpg"
+                alt="Me"
+                className={styles.aboutImage}
+              />
+              <p style={{ textAlign: "center" }}>
+                {localeJSON.about.imageCaption}
+              </p>
+            </div>
           </div>
 
           <div className={styles.stuffSection} id="stuff">
-            <h1 className={styles.stuffHeader}>Stuff&#8482;</h1>
+            <h1 className={styles.stuffHeader}>{localeJSON.stuff.header}</h1>
             <p className={styles.stuffParagraph}>
-              Here's the aforementioned stuff&#8482;:
+              {localeJSON.stuff.paragraph}
             </p>
             <div className={styles.stuffList}>
               <a
                 className={styles.stuffCard}
                 href="https://github.com/montylion/discord-md-badge"
+                target="_blank"
               >
                 <h2 className={styles.stuffCardHeader}>
-                  Discord Markdown Badge
+                  {localeJSON.stuff.cards[0].title}
                 </h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <a href="https://github.com/montylion/discord-md-badge">
+                  <a
+                    href="https://github.com/montylion/discord-md-badge"
+                    target="_blank"
+                  >
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
@@ -136,18 +147,23 @@ export default function Home() {
                   </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
-                  Add to your GitHub readme a badge that shows your Discord
-                  username and presence!
+                  {localeJSON.stuff.cards[0].caption}
                 </p>
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
               </a>
               <a
                 className={styles.stuffCard}
                 href="https://github.com/montylion/website"
+                target="_blank"
               >
-                <h2 className={styles.stuffCardHeader}>Website</h2>
+                <h2 className={styles.stuffCardHeader}>
+                  {localeJSON.stuff.cards[1].title}
+                </h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <a href="https://github.com/montylion/website">
+                  <a
+                    href="https://github.com/montylion/website"
+                    target="_blank"
+                  >
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
@@ -156,19 +172,23 @@ export default function Home() {
                   </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
-                  The website you're currently browsing!
+                  {localeJSON.stuff.cards[1].caption}
                 </p>
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
               </a>
               <a
                 className={styles.stuffCard}
                 href="https://github.com/montylion/neofetch-but-its-always-arch"
+                target="_blank"
               >
                 <h2 className={styles.stuffCardHeader}>
-                  Neofetch but it's always Arch
+                  {localeJSON.stuff.cards[2].title}
                 </h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <a href="https://github.com/montylion/neofetch-but-its-always-arch">
+                  <a
+                    href="https://github.com/montylion/neofetch-but-its-always-arch"
+                    target="_blank"
+                  >
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
@@ -177,22 +197,30 @@ export default function Home() {
                   </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
-                  This is exactly what it sounds like: this version of Neofetch
-                  always returns Arch.
+                  {localeJSON.stuff.cards[2].caption}
                 </p>
                 <p className={styles.stuffLang}>Shell</p>
               </a>
-              <a className={styles.stuffCard} href="https://croissant.ga">
-                <h2 className={styles.stuffCardHeader}>croissant.ga</h2>
+              <a
+                className={styles.stuffCard}
+                href="https://croissant.ga"
+                target="_blank"
+              >
+                <h2 className={styles.stuffCardHeader}>
+                  {localeJSON.stuff.cards[3].title}
+                </h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <a href="https://croissant.ga">
+                  <a href="https://croissant.ga" target="_blank">
                     <img
                       src="/globeFeather.svg"
                       alt="Website"
                       className={styles.stuffCardIcon}
                     />
                   </a>
-                  <a href="https://github.com/montylion/croissant">
+                  <a
+                    href="https://github.com/montylion/croissant"
+                    target="_blank"
+                  >
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
@@ -201,8 +229,7 @@ export default function Home() {
                   </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
-                  A website that shows random pictures of croissants. Don't ask
-                  me why.
+                  {localeJSON.stuff.cards[3].caption}
                 </p>
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
               </a>
@@ -210,13 +237,14 @@ export default function Home() {
           </div>
 
           <div className={styles.contactSection} id="contact">
-            <h1 className={styles.aboutHeader}>Contact me</h1>
+            <h1 className={styles.aboutHeader}>{localeJSON.contact.header}</h1>
             <p className={styles.aboutParagraph}>
-              Feel free to reach out to me for anything!
+              {localeJSON.contact.paragraph}
             </p>
             <div className={styles.contactCardList}>
               <a
                 href="https://github.com/montylion"
+                target="_blank"
                 className={styles.contactCard}
               >
                 <svg
@@ -252,6 +280,7 @@ export default function Home() {
 
               <a
                 href="https://twitter.com/montylion_"
+                target="_blank"
                 className={styles.contactCard}
               >
                 <svg
@@ -271,6 +300,7 @@ export default function Home() {
 
               <a
                 href="mailto:monty.github@gmail.com"
+                target="_blank"
                 className={styles.contactCard}
               >
                 <svg
@@ -290,6 +320,7 @@ export default function Home() {
 
               <a
                 href="https://ko-fi.com/montylion"
+                target="_blank"
                 className={styles.contactCard}
               >
                 <svg

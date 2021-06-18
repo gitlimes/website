@@ -1,0 +1,47 @@
+{
+  "navbar": {
+    "about": "About",
+    "stuff": "Stuff™",
+    "contact": "Contact"
+  },
+  "imageSection": {
+    "paragraph": "Hi, I'm Monty!"
+  },
+  "about": {
+    "header": "About me",
+    "paragraphs": {
+      "a": "I make stuff™ in JavaScript & Node.js as a hobby.",
+      "b": "Sometimes it's useful stuff™, sometimes it's just random stuff™ made for fun. <i> Usually the latter though.</i>",
+      "c": "My go to for making websites/APIs is Next.js, a React framework. This website is in fact made using that.",
+      "d": "I like localizing open source projects from English to Italian and vice versa (some projects I've worked on and/or I'm working on are <a href=\"https://pretendo.network\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\">ACC</a>, and <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\">SPB</a>).",
+      "e": "I also enjoy <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\">listening to music</a> and playing the piano. Lately I've also been trying to learn to play the guitar, <i>with... mixed results.</i>"
+    },
+    "imageCaption": "A snippet of my code"
+  },
+  "stuff": {
+    "header": "Stuff™",
+    "paragraph": "Here's the aforementioned stuff™",
+    "cards": [
+      {
+        "title": "Discord Profile Markdown Badge",
+        "caption": "Add to your GitHub readme a badge that shows your Discord username and presence!"
+      },
+      {
+        "title": "Website",
+        "caption": "The website you're currently browsing!"
+      },
+      {
+        "title": "Neofetch but it's always Arch",
+        "caption": "This is exactly what it sounds like: this version of Neofetch always returns Arch."
+      },
+      {
+        "title": "croissant.ga",
+        "caption": "A website that shows random pictures of croissants. Don't ask me why."
+      }
+    ]
+  },
+  "contact": {
+    "header": "Contact me",
+    "paragraph": "Feel free to reach out to me for anything!"
+  }
+}

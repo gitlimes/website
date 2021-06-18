@@ -1,0 +1,47 @@
+{
+  "navbar": {
+    "about": "Info",
+    "stuff": "Roba™",
+    "contact": "Contatti"
+  },
+  "imageSection": {
+    "paragraph": "Ciao, sono Monty!"
+  },
+  "about": {
+    "header": "Informazioni",
+    "paragraphs": {
+      "a": "Faccio roba™ in JavaScript e Node.js come hobby.",
+      "b": "A volte è roba™ utile, a volte è roba™ fatta così, per divertimento. <i> Di solito è la seconda però.</i>",
+      "c": "Per fare siti/APIs il mio goto è Next.js, una framework per React. Infatti questo sito è fatto con quello.",
+      "d": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\">SPB</a>).",
+      "e": "Inoltre, mi piace <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\">ascoltare musica</a> e suonare il piano. Ultimamente sto imparando a suonare la chitarra, <i>con risultati... misti.</i>"
+    },
+    "imageCaption": "A snippet of my code"
+  },
+  "stuff": {
+    "header": "Roba™",
+    "paragraph": "Ecco la roba™ sopra citata",
+    "cards": [
+      {
+        "title": "Badge Markdown per profilo Discord",
+        "caption": "Aggiungi alla tua readme di GitHub un badge che mostra il tuo profilo discord e la tua presenza!"
+      },
+      {
+        "title": "Sito web",
+        "caption": "Il sito su cui stai navigando correntemente!"
+      },
+      {
+        "title": "Neofetch ma è sempre Arch",
+        "caption": "Esattamente come dice il titolo, questa versione di Neofetch ritorna sempre Arch."
+      },
+      {
+        "title": "croissant.ga",
+        "caption": "Un sito che mostra immagini di croissant a caso. Non chiedermi perché."
+      }
+    ]
+  },
+  "contact": {
+    "header": "Contattami",
+    "paragraph": "Sentiti libero/a di raggiungermi per qualsiasi motivo!"
+  }
+}

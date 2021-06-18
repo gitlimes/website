@@ -1,5 +1,6 @@
 module.exports = {
-  images: {
-    domains: ["via.placeholder.com"], //To be removed in the final version
+  i18n: {
+    locales: ["en", "it"],
+    defaultLocale: "en",
   },
 };

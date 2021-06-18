@@ -8,6 +8,7 @@
     "start": "next start -p 8080"
   },
   "dependencies": {
+    "html-react-parser": "^1.2.6",
     "next": "^10.2.0",
     "nextjs-redirect": "^5.0.2",
     "react": "17.0.1",
