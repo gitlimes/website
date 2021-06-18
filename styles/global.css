@@ -1,9 +1,13 @@
 :root {
-  --accent-color: #969acf;;
+  --light-color: #d5d7ec;
   --background-color: #ffffff;
   --font-family: "Inter", sans-serif;
   --width: 1000px;
-  --grey-text: rgb(129, 129, 129);
+  --medium-purple: #737abf;
+  --grey-shadow: #e9eaec;
+  --purple-shadow: #abaed9;
+  --dark-purple: #262a54;
+  --light-hover: rgb(230, 230, 230);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
@@ -14,6 +18,7 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
+  color: var(--dark-purple);
   font-family: var(--font-family);
   background-color: var(--background-color);
 }
@@ -21,4 +26,8 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.aboutURLS:hover {
+  text-decoration: underline;
 }

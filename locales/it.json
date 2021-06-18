@@ -10,13 +10,10 @@
   "about": {
     "header": "Informazioni",
     "paragraphs": {
-      "a": "Faccio roba™ in JavaScript e Node.js come hobby.",
-      "b": "A volte è roba™ utile, a volte è roba™ fatta così, per divertimento. <i> Di solito è la seconda però.</i>",
-      "c": "Per fare siti/APIs il mio goto è Next.js, una framework per React. Infatti questo sito è fatto con quello.",
-      "d": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\">SPB</a>).",
-      "e": "Inoltre, mi piace <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\">ascoltare musica</a> e suonare il piano. Ultimamente sto imparando a suonare la chitarra, <i>con risultati... misti.</i>"
+      "a": "Faccio roba™ in JavaScript e Node.js come hobby. A volte è roba™ utile, a volte è roba™ fatta così, per divertimento. <i> Di solito è la seconda però.</i> <br/> Per fare siti/APIs il mio goto è Next.js, una framework per React. Infatti questo sito è fatto con quello.",
+      "b": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\" class=\"aboutURLS\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\" class=\"aboutURLS\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\" class=\"aboutURLS\">SPB</a>). Mi piace anche <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">ascoltare musica</a> e suonare il piano. Ultimamente sto imparando a suonare la chitarra, <i>con risultati... misti.</i>"
     },
-    "imageCaption": "A snippet of my code"
+    "imageCaption": "Uno snippet del mio codice"
   },
   "stuff": {
     "header": "Roba™",
@@ -43,5 +40,9 @@
   "contact": {
     "header": "Contattami",
     "paragraph": "Sentiti libero/a di raggiungermi per qualsiasi motivo!"
+  },
+  "easterEggs": {
+    "discord": "Non è un link perche Discord non ti permette ancora di creare link di profilo. Molto bello.",
+    "footer": "Design \"ispirato\" da jonbarrow.dev, che a quanto pare lo ha rubato da mrjvs...? Non sono neanche sicuro da chi ho rub- preso in prestito il design!"
   }
 }

@@ -10,11 +10,8 @@
   "about": {
     "header": "About me",
     "paragraphs": {
-      "a": "I make stuff™ in JavaScript & Node.js as a hobby.",
-      "b": "Sometimes it's useful stuff™, sometimes it's just random stuff™ made for fun. <i> Usually the latter though.</i>",
-      "c": "My go to for making websites/APIs is Next.js, a React framework. This website is in fact made using that.",
-      "d": "I like localizing open source projects from English to Italian and vice versa (some projects I've worked on and/or I'm working on are <a href=\"https://pretendo.network\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\">ACC</a>, and <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\">SPB</a>).",
-      "e": "I also enjoy <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\">listening to music</a> and playing the piano. Lately I've also been trying to learn to play the guitar, <i>with... mixed results.</i>"
+      "a": "I make stuff™ in JavaScript & Node.js as a hobby. Sometimes it's useful stuff™, sometimes it's just random stuff™ made for fun. <i> Usually the latter though.</i> <br/>My go to for making websites/APIs is Next.js, a React framework. This website is in fact made using that.",
+      "b": "I like localizing open source projects from English to Italian and vice versa (some projects I've worked on and/or I'm working on are <a href=\"https://pretendo.network\" class=\"aboutURLS\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\" class=\"aboutURLS\">ACC</a>, and <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\" class=\"aboutURLS\">SPB</a>). I also enjoy <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">listening to music</a> and playing the piano. Lately I've also been trying to learn to play the guitar, <i>with... mixed results.</i>"
     },
     "imageCaption": "A snippet of my code"
   },
@@ -43,5 +40,9 @@
   "contact": {
     "header": "Contact me",
     "paragraph": "Feel free to reach out to me for anything!"
+  },
+  "easterEggs": {
+    "discord": "Not a link 'cause Discord to this day doesn't support linking to your profile. Very cool.",
+    "footer": "Design \"inspired\" by jonbarrow.dev, which apparently got it from mrjvs...? I'm not even sure whose design I sto- borrowed from anymore!"
   }
 }
