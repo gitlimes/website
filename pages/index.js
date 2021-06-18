@@ -103,6 +103,14 @@ export default function Home() {
               </Link>
               ).
             </p>
+            <p className={styles.aboutParagraph}>
+              I also enjoy{" "}
+              <Link href="https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f">
+                listening to music
+              </Link>{" "}
+              and playing the piano. Lately I've also been trying to learn to
+              play the guitar, <i>with mixed results.</i>
+            </p>
           </div>
 
           <div className={styles.stuffSection} id="stuff">
@@ -168,17 +176,17 @@ export default function Home() {
               <div className={styles.stuffCard}>
                 <h2 className={styles.stuffCardHeader}>croissant.ga</h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <Link href="https://github.com/montylion/croissant">
-                    <img
-                      src="/githubFeather.svg"
-                      alt="GitHub"
-                      className={styles.stuffCardIcon}
-                    />
-                  </Link>
                   <Link href="https://croissant.ga">
                     <img
                       src="/globeFeather.svg"
                       alt="Website"
+                      className={styles.stuffCardIcon}
+                    />
+                  </Link>
+                  <Link href="https://github.com/montylion/croissant">
+                    <img
+                      src="/githubFeather.svg"
+                      alt="GitHub"
                       className={styles.stuffCardIcon}
                     />
                   </Link>
