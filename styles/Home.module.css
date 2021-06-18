@@ -164,7 +164,7 @@
 }
 
 .stuffCardIcon {
-  padding-left: 10px;
+  padding-left: 15px;
   stroke: var(--medium-purple);
 }
 
@@ -193,7 +193,8 @@
 
 .contactHeader {
   font-size: xx-large;
-  margin: 0px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #fff;
 }
 
@@ -222,6 +223,10 @@
   color: #fff;
 }
 
+.contactCardGitHub:hover {
+  background-color: #343232;
+}
+
 .contactCardDiscord {
   display: flex;
   flex-flow: row;
@@ -246,6 +251,10 @@
   color: #fff;
 }
 
+.contactCardTwitter:hover {
+  background-color: #51b6f5;
+}
+
 .contactCardGmail {
   display: flex;
   flex-flow: row;
@@ -258,6 +267,10 @@
   color: #fff;
 }
 
+.contactCardGmail:hover {
+  background-color: #ee6559;
+}
+
 .contactCardKofi {
   display: flex;
   flex-flow: row;
@@ -268,6 +281,10 @@
   margin-bottom: 15px;
   background-color: #ff5e5b;
   color: #fff;
+}
+
+.contactCardKofi:hover {
+  background-color: #ff8785;
 }
 
 .contactCard:hover {
