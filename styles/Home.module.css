@@ -170,7 +170,7 @@
 
 .stuffCardIcon:hover {
   stroke: var(--dark-purple);
-  transition: ease-in-out 0.25s;
+  transition: ease-in-out 0.1s;
 }
 
 .stuffSection {
@@ -225,6 +225,7 @@
 
 .contactCardGitHub:hover {
   background-color: #343232;
+  transition: ease-in-out 0.1s;
 }
 
 .contactCardDiscord {
@@ -253,6 +254,7 @@
 
 .contactCardTwitter:hover {
   background-color: #51b6f5;
+  transition: ease-in-out 0.1s;
 }
 
 .contactCardGmail {
@@ -269,6 +271,7 @@
 
 .contactCardGmail:hover {
   background-color: #ee6559;
+  transition: ease-in-out 0.1s;
 }
 
 .contactCardKofi {
@@ -285,11 +288,7 @@
 
 .contactCardKofi:hover {
   background-color: #ff8785;
-}
-
-.contactCard:hover {
-  background-color: var(--light-hover);
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.1s;
 }
 
 .contactCardIcon {
