@@ -132,19 +132,6 @@
   padding-left: 10px;
 }
 
-.moreStuffBtn {
-  display: flex;
-  margin: 10px;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: var(--accent-color);
-  color: white;
-  filter: drop-shadow(0px 0px 15px #dedfe0);
-}
-
 .stuffSection {
   padding-top: 60px;
 }

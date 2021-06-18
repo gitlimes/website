@@ -145,7 +145,6 @@ export default function Home() {
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
               </div>
             </div>
-            <a href="/stuff" className={styles.moreStuffBtn}>View more</a>
           </div>
 
           <div className={styles.contactSection} id="contact">
