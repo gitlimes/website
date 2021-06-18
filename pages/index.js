@@ -119,84 +119,93 @@ export default function Home() {
               Here's the aforementioned stuff&#8482;:
             </p>
             <div className={styles.stuffList}>
-              <div className={styles.stuffCard}>
+              <a
+                className={styles.stuffCard}
+                href="https://github.com/montylion/discord-md-badge"
+              >
                 <h2 className={styles.stuffCardHeader}>
                   Discord Markdown Badge
                 </h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <Link href="https://github.com/montylion/discord-md-badge">
+                  <a href="https://github.com/montylion/discord-md-badge">
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
                       className={styles.stuffCardIcon}
                     />
-                  </Link>
+                  </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
                   Add to your GitHub readme a badge that shows your Discord
                   username and presence!
                 </p>
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
-              </div>
-              <div className={styles.stuffCard}>
+              </a>
+              <a
+                className={styles.stuffCard}
+                href="https://github.com/montylion/website"
+              >
                 <h2 className={styles.stuffCardHeader}>Website</h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <Link href="https://github.com/montylion/website">
+                  <a href="https://github.com/montylion/website">
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
                       className={styles.stuffCardIcon}
                     />
-                  </Link>
+                  </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
                   The website you're currently browsing!
                 </p>
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
-              </div>
-              <div className={styles.stuffCard}>
+              </a>
+              <a
+                className={styles.stuffCard}
+                href="https://github.com/montylion/neofetch-but-its-always-arch"
+              >
                 <h2 className={styles.stuffCardHeader}>
                   Neofetch but it's always Arch
                 </h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <Link href="https://github.com/montylion/neofetch-but-its-always-arch">
+                  <a href="https://github.com/montylion/neofetch-but-its-always-arch">
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
                       className={styles.stuffCardIcon}
                     />
-                  </Link>
+                  </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
                   This is exactly what it sounds like: this version of Neofetch
                   always returns Arch.
                 </p>
                 <p className={styles.stuffLang}>Shell</p>
-              </div>
-              <div className={styles.stuffCard}>
+              </a>
+              <a className={styles.stuffCard} href="https://croissant.ga">
                 <h2 className={styles.stuffCardHeader}>croissant.ga</h2>
                 <div className={styles.stuffCardIconFlex}>
-                  <Link href="https://croissant.ga">
+                  <a href="https://croissant.ga">
                     <img
                       src="/globeFeather.svg"
                       alt="Website"
                       className={styles.stuffCardIcon}
                     />
-                  </Link>
-                  <Link href="https://github.com/montylion/croissant">
+                  </a>
+                  <a href="https://github.com/montylion/croissant">
                     <img
                       src="/githubFeather.svg"
                       alt="GitHub"
                       className={styles.stuffCardIcon}
                     />
-                  </Link>
+                  </a>
                 </div>
                 <p className={styles.stuffCardParagraph}>
                   A website that shows random pictures of croissants. Don't ask
                   me why.
                 </p>
                 <p className={styles.stuffLang}>JavaScript, Next.js</p>
-              </div>
+              </a>
             </div>
           </div>
 

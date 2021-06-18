@@ -1,6 +1,6 @@
 {
-  "name": "monty.exe",
-  "version": "0.1.0",
+  "name": "Monty website",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
