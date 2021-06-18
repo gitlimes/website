@@ -93,6 +93,7 @@
   margin: 10px;
   /*border: 2px solid #e1e4e8;*/
   background-color: var(--background-color);
+  position:relative;
   border-radius: 20px;
   padding: 20px;
   flex: 380px;
