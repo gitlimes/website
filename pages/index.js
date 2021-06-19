@@ -398,7 +398,7 @@ export default function Home({ localeJSON }) {
           </div>
         </div>
         <div className={styles.footer} title={localeJSON.easterEggs.footer}>
-          Copyright 2021 - Monty (montylion)
+          Copyright 2021 - Matteo Monteleone (Monty)
         </div>
       </section>
     </home>
