@@ -92,7 +92,7 @@
 .stuffHeader {
   text-align: center;
   font-size: xx-large;
-  padding: 0;
+  margin-top: 0;
 }
 
 .stuffParagraph {
@@ -106,7 +106,6 @@
   left: 0px;
   display: flex;
   justify-content: center;
-  padding-bottom: 60px;
   box-shadow: 0px -10px 15px var(--grey-shadow);
 }
 
@@ -115,6 +114,8 @@
   width: 90vw;
   margin: auto;
   filter: drop-shadow(5px 5px 10px var(--purple-shadow));
+  padding-bottom: 80px;
+  padding-top: 80px;
 }
 
 .stuffList {
@@ -173,10 +174,6 @@
   transition: ease-in-out 0.1s;
 }
 
-.stuffSection {
-  padding-top: 60px;
-}
-
 .contactBg {
   width: 100vw;
   background-color: var(--dark-purple);
@@ -188,10 +185,11 @@
 .contactSection {
   width: 90vw;
   max-width: var(--width);
-  padding: 60px 0px;
+  margin: 80px 0px 40px 0px;
 }
 
 .contactHeader {
+  margin-top: 0;
   font-size: xx-large;
   margin-left: 10px;
   margin-right: 10px;

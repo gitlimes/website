@@ -15,26 +15,25 @@ export async function getServerSideProps(context) {
 
 export default function Home({ localeJSON }) {
 
-
   const router = useRouter();
   useEffect(() => {
-    let keyPresses = ""
-    document.addEventListener('keydown', event => {
+    let keyPresses = "";
+    document.addEventListener("keydown", (event) => {
       const key = event.key.toLowerCase();
-      keyPresses += key
+      keyPresses += key;
 
       let winRegex = /win/;
 
-      let ghRegex = /gh/
+      let ghRegex = /gh/;
 
       // This redirects to win.monty.ga if the user types "win"
       if (winRegex.test(keyPresses)) {
-        router.push("https://win.monty.ga")
+        router.push("https://win.monty.ga");
       }
 
       // This redirects to my github if the user types "gh"
       if (ghRegex.test(keyPresses)) {
-        router.push("https://github.com/montylion")
+        router.push("https://github.com/montylion");
       }
 
     })

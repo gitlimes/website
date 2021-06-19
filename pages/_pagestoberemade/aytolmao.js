@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import "98.css";
 import React, { useEffect } from "react";
 
 export default function Generator() {
@@ -27,81 +26,55 @@ export default function Generator() {
     }
   };
 
-  useEffect(() => {
-    dragElement(document.getElementById("mainWindow"));
-
-    function dragElement(elmnt) {
-      let pos1 = 0,
-        pos2 = 0,
-        pos3 = 0,
-        pos4 = 0;
-      if (document.getElementById(elmnt.id + "header")) {
-        document.getElementById(
-          elmnt.id + "header"
-        ).onmousedown = dragMouseDown;
-      } else {
-        elmnt.onmousedown = dragMouseDown;
-      }
-
-      function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-      }
-
-      function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-      }
-
-      function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-      }
-    }
-  });
-
   return (
     <home>
       <Head>
-        <title>aytolmao.dll</title>
+        <title>Ay to lmao | Monty</title>
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href="/apple-touch-icon.png?v=180621"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png"
+          href="/favicon-32x32.png?v=180621"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png"
+          href="/favicon-16x16.png?v=180621"
         />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#603cba" />
+        <link rel="manifest" href="/site.webmanifest?v=180621" />
+        <link
+          rel="mask-icon"
+          href="/safari-pinned-tab.svg?v=180621"
+          color="#969acf"
+        />
+        <link rel="shortcut icon" href="/favicon.ico?v=180621" />
+        <meta name="msapplication-TileColor" content="#969acf" />
         <meta name="theme-color" content="#ffffff" />
 
-        <meta property="og:image" content="/og_image.png" />
+        <meta property="og:site_name" content="Ay to lmao | Monty (montylion)" />
+        <meta property="og:title" content="Ay to lmao | Monty (montylion)" />
+        <meta
+          property="og:description"
+          content="This thing converts all 'ay's into 'lmao's"
+        />
+        <meta property="og:url" content="https://monty.ga/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="monty.exe" />
-        <meta property="og:url" content="https://monty.ga" />
+        <meta property="og:image" content="/opengraph.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="/og_image.png" />
+        <meta name="twitter:image" content="/opengraph.png" />
+
+        <meta
+          name="description"
+          content="I make stuff™ in JavaScript & Node.js as a hobby."
+        />
+        <meta name="robots" content="index, follow" />
       </Head>
       <section>
         <div
@@ -131,10 +104,10 @@ export default function Generator() {
               <textarea
                 id="textToLmao"
                 rows="8"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                spellcheck="false"
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
                 placeholder="Type here the text to lmaoify"
               />
               <textarea
