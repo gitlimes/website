@@ -93,13 +93,13 @@ export default function Home({ localeJSON }) {
           <ul className={styles.navbarList}>
             <li className={styles.navbarMainItem}>Monty</li>
             <li className={styles.navbarItem}>
-              <Link href="#about">{localeJSON.navbar.about}</Link>
+              <Link href="#about">{localeJSON.index.navbar.about}</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="#stuff">{localeJSON.navbar.stuff}</Link>
+              <Link href="#stuff">{localeJSON.index.navbar.stuff}</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="#contact">{localeJSON.navbar.contact}</Link>
+              <Link href="#contact">{localeJSON.index.navbar.contact}</Link>
             </li>
           </ul>
         </header>
@@ -107,46 +107,46 @@ export default function Home({ localeJSON }) {
           <div className={styles.heroSection}>
             <img
               src="/this_is_temporary_and_should_not_be_used_in_the_official_website.jpg"
-              alt="Me"
+              alt={localeJSON.index.imageSection.imageAlt}
               className={styles.heroImage}
             />
             <h1 className={styles.heroText}>
-              {localeJSON.imageSection.paragraph}
+              {localeJSON.index.imageSection.paragraph}
             </h1>
           </div>
 
           <div className={styles.aboutSection} id="about">
             <div className={styles.aboutText}>
-              <h1 className={styles.aboutHeader}>{localeJSON.about.header}</h1>
+              <h1 className={styles.aboutHeader}>{localeJSON.index.about.header}</h1>
               <p className={styles.aboutParagraph}>
-                {parse(localeJSON.about.paragraphs.a)}
+                {parse(localeJSON.index.about.paragraphs.a)}
               </p>
               <p className={styles.aboutParagraph}>
-                {parse(localeJSON.about.paragraphs.b)}
+                {parse(localeJSON.index.about.paragraphs.b)}
               </p>
             </div>
             <div className={styles.aboutImageContainer}>
               <img
                 src="/spaghetti.jpg"
-                alt="Me"
+                alt={localeJSON.index.about.imageAlt}
                 className={styles.aboutImage}
               />
               <p style={{ textAlign: "center", marginRight: "20px" }}>
-                {localeJSON.about.imageCaption}
+                {localeJSON.index.about.imageCaption}
               </p>
             </div>
           </div>
 
           <div className={styles.stuffBg}>
             <div className={styles.stuffSection} id="stuff">
-              <h1 className={styles.stuffHeader}>{localeJSON.stuff.header}</h1>
+              <h1 className={styles.stuffHeader}>{localeJSON.index.stuff.header}</h1>
               <p className={styles.stuffParagraph}>
-                {localeJSON.stuff.paragraph}
+                {localeJSON.index.stuff.paragraph}
               </p>
               <div className={styles.stuffList}>
                 <div className={styles.stuffCard}>
                   <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.stuff.cards[0].title}
+                    {localeJSON.index.stuff.cards[0].title}
                   </h2>
                   <div className={styles.stuffCardIconFlex}>
                     <a
@@ -170,13 +170,13 @@ export default function Home({ localeJSON }) {
                     </a>
                   </div>
                   <p className={styles.stuffCardParagraph}>
-                    {localeJSON.stuff.cards[0].caption}
+                    {localeJSON.index.stuff.cards[0].caption}
                   </p>
                   <p className={styles.stuffLang}>JavaScript, Next.js</p>
                 </div>
                 <div className={styles.stuffCard}>
                   <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.stuff.cards[1].title}
+                    {localeJSON.index.stuff.cards[1].title}
                   </h2>
                   <div className={styles.stuffCardIconFlex}>
                     <a
@@ -200,13 +200,13 @@ export default function Home({ localeJSON }) {
                     </a>
                   </div>
                   <p className={styles.stuffCardParagraph}>
-                    {localeJSON.stuff.cards[1].caption}
+                    {localeJSON.index.stuff.cards[1].caption}
                   </p>
                   <p className={styles.stuffLang}>JavaScript, Next.js</p>
                 </div>
                 <div className={styles.stuffCard}>
                   <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.stuff.cards[2].title}
+                    {localeJSON.index.stuff.cards[2].title}
                   </h2>
                   <div className={styles.stuffCardIconFlex}>
                     <a
@@ -230,13 +230,13 @@ export default function Home({ localeJSON }) {
                     </a>
                   </div>
                   <p className={styles.stuffCardParagraph}>
-                    {localeJSON.stuff.cards[2].caption}
+                    {localeJSON.index.stuff.cards[2].caption}
                   </p>
                   <p className={styles.stuffLang}>Shell</p>
                 </div>
                 <div className={styles.stuffCard}>
                   <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.stuff.cards[3].title}
+                    {localeJSON.index.stuff.cards[3].title}
                   </h2>
                   <div className={styles.stuffCardIconFlex}>
                     <a href="https://croissant.ga" target="_blank">
@@ -278,7 +278,7 @@ export default function Home({ localeJSON }) {
                     </a>
                   </div>
                   <p className={styles.stuffCardParagraph}>
-                    {localeJSON.stuff.cards[3].caption}
+                    {localeJSON.index.stuff.cards[3].caption}
                   </p>
                   <p className={styles.stuffLang}>JavaScript, Next.js</p>
                 </div>
@@ -289,10 +289,10 @@ export default function Home({ localeJSON }) {
           <div className={styles.contactBg}>
             <div className={styles.contactSection} id="contact">
               <h1 className={styles.contactHeader}>
-                {localeJSON.contact.header}
+                {localeJSON.index.contact.header}
               </h1>
               <p className={styles.contactParagraph}>
-                {localeJSON.contact.paragraph}
+                {localeJSON.index.contact.paragraph}
               </p>
               <div className={styles.contactCardList}>
                 <a
@@ -317,7 +317,7 @@ export default function Home({ localeJSON }) {
 
                 <a
                   className={styles.contactCardDiscord}
-                  title={localeJSON.easterEggs.discord}
+                  title={localeJSON.index.easterEggs.discord}
                 >
                   <svg
                     role="img"
@@ -397,7 +397,7 @@ export default function Home({ localeJSON }) {
             </div>
           </div>
         </div>
-        <div className={styles.footer} title={localeJSON.easterEggs.footer}>
+        <div className={styles.footer} title={localeJSON.index.easterEggs.footer}>
           Copyright 2021 - Matteo Monteleone (Monty)
         </div>
       </section>

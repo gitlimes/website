@@ -1,48 +1,52 @@
 {
-  "navbar": {
-    "about": "Info",
-    "stuff": "Roba™",
-    "contact": "Contatti"
-  },
-  "imageSection": {
-    "paragraph": "Ciao, sono Monty!"
-  },
-  "about": {
-    "header": "Informazioni",
-    "paragraphs": {
-      "a": "Faccio roba™ in JavaScript e Node.js come hobby. A volte è roba™ utile, a volte è roba™ fatta così, per divertimento. <i> Di solito è la seconda però.</i> <br/> Per fare siti/APIs utilizzo quasi sempre Next.js, una framework per React. Per questo sito ho infatti usato quello.",
-      "b": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\" class=\"aboutURLS\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\" class=\"aboutURLS\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\" class=\"aboutURLS\">SPB</a>). Mi piace anche <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">ascoltare musica</a> e suonare il piano. Ultimamente sto imparando a suonare la chitarra, <i>con risultati... misti.</i>"
+  "index": {
+    "navbar": {
+      "about": "Info",
+      "stuff": "Roba™",
+      "contact": "Contatti"
     },
-    "imageCaption": "Uno snippet del mio codice"
-  },
-  "stuff": {
-    "header": "Roba™",
-    "paragraph": "Ecco la roba™ sopra citata",
-    "cards": [
-      {
-        "title": "Badge Markdown per profilo Discord",
-        "caption": "Aggiungi alla tua readme di GitHub un badge che mostra il tuo profilo discord e la tua presenza!"
+    "imageSection": {
+      "paragraph": "Ciao, sono Monty!",
+      "imageAlt": "Una mia foto con una faccia stupida"
+    },
+    "about": {
+      "header": "Informazioni",
+      "paragraphs": {
+        "a": "Faccio roba™ in JavaScript e Node.js come hobby. A volte è roba™ utile, a volte è roba™ fatta così, per divertimento. <i> Di solito è la seconda però.</i> <br/> Per fare siti/APIs utilizzo quasi sempre Next.js, una framework per React. Per questo sito ho infatti usato quello.",
+        "b": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\" class=\"aboutURLS\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\" class=\"aboutURLS\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\" class=\"aboutURLS\">SPB</a>). Mi piace anche <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">ascoltare musica</a> e suonare il piano. Ultimamente sto imparando a suonare la chitarra, <i>con risultati... misti.</i>"
       },
-      {
-        "title": "Sito web",
-        "caption": "Il sito su cui stai navigando proprio ora!"
-      },
-      {
-        "title": "Neofetch ma è sempre Arch",
-        "caption": "Esattamente come dice il titolo, questa versione di Neofetch ritorna sempre Arch."
-      },
-      {
-        "title": "croissant.ga",
-        "caption": "Un sito che mostra immagini di croissant a caso. Non chiedermi perché."
-      }
-    ]
-  },
-  "contact": {
-    "header": "Contattami",
-    "paragraph": "Sentiti libero/a di raggiungermi per qualsiasi motivo!"
-  },
-  "easterEggs": {
-    "discord": "Non è un link perche Discord non ti permette ancora di creare link di profilo. Molto bello.",
-    "footer": "\"Quindi hai rubat- preso in prestito [il design] da jonbarrow, me e JipFr in un colpo solo. Efficienza impressionante.\" -mrjvs"
+      "imageCaption": "Uno frammento del mio codice",
+      "imageAlt": "Codice spaghetti"
+    },
+    "stuff": {
+      "header": "Roba™",
+      "paragraph": "Ecco la roba™ sopra citata",
+      "cards": [
+        {
+          "title": "Badge Markdown per profilo Discord",
+          "caption": "Aggiungi alla tua readme di GitHub un badge che mostra il tuo profilo discord e la tua presenza!"
+        },
+        {
+          "title": "Sito web",
+          "caption": "Il sito su cui stai navigando proprio ora!"
+        },
+        {
+          "title": "Neofetch ma è sempre Arch",
+          "caption": "Esattamente come dice il titolo, questa versione di Neofetch ritorna sempre Arch."
+        },
+        {
+          "title": "croissant.ga",
+          "caption": "Un sito che mostra immagini di croissant a caso. Non chiedermi perché."
+        }
+      ]
+    },
+    "contact": {
+      "header": "Contattami",
+      "paragraph": "Sentiti libero/a di raggiungermi per qualsiasi motivo!"
+    },
+    "easterEggs": {
+      "discord": "Non è un link perche Discord non ti permette ancora di creare link di profilo. Molto bello.",
+      "footer": "\"Quindi hai rubat- preso in prestito [il design] da jonbarrow, me e JipFr in un colpo solo. Efficienza impressionante.\" -mrjvs"
+    }
   }
 }
