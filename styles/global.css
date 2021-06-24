@@ -21,6 +21,7 @@ body {
   color: var(--dark-purple);
   font-family: var(--font-family);
   background-color: var(--background-color);
+  scroll-behavior: smooth;
 }
 
 a {
