@@ -15,7 +15,7 @@
         "a": "Faccio roba™ in JavaScript e Node.js come hobby. A volte è roba™ utile, a volte è roba™ fatta così, per divertimento. <i> Di solito è la seconda però.</i> <br/> Per fare siti/APIs utilizzo quasi sempre Next.js, una framework per React. Per questo sito ho infatti usato quello.",
         "b": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\" class=\"aboutURLS\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\" class=\"aboutURLS\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\" class=\"aboutURLS\">SPB</a>). Mi piace anche <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">ascoltare musica</a> e suonare il piano. Ultimamente sto imparando a suonare la chitarra, <i>con risultati... misti.</i>"
       },
-      "imageCaption": "Uno frammento del mio codice",
+      "imageCaption": "Un frammento del mio codice",
       "imageAlt": "Codice spaghetti"
     },
     "stuff": {
