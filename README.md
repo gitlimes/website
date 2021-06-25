@@ -1,2 +1,4 @@
 # website
-This branch contains the code for [dc.monty.ga](https://dc.monty.ga) and [discord.monty.ga](https://discord.monty.ga) I guess
+This branch contains the code for [dc.montylion.dev](https://dc.montylion.dev) and [discord.montylion.dev](https://discord.montylion.dev) I guess
+
+Not really mantained

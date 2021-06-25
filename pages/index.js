@@ -59,7 +59,7 @@ export default function Generator() {
     }
 
     document.getElementById("embedUrl").value =
-      "https://dc.monty.ga/e?e=" + btoa(encodeURI(embedQuery));
+      "https://dc.montylion.dev/e?e=" + btoa(encodeURI(embedQuery));
   };
 
   const copyURL = async (event) => {
@@ -144,7 +144,7 @@ export default function Generator() {
         <meta property="og:image" content="/og_image.png" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="monty.exe" />
-        <meta property="og:url" content="https://monty.ga" />
+        <meta property="og:url" content="https://dc.montylion.deev" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/og_image.png" />
       </Head>
