@@ -14,7 +14,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ localeJSON }) {
-
   const router = useRouter();
   useEffect(() => {
     let keyPresses = "";
@@ -26,18 +25,17 @@ export default function Home({ localeJSON }) {
 
       let ghRegex = /gh/;
 
-      // This redirects to win.monty.ga if the user types "win"
+      // This redirects to win.montylion.dev if the user types "win"
       if (winRegex.test(keyPresses)) {
-        router.push("https://win.monty.ga");
+        router.push("https://win.montylion.dev");
       }
 
       // This redirects to my github if the user types "gh"
       if (ghRegex.test(keyPresses)) {
         router.push("https://github.com/montylion");
       }
-
-    })
-  })
+    });
+  });
   return (
     <home>
       <Head>
@@ -76,7 +74,7 @@ export default function Home({ localeJSON }) {
           property="og:description"
           content="I make stuff™ in JavaScript & Node.js as a hobby."
         />
-        <meta property="og:url" content="https://monty.ga/" />
+        <meta property="og:url" content="https://montylion.dev/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/opengraph.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -117,7 +115,9 @@ export default function Home({ localeJSON }) {
 
           <div className={styles.aboutSection} id="about">
             <div className={styles.aboutText}>
-              <h1 className={styles.aboutHeader}>{localeJSON.index.about.header}</h1>
+              <h1 className={styles.aboutHeader}>
+                {localeJSON.index.about.header}
+              </h1>
               <p className={styles.aboutParagraph}>
                 {parse(localeJSON.index.about.paragraphs.a)}
               </p>
@@ -139,7 +139,9 @@ export default function Home({ localeJSON }) {
 
           <div className={styles.stuffBg}>
             <div className={styles.stuffSection} id="stuff">
-              <h1 className={styles.stuffHeader}>{localeJSON.index.stuff.header}</h1>
+              <h1 className={styles.stuffHeader}>
+                {localeJSON.index.stuff.header}
+              </h1>
               <p className={styles.stuffParagraph}>
                 {localeJSON.index.stuff.paragraph}
               </p>
@@ -239,7 +241,7 @@ export default function Home({ localeJSON }) {
                     {localeJSON.index.stuff.cards[3].title}
                   </h2>
                   <div className={styles.stuffCardIconFlex}>
-                    <a href="https://croissant.ga" target="_blank">
+                    <a href="https://croissant.montylion.dev" target="_blank">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -397,7 +399,10 @@ export default function Home({ localeJSON }) {
             </div>
           </div>
         </div>
-        <div className={styles.footer} title={localeJSON.index.easterEggs.footer}>
+        <div
+          className={styles.footer}
+          title={localeJSON.index.easterEggs.footer}
+        >
           Copyright 2021 - Matteo Monteleone (Monty)
         </div>
       </section>
