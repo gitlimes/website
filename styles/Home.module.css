@@ -263,12 +263,12 @@
   padding: 10px;
   margin-right: 15px;
   margin-bottom: 15px;
-  background-color: #ea4335;
+  background-color: #737abf;
   color: #fff;
 }
 
 .contactCardGmail:hover {
-  background-color: #ee6559;
+  background-color: #9da2d2;
   transition: ease-in-out 0.1s;
 }
 
