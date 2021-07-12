@@ -206,16 +206,19 @@
   display: flex;
   flex-flow: row wrap;
   text-align: center;
-  margin: 0px 10px;
+  margin: 0px 5px;
 }
 
 .contactCardGitHub {
   display: flex;
   flex-flow: row;
+  flex: 15%;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 15px;
   background-color: #181717;
   color: #fff;
@@ -229,10 +232,13 @@
 .contactCardDiscord {
   display: flex;
   flex-flow: row;
+  flex: 15%;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 15px;
   background-color: #5865f2;
   color: #fff;
@@ -241,10 +247,13 @@
 .contactCardTwitter {
   display: flex;
   flex-flow: row;
+  flex: 15%;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 15px;
   background-color: #1da1f2;
   color: #fff;
@@ -255,19 +264,22 @@
   transition: ease-in-out 0.1s;
 }
 
-.contactCardGmail {
+.contactCardEmail {
   display: flex;
   flex-flow: row;
+  flex: 15%;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 15px;
   background-color: #737abf;
   color: #fff;
 }
 
-.contactCardGmail:hover {
+.contactCardEmail:hover {
   background-color: #9da2d2;
   transition: ease-in-out 0.1s;
 }
@@ -275,10 +287,13 @@
 .contactCardKofi {
   display: flex;
   flex-flow: row;
+  flex: 15%;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   padding: 10px;
-  margin-right: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
   margin-bottom: 15px;
   background-color: #ff5e5b;
   color: #fff;
@@ -308,6 +323,54 @@
   .navbarBg {
     display: none;
   }
+
+  .contactCardList {
+    margin: 0;
+  }
+
+  .contactCardDiscord {
+    flex: none !important;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .contactCardTwitter {
+    flex: none !important;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .contactCardGitHub {
+    flex: none !important;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .contactCardEmail {
+    flex: none !important;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .contactCardKofi {
+    flex: none !important;
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactCardDiscord {
+    flex: 40%;
+  }
+  .contactCardTwitter {
+    flex: 40%;
+  }
+  .contactCardGitHub {
+    flex: 40%;
+  }
+  .contactCardEmail {
+    flex: 40%;
+  }
+  .contactCardKofi {
+    flex: 40%;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -321,5 +384,14 @@
 
   .aboutSection {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contactCardEmail {
+    flex: 40%;
+  }
+  .contactCardKofi {
+    flex: 40%;
   }
 }
