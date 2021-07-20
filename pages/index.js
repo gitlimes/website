@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+
 import parse from "html-react-parser";
 
 import styles from "../styles/Home.module.css";
@@ -14,28 +13,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ localeJSON }) {
-  const router = useRouter();
-  useEffect(() => {
-    let keyPresses = "";
-    document.addEventListener("keydown", (event) => {
-      const key = event.key.toLowerCase();
-      keyPresses += key;
-
-      let winRegex = /win/;
-
-      let ghRegex = /gh/;
-
-      // This redirects to win.montylion.dev if the user types "win"
-      if (winRegex.test(keyPresses)) {
-        router.push("https://win.montylion.dev");
-      }
-
-      // This redirects to my github if the user types "gh"
-      if (ghRegex.test(keyPresses)) {
-        router.push("https://github.com/montylion");
-      }
-    });
-  });
   return (
     <home>
       <Head>
@@ -406,7 +383,7 @@ export default function Home({ localeJSON }) {
           className={styles.footer}
           title={localeJSON.index.easterEggs.footer}
         >
-          Copyright 2021 - Matteo Monteleone (Monty)
+          Copyright 2021 - Monty (montylion)
         </div>
       </section>
     </home>
