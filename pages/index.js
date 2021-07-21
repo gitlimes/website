@@ -294,7 +294,7 @@ export default function Home({ localeJSON }) {
                   montylion
                 </a>
 
-                <a
+                <div
                   className={styles.contactCardDiscord}
                   title={localeJSON.index.easterEggs.discord}
                 >
@@ -311,7 +311,7 @@ export default function Home({ localeJSON }) {
                     />
                   </svg>
                   montylion#3581
-                </a>
+                </div>
 
                 <a
                   href="https://twitter.com/montylion_"
@@ -379,12 +379,7 @@ export default function Home({ localeJSON }) {
             </div>
           </div>
         </div>
-        <div
-          className={styles.footer}
-          title={localeJSON.index.easterEggs.footer}
-        >
-          Copyright 2021 - Monty (montylion)
-        </div>
+        <div className={styles.footer}>Copyright 2021 - Monty (montylion)</div>
       </section>
     </home>
   );
