@@ -131,6 +131,7 @@ export default function Home({ localeJSON }) {
                     <a
                       href="https://github.com/montylion/discord-md-badge"
                       target="_blank"
+                      rel="noopener"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -161,6 +162,7 @@ export default function Home({ localeJSON }) {
                     <a
                       href="https://github.com/montylion/website"
                       target="_blank"
+                      rel="noopener"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -191,6 +193,7 @@ export default function Home({ localeJSON }) {
                     <a
                       href="https://github.com/montylion/neofetch-but-its-always-arch"
                       target="_blank"
+                      rel="noopener"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +221,11 @@ export default function Home({ localeJSON }) {
                     {localeJSON.index.stuff.cards[3].title}
                   </h2>
                   <div className={styles.stuffCardIconFlex}>
-                    <a href="https://croissant.montylion.dev" target="_blank">
+                    <a
+                      href="https://croissant.montylion.dev"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -239,6 +246,7 @@ export default function Home({ localeJSON }) {
                     <a
                       href="https://github.com/montylion/croissant"
                       target="_blank"
+                      rel="noopener"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -277,6 +285,7 @@ export default function Home({ localeJSON }) {
                 <a
                   href="https://github.com/montylion"
                   target="_blank"
+                  rel="noopener"
                   className={styles.contactCardGitHub}
                 >
                   <svg
@@ -316,6 +325,7 @@ export default function Home({ localeJSON }) {
                 <a
                   href="https://twitter.com/montylion_"
                   target="_blank"
+                  rel="noopener"
                   className={styles.contactCardTwitter}
                 >
                   <svg
@@ -336,6 +346,7 @@ export default function Home({ localeJSON }) {
                 <a
                   href="mailto:hey@montylion.dev"
                   target="_blank"
+                  rel="noopener"
                   className={styles.contactCardEmail}
                 >
                   <svg
@@ -359,6 +370,7 @@ export default function Home({ localeJSON }) {
                 <a
                   href="https://ko-fi.com/montylion"
                   target="_blank"
+                  rel="noopener"
                   className={styles.contactCardKofi}
                 >
                   <svg
