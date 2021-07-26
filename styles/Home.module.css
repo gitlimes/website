@@ -43,12 +43,13 @@
   flex-flow: column wrap;
   justify-content: center;
 }
+
 .heroImage {
   width: 225px;
   height: 225px;
   border-radius: 20px;
-  filter: drop-shadow(20px 20px 0 var(--medium-purple));
-
+  background-color: var(--light-color);
+  filter: drop-shadow(-20px -20px 0 var(--medium-purple));
   margin: auto;
   padding: auto;
   margin-top: 100px;

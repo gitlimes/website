@@ -81,7 +81,7 @@ export default function Home({ localeJSON }) {
         <div className={styles.mainWrapper}>
           <div className={styles.heroSection}>
             <img
-              src="/this_is_temporary_and_should_not_be_used_in_the_official_website.jpg"
+              src="/swoosh-alpha.png"
               alt={localeJSON.index.imageSection.imageAlt}
               className={styles.heroImage}
             />
@@ -356,9 +356,9 @@ export default function Home({ localeJSON }) {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className={styles.contactCardIcon}
                   >
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
