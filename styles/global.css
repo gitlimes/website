@@ -7,7 +7,7 @@
   --grey-shadow: #e9eaec;
   --purple-shadow: #abaed9;
   --dark-purple: #262a54;
-  --light-hover: rgb(230, 230, 230);
+  --light-hover: #f1f2f9;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");

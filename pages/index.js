@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import parse from "html-react-parser";
 
+import StuffCard from "../components/stuffCard";
+
 import styles from "../styles/Home.module.css";
 
 export async function getServerSideProps(context) {
@@ -16,7 +18,7 @@ export default function Home({ localeJSON }) {
   return (
     <home>
       <Head>
-        <title>Monty</title>
+        <title>Monty (montylion)</title>
 
         <link
           rel="apple-touch-icon"
@@ -47,9 +49,14 @@ export default function Home({ localeJSON }) {
 
         <meta property="og:site_name" content="Monty (montylion)" />
         <meta property="og:title" content="Monty (montylion)" />
+        <meta property="twitter:title" content="Monty (montylion)" />
+        <meta
+          property="twitter:description"
+          content="I make stuff™ in JavaScript."
+        />
         <meta
           property="og:description"
-          content="I make stuff™ in JavaScript & Node.js as a hobby."
+          content="I make stuff™ in JavaScript."
         />
         <meta property="og:url" content="https://montylion.dev/" />
         <meta property="og:type" content="website" />
@@ -57,10 +64,7 @@ export default function Home({ localeJSON }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/opengraph.png" />
 
-        <meta
-          name="description"
-          content="I make stuff™ in JavaScript & Node.js as a hobby."
-        />
+        <meta name="description" content="I make stuff™ in JavaScript." />
         <meta name="robots" content="index, follow" />
       </Head>
       <section>
@@ -122,153 +126,48 @@ export default function Home({ localeJSON }) {
               <p className={styles.stuffParagraph}>
                 {localeJSON.index.stuff.paragraph}
               </p>
+
               <div className={styles.stuffList}>
-                <div className={styles.stuffCard}>
-                  <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.index.stuff.cards[0].title}
-                  </h2>
-                  <div className={styles.stuffCardIconFlex}>
-                    <a
-                      href="https://github.com/montylion/discord-md-badge"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="rgb(129,129,129)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={styles.stuffCardIcon}
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
-                    </a>
-                  </div>
-                  <p className={styles.stuffCardParagraph}>
-                    {localeJSON.index.stuff.cards[0].caption}
-                  </p>
-                  <p className={styles.stuffLang}>JavaScript, Next.js</p>
-                </div>
-                <div className={styles.stuffCard}>
-                  <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.index.stuff.cards[1].title}
-                  </h2>
-                  <div className={styles.stuffCardIconFlex}>
-                    <a
-                      href="https://github.com/montylion/website"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="rgb(129,129,129)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={styles.stuffCardIcon}
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
-                    </a>
-                  </div>
-                  <p className={styles.stuffCardParagraph}>
-                    {localeJSON.index.stuff.cards[1].caption}
-                  </p>
-                  <p className={styles.stuffLang}>JavaScript, Next.js</p>
-                </div>
-                <div className={styles.stuffCard}>
-                  <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.index.stuff.cards[2].title}
-                  </h2>
-                  <div className={styles.stuffCardIconFlex}>
-                    <a
-                      href="https://github.com/montylion/neofetch-but-its-always-arch"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="rgb(129,129,129)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={styles.stuffCardIcon}
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
-                    </a>
-                  </div>
-                  <p className={styles.stuffCardParagraph}>
-                    {localeJSON.index.stuff.cards[2].caption}
-                  </p>
-                  <p className={styles.stuffLang}>Shell</p>
-                </div>
-                <div className={styles.stuffCard}>
-                  <h2 className={styles.stuffCardHeader}>
-                    {localeJSON.index.stuff.cards[3].title}
-                  </h2>
-                  <div className={styles.stuffCardIconFlex}>
-                    <a
-                      href="https://croissant.montylion.dev"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="rgb(129,129,129)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={styles.stuffCardIcon}
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="https://github.com/montylion/croissant"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="rgb(129,129,129)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={styles.stuffCardIcon}
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
-                    </a>
-                  </div>
-                  <p className={styles.stuffCardParagraph}>
-                    {localeJSON.index.stuff.cards[3].caption}
-                  </p>
-                  <p className={styles.stuffLang}>JavaScript, Next.js</p>
-                </div>
+                <StuffCard
+                  title={localeJSON.index.stuff.cards[0].title}
+                  caption={localeJSON.index.stuff.cards[0].caption}
+                  repoUrl="discord-md-badge"
+                  langs="JavaScript, Next.js"
+                />
+
+                <StuffCard
+                  title={localeJSON.index.stuff.cards[1].title}
+                  caption={localeJSON.index.stuff.cards[1].caption}
+                  repoUrl="binbows"
+                  websiteUrl="https://binbows.montylion.dev"
+                  langs="JavaScript, Next.js"
+                />
+
+                <StuffCard
+                  title={localeJSON.index.stuff.cards[2].title}
+                  caption={localeJSON.index.stuff.cards[2].caption}
+                  repoUrl="website"
+                  langs="JavaScript, Next.js"
+                />
+
+                <StuffCard
+                  title={localeJSON.index.stuff.cards[3].title}
+                  caption={localeJSON.index.stuff.cards[3].caption}
+                  repoUrl="neofetch-but-its-always-arch"
+                  langs="Shell"
+                />
+
+                <StuffCard
+                  title={localeJSON.index.stuff.cards[4].title}
+                  caption={localeJSON.index.stuff.cards[4].caption}
+                  repoUrl="croissant"
+                  websiteUrl="https://croissant.montylion.dev"
+                  langs="JavaScript, Next.js"
+                />
+
+                <a className={styles.card} href="/stuff">
+                  {localeJSON.index.viewMore + " ->"}
+                </a>
               </div>
             </div>
           </div>
@@ -361,8 +260,8 @@ export default function Home({ localeJSON }) {
                     strokeLinejoin="round"
                     className={styles.contactCardIcon}
                   >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
                   </svg>
                   hey@montylion.dev
                 </a>
