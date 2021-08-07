@@ -1,4 +1,4 @@
-User-Agent: *
-Allow: /
+user-agent: *
+allow: /
 
-Sitemap: https://www.montylion.dev/sitemap.xml
+sitemap: https://www.montylion.dev/sitemap.xml
