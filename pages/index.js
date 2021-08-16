@@ -165,7 +165,7 @@ export default function Home({ localeJSON }) {
                   langs="JavaScript, Next.js"
                 />
 
-                <a className={styles.card} href="/stuff">
+                <a className={styles.card} href="https://github.com/montylion?tab=repositories">
                   {localeJSON.index.viewMore + " ->"}
                 </a>
               </div>
