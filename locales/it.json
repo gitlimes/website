@@ -13,7 +13,7 @@
       "header": "Info",
       "paragraphs": {
         "a": "Faccio roba™ in JavaScript e Node.js per passare il tempo. A volte è roba utile, a volte è roba fatta per divertimento. <i> Siamo onesti, solitamente è roba che non ha motivo di esistere.</i> <br/>Per fare siti/APIs utilizzo quasi sempre Next.js, una framework per React.",
-        "b": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\" rel=\"noopener\"  class=\"aboutURLS\">Pretendo Network</a>, <a href=\"https://github.com/Akilesh-T/ACC\" rel=\"noopener\"  class=\"aboutURLS\">ACC</a>, e <a href=\"https://github.com/Bobrobot1/Suicide-Prevention-Bot\" rel=\"noopener\"  class=\"aboutURLS\">SPB</a>). Mi piace anche <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">ascoltare musica</a> e suonare il piano, la chitarra, e lo strumento migliore di tutti, il kazoo.</i>"
+        "b": "Mi piace localizzare progetti open source dall'inglese all'italiano e vice versa (alcuni progetti su cui ho lavorato e/o sto lavorando sono <a href=\"https://pretendo.network\" rel=\"noopener\"  class=\"aboutURLS\">Pretendo Network</a> e <a href=\"https://github.com/Akilesh-T/ACC\" rel=\"noopener\"  class=\"aboutURLS\">ACC</a>). Mi piace anche <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">ascoltare musica</a> e suonare il piano, la chitarra, e lo strumento migliore di tutti, il kazoo.</i>"
       },
       "imageCaption": "Il mio codice",
       "imageAlt": "Codice spaghetti"
