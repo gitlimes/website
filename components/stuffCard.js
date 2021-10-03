@@ -1,5 +1,6 @@
 import React from "react";
-import styles from "../styles/stuffCard.module.css";
+
+const styles = "yhuid"
 
 export default class card extends React.Component {
   constructor(props) {

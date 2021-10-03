@@ -1,26 +1,27 @@
 :root {
-  --light-color: #d5d7ec;
-  --background-color: #ffffff;
-  --font-family: "Inter", sans-serif;
-  --width: 1000px;
-  --medium-purple: #737abf;
-  --grey-shadow: #e9eaec;
-  --purple-shadow: #abaed9;
-  --dark-purple: #262a54;
-  --light-hover: #f1f2f9;
+  --width: 1200px;
+
+  --accent: #e5707e;
+  --secondary: #343434;
+  --tertiary: #6b5cdf;
+  --background: #fff1d6;
+
+  --font-family: "Poppins", sans-serif;
+
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
 html,
 body {
+  position: relative;
   width: 100vw;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  color: var(--dark-purple);
+  color: var(--secondary);
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: var(--background);
   scroll-behavior: smooth;
 }
 
@@ -29,6 +30,6 @@ a {
   color: inherit;
 }
 
-.aboutURLS:hover {
+a:hover {
   text-decoration: underline;
 }

@@ -1,42 +1,54 @@
-.navbarBg {
+.wrapper {
+  width: 90vw;
+  max-width: var(--width);
+  margin: auto;
+}
+
+.hero {
   display: flex;
   justify-content: center;
-  width: 100vw;
-  height: 60px;
-  box-shadow: 0 10px 15px var(--grey-shadow);
+  margin-top: 40px;
 }
 
-.navbarList {
-  width: 90vw;
-  padding: 0;
-  padding-left: 20px;
-  margin: 10px 20px;
-  max-width: var(--width);
+.hero img {
+  width: 350px;
+  height: 350px;
+  border: none;
+  border-radius: 100%;
+  background: var(--accent);
+}
+
+.hero .text {
+  margin: 56px;
   display: flex;
-  flex-direction: row;
-  list-style: none;
+  flex-flow: column;
+  justify-content: center;
+  width: 100%;
 }
 
-.navbarItem {
-  display: flex;
-  align-items: center;
-  font-size: large;
-  margin-right: 40px;
-  color: var(--medium-purple);
+.hero .text h1 {
+  font-size: 5em;
+  margin: 0;
 }
 
-.navbarItem:hover {
-  text-decoration: underline;
+.hero .text h1 span {
+  color: var(--accent);
 }
 
-.navbarMainItem {
-  display: flex;
-  align-items: center;
-  font-size: large;
-  margin-right: 40px;
-  font-weight: bold;
+.hero .text p {
+  font-size: 2em;
+  margin: 0;
 }
 
+.hero .text p span {
+  transition: transform 500ms;
+}
+
+.hero .text p .stuff {
+  color: var(--tertiary);
+}
+
+/*
 .heroSection {
   width: 100%;
   display: flex;
@@ -369,3 +381,4 @@
     flex: 40%;
   }
 }
+*/
