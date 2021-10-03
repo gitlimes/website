@@ -7,31 +7,16 @@
     },
     "hero": {
       "header": "Hey, I'm <span>Monty</span>!",
-      "sentence": {
-        "static": {
-          "subject": "I",
-          "stuff": "stuff"
-        },
-        "changing": [
-          {
-            "verb": "make",
-            "object": "in JavaScript, HTML & CSS"
-          },
-          {
-            "verb": "localize",
-            "object": "in English and Italian"
-          },
-          {
-            "verb": "play",
-            "object": "on the piano"
-          }
-        ]
-      }
+      "captions": [
+        "I make <span>stuff™</span> in JavaScript, HTML & CSS.",
+        "I localize <span>stuff™</span> in in English and Italian.",
+        "I play <span>stuff™</span> on the piano and the kazoo."
+      ]
     },
     "about": {
       "header": "About me",
       "paragraphs": {
-        "a": "I make stuff™ in JavaScript. Sometimes it's useful stuff, sometimes it's just random stuff made for fun. <i> Let's be honest it's usually stuff without a purpose.</i>",
+        "a": "Lorem Ipsum blablablabalbalbaòlakdsuhgsdguisdyklfhguidslfgh hdusfgilohsdfiugolh dsuiglodfsfg sdfh sdfh dfh dshhsd  shjlhsd hgusdil ghusdil lduh gujsdiklfg sdhjfgiklsdf hgudsiflg dhsfujgilds fghudsilf  dfs hudslgudisfghuhdlsufgdusi hdusfgilosdhuighuidshuighudshuilgds hdusilfhudhsulihuidshuidshuihuidfhuilds dfhsuidslfuisdhuilhduisflhiudsflhuidsfulhisdluihkudhisksd hsduilsduikdsuidgs hdsuilgsdiufhg dshfugildsikufgh dsfhguldsfiguhdfs ghudsfilogdsiugdsiuolgdfiusi udhsfi uhdsf hudsu hod husio huids huiods uhio dshui shodihiusd hdsuiodsfhuiod shudfi osidhusioudhiudohiudoihud blablablabalbalbaòlakdsuhgsdguisdyklfhguidslfgh hdusfgilohsdfiugolh dsuiglodfsfg sdfh sdfh dfh dshhsd  shjlhsd hgusdil ghusdil lduh gujsdiklfg sdhjfgiklsdf hgudsiflg dhsfujgilds fghudsilf  dfs hudslgudisfghuhdlsufgdusi hdusfgilosdhuighuidshuighudshuilgds hdusilfhudhsulihuidshuidshuihuidfhuilds dfhsuidslfuisdhuilhduisflhiudsflhuidsfulhisdluihkudhisksd hsduilsduikdsuidgs hdsuilgsdiufhg dshfugildsikufgh dsfhguldsfiguhdfs ghudsfilogdsiugdsiuolgdfiusi udhsfi uhdsf hudsu hod husio huids huiods uhio dshui shodihiusd hdsuiodsfhuiod shudfi osidhusioudhiudohiudoihud",
         "b": "I also like localizing open source projects from English to Italian and vice versa (some projects I've worked on and/or I'm working on are <a href=\"https://pretendo.network\" rel=\"noopener\" class=\"aboutURLS\">Pretendo Network</a> and <a href=\"https://github.com/Akilesh-T/ACC\" rel=\"noopener\"  class=\"aboutURLS\">ACC</a>). I also enjoy <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">listening to music</a> and playing the piano, the guitar, and the best instrument of all, the kazoo."
       },
       "imageCaption": "My code",

@@ -7,7 +7,6 @@
   --background: #fff1d6;
 
   --font-family: "Poppins", sans-serif;
-
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
@@ -32,4 +31,109 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* All the animations for the easter egg that probably like 2 people will see */
+
+.hideMe {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: hideMe;
+}
+
+.fadeAway {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: fadeAway;
+}
+
+.unfade {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: unfade;
+}
+
+.expandCircle {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: expandCircle;
+}
+
+.showMe {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: showMe;
+}
+
+@keyframes hideMe {
+  from {
+    bottom: -15px;
+  }
+
+  12% {
+    bottom: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    bottom: -500px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: -500px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeAway {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes unfade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes expandCircle {
+  from {
+    width: 350px;
+    height: 350px;
+  }
+
+  to {
+    top: -200vw;
+    left: -250vw;
+    width: 500vw;
+    height: 500vw;
+  }
+}
+
+@keyframes showMe {
+  from {
+    bottom: -500px;
+    opacity: 1;
+  }
+
+  88% {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -15px;
+  }
 }

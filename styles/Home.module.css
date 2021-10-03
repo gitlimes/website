@@ -8,14 +8,24 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  padding: 100px 0;
 }
 
-.hero img {
+.hero .imgBg {
   width: 350px;
   height: 350px;
-  border: none;
+  flex-shrink: 0;
   border-radius: 100%;
   background: var(--accent);
+  overflow: hidden;
+  transition: 200ms;
+}
+
+.hero .imgBg img {
+  position: relative;
+  bottom: -15px;
+  width: 100%;
+  height: 100%;
 }
 
 .hero .text {
@@ -23,7 +33,6 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 100%;
 }
 
 .hero .text h1 {
@@ -41,10 +50,6 @@
 }
 
 .hero .text p span {
-  transition: transform 500ms;
-}
-
-.hero .text p .stuff {
   color: var(--tertiary);
 }
 

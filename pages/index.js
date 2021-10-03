@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 
 import parse from "html-react-parser";
 
 import navbar from "../components/navbar";
-import HeroSentence from "../components/heroSentence";
 import StuffCard from "../components/stuffCard";
 
 import styles from "../styles/Home.module.css";
@@ -17,6 +17,88 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ localeJSON }) {
+  function updateCSSVars(accent, secondary, tertiary, background) {
+    const style = document.documentElement.style;
+    style.setProperty("--accent", accent);
+    style.setProperty("--secondary", secondary);
+    style.setProperty("--tertiary", tertiary);
+    style.setProperty("--background", background);
+  }
+
+  function fadeElement(element) {
+    document.querySelector(element).className += " fadeAway";
+  }
+
+  function unfadeElement(element) {
+    document.querySelector(element).className = document
+      .querySelector(element)
+      .className.replace(" fadeAway", " unfade")
+  }
+
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function changeColorScheme() {
+    // 1 - Duck!
+    document.querySelector("#imgMe").className += " hideMe";
+
+    // 2 - Fade the text away
+    fadeElement("#navbar");
+    fadeElement("#hero-text");
+    fadeElement("#about");
+    fadeElement("#stuff");
+
+    await wait(500);
+
+    // 3 - Expand the circle to fill the screen
+    const circle = document.querySelector("#imgBg");
+    const circleCoordinates = circle.getBoundingClientRect();
+    console.log(circleCoordinates);
+    circle.style.position = "absolute";
+    circle.style.left = `${circleCoordinates.x}px`;
+    circle.style.top = `${circleCoordinates.y}px`;
+    circle.className += " expandCircle";
+    document.querySelector("body").style.maxHeight = "100vh";
+
+    await wait(300);
+
+    // 4 - Change color scheme and update circle
+    updateCSSVars("#85cb33", "#fff", "#e5707e", "#2d3362");
+    circle.style.background = "var(--background)";
+
+    await wait(200);
+
+    // 5 - Fade the expanded circle away
+    circle.className = circle.className.replace(" expandCircle", "");
+    fadeElement("#imgBg");
+
+    await wait(200);
+
+    // 6 - Reset overflow and put circle back in its place
+    document.querySelector("body").style.maxHeight = "none";
+    circle.style.position = "relative";
+    circle.style.left = `0`;
+    circle.style.top = `0`;
+    circle.style.width = `350px`;
+    circle.style.height = `350px`;
+
+    await wait(200);
+
+    // 7 - Unfade text
+    unfadeElement("#navbar");
+    unfadeElement("#hero-text");
+    unfadeElement("#about");
+    unfadeElement("#stuff");
+
+    await wait(200);
+
+    // 8 - Unfade circle and pop myself back up
+    circle.style.background = "var(--accent)";
+    unfadeElement("#imgBg");
+    document.querySelector("#imgMe").className = document.querySelector("#imgMe").className.replace(" hideMe", "showMe");
+  }
+  
   return (
     <home>
       <Head>
@@ -45,11 +127,24 @@ export default function Home({ localeJSON }) {
         <meta name="robots" content="index, follow" />
       </Head>
 
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} id="wrapper">
         {navbar(localeJSON)}
         <div className={styles.hero}>
-          <img src="/assets/images/me.png" />
-          <HeroSentence localeJSON={localeJSON}/>
+          <div
+            className={styles.imgBg}
+            id="imgBg"
+            onClick={() => changeColorScheme()}
+          >
+            <img src="/assets/images/me.png" id="imgMe" />
+          </div>
+          <div className={styles.text} id="hero-text">
+            <h1>{parse(localeJSON.index.hero.header)}</h1>
+            <div id="hero-captions">
+              <p>{parse(localeJSON.index.hero.captions[0])}</p>
+              {/*<p>{parse(localeJSON.index.hero.captions[1])}</p>
+              <p>{parse(localeJSON.index.hero.captions[2])}</p>*/}
+            </div>
+          </div>
         </div>
 
         <div className={styles.aboutSection} id="about">
@@ -66,60 +161,58 @@ export default function Home({ localeJSON }) {
           </div>
         </div>
 
-        <div className={styles.stuffBg}>
-          <div className={styles.stuffSection} id="stuff">
-            <h1 className={styles.stuffHeader}>
-              {localeJSON.index.stuff.header}
-            </h1>
-            <p className={styles.stuffParagraph}>
-              {localeJSON.index.stuff.paragraph}
-            </p>
+        <div className={styles.stuffSection} id="stuff">
+          <h1 className={styles.stuffHeader}>
+            {localeJSON.index.stuff.header}
+          </h1>
+          <p className={styles.stuffParagraph}>
+            {localeJSON.index.stuff.paragraph}
+          </p>
 
-            <div className={styles.stuffList}>
-              <StuffCard
-                title={localeJSON.index.stuff.cards[0].title}
-                caption={localeJSON.index.stuff.cards[0].caption}
-                repoUrl="discord-md-badge"
-                langs="JavaScript, Next.js"
-              />
+          <div className={styles.stuffList}>
+            <StuffCard
+              title={localeJSON.index.stuff.cards[0].title}
+              caption={localeJSON.index.stuff.cards[0].caption}
+              repoUrl="discord-md-badge"
+              langs="JavaScript, Next.js"
+            />
 
-              <StuffCard
-                title={localeJSON.index.stuff.cards[1].title}
-                caption={localeJSON.index.stuff.cards[1].caption}
-                repoUrl="binbows"
-                websiteUrl="https://binbows.montylion.dev"
-                langs="JavaScript, Next.js"
-              />
+            <StuffCard
+              title={localeJSON.index.stuff.cards[1].title}
+              caption={localeJSON.index.stuff.cards[1].caption}
+              repoUrl="binbows"
+              websiteUrl="https://binbows.montylion.dev"
+              langs="JavaScript, Next.js"
+            />
 
-              <StuffCard
-                title={localeJSON.index.stuff.cards[2].title}
-                caption={localeJSON.index.stuff.cards[2].caption}
-                repoUrl="website"
-                langs="JavaScript, Next.js"
-              />
+            <StuffCard
+              title={localeJSON.index.stuff.cards[2].title}
+              caption={localeJSON.index.stuff.cards[2].caption}
+              repoUrl="website"
+              langs="JavaScript, Next.js"
+            />
 
-              <StuffCard
-                title={localeJSON.index.stuff.cards[3].title}
-                caption={localeJSON.index.stuff.cards[3].caption}
-                repoUrl="neofetch-but-its-always-arch"
-                langs="Shell"
-              />
+            <StuffCard
+              title={localeJSON.index.stuff.cards[3].title}
+              caption={localeJSON.index.stuff.cards[3].caption}
+              repoUrl="neofetch-but-its-always-arch"
+              langs="Shell"
+            />
 
-              <StuffCard
-                title={localeJSON.index.stuff.cards[4].title}
-                caption={localeJSON.index.stuff.cards[4].caption}
-                repoUrl="croissant"
-                websiteUrl="https://croissant.montylion.dev"
-                langs="JavaScript, Next.js"
-              />
+            <StuffCard
+              title={localeJSON.index.stuff.cards[4].title}
+              caption={localeJSON.index.stuff.cards[4].caption}
+              repoUrl="croissant"
+              websiteUrl="https://croissant.montylion.dev"
+              langs="JavaScript, Next.js"
+            />
 
-              <a
-                className={styles.card}
-                href="https://github.com/montylion?tab=repositories"
-              >
-                {localeJSON.index.viewMore + " ->"}
-              </a>
-            </div>
+            <a
+              className={styles.card}
+              href="https://github.com/montylion?tab=repositories"
+            >
+              {localeJSON.index.viewMore + " ->"}
+            </a>
           </div>
         </div>
 
