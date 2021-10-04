@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
 
 import parse from "html-react-parser";
 
@@ -17,12 +16,40 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ localeJSON }) {
-  function updateCSSVars(accent, secondary, tertiary, background) {
-    const style = document.documentElement.style;
-    style.setProperty("--accent", accent);
-    style.setProperty("--secondary", secondary);
-    style.setProperty("--tertiary", tertiary);
-    style.setProperty("--background", background);
+  const colorSchemes = [
+    {
+      accent: "#e5707e",
+      secondary: "#343434",
+      dimmed: "var(--secondary)",
+      tertiary: "#6b5cdf",
+      background: "#fff1d6",
+      headingFont: "'Poppins', sans-serif",
+      secondaryFont: "'Poppins', sans-serif",
+    },
+    {
+      accent: "#85cb33",
+      secondary: "#fff",
+      dimmed: "#B9BEDF",
+      tertiary: "#e5707e",
+      background: "#2d3362",
+      headingFont: "'Zilla Slab', sans-serif",
+      secondaryFont: "'Open Sans', sans-serif",
+    },
+  ];
+  let colorSchemeIndex = 0;
+
+  function updateCSSVars() {
+    colorSchemeIndex++;
+    if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
+    const rootVars = document.documentElement.style;
+    const scheme = colorSchemes[colorSchemeIndex];
+    rootVars.setProperty("--accent", scheme.accent);
+    rootVars.setProperty("--secondary", scheme.secondary);
+    rootVars.setProperty("--dimmed", scheme.dimmed);
+    rootVars.setProperty("--tertiary", scheme.tertiary);
+    rootVars.setProperty("--background", scheme.background);
+    rootVars.setProperty("--heading-font", scheme.headingFont);
+    rootVars.setProperty("--secondary-font", scheme.secondaryFont);
   }
 
   function fadeElement(element) {
@@ -32,7 +59,16 @@ export default function Home({ localeJSON }) {
   function unfadeElement(element) {
     document.querySelector(element).className = document
       .querySelector(element)
-      .className.replace(" fadeAway", " unfade")
+      .className.replace(" fadeAway", " unfade");
+  }
+
+  function resetClass(element) {
+    document.querySelector(element).className = document
+      .querySelector(element)
+      .className.replace(" unfade", "")
+      .replace(" showMe", "")
+      .replace(" hideMe", "")
+      .replace(" fadeAway", "");
   }
 
   function wait(ms) {
@@ -64,7 +100,7 @@ export default function Home({ localeJSON }) {
     await wait(300);
 
     // 4 - Change color scheme and update circle
-    updateCSSVars("#85cb33", "#fff", "#e5707e", "#2d3362");
+    updateCSSVars();
     circle.style.background = "var(--background)";
 
     await wait(200);
@@ -76,12 +112,10 @@ export default function Home({ localeJSON }) {
     await wait(200);
 
     // 6 - Reset overflow and put circle back in its place
-    document.querySelector("body").style.maxHeight = "none";
-    circle.style.position = "relative";
-    circle.style.left = `0`;
-    circle.style.top = `0`;
-    circle.style.width = `350px`;
-    circle.style.height = `350px`;
+
+    document.querySelector("body").style = "";
+    circle.style = "";
+    circle.style.background = "var(--background)";
 
     await wait(200);
 
@@ -95,10 +129,23 @@ export default function Home({ localeJSON }) {
 
     // 8 - Unfade circle and pop myself back up
     circle.style.background = "var(--accent)";
+    circle.style = "";
     unfadeElement("#imgBg");
-    document.querySelector("#imgMe").className = document.querySelector("#imgMe").className.replace(" hideMe", "showMe");
+    document.querySelector("#imgMe").className = document
+      .querySelector("#imgMe")
+      .className.replace("hideMe", "showMe");
+
+    await wait(500);
+
+    // 9 - Reset the classes
+    resetClass("#imgBg");
+    resetClass("#imgMe");
+    resetClass("#navbar");
+    resetClass("#hero-text");
+    resetClass("#about");
+    resetClass("#stuff");
   }
-  
+
   return (
     <home>
       <Head>

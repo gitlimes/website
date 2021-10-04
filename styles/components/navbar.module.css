@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   font-size: large;
-  color: var(--secondary);
 }
 
 .navbar .item {
@@ -17,4 +16,5 @@
 
 .navbar .item:first-child {
   font-weight: bold;
+  color: var(--secondary);
 }

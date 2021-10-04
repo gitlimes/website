@@ -5,9 +5,13 @@
       "stuff": "Roba™",
       "contact": "Contatti"
     },
-    "imageSection": {
-      "paragraph": "Ciao, sono Monty!",
-      "imageAlt": "I miei capelli fanno swoosh"
+    "hero": {
+      "header": "Hey, sono <span>Monty</span>!",
+      "captions": [
+        "Faccio <span>roba™</span> con JavaScript, HTML & CSS.",
+        "Localizzo <span>roba™</span> in italiano e inglese.",
+        "Suono <span>roba™</span> al piano e al kazoo."
+      ]
     },
     "about": {
       "header": "Info",
