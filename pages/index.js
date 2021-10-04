@@ -75,13 +75,13 @@ export default function Home({ localeJSON }) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
+  let animationRunning = false;
+
   async function changeColorScheme() {
-    resetClass("#imgBg");
-    resetClass("#navbar");
-    resetClass("#hero-text");
-    resetClass("#about");
-    resetClass("#stuff");
-    resetClass("#imgMe");
+    if (animationRunning) return;
+    animationRunning = !animationRunning;
+
+    // ANIMATION START
 
     // 0 - Hide the cursor
     document.querySelector("body").style.cursor = "none";
@@ -100,7 +100,6 @@ export default function Home({ localeJSON }) {
     // 3 - Expand the circle to fill the screen
     const circle = document.querySelector("#imgBg");
     const circleCoordinates = circle.getBoundingClientRect();
-    console.log(circleCoordinates);
     circle.style.position = "absolute";
     circle.style.left = `${circleCoordinates.x}px`;
     circle.style.top = `${circleCoordinates.y}px`;
@@ -150,6 +149,10 @@ export default function Home({ localeJSON }) {
     resetClass("#stuff");
     await wait(300);
     resetClass("#imgMe");
+
+    // ANIMATION END
+
+    animationRunning = false;
   }
 
   return (
