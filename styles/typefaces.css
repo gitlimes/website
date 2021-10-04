@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "FOT-RodinNTLG Pro";
+  font-style: normal;
+  font-weight: 100;
+  src: local("FOT-RodinNTLG Pro L"),
+    url("./typefaces/FOTRodinNTLG Pro L.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FOT-RodinNTLG Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: local("FOT-RodinNTLG Pro M"),
+    url("./typefaces/FOTRodinNTLG Pro M.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FOT-RodinNTLG Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local("FOT-RodinNTLG Pro DB"),
+    url("./typefaces/FOTRodinNTLG Pro DB.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FOT-RodinNTLG Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: local("FOT-RodinNTLG Pro B"),
+    url("./typefaces/FOTRodinNTLG Pro B.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FOT-RodinNTLG Pro EB";
+  font-style: normal;
+  font-weight: 700;
+  src: local("FOT-RodinNTLG Pro EB"),
+    url("./typefaces/FOTRodinNTLG Pro EB.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FOT-RodinNTLG Pro UB";
+  font-style: normal;
+  font-weight: 900;
+  src: local("FOT-RodinNTLG Pro UB"),
+    url("./typefaces/FOTRodinNTLG Pro UB.woff") format("woff");
+}

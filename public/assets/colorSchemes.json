@@ -1,0 +1,29 @@
+[
+  {
+    "accent": "#e5707e",
+    "secondary": "#343434",
+    "dimmed": "var(--secondary)",
+    "tertiary": "#6b5cdf",
+    "background": "#fff1d6",
+    "headingFont": "'Poppins', sans-serif",
+    "secondaryFont": "'Poppins', sans-serif"
+  },
+  {
+    "accent": "#85cb33",
+    "secondary": "#fff",
+    "dimmed": "#B9BEDF",
+    "tertiary": "#e5707e",
+    "background": "#2d3362",
+    "headingFont": "'Zilla Slab', sans-serif",
+    "secondaryFont": "'Inter', sans-serif"
+  },
+  {
+    "accent": "#e5707e",
+    "secondary": "#A3A3A3",
+    "dimmed": "var(--secondary)",
+    "tertiary": "#6b5cdf",
+    "background": "#121212",
+    "headingFont": "'Poppins', sans-serif",
+    "secondaryFont": "'Poppins', sans-serif"
+  }
+]

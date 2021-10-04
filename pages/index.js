@@ -1,5 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
+
+const colorSchemes = require("../public/assets/colorSchemes.json")
 
 import parse from "html-react-parser";
 
@@ -16,31 +19,18 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ localeJSON }) {
-  const colorSchemes = [
-    {
-      accent: "#e5707e",
-      secondary: "#343434",
-      dimmed: "var(--secondary)",
-      tertiary: "#6b5cdf",
-      background: "#fff1d6",
-      headingFont: "'Poppins', sans-serif",
-      secondaryFont: "'Poppins', sans-serif",
-    },
-    {
-      accent: "#85cb33",
-      secondary: "#fff",
-      dimmed: "#B9BEDF",
-      tertiary: "#e5707e",
-      background: "#2d3362",
-      headingFont: "'Zilla Slab', sans-serif",
-      secondaryFont: "'Open Sans', sans-serif",
-    },
-  ];
+  function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
   let colorSchemeIndex = 0;
 
   function updateCSSVars() {
-    colorSchemeIndex++;
+    colorSchemeIndex = 2;
+
+    //colorSchemeIndex++;
     if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
+
     const rootVars = document.documentElement.style;
     const scheme = colorSchemes[colorSchemeIndex];
     rootVars.setProperty("--accent", scheme.accent);
@@ -71,17 +61,13 @@ export default function Home({ localeJSON }) {
       .replace(" fadeAway", "");
   }
 
-  function wait(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
+
 
   let animationRunning = false;
 
   async function changeColorScheme() {
     if (animationRunning) return;
     animationRunning = !animationRunning;
-
-    // ANIMATION START
 
     // 0 - Hide the cursor
     document.querySelector("body").style.cursor = "none";
@@ -106,7 +92,7 @@ export default function Home({ localeJSON }) {
     circle.className += " expandCircle";
     document.querySelector("body").style.maxHeight = "100vh";
 
-    await wait(200);
+    await wait(300);
 
     // 4 - Change color scheme and update circle
     updateCSSVars();
@@ -150,8 +136,6 @@ export default function Home({ localeJSON }) {
     await wait(300);
     resetClass("#imgMe");
 
-    // ANIMATION END
-
     animationRunning = false;
   }
 
@@ -191,14 +175,25 @@ export default function Home({ localeJSON }) {
             id="imgBg"
             onClick={() => changeColorScheme()}
           >
-            <img src="/assets/images/me.png" id="imgMe" />
+            <img src="/assets/images/me.png" id="imgMe" draggable="false" />
           </div>
           <div className={styles.text} id="hero-text">
             <h1>{parse(localeJSON.index.hero.header)}</h1>
             <div id="hero-captions">
               <p>{parse(localeJSON.index.hero.captions[0])}</p>
-              {/*<p>{parse(localeJSON.index.hero.captions[1])}</p>
-              <p>{parse(localeJSON.index.hero.captions[2])}</p>*/}
+              {/*
+              <p id="caption1" style={{ display: "none" }}>
+                {parse(localeJSON.index.hero.captions[1])}
+              </p>
+              <p>
+                <span id="caption2" style={{ display: "none" }}>
+                  {localeJSON.index.hero.captions[2]}
+                </span>
+                <span id="caption3" style={{ display: "none" }}>
+                  {localeJSON.index.hero.captions[3]}
+                </span>
+              </p>
+              */}
             </div>
           </div>
         </div>

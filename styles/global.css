@@ -10,7 +10,8 @@
   --secondary-font: "Poppins", sans-serif;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Zilla+Slab:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Zilla+Slab:wght@300;400;700&family=Inter:wght@300;400;700&family=Ephesis&family=Lato&display=swap");
+/*@import url(./typefaces.css);*/
 
 html,
 body {
@@ -33,6 +34,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+span.stuff {
+  color: var(--tertiary)
 }
 
 /* All the animations for the easter egg that probably like 2 people will see */

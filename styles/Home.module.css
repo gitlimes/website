@@ -35,7 +35,7 @@
 }
 
 .hero .text {
-  margin: 56px;
+  margin-left: 56px;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -46,6 +46,7 @@
   margin: 0;
 }
 
+
 .hero .text h1 span {
   color: var(--accent);
 }
@@ -53,10 +54,6 @@
 .hero .text p {
   font-size: 2em;
   margin: 0;
-}
-
-.hero .text p span {
-  color: var(--tertiary);
 }
 
 /*
