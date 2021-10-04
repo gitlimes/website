@@ -76,6 +76,16 @@ export default function Home({ localeJSON }) {
   }
 
   async function changeColorScheme() {
+    resetClass("#imgBg");
+    resetClass("#navbar");
+    resetClass("#hero-text");
+    resetClass("#about");
+    resetClass("#stuff");
+    resetClass("#imgMe");
+
+    // 0 - Hide the cursor
+    document.querySelector("body").style.cursor = "none";
+
     // 1 - Duck!
     document.querySelector("#imgMe").className += " hideMe";
 
@@ -85,7 +95,7 @@ export default function Home({ localeJSON }) {
     fadeElement("#about");
     fadeElement("#stuff");
 
-    await wait(500);
+    await wait(400);
 
     // 3 - Expand the circle to fill the screen
     const circle = document.querySelector("#imgBg");
@@ -97,7 +107,7 @@ export default function Home({ localeJSON }) {
     circle.className += " expandCircle";
     document.querySelector("body").style.maxHeight = "100vh";
 
-    await wait(300);
+    await wait(200);
 
     // 4 - Change color scheme and update circle
     updateCSSVars();
@@ -109,15 +119,10 @@ export default function Home({ localeJSON }) {
     circle.className = circle.className.replace(" expandCircle", "");
     fadeElement("#imgBg");
 
-    await wait(200);
-
     // 6 - Reset overflow and put circle back in its place
-
     document.querySelector("body").style = "";
     circle.style = "";
     circle.style.background = "var(--background)";
-
-    await wait(200);
 
     // 7 - Unfade text
     unfadeElement("#navbar");
@@ -125,7 +130,7 @@ export default function Home({ localeJSON }) {
     unfadeElement("#about");
     unfadeElement("#stuff");
 
-    await wait(200);
+    await wait(100);
 
     // 8 - Unfade circle and pop myself back up
     circle.style.background = "var(--accent)";
@@ -135,15 +140,16 @@ export default function Home({ localeJSON }) {
       .querySelector("#imgMe")
       .className.replace("hideMe", "showMe");
 
-    await wait(500);
+    await wait(200);
 
     // 9 - Reset the classes
     resetClass("#imgBg");
-    resetClass("#imgMe");
     resetClass("#navbar");
     resetClass("#hero-text");
     resetClass("#about");
     resetClass("#stuff");
+    await wait(300);
+    resetClass("#imgMe");
   }
 
   return (
