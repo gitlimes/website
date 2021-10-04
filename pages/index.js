@@ -26,9 +26,7 @@ export default function Home({ localeJSON }) {
   let colorSchemeIndex = 0;
 
   function updateCSSVars() {
-    colorSchemeIndex = 2;
-
-    //colorSchemeIndex++;
+    colorSchemeIndex++;
     if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
 
     const rootVars = document.documentElement.style;
