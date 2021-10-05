@@ -27,15 +27,20 @@ export default function Home({ localeJSON }) {
 
   function updateCSSVars() {
     colorSchemeIndex++;
+    //colorSchemeIndex = 2;
     if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
 
     const heroCaption = document.querySelector("#hero-caption");
     // Update the hero caption
     switch (colorSchemeIndex) {
+      case 2: {
+        // Not ready yet, so I'm just gonna skip it
+        colorSchemeIndex++;
+      }
       case 3: {
-        heroCaption.innerHTML = parse(localeJSON.index.hero.captions[1]);
+        heroCaption.innerHTML = localeJSON.index.hero.captions[1];
         heroCaption.className += " awfulRainbowText";
-        document.querySelector("#imgMe").src = "/assets/images/me-sad.png"
+        document.querySelector("#imgMe").src = "/assets/images/me-sad.png";
         break;
       }
       default: {
@@ -44,7 +49,7 @@ export default function Home({ localeJSON }) {
           " awfulRainbowText",
           ""
         );
-        document.querySelector("#imgMe").src = "/assets/images/me.png"
+        document.querySelector("#imgMe").src = "/assets/images/me.png";
         break;
       }
     }
@@ -58,6 +63,8 @@ export default function Home({ localeJSON }) {
     rootVars.setProperty("--background", scheme.background);
     rootVars.setProperty("--heading-font", scheme.headingFont);
     rootVars.setProperty("--secondary-font", scheme.secondaryFont);
+    rootVars.setProperty("--radius", scheme.radius);
+    rootVars.setProperty("--border", scheme.border);
   }
 
   function fadeElement(element) {

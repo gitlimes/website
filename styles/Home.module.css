@@ -20,7 +20,8 @@
   width: 350px;
   height: 350px;
   flex-shrink: 0;
-  border-radius: 100%;
+  border-radius: var(--radius);
+  /*border: var(--border);*/
   background: var(--accent);
   overflow: hidden;
   transition: 200ms;
@@ -33,7 +34,6 @@
   height: 100%;
   user-select: none;
 }
-
 .hero .text {
   margin-left: 56px;
   display: flex;
@@ -45,7 +45,6 @@
   font-size: 5em;
   margin: 0;
 }
-
 
 .hero .text h1 span {
   color: var(--accent);

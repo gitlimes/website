@@ -8,12 +8,11 @@
   --background: #fff1d6;
   --heading-font: "Poppins", sans-serif;
   --secondary-font: "Poppins", sans-serif;
+  --radius: 100%;
+  --border: none;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Zilla+Slab:wght@300;400;700&family=Inter:wght@300;400;700&family=Ephesis&family=Lato&display=swap");
-@import url(https://allfont.net/allfont.css?fonts=comic-sans-ms); /* I'm sorry */
-
-/*@import url(./typefaces.css);*/
+@import url(./typefaces.css);
 
 html,
 body {
@@ -39,13 +38,26 @@ a:hover {
 }
 
 span.stuff {
-  color: var(--tertiary)
+  color: var(--tertiary);
 }
 
 .awfulRainbowText {
-  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.smol-text {
+  font-size: 0.5em !important;
 }
 
 /* All the animations for the easter egg that probably like 2 people will see */

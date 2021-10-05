@@ -9,13 +9,13 @@
       "header": "Hey, I'm <span>Monty</span>!",
       "captions": [
         "I make <span class='stuff'>stuff™</span> in JavaScript, HTML & CSS.",
-        "Graphic design is my passion."
+        "Graphic design is my passion.</p><p class='smol-text'>I swear this is bad on purpose."
       ]
     },
     "about": {
       "header": "About me",
       "paragraphs": {
-        "a": "Lorem Ipsum blablablabalbalbaòlakdsuhgsdguisdyklfhguidslfgh hdusfgilohsdfiugolh dsuiglodfsfg sdfh sdfh dfh dshhsd  shjlhsd hgusdil ghusdil lduh gujsdiklfg sdhjfgiklsdf hgudsiflg dhsfujgilds fghudsilf  dfs hudslgudisfghuhdlsufgdusi hdusfgilosdhuighuidshuighudshuilgds hdusilfhudhsulihuidshuidshuihuidfhuilds dfhsuidslfuisdhuilhduisflhiudsflhuidsfulhisdluihkudhisksd hsduilsduikdsuidgs hdsuilgsdiufhg dshfugildsikufgh dsfhguldsfiguhdfs ghudsfilogdsiugdsiuolgdfiusi udhsfi uhdsf hudsu hod husio huids huiods uhio dshui shodihiusd hdsuiodsfhuiod shudfi osidhusioudhiudohiudoihud blablablabalbalbaòlakdsuhgsdguisdyklfhguidslfgh hdusfgilohsdfiugolh dsuiglodfsfg sdfh sdfh dfh dshhsd  shjlhsd hgusdil ghusdil lduh gujsdiklfg sdhjfgiklsdf hgudsiflg dhsfujgilds fghudsilf  dfs hudslgudisfghuhdlsufgdusi hdusfgilosdhuighuidshuighudshuilgds hdusilfhudhsulihuidshuidshuihuidfhuilds dfhsuidslfuisdhuilhduisflhiudsflhuidsfulhisdluihkudhisksd hsduilsduikdsuidgs hdsuilgsdiufhg dshfugildsikufgh dsfhguldsfiguhdfs ghudsfilogdsiugdsiuolgdfiusi udhsfi uhdsf hudsu hod husio huids huiods uhio dshui shodihiusd hdsuiodsfhuiod shudfi osidhusioudhiudohiudoihud",
+        "a": "aaaa",
         "b": "I also like localizing open source projects from English to Italian and vice versa (some projects I've worked on and/or I'm working on are <a href=\"https://pretendo.network\" rel=\"noopener\" class=\"aboutURLS\">Pretendo Network</a> and <a href=\"https://github.com/Akilesh-T/ACC\" rel=\"noopener\"  class=\"aboutURLS\">ACC</a>). I also enjoy <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">listening to music</a> and playing the piano, the guitar, and the best instrument of all, the kazoo."
       },
       "imageCaption": "My code",
