@@ -25,5 +25,14 @@
     "background": "#121212",
     "headingFont": "'Poppins', sans-serif",
     "secondaryFont": "'Poppins', sans-serif"
+  },
+  {
+    "accent": "red",
+    "secondary": "blue",
+    "dimmed": "var(--secondary)",
+    "tertiary": "green",
+    "background": "orange",
+    "headingFont": "'Times New Roman', serif",
+    "secondaryFont": "'Comic Sans MS', sans-serif"
   }
 ]

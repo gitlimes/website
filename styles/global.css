@@ -11,6 +11,8 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Zilla+Slab:wght@300;400;700&family=Inter:wght@300;400;700&family=Ephesis&family=Lato&display=swap");
+@import url(https://allfont.net/allfont.css?fonts=comic-sans-ms); /* I'm sorry */
+
 /*@import url(./typefaces.css);*/
 
 html,
@@ -23,7 +25,7 @@ body {
   color: var(--dimmed);
   font-family: var(--secondary-font);
   font-weight: 300;
-  background-color: var(--background);
+  background: var(--background);
   scroll-behavior: smooth;
 }
 
@@ -38,6 +40,12 @@ a:hover {
 
 span.stuff {
   color: var(--tertiary)
+}
+
+.awfulRainbowText {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* All the animations for the easter egg that probably like 2 people will see */

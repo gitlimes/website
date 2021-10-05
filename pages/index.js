@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 
-const colorSchemes = require("../public/assets/colorSchemes.json")
+const colorSchemes = require("../public/assets/colorSchemes.json");
 
 import parse from "html-react-parser";
 
@@ -28,6 +28,26 @@ export default function Home({ localeJSON }) {
   function updateCSSVars() {
     colorSchemeIndex++;
     if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
+
+    const heroCaption = document.querySelector("#hero-caption");
+    // Update the hero caption
+    switch (colorSchemeIndex) {
+      case 3: {
+        heroCaption.innerHTML = parse(localeJSON.index.hero.captions[1]);
+        heroCaption.className += " awfulRainbowText";
+        document.querySelector("#imgMe").src = "/assets/images/me-sad.png"
+        break;
+      }
+      default: {
+        heroCaption.innerHTML = localeJSON.index.hero.captions[0];
+        heroCaption.className = heroCaption.className.replace(
+          " awfulRainbowText",
+          ""
+        );
+        document.querySelector("#imgMe").src = "/assets/images/me.png"
+        break;
+      }
+    }
 
     const rootVars = document.documentElement.style;
     const scheme = colorSchemes[colorSchemeIndex];
@@ -58,8 +78,6 @@ export default function Home({ localeJSON }) {
       .replace(" hideMe", "")
       .replace(" fadeAway", "");
   }
-
-
 
   let animationRunning = false;
 
@@ -163,6 +181,9 @@ export default function Home({ localeJSON }) {
         {/* Google SEO */}
         <meta name="description" content="I make stuff™ in JavaScript." />
         <meta name="robots" content="index, follow" />
+
+        {/* Preload the image for the easter egg */}
+        <link rel="preload" href="/assets/images/me-sad.png" as="image" />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
@@ -177,22 +198,7 @@ export default function Home({ localeJSON }) {
           </div>
           <div className={styles.text} id="hero-text">
             <h1>{parse(localeJSON.index.hero.header)}</h1>
-            <div id="hero-captions">
-              <p>{parse(localeJSON.index.hero.captions[0])}</p>
-              {/*
-              <p id="caption1" style={{ display: "none" }}>
-                {parse(localeJSON.index.hero.captions[1])}
-              </p>
-              <p>
-                <span id="caption2" style={{ display: "none" }}>
-                  {localeJSON.index.hero.captions[2]}
-                </span>
-                <span id="caption3" style={{ display: "none" }}>
-                  {localeJSON.index.hero.captions[3]}
-                </span>
-              </p>
-              */}
-            </div>
+            <p id="hero-caption">{parse(localeJSON.index.hero.captions[0])}</p>
           </div>
         </div>
 

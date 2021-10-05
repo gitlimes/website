@@ -8,10 +8,8 @@
     "hero": {
       "header": "Hey, I'm <span>Monty</span>!",
       "captions": [
-        "I make <span className='stuff'>stuff™</span> in JavaScript, HTML & CSS.",
-        "And I localize <span className='stuff'>stuff™</span> in English and Italian.",
-        "And I play the piano ",
-        "and the kazoo."
+        "I make <span class='stuff'>stuff™</span> in JavaScript, HTML & CSS.",
+        "Graphic design is my passion."
       ]
     },
     "about": {
