@@ -1,3 +1,24 @@
+.redesignNotice {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: var(--light-color);
+  padding: 0 20px;
+  box-shadow: 0 10px 10x var(--light-color);
+}
+
+.redesignNotice span {
+  display: inline-block;
+}
+
+.redesignNotice a {
+  font-weight: bold;
+}
+
+.redesignNotice a:hover {
+  text-decoration: underline;
+}
+
 .navbarBg {
   display: flex;
   justify-content: center;

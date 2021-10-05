@@ -67,6 +67,9 @@ export default function Home({ localeJSON }) {
         <meta name="description" content="I make stuff™ in JavaScript." />
         <meta name="robots" content="index, follow" />
       </Head>
+      <div className={styles.redesignNotice}>
+        {parse(localeJSON.redesign)}
+      </div>
       <section>
         <header className={styles.navbarBg}>
           <ul className={styles.navbarList}>
@@ -165,7 +168,10 @@ export default function Home({ localeJSON }) {
                   langs="JavaScript, Next.js"
                 />
 
-                <a className={styles.card} href="https://github.com/montylion?tab=repositories">
+                <a
+                  className={styles.card}
+                  href="https://github.com/montylion?tab=repositories"
+                >
                   {localeJSON.index.viewMore + " ->"}
                 </a>
               </div>
