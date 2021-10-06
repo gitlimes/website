@@ -1,13 +1,13 @@
 .redesignNotice {
+  color: #fff;
   position: fixed;
   top: 0px;
   width: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
-  background: var(--light-color);
+  background: var(--dark-purple);
   padding: 0 20px;
-  box-shadow: 0 10px 10x var(--light-color);
   z-index: 69;
 }
 
@@ -28,7 +28,7 @@
   justify-content: center;
   width: 100vw;
   height: 60px;
-  margin-top: 60px;
+  margin-top: 50px;
   box-shadow: 0 10px 15px var(--grey-shadow);
 }
 
