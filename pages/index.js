@@ -27,17 +27,13 @@ export default function Home({ localeJSON }) {
 
   function updateCSSVars() {
     colorSchemeIndex++;
-    //colorSchemeIndex = 2;
+    //colorSchemeIndex = 3;
     if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
 
     const heroCaption = document.querySelector("#hero-caption");
-    // Update the hero caption
+    // Update theme specific stuff
     switch (colorSchemeIndex) {
-      case 2: {
-        // Not ready yet, so I'm just gonna skip it
-        colorSchemeIndex++;
-      }
-      case 3: {
+      case 4: {
         heroCaption.innerHTML = localeJSON.index.hero.captions[1];
         heroCaption.className += " awfulRainbowText";
         document.querySelector("#imgMe").src = "/assets/images/me-sad.png";

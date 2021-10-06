@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Zilla+Slab:wght@300;400;700&family=Inter:wght@300;400;700&family=Ephesis&family=Lato&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Zilla+Slab:wght@300;400;700&family=Inter:wght@300;400;700&display=swap");
 
 @font-face {
   font-family: "Comic Sans MS";
@@ -7,4 +7,22 @@
   src: local("Comic Sans MS"), local("ComicSansMS-Regular"),
     url("./typefaces/comic-sans.woff") format("woff"),
     url("./typefaces/comic-sans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Cascadia Code"), local("Cascadia Code PL"), local("Cascadia Mono"),
+    local("Cascadia Mono PL"),
+    url("./typefaces/CascadiaCode.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Cascadia Code"), local("Cascadia Code PL"), local("Cascadia Mono"),
+    local("Cascadia Mono PL"),
+    url("./typefaces/CascadiaCodeItalic.woff2") format("woff2");
 }
