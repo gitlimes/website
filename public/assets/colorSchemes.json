@@ -1,10 +1,10 @@
 [
   {
-    "accent": "#e5707e",
+    "accent": "#bd8ee1",
     "secondary": "#343434",
     "dimmed": "var(--secondary)",
     "tertiary": "#6b5cdf",
-    "background": "#fff1d6",
+    "background": "#f6effb",
     "headingFont": "'Poppins', sans-serif",
     "secondaryFont": "'Poppins', sans-serif",
     "radius": "100%",
@@ -31,6 +31,17 @@
     "secondaryFont": "'Inter', sans-serif",
     "radius": "5%",
     "border": "10px solid #e5707e"
+  },
+  {
+    "accent": "#e5707e",
+    "secondary": "#343434",
+    "dimmed": "var(--secondary)",
+    "tertiary": "#6b5cdf",
+    "background": "#fff1d6",
+    "headingFont": "'Poppins', sans-serif",
+    "secondaryFont": "'Poppins', sans-serif",
+    "radius": "100%",
+    "border": "0px"
   },
   {
     "accent": "#70FF70",

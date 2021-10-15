@@ -1,11 +1,11 @@
 :root {
-  --width: 1200px;
+  --width: 1300px;
 
-  --accent: #e5707e;
+  --accent: #bd8ee1;
   --secondary: #343434;
   --dimmed: var(--secondary);
-  --tertiary: #6b5cdf;
-  --background: #fff1d6;
+  --tertiary: #df5363;
+  --background: #f6effb;
   --heading-font: "Poppins", sans-serif;
   --secondary-font: "Poppins", sans-serif;
   --radius: 100%;

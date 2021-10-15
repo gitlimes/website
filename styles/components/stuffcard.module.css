@@ -1,0 +1,10 @@
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px;
+    text-align: left;
+}
+
+.card > * {
+    margin: 0;
+}

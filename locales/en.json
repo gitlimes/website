@@ -9,41 +9,51 @@
       "header": "Hey, I'm <span>Monty</span>!",
       "captions": [
         "I make <span class='stuff'>stuff™</span> in JavaScript, HTML & CSS.",
-        "Graphic design is my passion.</p><p class='smol-text'>I swear this is bad on purpose plshireme."
+        "Graphic design is my passion.</p><p class='smol-text'>I swear this is bad on purpose."
       ]
     },
     "about": {
       "header": "About me",
       "paragraphs": {
-        "a": "aaaa",
-        "b": "I also like localizing open source projects from English to Italian and vice versa (some projects I've worked on and/or I'm working on are <a href=\"https://pretendo.network\" rel=\"noopener\" class=\"aboutURLS\">Pretendo Network</a> and <a href=\"https://github.com/Akilesh-T/ACC\" rel=\"noopener\"  class=\"aboutURLS\">ACC</a>). I also enjoy <a href=\"https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=42f3ec6e4098402f\" class=\"aboutURLS\">listening to music</a> and playing the piano, the guitar, and the best instrument of all, the kazoo."
-      },
-      "imageCaption": "My code",
-      "imageAlt": "Spaghetti code"
+        "a": "I make <span class='stuff'>stuff™</span> in HTML, CSS, JavaScript, Node.js, Next.js and React.js. I also localize projects from English to Italian and vice versa.",
+        "b": "I play the piano and the kazoo, and my music taste is questionable at best as you can see from <a target='_blank' href='https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=e195984fd46a4ffb'>my Spotify playlist</a>."
+      }
     },
     "stuff": {
-      "header": "What stuff™?",
-      "paragraph": "All kinds of <span>stuff</span>: from useful to useless! (mostly useless ngl)",
+      "header": "Stuff™",
+      "paragraph": "Here's some of the <span class='stuff'>stuff™</span> I've worked on",
       "cards": [
         {
           "title": "Discord Profile Markdown Badge",
-          "caption": "Add to your GitHub readme a badge that shows your Discord username and presence!"
+          "caption": "An SVG badge that shows your Discord username and presence",
+          "repoUrl": "discord-md-badge",
+          "langs": "JavaScript, Next.js"
         },
         {
           "title": "Michaelsoft Binbows",
-          "caption": "A Next.js-based recreation of Windows 9X (95/98) [WIP]."
+          "caption": "A Next.js-based recreation of Windows 9X (95/98) [WIP].",
+          "repoUrl": "binbows",
+          "websiteUrl": "https://binbows.montylion.dev",
+          "langs": "JavaScript, Next.js"
         },
         {
           "title": "Website",
-          "caption": "The website you're currently browsing!"
+          "caption": "The website you're currently browsing!",
+          "repoUrl": "website",
+          "langs": "JavaScript, Next.js"
         },
         {
           "title": "Neofetch but it's always Arch",
-          "caption": "This is exactly what it sounds like: this version of Neofetch always returns Arch."
+          "caption": "This is exactly what it sounds like: this version of Neofetch always returns Arch.",
+          "repoUrl": "neofetch-but-its-always-arch",
+          "langs": "Shell"
         },
         {
           "title": "Croissant",
-          "caption": "A website that shows random pictures of croissants. Don't ask me why."
+          "caption": "A website that shows random pictures of croissants. Don't ask me why.",
+          "repoUrl": "croissant",
+          "websiteUrl": "https://croissant.montylion.dev",
+          "langs": "JavaScript, Next.js"
         }
       ]
     },
