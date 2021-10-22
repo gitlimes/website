@@ -26,7 +26,8 @@
         {
           "title": "Discord Profile Markdown Badge",
           "caption": "An SVG badge that shows your Discord username and presence",
-          "repoUrl": "discord-md-badge",
+          "cover": "discord-md-badge",
+          "page": "discord-md-badge",
           "langs": "JavaScript, Next.js"
         },
         {

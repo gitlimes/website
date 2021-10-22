@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
 
 const colorSchemes = require("../public/assets/colorSchemes.json");
 
@@ -86,7 +85,7 @@ export default function Home({ localeJSON }) {
 
   async function changeColorScheme() {
     if (animationRunning) return;
-    animationRunning = !animationRunning;
+    animationRunning = true;
 
     // 0 - Hide the cursor
     document.querySelector("body").style.cursor = "none";
@@ -103,13 +102,13 @@ export default function Home({ localeJSON }) {
     await wait(400);
 
     // 3 - Expand the circle to fill the screen
+    document.querySelector("body").style.overflowY = "hidden";
     const circle = document.querySelector("#imgBg");
     const circleCoordinates = circle.getBoundingClientRect();
     circle.style.position = "absolute";
     circle.style.left = `${circleCoordinates.x}px`;
     circle.style.top = `${circleCoordinates.y}px`;
     circle.className += " expandCircle";
-    document.querySelector("body").style.maxHeight = "100vh";
 
     await wait(300);
 
@@ -158,7 +157,31 @@ export default function Home({ localeJSON }) {
     animationRunning = false;
   }
 
-  console.log("Hi!");
+  console.log(
+    "%cHi! (*・ω・)ﾉ",
+    `
+      display: inline-block;
+      padding: 36px;
+      color: #bd8ee1;
+      background: #f6effb;
+      border-radius: 4px;
+      font-family: 'Poppins', sans serif;
+      font-size: 36px
+    `
+  );
+  console.log(
+    "%cThanks for checking out my website! If you wanna take a look at the source code, it's here:",
+    `
+      display: inline-block;
+      padding: 18px;
+      color: #bd8ee1;
+      background: #f6effb;
+      border-radius: 4px;
+      font-family: 'Poppins', sans serif;
+      font-size: 18px
+    `
+  );
+  console.log("https://source.montylion.dev");
 
   return (
     <home>
