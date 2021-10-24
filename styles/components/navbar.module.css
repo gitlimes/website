@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.navbar .item a:hover {
+  font-weight: inherit;
+}
+
 .navbar .item::marker{
   content: "";
 }

@@ -6,7 +6,7 @@ export default function Navbar(localeJSON) {
   return (
       <ul className={styles.navbar} id="navbar">
         <li className={styles.item}>
-        <Link href="/">Monty</Link>
+        <Link href="/">Ash</Link>
         </li>
         <li className={styles.item}>
           <Link href="#stuff">{localeJSON.index.navbar.stuff}</Link>

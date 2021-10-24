@@ -1,12 +1,11 @@
 .wrapper {
-  width: 90vw;
-  max-width: var(--width);
+  width: 100vw;
   margin: auto;
+  color: var(--secondary);
 }
 
 .wrapper h1 {
   font-family: var(--heading-font);
-  color: var(--secondary);
 }
 
 .hero {
@@ -57,7 +56,10 @@
 
 div.about {
   margin: 48px auto;
-  width: fit-content;
+  width: 90vw;
+  max-width: var(--width);
+  margin: auto;
+  color: var(--secondary);
 }
 
 div.about h1 {
@@ -73,16 +75,34 @@ div.about p {
 }
 
 div.stuff {
+  padding: 48px;
   margin: 48px 0;
   text-align: center;
+  background: var(--accent);
+  color: var(--background);
+}
+
+div.stuff h1 {
+  margin-top: 0;
+}
+
+div.stuff span {
+  color: var(--background);
 }
 
 div.stuff .list {
+  max-width: var(--width);
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 16px;
   margin: auto;
   padding-top: 20px;
   width: 100%;
+  color: var(--secondary);
 }
 
+div.contact {
+  width: 95vw;
+  max-width: var(--width);
+  margin: auto;
+}

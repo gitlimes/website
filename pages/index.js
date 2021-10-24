@@ -9,6 +9,7 @@ import navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
 
 import styles from "../styles/Home.module.css";
+import cardStyles from "../styles/components/stuffcard.module.css";
 
 export async function getServerSideProps(context) {
   const localeJSON = require(`../locales/${context.locale}.json`);
@@ -35,6 +36,8 @@ export default function Home({ localeJSON }) {
       case 5: {
         heroCaption.innerHTML = localeJSON.index.hero.captions[1];
         heroCaption.className += " awfulRainbowText";
+        document.querySelector("#imgBg").className += " awfulRainbowBg";
+        document.querySelector("#stuff").className += " awfulRainbowBg";
         document.querySelector("#imgMe").src = "/assets/images/me-sad.png";
         break;
       }
@@ -44,6 +47,12 @@ export default function Home({ localeJSON }) {
           " awfulRainbowText",
           ""
         );
+        document.querySelector("#stuff").className = document
+          .querySelector("#stuff")
+          .className.replace(" awfulRainbowBg", "");
+        document.querySelector("#imgBg").className = document
+          .querySelector("#imgBg")
+          .className.replace(" awfulRainbowBg", "");
         document.querySelector("#imgMe").src = "/assets/images/me.png";
         break;
       }
@@ -143,7 +152,7 @@ export default function Home({ localeJSON }) {
       .querySelector("#imgMe")
       .className.replace("hideMe", "showMe");
 
-    await wait(200);
+    await wait(350); // Gecko hates me
 
     // 9 - Reset the classes
     resetClass("#imgBg");
@@ -162,31 +171,30 @@ export default function Home({ localeJSON }) {
     `
       display: inline-block;
       padding: 36px;
-      color: #bd8ee1;
+      color: #FF6B6B;
       background: #f6effb;
       border-radius: 4px;
-      font-family: 'Poppins', sans serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 36px
     `
   );
   console.log(
-    "%cThanks for checking out my website! If you wanna take a look at the source code, it's here:",
+    "%cThanks for checking out my website! You can take a look at the source code here: https://src.montylion.dev",
     `
       display: inline-block;
       padding: 18px;
-      color: #bd8ee1;
+      color: #FF6B6B;
       background: #f6effb;
       border-radius: 4px;
-      font-family: 'Poppins', sans serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 18px
     `
   );
-  console.log("https://source.montylion.dev");
 
   return (
     <home>
       <Head>
-        <title>Monty (montylion)</title>
+        <title>Ash (montylion)</title>
 
         {/* Preload the image for the easter egg */}
         <link rel="prefetch" href="/assets/images/me-sad.png" as="image" />
@@ -218,10 +226,6 @@ export default function Home({ localeJSON }) {
           <h1>{localeJSON.index.stuff.header}</h1>
           <p>{parse(localeJSON.index.stuff.paragraph)}</p>
 
-          <strong>
-            TODO: everything below this, cleanup code, janky about me design
-          </strong>
-
           <div className={styles.list}>
             {localeJSON.index.stuff.cards.map((card, index) => {
               return (
@@ -237,10 +241,24 @@ export default function Home({ localeJSON }) {
             })}
 
             <a
-              className={styles.card}
+              className={cardStyles.card}
               href="https://github.com/montylion?tab=repositories"
             >
-              {localeJSON.index.viewMore + " ->"}
+              {localeJSON.index.viewMore}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
           </div>
         </div>
@@ -298,7 +316,7 @@ export default function Home({ localeJSON }) {
           </div>
         </div>
       </div>
-      <div className={styles.footer}>Copyright 2021 - Monty (montylion)</div>
+      <div className={styles.footer}>Copyright 2021 - Ash (Monty)</div>
     </home>
   );
 }

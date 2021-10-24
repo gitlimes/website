@@ -2,9 +2,9 @@ export default function openGraph() {
   return (
     <div>
       {/* OpenGraph & Twitter stuff */}
-      <meta property="og:site_name" content="Monty (montylion)" />
-      <meta property="og:title" content="Monty (montylion)" />
-      <meta property="twitter:title" content="Monty (montylion)" />
+      <meta property="og:site_name" content="Ash (Monty)" />
+      <meta property="og:title" content="Ash (Monty)" />
+      <meta property="twitter:title" content="Ash (Monty)" />
       <meta
         property="twitter:description"
         content="I make stuff™ in JavaScript."

@@ -1,10 +1,10 @@
 :root {
   --width: 1300px;
 
-  --accent: #bd8ee1;
-  --secondary: #343434;
+  --accent: #FF6B6B; 
+  --secondary: #251659;
   --dimmed: var(--secondary);
-  --tertiary: #FF70B8; /* FF70B8? */
+  --tertiary: #FF6B6B;
   --background: #f6effb;
   --heading-font: "Poppins", sans-serif;
   --secondary-font: "Poppins", sans-serif;
@@ -34,7 +34,9 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--accent);
 }
 
 span.stuff {
@@ -54,6 +56,19 @@ span.stuff {
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.awfulRainbowBg {
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  ) !important;
 }
 
 .smol-text {
