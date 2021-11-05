@@ -35,7 +35,6 @@ a {
 
 a:hover {
   font-weight: bold;
-  font-style: italic;
   color: var(--accent);
 }
 

@@ -12,7 +12,6 @@
 @font-face {
   font-family: "Cascadia Code";
   font-style: normal;
-  font-weight: 400;
   src: local("Cascadia Code"), local("Cascadia Code PL"), local("Cascadia Mono"),
     local("Cascadia Mono PL"),
     url("./typefaces/CascadiaCode.woff2") format("woff2");
@@ -21,7 +20,6 @@
 @font-face {
   font-family: "Cascadia Code";
   font-style: italic;
-  font-weight: 400;
   src: local("Cascadia Code"), local("Cascadia Code PL"), local("Cascadia Mono"),
     local("Cascadia Mono PL"),
     url("./typefaces/CascadiaCodeItalic.woff2") format("woff2");

@@ -1,4 +1,4 @@
 user-agent: *
 allow: /
 
-sitemap: https://www.montylion.dev/sitemap.xml
+sitemap: https://www.ashmonty.com/sitemap.xml

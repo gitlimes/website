@@ -1,4 +1,4 @@
-My website at [montylion.dev](https://montylion.dev)
+My website at [ashmonty.com](https://ashmonty.com)
 
 TODO:
 - [ ] Fix Cascadia Code being broken on Firefox (Gecko really hates me for whatever reason)

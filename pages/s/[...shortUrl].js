@@ -4,7 +4,7 @@ export default function shortUrlRedirect() {
   const router = useRouter();
   const shortUrlList = require("../../shorturls.json");
   const shortUrl = router.query.shortUrl;
-  const fullUrl = shortUrlList[shortUrl] || "https://montylion.dev";
+  const fullUrl = shortUrlList[shortUrl] || "https://ashmonty.com";
 
   //console.log(`shortUrl: ${shortUrl}\nfullUrl: ${fullUrl}`);
 

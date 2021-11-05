@@ -7,6 +7,7 @@ import parse from "html-react-parser";
 
 import navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
+import OpenGraph from "../components/openGraph";
 
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
@@ -38,7 +39,7 @@ export default function Home({ localeJSON }) {
         heroCaption.className += " awfulRainbowText";
         document.querySelector("#imgBg").className += " awfulRainbowBg";
         document.querySelector("#stuff").className += " awfulRainbowBg";
-        document.querySelector("#imgMe").src = "/assets/images/me-sad.png";
+        document.querySelector("#imgMe").src = "/assets/images/me-sad.webp";
         break;
       }
       default: {
@@ -53,7 +54,7 @@ export default function Home({ localeJSON }) {
         document.querySelector("#imgBg").className = document
           .querySelector("#imgBg")
           .className.replace(" awfulRainbowBg", "");
-        document.querySelector("#imgMe").src = "/assets/images/me.png";
+        document.querySelector("#imgMe").src = "/assets/images/me.webp";
         break;
       }
     }
@@ -107,11 +108,12 @@ export default function Home({ localeJSON }) {
     fadeElement("#hero-text");
     fadeElement("#about");
     fadeElement("#stuff");
+    fadeElement("#contact");
 
     await wait(400);
 
     // 3 - Expand the circle to fill the screen
-    document.querySelector("body").style.overflowY = "hidden";
+    document.querySelector("body").style.overflow = "hidden";
     const circle = document.querySelector("#imgBg");
     const circleCoordinates = circle.getBoundingClientRect();
     circle.style.position = "absolute";
@@ -141,6 +143,7 @@ export default function Home({ localeJSON }) {
     unfadeElement("#hero-text");
     unfadeElement("#about");
     unfadeElement("#stuff");
+    unfadeElement("#contact");
 
     await wait(100);
 
@@ -160,6 +163,7 @@ export default function Home({ localeJSON }) {
     resetClass("#hero-text");
     resetClass("#about");
     resetClass("#stuff");
+    resetClass("#contact");
     await wait(300);
     resetClass("#imgMe");
 
@@ -179,7 +183,7 @@ export default function Home({ localeJSON }) {
     `
   );
   console.log(
-    "%cThanks for checking out my website! You can take a look at the source code here: https://src.montylion.dev",
+    "%cThanks for checking out my website! You can take a look at the source code here: https://src.ashmonty.com",
     `
       display: inline-block;
       padding: 18px;
@@ -194,10 +198,12 @@ export default function Home({ localeJSON }) {
   return (
     <home>
       <Head>
-        <title>Ash (montylion)</title>
+        <title>Ash (Monty)</title>
 
         {/* Preload the image for the easter egg */}
-        <link rel="prefetch" href="/assets/images/me-sad.png" as="image" />
+        <link rel="prefetch" href="/assets/images/me-sad.webp" as="image" />
+
+        < OpenGraph />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
@@ -208,7 +214,7 @@ export default function Home({ localeJSON }) {
             id="imgBg"
             onClick={() => changeColorScheme()}
           >
-            <img src="/assets/images/me.png" id="imgMe" draggable="false" />
+            <img src="/assets/images/me.webp" id="imgMe" draggable="false" />
           </div>
           <div className={styles.text} id="hero-text">
             <h1>{parse(localeJSON.index.hero.header)}</h1>
@@ -234,6 +240,7 @@ export default function Home({ localeJSON }) {
                   caption={card.caption}
                   repoUrl={card.repoUrl}
                   websiteUrl={card.websiteUrl}
+                  coverEl={card.coverEl}
                   langs={card.langs}
                   key={index}
                 />
@@ -242,7 +249,7 @@ export default function Home({ localeJSON }) {
 
             <a
               className={cardStyles.card}
-              href="https://github.com/montylion?tab=repositories"
+              href="https://github.com/ashmonty?tab=repositories"
             >
               {localeJSON.index.viewMore}
               <svg
@@ -255,6 +262,7 @@ export default function Home({ localeJSON }) {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                className={styles.viewMore}
               >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -272,12 +280,12 @@ export default function Home({ localeJSON }) {
           </p>
           <div className={styles.contactCardList}>
             <a
-              href="https://github.com/montylion"
+              href="https://github.com/ashmonty"
               target="_blank"
               rel="noopener"
               className={styles.githubCard}
             >
-              montylion
+              ashmonty
             </a>
 
             <div
@@ -288,30 +296,30 @@ export default function Home({ localeJSON }) {
             </div>
 
             <a
-              href="https://twitter.com/montylion_"
+              href="https://twitter.com/ashmonty_"
               target="_blank"
               rel="noopener"
               className={styles.twitterCard}
             >
-              montylion_
+              ashmonty_
             </a>
 
             <a
-              href="mailto:hey@montylion.dev"
+              href="mailto:hey@ashmonty.com"
               target="_blank"
               rel="noopener"
               className={styles.emailCard}
             >
-              hey@montylion.dev
+              hey@ashmonty.com
             </a>
 
             <a
-              href="https://ko-fi.com/montylion"
+              href="https://ko-fi.com/ashmonty"
               target="_blank"
               rel="noopener"
               className={styles.kofiCard}
             >
-              montylion
+              ashmonty
             </a>
           </div>
         </div>

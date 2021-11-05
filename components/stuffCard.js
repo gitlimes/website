@@ -13,7 +13,7 @@ export default class card extends React.Component {
         <div className={styles.icons}>
           {this.props.repoUrl ? (
             <a
-              href={"https://github.com/montylion/" + this.props.repoUrl}
+              href={"https://github.com/ashmonty/" + this.props.repoUrl}
               target="_blank"
               rel="noopener"
             >

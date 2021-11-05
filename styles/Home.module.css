@@ -50,15 +50,14 @@
 }
 
 .hero .text p {
-  font-size: 2em;
+  font-size: 1.7em;
   margin: 0;
 }
 
 div.about {
-  margin: 48px auto;
+  margin: auto;
   width: 90vw;
   max-width: var(--width);
-  margin: auto;
   color: var(--secondary);
 }
 
@@ -99,6 +98,9 @@ div.stuff .list {
   padding-top: 20px;
   width: 100%;
   color: var(--secondary);
+}
+svg.viewMore {
+  margin-left: 0.3ch;
 }
 
 div.contact {

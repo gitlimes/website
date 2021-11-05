@@ -1,4 +1,4 @@
-export default function openGraph() {
+export default function OpenGraph() {
   return (
     <div>
       {/* OpenGraph & Twitter stuff */}
@@ -10,14 +10,14 @@ export default function openGraph() {
         content="I make stuff™ in JavaScript."
       />
       <meta property="og:description" content="I make stuff™ in JavaScript." />
-      <meta property="og:url" content="https://montylion.dev/" />
+      <meta property="og:url" content="https://ashmonty.com/" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="/opengraph.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="/opengraph.png" />
       {/* Google SEO */}
       <meta name="description" content="I make stuff™ in JavaScript." />
-      <meta name="robots" content="index, follow" />)
+      <meta name="robots" content="index, follow" />
     </div>
   );
 }
