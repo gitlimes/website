@@ -292,7 +292,7 @@ export default function Home({ localeJSON }) {
               className={styles.contactCardDiscord}
               title={localeJSON.index.easterEggs.discord}
             >
-              montylion#3581
+              Monty#3581
             </div>
 
             <a
