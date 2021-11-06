@@ -58,7 +58,7 @@ export default function Home({ localeJSON }) {
           property="og:description"
           content="I make stuff™ in JavaScript."
         />
-        <meta property="og:url" content="https://montylion.dev/" />
+        <meta property="og:url" content="https://ashmonty.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/opengraph.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -142,7 +142,7 @@ export default function Home({ localeJSON }) {
                   title={localeJSON.index.stuff.cards[1].title}
                   caption={localeJSON.index.stuff.cards[1].caption}
                   repoUrl="binbows"
-                  websiteUrl="https://binbows.montylion.dev"
+                  websiteUrl="https://binbows.ashmonty.com"
                   langs="JavaScript, Next.js"
                 />
 
@@ -164,7 +164,7 @@ export default function Home({ localeJSON }) {
                   title={localeJSON.index.stuff.cards[4].title}
                   caption={localeJSON.index.stuff.cards[4].caption}
                   repoUrl="croissant"
-                  websiteUrl="https://croissant.montylion.dev"
+                  websiteUrl="https://croissant.ashmonty.com"
                   langs="JavaScript, Next.js"
                 />
 
@@ -249,7 +249,7 @@ export default function Home({ localeJSON }) {
                 </a>
 
                 <a
-                  href="mailto:hey@montylion.dev"
+                  href="mailto:hey@ashmonty.com"
                   target="_blank"
                   rel="noopener"
                   className={styles.contactCardEmail}
@@ -269,7 +269,7 @@ export default function Home({ localeJSON }) {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
-                  hey@montylion.dev
+                  hey@ashmonty.com
                 </a>
 
                 <a
@@ -296,7 +296,7 @@ export default function Home({ localeJSON }) {
             </div>
           </div>
         </div>
-        <div className={styles.footer}>Copyright 2021 - Monty (montylion)</div>
+        <div className={styles.footer}>Copyright 2021 - Monty</div>
       </section>
     </home>
   );
