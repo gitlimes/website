@@ -1,6 +1,6 @@
 export default function OpenGraph() {
   return (
-    <div>
+    <head>
       {/* OpenGraph & Twitter stuff */}
       <meta property="og:site_name" content="Ash (Monty)" />
       <meta property="og:title" content="Ash (Monty)" />
@@ -18,6 +18,6 @@ export default function OpenGraph() {
       {/* Google SEO */}
       <meta name="description" content="I make stuff™ in JavaScript." />
       <meta name="robots" content="index, follow" />
-    </div>
+    </head>
   );
 }

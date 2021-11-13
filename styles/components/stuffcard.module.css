@@ -3,6 +3,7 @@
   border-radius: 12px;
   padding: 36px;
   text-align: left;
+  transition: 50ms;
 }
 
 .card > * {

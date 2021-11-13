@@ -8,53 +8,52 @@
     "hero": {
       "header": "Hey, I'm <span>Ash</span>!",
       "captions": [
-        "I make <span class='stuff'>stuff™</span> in JavaScript, HTML & CSS.",
+        "I make <span class='stuff'>stuff™</span>, I think.",
         "Graphic design is my passion.</p><p class='smol-text'>I swear this is bad on purpose."
       ]
     },
     "about": {
-      "header": "About me",
-      "paragraphs": {
-        "a": "I make <span class='stuff'>stuff™</span> in HTML, CSS, JavaScript, Node.js, Next.js and React.js. I also localize projects from English to Italian and vice versa.",
-        "b": "I play the piano and the kazoo, and my music taste is questionable at best as you can see from <a target='_blank' href='https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=e195984fd46a4ffb'>my Spotify playlist</a>."
-      }
+      "header": "Who?",
+      "paragraphs": [
+        "I'm Ash, {age} I make <span class='stuff'>stuff™</span>",
+        "I play the piano and the kazoo, and my music taste is questionable at best as you can see from <a target='_blank' href='https://open.spotify.com/playlist/5rx5PZoWqEeaoivwz350Ki?si=e195984fd46a4ffb'>my Spotify playlist</a>."
+      ]
     },
     "stuff": {
       "header": "Stuff™",
-      "paragraph": "Here's some of the <span class='stuff'>stuff™</span> I've worked on!",
+      "paragraph": "Here's some of the <span class='stuff'>stuff™</span> I've worked on! It ain't much, but it's honest work.",
       "cards": [
         {
-          "title": "Discord Profile Markdown Badge",
+          "title": "Discord Badge",
           "caption": "An SVG badge that shows your Discord username and presence",
-          "cover": "discord-md-badge",
-          "page": "discord-md-badge",
-          "langs": "JavaScript, Next.js",
-          "coverEl": "<img></img>"
+          "repo": "ashmonty/discord-md-badge",
+          "langs": ["Next.js", "JavaScript"]
+        },
+        {
+          "title": "Pretendo Network",
+          "caption": "I implemented the blog section and the locale switcher 😎",
+          "repo": "PretendoNetwork/website",
+          "page": "https://pretendo.network",
+          "langs": ["Express.js", "JavaScript"]
         },
         {
           "title": "Michaelsoft Binbows",
-          "caption": "A Next.js-based recreation of Windows 9X (95/98) [WIP].",
-          "repoUrl": "binbows",
+          "caption": "A Next.js-based recreation of Windows 9X (95/98) [should probably remove this as I haven't wokred on this for ages].",
+          "repo": "binbows",
           "websiteUrl": "https://binbows.ashmonty.com",
-          "langs": "JavaScript, Next.js"
+          "langs": ["Next.js", "JavaScript"]
         },
         {
           "title": "Website",
           "caption": "The website you're currently browsing!",
-          "repoUrl": "website",
-          "langs": "JavaScript, Next.js"
-        },
-        {
-          "title": "Neofetch but it's always Arch",
-          "caption": "This is exactly what it sounds like: this version of Neofetch always returns Arch.",
-          "repoUrl": "neofetch-but-its-always-arch",
-          "langs": "Shell"
+          "repo": "website",
+          "langs": ["Next.js", "JavaScript"]
         },
         {
           "title": "Croissant",
           "caption": "A website that shows random pictures of croissants. Don't ask me why.",
-          "repoUrl": "croissant",
-          "websiteUrl": "https://croissant.ashmonty.com",
+          "repo": "croissant",
+          "website": "https://croissant.ashmonty.com",
           "langs": "JavaScript, Next.js"
         }
       ]

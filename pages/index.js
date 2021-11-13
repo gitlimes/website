@@ -13,13 +13,23 @@ import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
 export async function getServerSideProps(context) {
+  const _dcTagFetch = await fetch(
+    "https://dcbadge.vercel.app/api/shield/json/406125028065804289"
+  );
+  const _dcTagFetchJson = await _dcTagFetch.json();
+  const dcTag = _dcTagFetchJson.t;
   const localeJSON = require(`../locales/${context.locale}.json`);
+  const age = Math.floor(
+    (new Date() - new Date("April 13, 2004")) / (1000 * 60 * 60 * 24 * 365)
+  ); // There's no way I'm gonna remember to update it myself, so here's a lazy workaround.
   return {
-    props: { localeJSON },
+    props: { localeJSON, dcTag, age },
   };
 }
 
-export default function Home({ localeJSON }) {
+export default function Home({ localeJSON, dcTag, age }) {
+  /* This is bad; commenting out for now just so I can get the new website out for now
+
   function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -179,11 +189,11 @@ export default function Home({ localeJSON }) {
       background: #f6effb;
       border-radius: 4px;
       font-family: 'Poppins', sans-serif;
-      font-size: 36px
+      font-size: 32px;
     `
   );
   console.log(
-    "%cThanks for checking out my website! You can take a look at the source code here: https://src.ashmonty.com",
+    "%cThanks for checking out my website! You can take a look at the source code here: https://ashmonty.com/repo",
     `
       display: inline-block;
       padding: 18px;
@@ -193,7 +203,7 @@ export default function Home({ localeJSON }) {
       font-family: 'Poppins', sans-serif;
       font-size: 18px
     `
-  );
+  );*/
 
   return (
     <home>
@@ -201,9 +211,9 @@ export default function Home({ localeJSON }) {
         <title>Ash (Monty)</title>
 
         {/* Preload the image for the easter egg */}
-        <link rel="prefetch" href="/assets/images/me-sad.webp" as="image" />
+        {/* Commented out as it's not needed <link rel="prefetch" href="/assets/images/me-sad.webp" as="image" />*/}
 
-        < OpenGraph />
+        <OpenGraph />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
@@ -212,20 +222,20 @@ export default function Home({ localeJSON }) {
           <div
             className={styles.imgBg}
             id="imgBg"
-            onClick={() => changeColorScheme()}
+            /*onClick={() => changeColorScheme()} This is bad; hiding for now just so I can get the new website out for now */
           >
-            <img src="/assets/images/me.webp" id="imgMe" draggable="false" />
+            <img src="/assets/images/me2.png" id="imgMe" draggable="false" />
           </div>
           <div className={styles.text} id="hero-text">
-            <h1>{parse(localeJSON.index.hero.header)}</h1>
-            <p id="hero-caption">{parse(localeJSON.index.hero.captions[0])}</p>
+            <h1>Hey, I'm <span>Ash</span>!</h1>
+            <p id="hero-caption">I make <span className='stuff'>stuff™</span>, I think.</p>
           </div>
         </div>
 
         <div className={styles.about} id="about">
-          <h1>{localeJSON.index.about.header}</h1>
-          <p>{parse(localeJSON.index.about.paragraphs.a)}</p>
-          <p>{parse(localeJSON.index.about.paragraphs.b)}</p>
+          <h1>Who?</h1>
+          <p>I'm Ash, a {age} year old dev who likes to make <span className="stuff">stuff™</span>. From useless websites to dumb unreleased songs, you can be sure it's in my repertoire.</p>
+          <p>I play the piano and I'm learning to play the guitar, and I've got like 15 half baked songs, who knows if I'm ever gonna release any of them.</p>
         </div>
 
         <div className={styles.stuff} id="stuff">
@@ -238,8 +248,8 @@ export default function Home({ localeJSON }) {
                 <StuffCard
                   title={card.title}
                   caption={card.caption}
-                  repoUrl={card.repoUrl}
-                  websiteUrl={card.websiteUrl}
+                  repo={card.repoUrl}
+                  website={card.websiteUrl}
                   coverEl={card.coverEl}
                   langs={card.langs}
                   key={index}
@@ -292,7 +302,7 @@ export default function Home({ localeJSON }) {
               className={styles.contactCardDiscord}
               title={localeJSON.index.easterEggs.discord}
             >
-              Monty#3581
+              {dcTag}
             </div>
 
             <a
