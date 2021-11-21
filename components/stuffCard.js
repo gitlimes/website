@@ -50,7 +50,6 @@ export default function card(props) {
         ) : null}
         </div>*/}
       <p>{props.caption}</p>
-      <p className={styles.langs}>{props.langs}</p>
     </a>
   );
 }

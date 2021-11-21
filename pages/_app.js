@@ -4,7 +4,7 @@ import "simplebar/dist/simplebar.min.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <SimpleBar style={{ maxHeight: "100vh" }}>
+    <SimpleBar style={{ maxHeight: "100vh", overflowX: "hidden" }}>
       <Component {...pageProps} />
     </SimpleBar>
   );

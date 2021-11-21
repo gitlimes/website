@@ -3,57 +3,53 @@
   margin: auto;
   color: var(--secondary);
 }
-
 .wrapper h1 {
   font-family: var(--heading-font);
 }
 
+/* Hero */
+
 .hero {
   display: flex;
   justify-content: center;
+  margin: auto;
   margin-top: 40px;
   padding: 100px 0;
+  transition: 200ms;
 }
-
 .hero .imgBg {
   width: 350px;
   height: 350px;
   flex-shrink: 0;
-  border-radius: var(--radius);
-  /*border: var(--border);*/
-  background: var(--accent);
+  border-radius: 100%;
+  background: no-repeat center/cover url(../public/assets/images/me3.png)
+    /*, var(--accent)*/;
   overflow: hidden;
   transition: 200ms;
 }
-
-.hero .imgBg img {
-  position: relative;
-  /*bottom: -15px;*/
-  bottom: 55px;
-  width: 100%;
-  user-select: none;
-}
-
 .hero .text {
   margin-left: 56px;
   display: flex;
   flex-flow: column;
   justify-content: center;
+  width: fit-content;
 }
-
 .hero .text h1 {
   font-size: 5em;
   margin: 0;
+  transition: 200ms;
 }
-
 .hero .text h1 span {
   color: var(--accent);
+  transition: 200ms;
 }
-
 .hero .text p {
   font-size: 2.3em;
   margin: 0;
+  transition: 200ms;
 }
+
+/* About */
 
 div.about {
   margin: auto;
@@ -61,57 +57,199 @@ div.about {
   max-width: var(--width);
   color: var(--secondary);
 }
-
 div.about h1 {
   margin-bottom: 12px;
 }
-
 div.about a {
   text-decoration: underline;
 }
-
 div.about p {
   margin: 8px 0;
 }
 
+/* Stuff */
+
 div.stuff {
-  padding: 48px;
+  padding: 48px 0;
   margin: 48px 0;
   text-align: center;
   background: var(--accent);
   color: var(--background);
 }
-
+div.stuff > * {
+  margin: auto;
+  width: 90vw;
+  max-width: var(--width);
+}
 div.stuff h1 {
   margin-top: 0;
+  margin-bottom: 4px;
 }
-
 div.stuff span.stuff {
   color: var(--secondary);
 }
-
 div.stuff .list {
-  max-width: var(--width);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin: auto;
   padding-top: 20px;
-  width: 100%;
   color: var(--secondary);
 }
 svg.viewMore {
   margin-left: 0.3ch;
 }
 
+/* Contact */
+
 div.contact {
-  width: 95vw;
-  max-width: var(--width);
   margin: auto;
+  width: 90vw;
+  max-width: var(--width);
+  margin-bottom: 24px;
+}
+.contact .list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.contactCard {
+  display: inline-flex;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 6px;
+  color: #fff;
+
+  transition: 75ms;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 0px 0 var(--secondary);
+}
+.contactCard:hover {
+  font-weight: inherit;
+  color: #fff;
+  top: -2px;
+  left: -2px;
+  box-shadow: 4px 4px 0 var(--secondary);
+}
+.contactCard.github {
+  background-color: #171515;
+}
+.contactCard.discord {
+  background-color: #5865f2;
+}
+.contactCard.twitter {
+  background-color: #1d9bf0;
+}
+.contactCard.mail {
+  background-color: var(--accent);
+}
+.contactCard.kofi {
+  background-color: #ff5e5b;
+}
+.contactCard svg {
+  padding-right: 8px;
+  fill: #fff;
+  width: 24px;
+}
+
+.footer {
+  margin: 12px auto;
+  width: fit-content;
+  max-width: var(--width);
+}
+
+@media screen and (max-width: 1080px) {
+  .hero {
+    flex-flow: column;
+    align-items: center;
+    padding-top: 0;
+  }
+  .hero .text {
+    margin-top: 24px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .contact .list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .contactCard.github {
+    grid-column: 1 / span 2;
+  }
+  .contactCard.discord {
+    grid-column: 3 / span 2;
+  }
+  .contactCard.twitter {
+    grid-column: 5 / span 2;
+  }
+  .contactCard.mail {
+    grid-column: 1 / span 3;
+  }
+  .contactCard.kofi {
+    grid-column: 4 / span 3;
+  }
 }
 
 @media screen and (max-width: 768px) {
   div.stuff .list {
     grid-template-columns: 1fr;
+  }
+
+  div.hero .imgBg {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero .text {
+    margin: 0;
+    margin-top: 24px;
+  }
+  .hero .text h1 {
+    font-size: 4em;
+  }
+  .hero .text p {
+    font-size: 2.3em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contactCard.github,
+  .contactCard.twitter {
+    grid-column: 1 / span 1;
+  }
+  .contactCard.discord,
+  .contactCard.mail {
+    grid-column: 2 / span 1;
+  }
+  .contactCard.kofi {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .contact .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .contactCard.github,
+  .contactCard.discord,
+  .contactCard.twitter,
+  .contactCard.mail,
+  .contactCard.kofi {
+    grid-column: 1 / span 1;
+  }
+
+  .hero .text h1 {
+    font-size: 3em;
+  }
+  .hero .text p {
+    font-size: 1.5em;
   }
 }
