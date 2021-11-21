@@ -86,8 +86,8 @@ div.stuff h1 {
   margin-top: 0;
 }
 
-div.stuff span {
-  color: var(--background);
+div.stuff span.stuff {
+  color: var(--secondary);
 }
 
 div.stuff .list {

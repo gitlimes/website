@@ -2,17 +2,17 @@ import Link from "next/link";
 
 import styles from "../styles/components/navbar.module.css";
 
-export default function Navbar(localeJSON) {
+export default function Navbar() {
   return (
       <ul className={styles.navbar} id="navbar">
         <li className={styles.item}>
         <Link href="/">Ash</Link>
         </li>
         <li className={styles.item}>
-          <Link href="#stuff">{localeJSON.index.navbar.stuff}</Link>
+          <Link href="#stuff">stuff™</Link>
         </li>
         <li className={styles.item}>
-          <Link href="#contact">{localeJSON.index.navbar.contact}</Link>
+          <Link href="#contact">Contact</Link>
         </li>
       </ul>
   );

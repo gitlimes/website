@@ -3,10 +3,10 @@ import styles from "../styles/components/stuffcard.module.css";
 
 export default function card(props) {
   return (
-    <div className={styles.card}>
+    <a href={props.link} className={styles.card}>
       <h2>{props.title}</h2>
 
-      <div className={styles.icons}>
+      {/* <div className={styles.icons}>
         {props.repoUrl ? (
           <a
             href={"https://github.com/ashmonty/" + props.repoUrl}
@@ -48,9 +48,9 @@ export default function card(props) {
             </svg>
           </a>
         ) : null}
-      </div>
+        </div>*/}
       <p>{props.caption}</p>
       <p className={styles.langs}>{props.langs}</p>
-    </div>
+    </a>
   );
 }

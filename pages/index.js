@@ -1,11 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-const colorSchemes = require("../public/assets/colorSchemes.json");
-
-import parse from "html-react-parser";
-
-import navbar from "../components/navbar";
+import Navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
 import OpenGraph from "../components/openGraph";
 
@@ -18,240 +14,106 @@ export async function getServerSideProps(context) {
   );
   const _dcTagFetchJson = await _dcTagFetch.json();
   const dcTag = _dcTagFetchJson.t;
-  const localeJSON = require(`../locales/${context.locale}.json`);
   const age = Math.floor(
     (new Date() - new Date("April 13, 2004")) / (1000 * 60 * 60 * 24 * 365)
   ); // There's no way I'm gonna remember to update it myself, so here's a lazy workaround.
+
+  const _mdbStarsFetch = await fetch(
+    "https://api.github.com/repos/ashmonty/discord-md-badge"
+  );
+  const _mdbStarsJson = await _mdbStarsFetch.json();
+  const mdbStarts = _mdbStarsJson.stargazers_count;
+
+  const cards = [
+    {
+      title: "The place to dump cool stuff™",
+      caption: "read the title, idiot",
+      link: "https://github.com/ashmonty/discord-md-badge",
+    },
+    {
+      title: "Discord Badge",
+      caption: `An SVG badge that shows your Discord username and presence. ${mdbStarts} people deemed it starworthy, so it must be somewhat good, I think.`,
+      link: "https://github.com/ashmonty/discord-md-badge",
+    },
+    {
+      title: "Pretendo Network",
+      caption:
+        "I implemented the blog section and the locale switcher, and I designed and wrote the CSS for the account management page and the login page. So yeah basically what I'm saying is that I'm cool. 😎",
+      repo: "PretendoNetwork/website",
+      link: "https://pretendo.network",
+    },
+    {
+      title: "Croissant",
+      caption:
+        "A website that shows random pictures of croissants. Don't ask me why I did this, but also don't expect anything too different from me.",
+      link: "https://croissant.ashmonty.com",
+    },
+    {
+      title: "Website",
+      caption:
+        "The website you're currently browsing! Can you tell I'm putting this just so this section looks even?",
+      link: "https://github.com/ashmonty/website",
+    },
+  ];
+
   return {
-    props: { localeJSON, dcTag, age },
+    props: { dcTag, age, cards },
   };
 }
 
-export default function Home({ localeJSON, dcTag, age }) {
-  /* This is bad; commenting out for now just so I can get the new website out for now
-
-  function wait(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  let colorSchemeIndex = 0;
-
-  function updateCSSVars() {
-    colorSchemeIndex++;
-    //colorSchemeIndex = 3;
-    if (colorSchemeIndex === colorSchemes.length) colorSchemeIndex = 0;
-
-    const heroCaption = document.querySelector("#hero-caption");
-    // Update theme specific stuff
-    switch (colorSchemeIndex) {
-      case 5: {
-        heroCaption.innerHTML = localeJSON.index.hero.captions[1];
-        heroCaption.className += " awfulRainbowText";
-        document.querySelector("#imgBg").className += " awfulRainbowBg";
-        document.querySelector("#stuff").className += " awfulRainbowBg";
-        document.querySelector("#imgMe").src = "/assets/images/me-sad.webp";
-        break;
-      }
-      default: {
-        heroCaption.innerHTML = localeJSON.index.hero.captions[0];
-        heroCaption.className = heroCaption.className.replace(
-          " awfulRainbowText",
-          ""
-        );
-        document.querySelector("#stuff").className = document
-          .querySelector("#stuff")
-          .className.replace(" awfulRainbowBg", "");
-        document.querySelector("#imgBg").className = document
-          .querySelector("#imgBg")
-          .className.replace(" awfulRainbowBg", "");
-        document.querySelector("#imgMe").src = "/assets/images/me.webp";
-        break;
-      }
-    }
-
-    const rootVars = document.documentElement.style;
-    const scheme = colorSchemes[colorSchemeIndex];
-    rootVars.setProperty("--accent", scheme.accent);
-    rootVars.setProperty("--secondary", scheme.secondary);
-    rootVars.setProperty("--dimmed", scheme.dimmed);
-    rootVars.setProperty("--tertiary", scheme.tertiary);
-    rootVars.setProperty("--background", scheme.background);
-    rootVars.setProperty("--heading-font", scheme.headingFont);
-    rootVars.setProperty("--secondary-font", scheme.secondaryFont);
-    rootVars.setProperty("--radius", scheme.radius);
-    rootVars.setProperty("--border", scheme.border);
-  }
-
-  function fadeElement(element) {
-    document.querySelector(element).className += " fadeAway";
-  }
-
-  function unfadeElement(element) {
-    document.querySelector(element).className = document
-      .querySelector(element)
-      .className.replace(" fadeAway", " unfade");
-  }
-
-  function resetClass(element) {
-    document.querySelector(element).className = document
-      .querySelector(element)
-      .className.replace(" unfade", "")
-      .replace(" showMe", "")
-      .replace(" hideMe", "")
-      .replace(" fadeAway", "");
-  }
-
-  let animationRunning = false;
-
-  async function changeColorScheme() {
-    if (animationRunning) return;
-    animationRunning = true;
-
-    // 0 - Hide the cursor
-    document.querySelector("body").style.cursor = "none";
-
-    // 1 - Duck!
-    document.querySelector("#imgMe").className += " hideMe";
-
-    // 2 - Fade the text away
-    fadeElement("#navbar");
-    fadeElement("#hero-text");
-    fadeElement("#about");
-    fadeElement("#stuff");
-    fadeElement("#contact");
-
-    await wait(400);
-
-    // 3 - Expand the circle to fill the screen
-    document.querySelector("body").style.overflow = "hidden";
-    const circle = document.querySelector("#imgBg");
-    const circleCoordinates = circle.getBoundingClientRect();
-    circle.style.position = "absolute";
-    circle.style.left = `${circleCoordinates.x}px`;
-    circle.style.top = `${circleCoordinates.y}px`;
-    circle.className += " expandCircle";
-
-    await wait(300);
-
-    // 4 - Change color scheme and update circle
-    updateCSSVars();
-    circle.style.background = "var(--background)";
-
-    await wait(200);
-
-    // 5 - Fade the expanded circle away
-    circle.className = circle.className.replace(" expandCircle", "");
-    fadeElement("#imgBg");
-
-    // 6 - Reset overflow and put circle back in its place
-    document.querySelector("body").style = "";
-    circle.style = "";
-    circle.style.background = "var(--background)";
-
-    // 7 - Unfade text
-    unfadeElement("#navbar");
-    unfadeElement("#hero-text");
-    unfadeElement("#about");
-    unfadeElement("#stuff");
-    unfadeElement("#contact");
-
-    await wait(100);
-
-    // 8 - Unfade circle and pop myself back up
-    circle.style.background = "var(--accent)";
-    circle.style = "";
-    unfadeElement("#imgBg");
-    document.querySelector("#imgMe").className = document
-      .querySelector("#imgMe")
-      .className.replace("hideMe", "showMe");
-
-    await wait(350); // Gecko hates me
-
-    // 9 - Reset the classes
-    resetClass("#imgBg");
-    resetClass("#navbar");
-    resetClass("#hero-text");
-    resetClass("#about");
-    resetClass("#stuff");
-    resetClass("#contact");
-    await wait(300);
-    resetClass("#imgMe");
-
-    animationRunning = false;
-  }
-
-  console.log(
-    "%cHi! (*・ω・)ﾉ",
-    `
-      display: inline-block;
-      padding: 36px;
-      color: #FF6B6B;
-      background: #f6effb;
-      border-radius: 4px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 32px;
-    `
-  );
-  console.log(
-    "%cThanks for checking out my website! You can take a look at the source code here: https://ashmonty.com/repo",
-    `
-      display: inline-block;
-      padding: 18px;
-      color: #FF6B6B;
-      background: #f6effb;
-      border-radius: 4px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 18px
-    `
-  );*/
-
+export default function Home({ dcTag, age, cards }) {
   return (
     <home>
       <Head>
         <title>Ash (Monty)</title>
-
-        {/* Preload the image for the easter egg */}
-        {/* Commented out as it's not needed <link rel="prefetch" href="/assets/images/me-sad.webp" as="image" />*/}
-
         <OpenGraph />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
-        {navbar(localeJSON)}
+        <Navbar />
         <div className={styles.hero}>
-          <div
-            className={styles.imgBg}
-            id="imgBg"
-            /*onClick={() => changeColorScheme()} This is bad; hiding for now just so I can get the new website out for now */
-          >
+          <div className={styles.imgBg} id="imgBg">
             <img src="/assets/images/me2.png" id="imgMe" draggable="false" />
           </div>
           <div className={styles.text} id="hero-text">
-            <h1>Hey, I'm <span>Ash</span>!</h1>
-            <p id="hero-caption">I make <span className='stuff'>stuff™</span>, I think.</p>
+            <h1>
+              Hey, I'm <span>Ash</span>!
+            </h1>
+            <p id="hero-caption">
+              I make <span className="stuff">stuff™</span>, I think.
+            </p>
           </div>
         </div>
 
         <div className={styles.about} id="about">
           <h1>Who?</h1>
-          <p>I'm Ash, a {age} year old dev who likes to make <span className="stuff">stuff™</span>. From useless websites to dumb unreleased songs, you can be sure it's in my repertoire.</p>
-          <p>I play the piano and I'm learning to play the guitar, and I've got like 15 half baked songs, who knows if I'm ever gonna release any of them.</p>
+          <p>
+            I'm Ash, a {age} year old who likes to make{" "}
+            <span className="stuff">stuff™</span>. From useless websites to dumb
+            unreleased songs, you can be sure it's in my repertoire.
+          </p>
+          <p>
+            I play the piano and I'm learning to play the guitar, but my
+            favorite instrument is the kazoo. I mean, can you really blame me?
+          </p>
         </div>
 
         <div className={styles.stuff} id="stuff">
-          <h1>{localeJSON.index.stuff.header}</h1>
-          <p>{parse(localeJSON.index.stuff.paragraph)}</p>
+          <h1>
+            Ok, but what exactly is <span className={styles.stuff}>stuff™</span>?
+          </h1>
+          <p>
+            Stuff is really anything I do. At the moment it's mainly web dev
+            stuff, but who knows, I might put up some songs in the future.
+          </p>
 
           <div className={styles.list}>
-            {localeJSON.index.stuff.cards.map((card, index) => {
+            {cards.map((card, index) => {
               return (
                 <StuffCard
                   title={card.title}
                   caption={card.caption}
-                  repo={card.repoUrl}
-                  website={card.websiteUrl}
-                  coverEl={card.coverEl}
-                  langs={card.langs}
+                  link={card.link}
                   key={index}
                 />
               );
@@ -261,7 +123,7 @@ export default function Home({ localeJSON, dcTag, age }) {
               className={cardStyles.card}
               href="https://github.com/ashmonty?tab=repositories"
             >
-              {localeJSON.index.viewMore}
+              View more
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -282,11 +144,12 @@ export default function Home({ localeJSON, dcTag, age }) {
         </div>
 
         <div className={styles.contact} id="contact">
-          <h1 className={styles.contactHeader}>
-            {localeJSON.index.contact.header}
-          </h1>
+          <h1 className={styles.contactHeader}>Contact me</h1>
           <p className={styles.contactParagraph}>
-            {localeJSON.index.contact.paragraph}
+            Feel free to reach out to me for anything, unless you're Kyle, in
+            which case: Kyle, I'm not giving you back your money. If you want it
+            back so bad go to the police or something I don't even care I'm
+            fleeing the country anyways
           </p>
           <div className={styles.contactCardList}>
             <a
@@ -300,7 +163,7 @@ export default function Home({ localeJSON, dcTag, age }) {
 
             <div
               className={styles.contactCardDiscord}
-              title={localeJSON.index.easterEggs.discord}
+              title="Not a link 'cause Discord is dumb"
             >
               {dcTag}
             </div>
