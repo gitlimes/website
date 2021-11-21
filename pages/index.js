@@ -54,6 +54,7 @@ export async function getServerSideProps(context) {
       caption:
         "The website you're currently browsing! Can you tell I'm putting this card here just so this section looks even?",
       link: "#stuff",
+      hideOnMobile: true,
     },
   ];
 
@@ -85,16 +86,20 @@ export default function Home({ dcTag, age, cards }) {
         </div>
 
         <div className={styles.about} id="about">
-          <h1>Who?</h1>
-          <p>
-            I'm Ash, a {age} year old who likes to make{" "}
-            <span className="stuff">stuff™</span>. From useless websites to dumb
-            unreleased songs, you can be sure it's in my repertoire.
-          </p>
-          <p>
-            I play the piano and I'm learning to play the guitar, but my
-            favorite instrument is the kazoo. I mean, can you really blame me?
-          </p>
+          <div>
+            <h1>Who?</h1>
+            <p>
+              I'm Ash, a {age} year old who likes to make{" "}
+              <span className="stuff">stuff™</span>. From useless websites to
+              dumb unreleased songs, you can be sure it's in my repertoire.
+            </p>
+            <p>
+              I play the piano and I'm learning to play the guitar, but my
+              favorite instrument will always be the kazoo. I mean, can you
+              really blame me?
+            </p>
+          </div>
+          <div className={styles.sideImg} />
         </div>
 
         <div className={styles.stuff} id="stuff">
@@ -104,7 +109,8 @@ export default function Home({ dcTag, age, cards }) {
           </h1>
           <p>
             Anything I do, really. At the moment it's mainly web dev stuff, but
-            who knows, I might put up something else here in the future.
+            who knows, I might put up something else here in the future{" "}
+            <i>(foreshadowing)</i>
           </p>
 
           <div className={styles.list}>
@@ -114,6 +120,7 @@ export default function Home({ dcTag, age, cards }) {
                   title={card.title}
                   caption={card.caption}
                   link={card.link}
+                  hideOnMobile={card.hideOnMobile}
                   key={index}
                 />
               );

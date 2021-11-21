@@ -2,7 +2,9 @@
   --width: 1300px;
 
   --accent: #ff6b6b;
+  --accentrgb: 255, 107, 107;
   --secondary: #251659;
+  --secondaryrgb: 37, 22, 89;
   --background: #f6effb;
   --heading-font: "Poppins", sans-serif;
   --secondary-font: "Poppins", sans-serif;
@@ -30,7 +32,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a:hover, a.bold {
+a:hover,
+a.bold {
   font-weight: bold;
   color: var(--accent);
 }

@@ -37,4 +37,8 @@
   .card:last-child {
     font-size: 1.25rem;
   }
+
+  .card.hideOnMobile {
+    display: none;
+  }
 }

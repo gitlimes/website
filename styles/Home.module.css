@@ -12,9 +12,7 @@
 .hero {
   display: flex;
   justify-content: center;
-  margin: auto;
-  margin-top: 40px;
-  padding: 100px 0;
+  margin: 100px auto;
   transition: 200ms;
 }
 .hero .imgBg {
@@ -56,15 +54,26 @@ div.about {
   width: 90vw;
   max-width: var(--width);
   color: var(--secondary);
+
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  gap: 72px;
 }
 div.about h1 {
   margin-bottom: 12px;
 }
-div.about a {
-  text-decoration: underline;
-}
 div.about p {
   margin: 8px 0;
+}
+
+div.about .sideImg {
+  background: no-repeat center/cover url(../public/assets/images/cactus.png);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  min-height: 200px;
 }
 
 /* Stuff */
@@ -131,9 +140,13 @@ div.contact {
   top: -2px;
   left: -2px;
   box-shadow: 4px 4px 0 var(--secondary);
+  /*outline: 1px solid var(--background);*/
 }
 .contactCard.github {
-  background-color: #171515;
+  background-color: #24292f;
+}
+.contactCard.github:hover {
+  outline: 1px solid var(--background);
 }
 .contactCard.discord {
   background-color: #5865f2;
@@ -168,6 +181,14 @@ div.contact {
   .hero .text {
     margin-top: 24px;
     text-align: center;
+  }
+
+  .about {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about .sideImg {
+    display: none !important;
   }
 }
 
