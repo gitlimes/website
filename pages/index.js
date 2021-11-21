@@ -28,7 +28,7 @@ export async function getServerSideProps(context) {
     {
       title: "The place to dump cool stuff™",
       caption: "read the title, idiot",
-      link: "https://github.com/ashmonty/discord-md-badge",
+      link: "/the-place-to-dump-cool-stuff",
     },
     {
       title: "Discord Badge",
@@ -45,14 +45,14 @@ export async function getServerSideProps(context) {
     {
       title: "Croissant",
       caption:
-        "A website that shows random pictures of croissants. Don't ask me why I did this, but also don't expect anything too different from me.",
+        "A website that shows random pictures of croissants. Don't ask me why I did this, but also don't expect any better from me.",
       link: "https://croissant.ashmonty.com",
     },
     {
       title: "Website",
       caption:
         "The website you're currently browsing! Can you tell I'm putting this just so this section looks even?",
-      link: "https://github.com/ashmonty/website",
+      link: "#stuff",
     },
   ];
 
