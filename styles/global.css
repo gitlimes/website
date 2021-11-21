@@ -1,10 +1,10 @@
 :root {
   --width: 1300px;
 
-  --accent: #FF6B6B; 
+  --accent: #ff6b6b;
   --secondary: #251659;
   --dimmed: var(--secondary);
-  --tertiary: #FF6B6B;
+  --tertiary: #ff6b6b;
   --background: #f6effb;
   --heading-font: "Poppins", sans-serif;
   --secondary-font: "Poppins", sans-serif;
@@ -42,122 +42,9 @@ span.stuff {
   color: var(--tertiary);
 }
 
-.awfulRainbowText {
-  background-image: linear-gradient(
-    to left,
-    violet,
-    indigo,
-    blue,
-    green,
-    yellow,
-    orange,
-    red
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.simplebar-scrollbar.simplebar-visible::before {
+  background: var(--secondary);
 }
-
-
-.smol-text {
-  font-size: 0.5em !important;
-}
-
-/* All the animations for the easter egg that probably like 2 people will see */
-
-.hideMe {
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-name: hideMe;
-}
-
-.fadeAway {
-  animation-duration: 0.25s;
-  animation-fill-mode: forwards;
-  animation-name: fadeAway;
-}
-
-.unfade {
-  animation-duration: 0.25s;
-  animation-fill-mode: forwards;
-  animation-name: unfade;
-}
-
-.expandCircle {
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-name: expandCircle;
-}
-
-.showMe {
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-name: showMe;
-}
-
-@keyframes hideMe {
-  from {
-    bottom: -15px;
-  }
-
-  12% {
-    bottom: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  50% {
-    bottom: -500px;
-    opacity: 0;
-  }
-
-  to {
-    bottom: -500px;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeAway {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes unfade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes expandCircle {
-  from {
-    width: 350px;
-    height: 350px;
-  }
-
-  to {
-    top: -200vw;
-    left: -250vw;
-    width: 500vw;
-    height: 500vw;
-  }
-}
-
-@keyframes showMe {
-  from {
-    bottom: -500px;
-  }
-
-  to {
-    bottom: -15px;
-  }
+.simplebar-scrollbar.simplebar-visible::before {
+  opacity: 1 !important;
 }
