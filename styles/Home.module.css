@@ -13,7 +13,6 @@
   display: flex;
   justify-content: center;
   margin: 100px auto;
-  transition: 200ms;
 }
 .hero .imgBg {
   width: 350px;
@@ -35,16 +34,15 @@
 .hero .text h1 {
   font-size: 5em;
   margin: 0;
-  transition: 200ms;
+  transition: font-size 200ms;
 }
 .hero .text h1 span {
   color: var(--accent);
-  transition: 200ms;
 }
 .hero .text p {
   font-size: 2.3em;
   margin: 0;
-  transition: 200ms;
+  transition: font-size 200ms;
 }
 
 /* About */
@@ -149,13 +147,10 @@ div.contact {
   color: #fff;
   top: -2px;
   left: -2px;
-  box-shadow: 4px 4px 0 var(--secondary);
+  box-shadow: 1px 1px 0 var(--background), 4px 4px 0 var(--secondary);
 }
 .contactCard.github {
   background-color: #24292f;
-}
-.contactCard.github:hover {
-  box-shadow: 1px 1px 0 var(--background), 4px 4px 0 var(--secondary);
 }
 .contactCard.discord {
   background-color: #5865f2;
