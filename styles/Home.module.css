@@ -116,6 +116,14 @@ div.contact {
   max-width: var(--width);
   margin-bottom: 24px;
 }
+
+.contact h1 {
+  margin-bottom: 12px;
+}
+
+.contact p {
+  margin-top: 0px;
+}
 .contact .list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
