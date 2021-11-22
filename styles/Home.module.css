@@ -128,6 +128,8 @@ div.contact {
   border-radius: 6px;
   color: #fff;
 
+  height: 24px;
+
   transition: 75ms;
   position: relative;
   top: 0px;
@@ -140,13 +142,12 @@ div.contact {
   top: -2px;
   left: -2px;
   box-shadow: 4px 4px 0 var(--secondary);
-  /*outline: 1px solid var(--background);*/
 }
 .contactCard.github {
   background-color: #24292f;
 }
 .contactCard.github:hover {
-  outline: 1px solid var(--background);
+  box-shadow: 1px 1px 0 var(--background), 4px 4px 0 var(--secondary);
 }
 .contactCard.discord {
   background-color: #5865f2;
@@ -163,7 +164,7 @@ div.contact {
 .contactCard svg {
   padding-right: 8px;
   fill: #fff;
-  width: 24px;
+  height: 24px;
 }
 
 .footer {

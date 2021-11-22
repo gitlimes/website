@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-size: large;
+  list-style: none;
 }
 
 .navbar .item {
@@ -13,10 +14,6 @@
 
 .navbar .item a:hover {
   font-weight: inherit;
-}
-
-.navbar .item::marker{
-  content: "";
 }
 
 .navbar .item:first-child {

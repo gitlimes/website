@@ -28,6 +28,26 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar styling - Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--background);
+}
+
+/* Scrollbar styling - Chromium, Webkit */
+html::-webkit-scrollbar {
+  width: 8px;
+}
+html::-webkit-scrollbar-track {
+  background-color: var(--background);
+  padding: 4px;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 6px;
+  padding: 2px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -45,11 +65,4 @@ a.bold {
 
 span.stuff {
   color: var(--accent);
-}
-
-.simplebar-scrollbar.simplebar-visible::before {
-  background: var(--secondary);
-}
-.simplebar-scrollbar.simplebar-visible::before {
-  opacity: 1 !important;
 }
