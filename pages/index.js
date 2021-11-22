@@ -234,7 +234,12 @@ export default function Home({ age, cards }) {
       </div>
       <div className={styles.footer}>
         Copyright 2021 - Ash (Monty) -{" "}
-        <a href="https://github.com/ashmonty/website" className="bold">
+        <a
+          href="https://github.com/ashmonty/website"
+          target="_blank"
+          rel="noopener"
+          className="bold"
+        >
           Source code
         </a>
       </div>
