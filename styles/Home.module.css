@@ -122,7 +122,7 @@ div.contact {
 }
 
 .contact p {
-  margin-top: 0px;
+  margin-top: 0;
 }
 .contact .list {
   display: grid;
@@ -140,9 +140,9 @@ div.contact {
 
   transition: 75ms;
   position: relative;
-  top: 0px;
-  left: 0px;
-  box-shadow: 0px 0px 0 var(--secondary);
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 0 var(--secondary);
 }
 .contactCard:hover {
   font-weight: inherit;

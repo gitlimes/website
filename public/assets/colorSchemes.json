@@ -8,7 +8,7 @@
     "headingFont": "'Poppins', sans-serif",
     "secondaryFont": "'Poppins', sans-serif",
     "radius": "100%",
-    "border": "0px"
+    "border": "0"
   },
   {
     "accent": "#13CDAE",
@@ -19,7 +19,7 @@
     "headingFont": "'Inter', sans-serif",
     "secondaryFont": "'Inter', sans-serif",
     "radius": "100%",
-    "border": "0px"
+    "border": "0"
   },
   {
     "accent": "#4D6CFA",
@@ -41,7 +41,7 @@
     "headingFont": "'Poppins', sans-serif",
     "secondaryFont": "'Poppins', sans-serif",
     "radius": "100%",
-    "border": "0px"
+    "border": "0"
   },
   {
     "accent": "#70FF70",
@@ -52,7 +52,7 @@
     "headingFont": "'Cascadia Code', monospace",
     "secondaryFont": "'Cascadia Code', monospace",
     "radius": "100%",
-    "border": "0px"
+    "border": "0"
   },
   {
     "accent": "#f00",
@@ -63,6 +63,6 @@
     "headingFont": "'Times New Roman', serif",
     "secondaryFont": "'Comic Sans MS', sans-serif",
     "radius": "0%",
-    "border": "0px"
+    "border": "0"
   }
 ]
