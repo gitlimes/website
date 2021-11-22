@@ -90,7 +90,10 @@ div.stuff > * {
 }
 div.stuff h1 {
   margin-top: 0;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
+}
+div.stuff p {
+  margin: 8px auto;
 }
 div.stuff span.stuff {
   color: var(--secondary);
