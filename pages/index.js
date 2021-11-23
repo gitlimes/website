@@ -64,6 +64,51 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home({ age, cards }) {
+  let timestampArray = [];
+  let oldTimestamp = 0;
+
+  function mouseOver(e) {
+    /*if (e.target.tagName !== "A") return;
+    timestampOver = e.timeStamp;*/
+  }
+
+  function mouseLeave(e) {
+    // Filter out child elements
+    if (e.target.tagName !== "A") return;
+
+    // Push to the array the difference between the time the mouse left the last time and the time the mouse left this time
+    let currentTimestamp = e.timeStamp;
+    timestampArray.push({
+      key: Number(e.target.id.split("-")[1]),
+      timestamp: currentTimestamp - oldTimestamp,
+    });
+
+    // Get the last n timestamps
+    const n = 50;
+    const ntyTimestamps = timestampArray.slice(-n);
+    if (ntyTimestamps.length !== n) return;
+
+    // Check if all the last n timestamps are from the same element, return if not
+
+    // NOTE: I am aware that this sometimes doesn't return even if the timestamps are from different elements, but I don't care.
+    // It works for the most part, and even when it doesn't it takes a little bit of time to get the right combination so the average is still very high.
+
+    const keySum = ntyTimestamps.reduce((a, b) => a + b.key, 0);
+    if (keySum % n !== 0) return;
+
+    // Calculate the average
+    let sum = ntyTimestamps.reduce((a, b) => a + b.timestamp, 0);
+    let avrg = sum / n;
+
+    // If the avergae is less than 69 (nice), then it's a bug.
+    if (avrg < 69) {
+      // A fun easter egg
+    }
+
+    //Sets the old timestamp to be the new timestamp
+    oldTimestamp = currentTimestamp;
+  }
+
   return (
     <div>
       <Head>
@@ -117,11 +162,14 @@ export default function Home({ age, cards }) {
             {cards.map((card, index) => {
               return (
                 <StuffCard
+                  key={index}
+                  index={index}
                   title={card.title}
                   caption={card.caption}
                   link={card.link}
                   hideOnMobile={card.hideOnMobile}
-                  key={index}
+                  onMouseOver={(e) => mouseOver(e)}
+                  onMouseOut={(e) => mouseLeave(e)}
                 />
               );
             })}
@@ -129,6 +177,9 @@ export default function Home({ age, cards }) {
             <a
               className={cardStyles.card}
               href="https://github.com/ashmonty?tab=repositories"
+              onMouseOver={(e) => mouseOver(e)}
+              onMouseOut={(e) => mouseLeave(e)}
+              id={`stuffCard-5`}
             >
               View more
               <svg

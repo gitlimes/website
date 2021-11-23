@@ -5,6 +5,9 @@ export default function card(props) {
   return (
     <a
       href={props.link}
+      id={`stuffCard-${props.index}`}
+      onMouseOver={props.onMouseOver}
+      onMouseOut={props.onMouseOut}
       className={(() => {
         if (!props.hideOnMobile) {
           return styles.card;
