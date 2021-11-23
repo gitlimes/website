@@ -2,9 +2,11 @@
   display: flex;
   justify-content: center;
   padding: 0;
-  margin: 0;
+  margin: auto;
   font-size: large;
   list-style: none;
+  width: 90vw;
+  max-width: var(--width);
 }
 
 .navbar .item {

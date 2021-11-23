@@ -13,11 +13,16 @@ export async function getServerSideProps(context) {
     (new Date() - new Date("April 13, 2004")) / (1000 * 60 * 60 * 24 * 365)
   ); // There's no way I'm gonna remember to update it myself, so here's a lazy workaround.
 
-  const _mdbStarsFetch = await fetch(
-    "https://api.github.com/repos/ashmonty/discord-md-badge"
+  const _mdbUserCountFetch = await fetch(
+    "https://discord.com/api/v9/guilds/852978546187698206?with_counts=true",
+    {
+      headers: {
+        Authorization: process.env.MD_BADGE_DISCORD_TOKEN,
+      },
+    }
   );
-  const _mdbStarsJson = await _mdbStarsFetch.json();
-  const mdbStarts = _mdbStarsJson.stargazers_count;
+  const _mdbUserCountJSON = await _mdbUserCountFetch.json();
+  const mdbUserCount = _mdbUserCountJSON.approximate_member_count;
 
   const cards = [
     {
@@ -28,7 +33,7 @@ export async function getServerSideProps(context) {
     },
     {
       title: "Discord Badge",
-      caption: `An SVG badge that shows your Discord username and presence. ${mdbStarts} people deemed it starworthy, so it must be somewhat good, I think.`,
+      caption: `An SVG badge that shows your Discord username and presence. ${mdbUserCount} people use it, so it must be somewhat good. I think.`,
       link: "https://github.com/ashmonty/discord-md-badge",
     },
     {
@@ -60,7 +65,7 @@ export async function getServerSideProps(context) {
 
 export default function Home({ age, cards }) {
   return (
-    <home>
+    <div>
       <Head>
         <title>Ash (Monty)</title>
         <OpenGraph />
@@ -243,6 +248,6 @@ export default function Home({ age, cards }) {
           Source code
         </a>
       </div>
-    </home>
+    </div>
   );
 }

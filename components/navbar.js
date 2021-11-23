@@ -9,7 +9,7 @@ export default function Navbar() {
         <Link href="/">Ash</Link>
         </li>
         <li className={styles.item}>
-          <Link href="#stuff">stuff™</Link>
+          <Link href="#stuff">Stuff™</Link>
         </li>
         <li className={styles.item}>
           <Link href="#contact">Contact</Link>
