@@ -1,0 +1,44 @@
+.loadingbar {
+  position: relative;
+  height: 32px;
+  width: 100%;
+  margin-top: 24px;
+  border-radius: 4px;
+  background-color: rgba(var(--backgroundrgb), 0.35);
+  
+}
+
+.loadingbar::after {
+  position: absolute;
+  left: 0;
+  content: "";
+  height: 32px;
+  width: 100%;
+  background-color: var(--background);
+  border-radius: 4px 0 0 4px;
+  animation: loading 18s forwards 1;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  24% {
+    width: 12%;
+  }
+  36% {
+    width: 13%;
+  }
+  56% {
+    width: 95%;
+  }
+  62% {
+    width: 69%;
+  }
+  90% {
+    width: 99%;
+  }
+  100% {
+    width: 200%;
+  }
+}

@@ -82,6 +82,7 @@ div.stuff {
   text-align: center;
   background: var(--accent);
   color: var(--background);
+  transition: height 200ms;
 }
 div.stuff > * {
   margin: auto;

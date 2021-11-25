@@ -6,6 +6,7 @@
   --secondary: #251659;
   --secondaryrgb: 37, 22, 89;
   --background: #f6effb;
+  --backgroundrgb: 246, 239, 251;
   --heading-font: "Poppins", sans-serif;
   --secondary-font: "Poppins", sans-serif;
   --radius: 100%;
@@ -65,4 +66,9 @@ a.bold {
 
 span.stuff {
   color: var(--accent);
+}
+
+.disabledCard {
+  pointer-events: none;
+  opacity: 0.8;
 }

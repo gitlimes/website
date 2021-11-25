@@ -5,6 +5,10 @@ import Navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
 import OpenGraph from "../components/openGraph";
 
+import { renderToString } from "react-dom/server";
+import LoadingBar from "../components/eastereggs/LoadingBar";
+import FakeCAPTCHA from "../components/eastereggs/FakeCAPTCHA";
+
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
@@ -67,11 +71,6 @@ export default function Home({ age, cards }) {
   let timestampArray = [];
   let oldTimestamp = 0;
 
-  function mouseOver(e) {
-    /*if (e.target.tagName !== "A") return;
-    timestampOver = e.timeStamp;*/
-  }
-
   function mouseLeave(e) {
     // Filter out child elements
     if (e.target.tagName !== "A") return;
@@ -84,7 +83,7 @@ export default function Home({ age, cards }) {
     });
 
     // Get the last n timestamps
-    const n = 50;
+    const n = 30;
     const ntyTimestamps = timestampArray.slice(-n);
     if (ntyTimestamps.length !== n) return;
 
@@ -100,13 +99,38 @@ export default function Home({ age, cards }) {
     let sum = ntyTimestamps.reduce((a, b) => a + b.timestamp, 0);
     let avrg = sum / n;
 
-    // If the avergae is less than 69 (nice), then it's a bug.
+    // If the average is less than 69 (nice), then it's a bug.
     if (avrg < 69) {
-      // A fun easter egg
+      cardBug(e);
     }
 
     //Sets the old timestamp to be the new timestamp
     oldTimestamp = currentTimestamp;
+  }
+
+  // Disable the card when the bug is found
+  let disabledCards = 0;
+  function cardBug(e) {
+    const element = e.target;
+    if (!element.className.includes("disabledCard"))
+      element.className += " disabledCard";
+    disabledCards += 1;
+    if (disabledCards === 6) {
+      loadingBarEasterEgg(e);
+    }
+
+    // Do that instantly for testing
+    loadingBarEasterEgg();
+  }
+
+  // The haha 169% loading bar easter egg
+  function loadingBarEasterEgg(e) {
+    document.querySelector("#stuff").innerHTML = renderToString(<LoadingBar />);
+    setTimeout(function () {
+      document.querySelector("#stuff").innerHTML = renderToString(
+        <FakeCAPTCHA />
+      );
+    }, 19000);
   }
 
   return (
@@ -158,7 +182,7 @@ export default function Home({ age, cards }) {
             <i>(foreshadowing)</i>
           </p>
 
-          <div className={styles.list}>
+          <div className={styles.list} id="stufflist">
             {cards.map((card, index) => {
               return (
                 <StuffCard
@@ -168,7 +192,6 @@ export default function Home({ age, cards }) {
                   caption={card.caption}
                   link={card.link}
                   hideOnMobile={card.hideOnMobile}
-                  onMouseOver={(e) => mouseOver(e)}
                   onMouseOut={(e) => mouseLeave(e)}
                 />
               );
@@ -177,7 +200,6 @@ export default function Home({ age, cards }) {
             <a
               className={cardStyles.card}
               href="https://github.com/ashmonty?tab=repositories"
-              onMouseOver={(e) => mouseOver(e)}
               onMouseOut={(e) => mouseLeave(e)}
               id={`stuffCard-5`}
             >
