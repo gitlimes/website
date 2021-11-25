@@ -67,9 +67,9 @@ export default function Home({ localeJSON }) {
         <meta name="description" content="I make stuff™ in JavaScript." />
         <meta name="robots" content="index, follow" />
       </Head>
-      <div className={styles.redesignNotice}>
+      <a href="https://www.ashmonty.com" className={styles.redesignNotice}>
         {parse(localeJSON.redesign)}
-      </div>
+      </a>
       <section>
         <header className={styles.navbarBg}>
           <ul className={styles.navbarList}>

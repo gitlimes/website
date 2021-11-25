@@ -6,15 +6,14 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  background: var(--medium-purple);
+  background: var(--dark-purple);
   padding: 0 20px;
   transition: 200ms;
   z-index: 69;
-  box-shadow: 0 10px 15px var(--grey-shadow);
 }
 
 .redesignNotice:hover {
-  background: var(--dark-purple);
+  background: var(--medium-purple);
 }
 
 .redesignNotice span {
