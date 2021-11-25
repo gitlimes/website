@@ -120,7 +120,7 @@ export default function Home({ age, cards }) {
     }
 
     // Do that instantly for testing
-    loadingBarEasterEgg();
+    //loadingBarEasterEgg();
   }
 
   // The haha 169% loading bar easter egg
