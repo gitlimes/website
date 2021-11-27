@@ -260,7 +260,7 @@ export default function Home({ age, cards }) {
               monty#9398
             </div>
             <a
-              href="https://twitter.com/ashmonty_"
+              href="https://twitter.com/ashmmonty"
               target="_blank"
               rel="noopener"
               className={styles.contactCard + " " + styles.twitter}
