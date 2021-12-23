@@ -19,7 +19,7 @@
   height: 350px;
   flex-shrink: 0;
   border-radius: 100%;
-  background: no-repeat center/cover url(../public/assets/images/me3.png)
+  background: no-repeat center/cover url(../public/assets/images/ohnonono.png)
     /*, var(--accent)*/;
   overflow: hidden;
   transition: 200ms;

@@ -83,7 +83,7 @@ export default function Home({ age, cards }) {
     });
 
     // Get the last n timestamps
-    const n = 30;
+    const n = 15;
     const ntyTimestamps = timestampArray.slice(-n);
     if (ntyTimestamps.length !== n) return;
 
@@ -99,8 +99,8 @@ export default function Home({ age, cards }) {
     let sum = ntyTimestamps.reduce((a, b) => a + b.timestamp, 0);
     let avrg = sum / n;
 
-    // If the average is less than 69 (nice), then it's a bug.
-    if (avrg < 69) {
+    // If the average is less than 100, then it's a bug.
+    if (avrg < 100) {
       cardBug(e);
     }
 
@@ -166,6 +166,9 @@ export default function Home({ age, cards }) {
               I play the piano and I'm learning to play the guitar, but my
               favorite instrument will always be the kazoo. I mean, can you
               really blame me?
+            </p>
+            <p>
+              Also, I'll probably remake this website again fairly soon.
             </p>
           </div>
           <div className={styles.sideImg} />
