@@ -8,13 +8,11 @@ export default function card(props) {
       id={`stuffCard-${props.index}`}
       onMouseOver={props.onMouseOver}
       onMouseOut={props.onMouseOut}
-      className={(() => {
-        if (!props.hideOnMobile) {
-          return styles.card;
-        } else {
-          return styles.card + " " + styles.hideOnMobile;
-        }
-      })()}
+      className={
+        props.hideOnMobile
+          ? `${styles.card} ${styles.cardHideOnMobile}`
+          : styles.card
+      }
     >
       <h2>{props.title}</h2>
       <p>{props.caption}</p>

@@ -1,13 +1,17 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+const urlList = require("../../shorturls.json");
+
+export async function getServerSideProps(c) {
+  const { shortUrl } = c.params;
+  const target = urlList[shortUrl] || "/";
+
+  return {
+    redirect: {
+      destination: target,
+      permanent: false,
+    },
+  };
+}
+
 export default function shortUrlRedirect() {
-  const router = useRouter();
-  const shortUrlList = require("../../shorturls.json");
-  const shortUrl = router.query.shortUrl;
-  const fullUrl = shortUrlList[shortUrl] || "https://ashmonty.com";
-
-  //console.log(`shortUrl: ${shortUrl}\nfullUrl: ${fullUrl}`);
-
-  useEffect(() => window.location.replace(fullUrl));
   return null;
 }
