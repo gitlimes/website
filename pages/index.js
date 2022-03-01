@@ -170,7 +170,7 @@ export default function Home({ age, cards }) {
               <i>I use Arch, btw.</i>
             </p>
             <p>
-              Also, fun fact, I'm depressed! But who isn't? right?{" "}
+              Also, fun fact, I'm depressed! But who isn't, right?{" "}
               <i>r-right?</i>
             </p>
           </div>
