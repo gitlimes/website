@@ -24,7 +24,8 @@
   flex-shrink: 0;
   border-radius: 100%;
   background: no-repeat center/cover
-    url(../public/assets/images/i-hate-my-life.jpg) /*, var(--accent)*/;
+    url(../public/assets/images/the-only-picture-of-me-outside.jpg)
+    /*, var(--accent)*/;
   overflow: hidden;
 }
 .hero .text {
@@ -69,7 +70,7 @@ div.about p {
 
 div.about .sideImg {
   background: no-repeat center/cover
-    url(../public/assets/images/the-only-picture-of-me-outside.jpg);
+  url(../public/assets/images/i-actually-like-this-one.jpg);
   border-radius: 12px;
   display: flex;
   justify-content: center;
