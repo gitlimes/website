@@ -15,7 +15,7 @@
 }
 
 .navbar .item a:hover {
-  font-weight: inherit;
+  color: var(--accent);
 }
 
 .navbar .item:first-child {

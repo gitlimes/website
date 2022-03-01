@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import Navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
@@ -31,8 +30,7 @@ export async function getServerSideProps(context) {
   const cards = [
     {
       title: "Coming soon...",
-      caption:
-        "gimme a sec lol",
+      caption: "gimme a sec lol",
       link: "#stuff",
     },
     {
@@ -159,16 +157,21 @@ export default function Home({ age, cards }) {
             <h1>Who?</h1>
             <p>
               I'm Ash, a {age} year old who likes to make{" "}
-              <span className="stuff">stuff™</span>. From useless websites to
-              dumb unreleased songs, you can be sure it's in my repertoire.
+              <span className="stuff">stuff™</span>!
             </p>
             <p>
-              I play the piano and I'm learning to play the guitar, but my
-              favorite instrument will always be the kazoo. I mean, can you
-              really blame me?
+              While Ash is my name, you may also know me in real life as �̷̗͎̐�̸̟̯̐�̸̬̳́�̸̱̅�̴̟̖́�,
+              but I decided to change it due to its unpronounceability.
             </p>
             <p>
-              Also, I'll probably remake this website again fairly soon.
+              I enjoy playing the piano and I'm learning to play the guitar, but
+              nothing will ever top my kazoo playing skills. I also love
+              tinkering with stuff, which is why I am an Arch Linux user. Yes,{" "}
+              <i>I use Arch, btw.</i>
+            </p>
+            <p>
+              Also, fun fact, I'm depressed! But who isn't? right?{" "}
+              <i>r-right?</i>
             </p>
           </div>
           <div className={styles.sideImg} />
@@ -319,7 +322,6 @@ export default function Home({ age, cards }) {
           href="https://github.com/ashmonty/website"
           target="_blank"
           rel="noopener"
-          className="bold"
         >
           Source code
         </a>

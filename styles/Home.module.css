@@ -4,7 +4,11 @@
   color: var(--secondary);
 }
 .wrapper h1 {
-  font-family: var(--heading-font);
+  font-family: var(--primary-font);
+  margin-bottom: 16px;
+}
+.wrapper p {
+  font-family: var(--secondary-font);
 }
 
 /* Hero */
@@ -19,10 +23,9 @@
   height: 350px;
   flex-shrink: 0;
   border-radius: 100%;
-  background: no-repeat center/cover url(../public/assets/images/ohnonono.png)
-    /*, var(--accent)*/;
+  background: no-repeat center/cover
+    url(../public/assets/images/i-hate-my-life.jpg) /*, var(--accent)*/;
   overflow: hidden;
-  transition: 200ms;
 }
 .hero .text {
   margin-left: 56px;
@@ -57,21 +60,22 @@ div.about {
   grid-template-columns: 4fr 3fr;
   gap: 72px;
 }
-div.about h1 {
-  margin-bottom: 12px;
+.about h1 {
+  margin-top: 0;
 }
 div.about p {
-  margin: 8px 0;
+  margin: 12px 0;
 }
 
 div.about .sideImg {
-  background: no-repeat center/cover url(../public/assets/images/cactus.png);
+  background: no-repeat center/cover
+    url(../public/assets/images/the-only-picture-of-me-outside.jpg);
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 24px;
-  min-height: 200px;
+  min-height: 250px;
 }
 
 /* Stuff */
@@ -91,7 +95,7 @@ div.stuff > * {
 }
 div.stuff h1 {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 div.stuff p {
   margin: 8px auto;
@@ -119,12 +123,9 @@ div.contact {
   margin-bottom: 24px;
 }
 
-.contact h1 {
-  margin-bottom: 12px;
-}
-
 .contact p {
   margin-top: 0;
+  margin-bottom: 24px;
 }
 .contact .list {
   display: grid;
@@ -134,21 +135,17 @@ div.contact {
 .contactCard {
   display: inline-flex;
   justify-content: center;
-  padding: 8px;
+  align-items: center;
+  padding: 10px;
   border-radius: 6px;
-  color: #fff;
-
-  height: 24px;
-
-  transition: 75ms;
+  color: var(--background);
+  transition: all 75ms;
   position: relative;
   top: 0;
   left: 0;
   box-shadow: 0 0 0 var(--secondary);
 }
 .contactCard:hover {
-  font-weight: inherit;
-  color: #fff;
   top: -2px;
   left: -2px;
   box-shadow: 1px 1px 0 var(--background), 4px 4px 0 var(--secondary);
@@ -175,9 +172,14 @@ div.contact {
 }
 
 .footer {
-  margin: 12px auto;
+  margin: 36px auto 24px;
   width: fit-content;
   max-width: var(--width);
+}
+
+.footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1080px) {

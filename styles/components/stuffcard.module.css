@@ -10,13 +10,13 @@
   left: 0;
 }
 
-.card > * {
-  margin: 0;
-}
-
 .card h2,
 .card p {
   pointer-events: none;
+  margin: 0;
+}
+.card h2 {
+  margin-bottom: 16px;
 }
 
 .card:last-child {
@@ -29,8 +29,6 @@
 .card:hover {
   top: -6px;
   left: -6px;
-  color: var(--secondary);
-  font-weight: 300;
   box-shadow: 12px 12px 0 var(--secondary);
 }
 

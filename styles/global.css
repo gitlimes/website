@@ -7,14 +7,13 @@
   --secondaryrgb: 37, 22, 89;
   --background: #f6effb;
   --backgroundrgb: 246, 239, 251;
-  --heading-font: "Poppins", sans-serif;
-  --secondary-font: "Poppins", sans-serif;
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Inter", sans-serif;
   --radius: 100%;
   --border: none;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 html,
 body {
   position: relative;
@@ -40,7 +39,7 @@ html::-webkit-scrollbar {
   width: 10px;
 }
 html::-webkit-scrollbar-track {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 html::-webkit-scrollbar-thumb {
   background: var(--secondary);
@@ -54,11 +53,6 @@ html::-webkit-scrollbar-thumb:hover {
 a {
   text-decoration: none;
   color: inherit;
-}
-a:hover,
-a.bold {
-  font-weight: bold;
-  color: var(--accent);
 }
 
 ::selection {
