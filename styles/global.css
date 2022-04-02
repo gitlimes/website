@@ -1,5 +1,5 @@
 :root {
-  --width: 1300px;
+  --width: 80rem;
 
   --accent: #ff6b6b;
   --accentrgb: 255, 107, 107;
@@ -8,7 +8,7 @@
   --background: #f6effb;
   --backgroundrgb: 246, 239, 251;
   --primary-font: "Poppins", sans-serif;
-  --secondary-font: "museo-sans", sans-serif;
+  --secondary-font: "museo-sans-rounded", sans-serif;
   --radius: 100%;
   --border: none;
 }
@@ -26,6 +26,7 @@ body {
   font-weight: 300;
   background: var(--background);
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 /* Scrollbar styling - Firefox */
@@ -36,20 +37,24 @@ html {
 
 /* Scrollbar styling - Chromium, Webkit */
 html::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 html::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
 }
 html::-webkit-scrollbar-thumb {
   background: var(--secondary);
-  border-radius: 10px;
-  border: 2px solid var(--background);
+  border-radius: 12px;
+  border: 3px solid var(--background);
 }
 html::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -67,4 +72,11 @@ span.stuff {
 .disabledCard {
   pointer-events: none;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 450px) {
+  html,
+  body {
+    font-size: 16px;
+  }
 }

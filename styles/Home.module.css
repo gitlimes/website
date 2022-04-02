@@ -5,7 +5,7 @@
 }
 .wrapper h1 {
   font-family: var(--primary-font);
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .wrapper p {
   font-family: var(--secondary-font);
@@ -16,11 +16,11 @@
 .hero {
   display: flex;
   justify-content: center;
-  margin: 100px auto;
+  margin: 6rem auto;
 }
 .hero .imgBg {
-  width: 350px;
-  height: 350px;
+  width: 20rem;
+  height: 20rem;
   flex-shrink: 0;
   border-radius: 100%;
   background: no-repeat center/cover
@@ -29,14 +29,14 @@
   overflow: hidden;
 }
 .hero .text {
-  margin-left: 56px;
+  margin-left: 4rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
   width: fit-content;
 }
 .hero .text h1 {
-  font-size: 5em;
+  font-size: 5rem;
   margin: 0;
   transition: font-size 200ms;
 }
@@ -44,7 +44,7 @@
   color: var(--accent);
 }
 .hero .text p {
-  font-size: 2.3em;
+  font-size: 2.5rem;
   margin: 0;
   transition: font-size 200ms;
 }
@@ -59,31 +59,33 @@ div.about {
 
   display: grid;
   grid-template-columns: 4fr 3fr;
-  gap: 72px;
+  gap: 5rem;
 }
-.about h1 {
-  margin-top: 0;
-}
+
 div.about p {
-  margin: 12px 0;
+  margin: 0.8rem 0;
+}
+
+.link {
+  color: var(--accent);
+  font-weight: bold;
 }
 
 div.about .sideImg {
   background: no-repeat center/cover
-  url(../public/assets/images/i-actually-like-this-one.jpg);
-  border-radius: 12px;
+    url(/assets/images/hehe-im-high-get-it.jpg);
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px;
-  min-height: 250px;
+  min-height: 14rem;
 }
 
 /* Stuff */
 
 div.stuff {
-  padding: 48px 0;
-  margin: 48px 0;
+  padding: 3rem 0;
+  margin: 3rem 0;
   text-align: center;
   background: var(--accent);
   color: var(--background);
@@ -96,10 +98,11 @@ div.stuff > * {
 }
 div.stuff h1 {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 div.stuff p {
-  margin: 8px auto;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
 }
 div.stuff span.stuff {
   color: var(--secondary);
@@ -107,12 +110,12 @@ div.stuff span.stuff {
 div.stuff .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding-top: 20px;
+  gap: 1.1rem;
+  padding-top: 1rem;
   color: var(--secondary);
 }
 svg.viewMore {
-  margin-left: 0.3ch;
+  margin-left: 0.3rem;
 }
 
 /* Contact */
@@ -121,23 +124,22 @@ div.contact {
   margin: auto;
   width: 90vw;
   max-width: var(--width);
-  margin-bottom: 24px;
 }
 
 .contact p {
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 .contact .list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
+  gap: 0.5rem;
 }
 .contactCard {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.5rem;
   border-radius: 6px;
   color: var(--background);
   transition: all 75ms;
@@ -147,12 +149,12 @@ div.contact {
   box-shadow: 0 0 0 var(--secondary);
 }
 .contactCard:hover {
-  top: -2px;
-  left: -2px;
-  box-shadow: 1px 1px 0 var(--background), 4px 4px 0 var(--secondary);
+  top: -0.2rem;
+  left: -0.2rem;
+  box-shadow: 1px 1px 0 var(--background), 0.2rem 0.2rem 0 var(--secondary);
 }
 .contactCard.github {
-  background-color: #24292f;
+  background-color: #171515;
 }
 .contactCard.discord {
   background-color: #5865f2;
@@ -167,13 +169,13 @@ div.contact {
   background-color: #ff5e5b;
 }
 .contactCard svg {
-  padding-right: 8px;
+  padding-right: 0.5rem;
   fill: #fff;
-  height: 24px;
+  height: 1.5rem;
 }
 
 .footer {
-  margin: 36px auto 24px;
+  margin: 2rem auto;
   width: fit-content;
   max-width: var(--width);
 }
@@ -183,27 +185,26 @@ div.contact {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1278px) {
   .hero {
     flex-flow: column;
     align-items: center;
     padding-top: 0;
+    margin: 3rem auto;
   }
   .hero .text {
-    margin-top: 24px;
+    margin-top: 1rem;
     text-align: center;
   }
 
-  .about {
-    grid-template-columns: 1fr !important;
+  div.about {
+    grid-template-columns: 1fr;
   }
 
-  .about .sideImg {
-    display: none !important;
+  div.about .sideImg {
+    display: none;
   }
-}
 
-@media screen and (max-width: 900px) {
   .contact .list {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -265,17 +266,13 @@ div.contact {
   }
 }
 
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 540px) {
   .contact .list {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .contactCard.github,
-  .contactCard.discord,
-  .contactCard.twitter,
-  .contactCard.mail,
-  .contactCard.kofi {
-    grid-column: 1 / span 1;
+  .contactCard {
+    grid-column: 1 / span 1 !important;
   }
 
   .hero .text h1 {

@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "../styles/components/stuffcard.module.css";
+import classNames from "classnames";
 
 export default function card(props) {
+  console.log(props.hideOnMobile);
   return (
     <a
       href={props.link}
@@ -9,14 +11,13 @@ export default function card(props) {
       id={`stuffCard-${props.index}`}
       onMouseOver={props.onMouseOver}
       onMouseOut={props.onMouseOut}
-      className={
-        props.hideOnMobile
-          ? `${styles.card} ${styles.cardHideOnMobile}`
-          : styles.card
-      }
+      className={classNames({
+        [styles.card]: true,
+        [styles.hideOnMobile]: props.hideOnMobile,
+      })}
     >
       <h2>{props.title}</h2>
-      <p>{props.caption}</p>
+      <p dangerouslySetInnerHTML={{ __html: props.caption }} />
     </a>
   );
 }

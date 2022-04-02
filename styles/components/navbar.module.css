@@ -10,8 +10,9 @@
 }
 
 .navbar .item {
-  margin: 24px 32px 24px 0;
+  margin: 2rem 1.5rem;
   align-items: center;
+  transition: margin 100ms;
 }
 
 .navbar .item a:hover {
@@ -21,4 +22,10 @@
 .navbar .item:first-child {
   font-weight: bold;
   color: var(--secondary);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .item {
+    margin: 1.2rem;
+  }
 }

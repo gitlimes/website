@@ -1,10 +1,11 @@
 .card {
   background: var(--background);
-  border-radius: 12px;
-  padding: 36px;
+  border-radius: 1rem;
+  padding: 2rem;
   text-align: left;
-  transition: 75ms;
+  transition: 150ms;
   box-shadow: 0 0 0 var(--secondary);
+  outline: 0 solid;
   position: relative;
   top: 0;
   left: 0;
@@ -16,7 +17,7 @@
   margin: 0;
 }
 .card h2 {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-family: var(--primary-font);
 }
 
@@ -28,9 +29,10 @@
 }
 
 .card:hover {
-  top: -6px;
-  left: -6px;
-  box-shadow: 12px 12px 0 var(--secondary);
+  top: -0.5rem;
+  left: -0.5rem;
+  box-shadow: 1rem 1rem 0 var(--secondary);
+  /*outline: 0.2rem solid;*/
 }
 
 @media screen and (max-width: 768px) {

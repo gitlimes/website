@@ -1,0 +1,32 @@
+{
+  "cards": [
+    {
+      "title": "Discord Markdown Badge",
+      "caption": "An SVG badge that shows your Discord username and presence. ${mdbUserCount} people use it, so it must be somewhat good. I think.",
+      "link": "https://github.com/ashmonty/discord-md-badge"
+    },
+    {
+      "title": "Pretendo Network",
+      "caption": "Implemented the blog, the locale stuff™, the online Mii editor (not released yet), and also some of the stuff in the homepage, of which the infinite scrolling in the special thanks section is a favorite of mine 😎",
+      "repo": "https://github.com/PretendoNetwork/website",
+      "link": "https://pretendo.network"
+    },
+    {
+      "title": "Binbows 98",
+      "caption": "A Next.js-based recreation of Windows 9X. Currently an early WIP, so expect bugs. <i>Many</i> bugs.",
+      "repo": "https://github.com/ashmonty/binbows",
+      "link": "https://binbows.ashmonty.com/"
+    },
+    {
+      "title": "Neofetch but it's always Arch",
+      "caption": "This version of neofetch always returns Arch, on any system. Don't ask me why I did this, but also don't expect any better from me.",
+      "link": "https://github.com/ashmonty/neofetch-but-its-always-arch"
+    },
+    {
+      "title": "Website",
+      "caption": "The website you're currently browsing! Can you tell I'm putting this card here just so this section looks even?",
+      "link": "#stuff",
+      "hideOnMobile": true
+    }
+  ]
+}

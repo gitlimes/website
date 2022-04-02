@@ -1,8 +1,11 @@
 import Head from "next/head";
+import Link from "next/link";
 
 import Navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
 import OpenGraph from "../components/openGraph";
+
+import { cards } from "/cards.json";
 
 import { renderToString } from "react-dom/server";
 import LoadingBar from "../components/eastereggs/LoadingBar";
@@ -12,9 +15,13 @@ import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
 export async function getServerSideProps(context) {
-  const age = Math.floor(
+  // There's no way I'm gonna remember to update my age, so this does that for me.
+  const ageNumber = Math.floor(
     (new Date() - new Date("April 13, 2004")) / (1000 * 60 * 60 * 24 * 365)
-  ); // There's no way I'm gonna remember to update it myself, so here's a lazy workaround.
+  );
+  // Purposefully ignoring 8 and 11 because I'm older than that and time travel hasn't been invented yet
+  const ageArticle = ageNumber === 18 ? "an" : "a";
+  const age = `${ageArticle} ${ageNumber}`;
 
   const _mdbUserCountFetch = await fetch(
     "https://discord.com/api/v9/guilds/852978546187698206?with_counts=true",
@@ -27,38 +34,9 @@ export async function getServerSideProps(context) {
   const _mdbUserCountJSON = await _mdbUserCountFetch.json();
   const mdbUserCount = _mdbUserCountJSON.approximate_member_count;
 
-  const cards = [
-    {
-      title: "Coming soon...",
-      caption: "gimme a sec lol",
-      link: "#stuff",
-    },
-    {
-      title: "Discord Badge",
-      caption: `An SVG badge that shows your Discord username and presence. ${mdbUserCount} people use it, so it must be somewhat good. I think.`,
-      link: "https://github.com/ashmonty/discord-md-badge",
-    },
-    {
-      title: "Pretendo Network",
-      caption:
-        "Implemented the blog, the locale stuff™, the online Mii editor (not released yet), and also some of the stuff in the homepage, of which the infinite scrolling in the special thanks section is a favorite of mine 😎",
-      repo: "PretendoNetwork/website",
-      link: "https://pretendo.network",
-    },
-    {
-      title: "Neofetch but it's always Arch",
-      caption:
-        "This version of neofetch always returns Arch, on any system. Don't ask me why I did this, but also don't expect any better from me.",
-      link: "https://github.com/ashmonty/neofetch-but-its-always-arch",
-    },
-    {
-      title: "Website",
-      caption:
-        "The website you're currently browsing! Can you tell I'm putting this card here just so this section looks even?",
-      link: "#stuff",
-      hideOnMobile: true,
-    },
-  ];
+  cards = JSON.parse(
+    JSON.stringify(cards).replace("${mdbUserCount}", mdbUserCount)
+  );
 
   return {
     props: { age, cards },
@@ -118,7 +96,7 @@ export default function Home({ age, cards }) {
     }
 
     // Do that instantly for testing
-    //loadingBarEasterEgg();
+    // loadingBarEasterEgg();
   }
 
   // The haha 169% loading bar easter egg
@@ -156,12 +134,8 @@ export default function Home({ age, cards }) {
           <div>
             <h1>Who?</h1>
             <p>
-              I'm Ash, a {age} year old who likes to make{" "}
+              I'm Ash, {age} year old who likes to make{" "}
               <span className="stuff">stuff™</span>!
-            </p>
-            <p>
-              While Ash is my name, you may also know me in real life as �̷̗͎̐�̸̟̯̐�̸̬̳́�̸̱̅�̴̟̖́�,
-              but I decided to change it due to its unpronounceability.
             </p>
             <p>
               I enjoy playing the piano and I'm learning to play the guitar, but
@@ -170,8 +144,20 @@ export default function Home({ age, cards }) {
               <i>I use Arch, btw.</i>
             </p>
             <p>
-              Also, fun fact, I'm depressed! But who isn't, right?{" "}
-              <i>r-right?</i>
+              I am very funny, especially when sleep deprived, as can be seen
+              from the{" "}
+              <Link
+                href="https://pretendo.network/nso-legacy-pack"
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+              >
+                <a className={styles.link}>
+                  Pretendo Network April Fools' joke of 2022
+                </a>
+              </Link>
+              . What? You think it isn't funny? Well, too bad. This is my about
+              me, I'll boast my funniness whenever I like.
             </p>
           </div>
           <div className={styles.sideImg} />
