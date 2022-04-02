@@ -3,7 +3,6 @@ import styles from "../styles/components/stuffcard.module.css";
 import classNames from "classnames";
 
 export default function card(props) {
-  console.log(props.hideOnMobile);
   return (
     <a
       href={props.link}
