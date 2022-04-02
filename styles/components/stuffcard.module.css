@@ -17,6 +17,7 @@
 }
 .card h2 {
   margin-bottom: 16px;
+  font-family: var(--primary-font);
 }
 
 .card:last-child {
