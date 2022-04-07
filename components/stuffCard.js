@@ -7,6 +7,7 @@ export default function card(props) {
     <a
       href={props.link}
       target="_blank"
+      rel="noopener noreferrer"
       id={`stuffCard-${props.index}`}
       onMouseOver={props.onMouseOver}
       onMouseOut={props.onMouseOut}
