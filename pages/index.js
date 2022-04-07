@@ -23,19 +23,16 @@ export async function getServerSideProps(context) {
   const ageArticle = ageNumber === 18 ? "an" : "a";
   const age = `${ageArticle} ${ageNumber}`;
 
-  const _mdbUserCountFetch = await fetch(
-    "https://discord.com/api/v9/guilds/852978546187698206?with_counts=true",
-    {
-      headers: {
-        Authorization: process.env.MD_BADGE_DISCORD_TOKEN,
-      },
-    }
+  const _statsFetch = await fetch(
+    "https://www.ashmonty.com/api/stats"
   );
-  const _mdbUserCountJSON = await _mdbUserCountFetch.json();
-  const mdbUserCount = _mdbUserCountJSON.approximate_member_count;
+  const _statsJSON = await _statsFetch.json();
+  const stats = _statsJSON;
+
+  console.log(stats)
 
   const cards = JSON.parse(
-    JSON.stringify(rawcards.cards).replace("${mdbUserCount}", mdbUserCount)
+    JSON.stringify(rawcards.cards).replace("${mdbUserCount}", stats.discordmdbadge.usercount)
   );
 
   return {
