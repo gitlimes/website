@@ -29,8 +29,6 @@ export async function getServerSideProps(context) {
   const _statsJSON = await _statsFetch.json();
   const stats = _statsJSON;
 
-  console.log(stats)
-
   const cards = JSON.parse(
     JSON.stringify(rawcards.cards).replace("${mdbUserCount}", stats.discordmdbadge.usercount)
   );
