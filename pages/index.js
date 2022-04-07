@@ -5,7 +5,7 @@ import Navbar from "../components/navbar";
 import StuffCard from "../components/stuffCard";
 import OpenGraph from "../components/openGraph";
 
-import { cards } from "/cards.json";
+import rawcards from "/cards.json";
 
 import { renderToString } from "react-dom/server";
 import LoadingBar from "../components/eastereggs/LoadingBar";
@@ -34,8 +34,8 @@ export async function getServerSideProps(context) {
   const _mdbUserCountJSON = await _mdbUserCountFetch.json();
   const mdbUserCount = _mdbUserCountJSON.approximate_member_count;
 
-  cards = JSON.parse(
-    JSON.stringify(cards).replace("${mdbUserCount}", mdbUserCount)
+  const cards = JSON.parse(
+    JSON.stringify(rawcards.cards).replace("${mdbUserCount}", mdbUserCount)
   );
 
   return {
