@@ -180,6 +180,7 @@ export default function Home({ age, cards }) {
                   caption={card.caption}
                   link={card.link}
                   hideOnMobile={card.hideOnMobile}
+                  samePage={card.samePage}
                   onMouseOut={(e) => mouseLeave(e)}
                 />
               );
@@ -301,7 +302,7 @@ export default function Home({ age, cards }) {
       <div className={styles.footer}>
         Copyright 2022 - Ash "Monty" -{" "}
         <a
-          href="https://github.com/ashmonty/website"
+          href="https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js"
           target="_blank"
           rel="noopener"
         >

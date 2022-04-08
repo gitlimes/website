@@ -6,6 +6,13 @@
       "link": "https://github.com/ashmonty/discord-md-badge"
     },
     {
+      "title": "Adobe Fonts downloader",
+      "caption": "A page to download .otf fonts from any Adobe Fonts Web Project/Typekit URL. <br>I made this because I wanted to install some fonts from there system-wide, but Adobe doesn't let you do that on Linux, but only on Windows/macOS. Bruh.",
+      "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
+      "link": "/adobe-fonts-dl",
+      "samePage": true
+    },
+    {
       "title": "Pretendo Network",
       "caption": "Implemented the blog, the locale stuff™, the online Mii editor (not released yet), and also some of the stuff in the homepage, of which the infinite scrolling in the special thanks section is a favorite of mine 😎",
       "repo": "https://github.com/PretendoNetwork/website",
@@ -21,12 +28,6 @@
       "title": "Neofetch but it's always Arch",
       "caption": "This version of neofetch always returns Arch, on any system. Don't ask me why I did this, but also don't expect any better from me.",
       "link": "https://github.com/ashmonty/neofetch-but-its-always-arch"
-    },
-    {
-      "title": "Website",
-      "caption": "The website you're currently browsing! Can you tell I'm putting this card here just so this section looks even?",
-      "link": "#stuff",
-      "hideOnMobile": true
     }
   ]
 }

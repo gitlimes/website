@@ -2,22 +2,31 @@ import React from "react";
 import styles from "../styles/components/stuffcard.module.css";
 import classNames from "classnames";
 
-export default function card(props) {
+export default function card({
+  link,
+  samePage,
+  index,
+  onMouseOver,
+  onMouseOut,
+  hideOnMobile,
+  title,
+  caption,
+}) {
   return (
     <a
-      href={props.link}
-      target="_blank"
+      href={link}
+      target={samePage ? "_self" : "_blank"}
       rel="noopener noreferrer"
-      id={`stuffCard-${props.index}`}
-      onMouseOver={props.onMouseOver}
-      onMouseOut={props.onMouseOut}
+      id={`stuffCard-${index}`}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
       className={classNames({
         [styles.card]: true,
-        [styles.hideOnMobile]: props.hideOnMobile,
+        [styles.hideOnMobile]: hideOnMobile,
       })}
     >
-      <h2>{props.title}</h2>
-      <p dangerouslySetInnerHTML={{ __html: props.caption }} />
+      <h2>{title}</h2>
+      <p dangerouslySetInnerHTML={{ __html: caption }} />
     </a>
   );
 }

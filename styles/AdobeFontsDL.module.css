@@ -94,6 +94,17 @@
   right: 5vw;
 }
 
+.footer {
+  margin: auto auto 2rem;
+  width: fit-content;
+  max-width: var(--width);
+}
+
+.footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1080px) {
   .projectHero h1 {
     font-size: 3.5rem;
