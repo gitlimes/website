@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import StuffCard from "../components/stuffCard";
 import OpenGraph from "../components/openGraph";
 
@@ -23,14 +23,15 @@ export async function getServerSideProps(context) {
   const ageArticle = ageNumber === 18 ? "an" : "a";
   const age = `${ageArticle} ${ageNumber}`;
 
-  const _statsFetch = await fetch(
-    "https://www.ashmonty.com/api/stats"
-  );
+  const _statsFetch = await fetch("https://www.ashmonty.com/api/stats");
   const _statsJSON = await _statsFetch.json();
   const stats = _statsJSON;
 
   const cards = JSON.parse(
-    JSON.stringify(rawcards.cards).replace("${mdbUserCount}", stats.discordmdbadge.usercount)
+    JSON.stringify(rawcards.cards).replace(
+      "${mdbUserCount}",
+      stats.discordmdbadge.usercount
+    )
   );
 
   return {
@@ -107,12 +108,12 @@ export default function Home({ age, cards }) {
   return (
     <div>
       <Head>
-        <title>Ash (Monty)</title>
+        <title>Ash "Monty"</title>
         <OpenGraph />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
-        <Navbar />
+        <Navbar home="true" />
         <div className={styles.hero}>
           <div className={styles.imgBg} id="imgBg" />{" "}
           <div className={styles.text} id="hero-text">
@@ -298,7 +299,7 @@ export default function Home({ age, cards }) {
         </div>
       </div>
       <div className={styles.footer}>
-        Copyright 2022 - Ash (Monty) -{" "}
+        Copyright 2022 - Ash "Monty" -{" "}
         <a
           href="https://github.com/ashmonty/website"
           target="_blank"

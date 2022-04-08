@@ -1,0 +1,26 @@
+.guideWrapper {
+  display: flex;
+  flex-flow: column;
+}
+
+.icon {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--secondary);
+  width: fit-content;
+  margin-left: auto;
+  padding: 0;
+  z-index: 3;
+}
+
+.guide {
+  background-color: var(--accent);
+  color: #fff;
+  width: fit-content;
+  max-width: calc(90vw - 4rem);
+  padding: 2rem;
+  margin-top: 0.7rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px 0px 0px 1000vw rgba(var(--backgroundrgb), 0.7);
+}

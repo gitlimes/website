@@ -1,0 +1,21 @@
+.navbar {
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto;
+  font-size: large;
+  list-style: none;
+  width: 90vw;
+  max-width: var(--width);
+}
+
+.navbar .item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .item {
+    margin: 1.2rem 0;
+  }
+}

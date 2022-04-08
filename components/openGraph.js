@@ -32,9 +32,9 @@ export default function OpenGraph() {
       />
       <meta name="theme-color" content="#FF6B6B" />
       {/* OpenGraph & Twitter stuff */}
-      <meta property="og:site_name" content="Ash (Monty)" />
-      <meta property="og:title" content="Ash (Monty)" />
-      <meta property="twitter:title" content="Ash (Monty)" />
+      <meta property="og:site_name" content={`Ash "Monty"`} />
+      <meta property="og:title" content={`Ash "Monty"`} />
+      <meta property="twitter:title" content={`Ash "Monty"`} />
       <meta
         property="twitter:description"
         content="I make stuff™ in JavaScript."

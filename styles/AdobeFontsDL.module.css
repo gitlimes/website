@@ -1,0 +1,141 @@
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  width: 90vw;
+  height: 100vh;
+  max-width: var(--width);
+  color: var(--secondary);
+}
+
+.wrapper h1 {
+  font-family: var(--primary-font);
+}
+
+.wrapper p {
+  font-family: var(--secondary-font);
+  max-width: 33rem;
+}
+
+.projectHero h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.projectHero p {
+  font-size: 1.8rem;
+  margin: 0;
+  max-width: 100%;
+}
+
+.formWrapper {
+  margin: 5rem 0;
+  width: 90vw;
+  max-width: var(--width);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.form {
+  width: fit-content;
+  max-width: var(--width);
+  display: flex;
+
+  color: var(--secondary);
+  border-bottom: 2px solid var(--accent);
+  overflow: hidden;
+}
+
+.form input {
+  appearance: none;
+  width: 20rem;
+  border: none;
+  padding: 0.5rem;
+  background: none;
+  color: var(--secondary);
+  font-size: 1rem;
+}
+.form input:focus {
+  outline: none;
+}
+
+.form input::placeholder {
+  color: rgba(var(--secondaryrgb), 0.4);
+}
+
+.form button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--accent);
+  padding: 0.5rem 0.7rem;
+}
+
+.notice {
+  margin: 1rem auto;
+  width: 90vw;
+  max-width: var(--width);
+  color: var(--secondary);
+  text-align: center;
+}
+
+.wrapper h2 {
+  width: fit-content;
+  display: inline-block;
+  margin: 0;
+  font-family: var(--primary-font);
+}
+
+.guide {
+  position: absolute;
+  top: 2rem;
+  right: 5vw;
+}
+
+@media screen and (max-width: 1080px) {
+  .projectHero h1 {
+    font-size: 3.5rem;
+  }
+
+  .projectHero p {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .projectHero h1 {
+    font-size: 3rem;
+  }
+
+  .projectHero p {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .guide {
+    top: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .form {
+    width: 90vw;
+  }
+
+  .form input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 358px) {
+  .projectHero h1 {
+    font-size: 2.5rem;
+  }
+
+  .projectHero p {
+    font-size: 1.1rem;
+  }
+}

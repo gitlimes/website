@@ -8,8 +8,11 @@
     "start": "next start -p 8080"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "classnames": "^2.3.1",
+    "file-saver": "^2.0.5",
     "html-react-parser": "^1.4.0",
+    "jszip": "^3.9.1",
     "next": "^12.1.0",
     "nextjs-redirect": "^5.0.2",
     "react": "^17.0.2",
