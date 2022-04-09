@@ -12,11 +12,12 @@
   margin-left: auto;
   padding: 0;
   z-index: 3;
+  cursor: pointer;
 }
 
 .guide {
-  background-color: var(--accent);
-  color: #fff;
+  background: var(--accent);
+  color: var(--background);
   width: fit-content;
   max-width: calc(90vw - 4rem);
   padding: 2rem;
