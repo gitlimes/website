@@ -297,7 +297,7 @@ export default function Home({ age, cards }) {
       <div className={styles.footer}>
         Copyright 2022 - Ash "Monty" -{" "}
         <a
-          href="https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js"
+          href="https://github.com/ashmonty/website"
           target="_blank"
           rel="noopener"
         >
