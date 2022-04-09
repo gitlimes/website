@@ -16,12 +16,7 @@ import cardStyles from "../styles/components/stuffcard.module.css";
 
 export async function getServerSideProps(context) {
   // There's no way I'm gonna remember to update my age, so this does that for me.
-  const ageNumber = Math.floor(
-    (new Date() - new Date("April 13, 2004")) / (1000 * 60 * 60 * 24 * 365)
-  );
-  // Purposefully ignoring 8 and 11 because I'm older than that and time travel hasn't been invented yet
-  const ageArticle = ageNumber === 18 ? "an" : "a";
-  const age = `${ageArticle} ${ageNumber}`;
+  const age = "a 17"
 
   const _statsFetch = await fetch("https://www.ashmonty.com/api/stats");
   const _statsJSON = await _statsFetch.json();
