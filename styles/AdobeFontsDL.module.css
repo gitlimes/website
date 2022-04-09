@@ -1,4 +1,5 @@
 .wrapper {
+  position: relative;
   display: flex;
   flex-flow: column;
   margin: auto;
@@ -91,7 +92,7 @@
 .guide {
   position: absolute;
   top: 2rem;
-  right: 5vw;
+  right: 0;
 }
 
 .footer {
