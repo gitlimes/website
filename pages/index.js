@@ -14,9 +14,7 @@ import FakeCAPTCHA from "../components/eastereggs/FakeCAPTCHA";
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
-export async function getServerSideProps(context) {
-  // There's no way I'm gonna remember to update my age, so this does that for me.
-  const age = "a 17"
+export async function getServerSideProps() {
 
   const _statsFetch = await fetch("https://www.ashmonty.com/api/stats");
   const _statsJSON = await _statsFetch.json();
@@ -30,11 +28,11 @@ export async function getServerSideProps(context) {
   );
 
   return {
-    props: { age, cards },
+    props: { cards },
   };
 }
 
-export default function Home({ age, cards }) {
+export default function Home({ cards }) {
   let timestampArray = [];
   let oldTimestamp = 0;
 
@@ -125,7 +123,7 @@ export default function Home({ age, cards }) {
           <div>
             <h1>Who?</h1>
             <p>
-              I'm Ash, {age} year old who likes to make{" "}
+              I'm Ash, an 18 year old who likes to make{" "}
               <span className="stuff">stuff™</span>!
             </p>
             <p>
