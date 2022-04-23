@@ -4,6 +4,7 @@
 
 import Head from "next/head";
 import { useState } from "react";
+import classNames from "classnames";
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
@@ -14,6 +15,7 @@ import { saveAs } from "file-saver";
 
 export default function AdobeFontsDL() {
   const [notice, setNotice] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // add string prototype for titleCase
   String.prototype.toTitleCase = function () {
@@ -48,6 +50,8 @@ export default function AdobeFontsDL() {
   async function downloadFonts(e) {
     e.preventDefault();
 
+    setLoading(true);
+
     const formValue = e.target.url.value;
     let cssUrl = "";
     let stylesheetID = "";
@@ -59,6 +63,7 @@ export default function AdobeFontsDL() {
       cssUrl = `https://use.typekit.net/${formValue}.css`;
     } else {
       setNotice("Please enter a valid Typekit URL or ID");
+      stopAnimation();
       return;
     }
 
@@ -66,6 +71,7 @@ export default function AdobeFontsDL() {
     const rawCSSFetch = await fetch(cssUrl);
     if (!rawCSSFetch.ok) {
       setNotice("Could not fetch CSS. Try checking the URL.");
+      stopAnimation();
       return;
     }
     const rawCSS = await rawCSSFetch.text();
@@ -74,6 +80,7 @@ export default function AdobeFontsDL() {
     console.log("[info] found", urls?.length, "fonts");
     if (urls.length === 0) {
       setNotice("No fonts found in CSS. Try checking the URL.");
+      stopAnimation();
       return;
     }
     setNotice(
@@ -131,6 +138,17 @@ export default function AdobeFontsDL() {
         .then((zip) => saveAs(zip, `fonts-${stylesheetID}.zip`));
     });
     setNotice(`Downloaded <span class="accented">${urls.length}</span> fonts!`);
+    stopAnimation();
+  }
+
+  function stopAnimation() {
+    if (loading) {
+      document
+        .querySelector("#form")
+        .addEventListener("animationiteration", () => {
+          setLoading(false);
+        });
+    }
   }
 
   return (
@@ -154,7 +172,14 @@ export default function AdobeFontsDL() {
           all of its fonts for use in any program.
         </p>
         <div className={styles.formWrapper}>
-          <form className={styles.form} onSubmit={downloadFonts}>
+          <form
+            className={classNames({
+              [styles.form]: true,
+              [styles.loading]: loading,
+            })}
+            id="form"
+            onSubmit={downloadFonts}
+          >
             <input
               type="text"
               id="url"
