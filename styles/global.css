@@ -27,7 +27,7 @@ body {
   font-weight: 300;
   background: var(--background);
   scroll-behavior: smooth;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 /* Scrollbar styling - Firefox */
