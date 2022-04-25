@@ -15,7 +15,15 @@
 
 .wrapper p {
   font-family: var(--secondary-font);
-  max-width: 33rem;
+}
+
+.floatingContainer {
+  text-align: center;
+  margin: auto;
+}
+
+.floatingContainer * {
+  transition: font-size 100ms;
 }
 
 .projectHero h1 {
@@ -26,7 +34,6 @@
 .projectHero p {
   font-size: 1.8rem;
   margin: 0;
-  max-width: 100%;
 }
 
 .formWrapper {
@@ -105,7 +112,8 @@
   border: none;
   background: none;
   color: var(--accent);
-  padding: 0.5rem 0.7rem;
+  width: 48px;
+  height: 48px;
 }
 
 .notice {
@@ -130,7 +138,7 @@
 }
 
 .footer {
-  margin: auto auto 2rem;
+  margin: 2rem auto;
   width: fit-content;
   max-width: var(--width);
 }
@@ -140,19 +148,9 @@
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1023px) {
   .projectHero h1 {
     font-size: 3.5rem;
-  }
-
-  .projectHero p {
-    font-size: 1.7rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .projectHero h1 {
-    font-size: 3rem;
   }
 
   .projectHero p {
@@ -160,25 +158,49 @@
   }
 }
 
+@media screen and (max-width: 856px) {
+  .projectHero h1 {
+    font-size: 3rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .guide {
     top: 1.2rem;
   }
-}
 
-@media screen and (max-width: 450px) {
-  .form {
-    width: 90vw;
+  .projectHero h1 {
+    font-size: 2.5rem;
+  }
+  .projectHero p {
+    font-size: 1rem;
+  }
+
+  .floatingContainer > p {
+    font-size: 1rem;
+    max-width: 75%;
+  }
+
+  .floatingContainer {
+    text-align: left;
   }
 
   .form input {
+    width: calc(var(--width) - 48px);
+  }
+
+  .form {
     width: 100%;
+  }
+
+  .formWrapper {
+    margin: 2.5rem 0;
   }
 }
 
-@media screen and (max-width: 358px) {
+@media screen and (max-width: 600px) {
   .projectHero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .projectHero p {

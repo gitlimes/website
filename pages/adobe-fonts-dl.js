@@ -161,56 +161,54 @@ export default function AdobeFontsDL() {
       <div className={styles.wrapper} id="wrapper">
         <GoHome />
 
-        <div className={styles.projectHero}>
-          <h1>
-            Adobe Fonts <span className="accented">downloader</span>
-          </h1>
-          <p>Download .otf fonts from any Adobe Fonts Web Project</p>
-        </div>
-        <p>
-          Paste the Typekit URL or Project ID of your Web Project to download
-          all of its fonts for use in any program.
-        </p>
-        <div className={styles.formWrapper}>
-          <form
-            className={classNames({
-              [styles.form]: true,
-              [styles.loading]: loading,
-            })}
-            id="form"
-            onSubmit={downloadFonts}
-          >
-            <input
-              type="text"
-              id="url"
-              name="url"
-              required={true}
-              placeholder="https://use.typekit.net/qwertyu.css"
-            />
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-            </button>
-          </form>
-          {notice && (
-            <p
-              className={styles.notice}
-              dangerouslySetInnerHTML={{ __html: notice }}
-            />
-          )}
+        <div className={styles.floatingContainer}>
+          <div className={styles.projectHero}>
+            <h1>
+              Adobe Fonts <span className="accented">downloader</span>
+            </h1>
+            <p>Download .otf fonts from any Adobe Fonts Web Project</p>
+          </div>
+          <div className={styles.formWrapper}>
+            <form
+              className={classNames({
+                [styles.form]: true,
+                [styles.loading]: loading,
+              })}
+              id="form"
+              onSubmit={downloadFonts}
+            >
+              <input
+                type="text"
+                id="url"
+                name="url"
+                required={true}
+                placeholder="https://use.typekit.net/qwertyu.css"
+              />
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </button>
+            </form>
+            {notice && (
+              <p
+                className={styles.notice}
+                dangerouslySetInnerHTML={{ __html: notice }}
+              />
+            )}
+          </div>
         </div>
 
         <div className={styles.guide}>
@@ -248,6 +246,7 @@ export default function AdobeFontsDL() {
             </ol>
           </Guide>
         </div>
+        
         <div className={styles.footer}>
           Copyright 2022 - Ash "Monty" -{" "}
           <a
