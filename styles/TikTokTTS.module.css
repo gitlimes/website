@@ -38,7 +38,8 @@
 .select {
   margin-top: 2rem;
 }
-.textarea {
+.floatingContainer > textarea,
+.floatingContainer > input[type="text"] {
   box-sizing: border-box;
   margin-top: 1rem;
   width: 100%;
@@ -52,16 +53,18 @@
   color: inherit;
   resize: none;
 }
-.textarea::placeholder {
+.floatingContainer > textarea::placeholder,
+.floatingContainer > input[type="text"]::placeholder {
   color: rgba(var(--secondaryrgb), 0.8);
 }
-.textarea:focus {
+.floatingContainer > textarea:focus,
+.floatingContainer > input[type="text"]:focus {
   outline: none;
   box-shadow: 0px 2px 4px 2px rgba(var(--secondaryrgb), 0.1),
     0 0 0 2px var(--accent);
 }
 
-.button {
+.floatingContainer > button {
   position: relative;
   appearance: none;
   border: none;
@@ -76,7 +79,7 @@
   font-size: inherit;
   font-family: inherit;
 }
-.button:hover {
+.floatingContainer > button:hover {
   background: rgba(var(--accentrgb), 0.85);
 }
 
@@ -103,8 +106,9 @@
 }
 
 .footer {
-  margin: 2rem auto;
-  width: fit-content;
+  margin: 2rem 0;
+  text-align: center;
+  width: 100%;
   max-width: var(--width);
 }
 
@@ -113,32 +117,16 @@
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1023px) {
-  .projectHero h1 {
-    font-size: 3.5rem;
-  }
-
-  .projectHero p {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 856px) {
-  .projectHero h1 {
-    font-size: 3rem;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .guide {
     top: 1.2rem;
   }
 
   .projectHero h1 {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
   }
   .projectHero p {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .floatingContainer > p {

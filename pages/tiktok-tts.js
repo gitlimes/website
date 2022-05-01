@@ -191,6 +191,7 @@ export default function TikTokTTS() {
             </h1>
             <p>Read text in TikTok's Text To Speech voices.</p>
           </div>
+
           <CreatableSelect
             className={styles.select}
             options={voiceList}
@@ -244,7 +245,7 @@ export default function TikTokTTS() {
             <p
               className={styles.notice}
               style={{ visibility: notice ? "visible" : "hidden" }}
-              dangerouslySetInnerHTML={{ __html: notice || "hello" }}
+              dangerouslySetInnerHTML={{ __html: notice || "hi" }}
             />
           )}
         </div>

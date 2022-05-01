@@ -13,7 +13,7 @@
       "samePage": true
     },
     {
-      "title": "Adobe Fonts downloader",
+      "title": "Adobe Fonts dl",
       "caption": "A page to download .otf fonts from any Adobe Fonts Web Project/Typekit URL. <br>I made this because I wanted to install some fonts from there system-wide, but Adobe doesn't let you do that on Linux, but only on Windows/macOS. Bruh.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
       "link": "/adobe-fonts-dl",

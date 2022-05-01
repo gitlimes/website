@@ -8,14 +8,14 @@ import classNames from "classnames";
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
-import styles from "../styles/AdobeFontsDL.module.css";
+import styles from "../styles/TikTokTTS.module.css";
 
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 
 export default function AdobeFontsDL() {
   const [notice, setNotice] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [stylesheet, setStylesheet] = useState("");
 
   // add string prototype for titleCase
   String.prototype.toTitleCase = function () {
@@ -50,20 +50,16 @@ export default function AdobeFontsDL() {
   async function downloadFonts(e) {
     e.preventDefault();
 
-    setLoading(true);
-
-    const formValue = e.target.url.value;
     let cssUrl = "";
     let stylesheetID = "";
 
-    if (formValue.match(styleSheetURLRegex)) {
-      cssUrl = formValue;
-    } else if (formValue.match(stylesheetIDRegex)) {
-      stylesheetID = formValue;
-      cssUrl = `https://use.typekit.net/${formValue}.css`;
+    if (stylesheet.match(styleSheetURLRegex)) {
+      cssUrl = stylesheet;
+    } else if (stylesheet.match(stylesheetIDRegex)) {
+      stylesheetID = stylesheet;
+      cssUrl = `https://use.typekit.net/${stylesheet}.css`;
     } else {
       setNotice("Please enter a valid Typekit URL or ID");
-      stopAnimation();
       return;
     }
 
@@ -71,7 +67,6 @@ export default function AdobeFontsDL() {
     const rawCSSFetch = await fetch(cssUrl);
     if (!rawCSSFetch.ok) {
       setNotice("Could not fetch CSS. Try checking the URL.");
-      stopAnimation();
       return;
     }
     const rawCSS = await rawCSSFetch.text();
@@ -80,7 +75,6 @@ export default function AdobeFontsDL() {
     console.log("[info] found", urls?.length, "fonts");
     if (urls.length === 0) {
       setNotice("No fonts found in CSS. Try checking the URL.");
-      stopAnimation();
       return;
     }
     setNotice(
@@ -138,23 +132,12 @@ export default function AdobeFontsDL() {
         .then((zip) => saveAs(zip, `fonts-${stylesheetID}.zip`));
     });
     setNotice(`Downloaded <span class="accented">${urls.length}</span> fonts!`);
-    stopAnimation();
-  }
-
-  function stopAnimation() {
-    if (loading) {
-      document
-        .querySelector("#form")
-        .addEventListener("animationiteration", () => {
-          setLoading(false);
-        });
-    }
   }
 
   return (
     <div>
       <Head>
-        <title>Adobe Fonts downloader | Ash "Monty"</title>
+        <title>Adobe Fonts dl | Ash "Monty"</title>
         <OpenGraph />
       </Head>
 
@@ -164,51 +147,25 @@ export default function AdobeFontsDL() {
         <div className={styles.floatingContainer}>
           <div className={styles.projectHero}>
             <h1>
-              Adobe Fonts <span className="accented">downloader</span>
+              Adobe Fonts <span className="accented">dl</span>
             </h1>
-            <p>Download .otf fonts from any Adobe Fonts Web Project</p>
+            <p>Download fonts from any Web Project.</p>
           </div>
-          <div className={styles.formWrapper}>
-            <form
-              className={classNames({
-                [styles.form]: true,
-                [styles.loading]: loading,
-              })}
-              id="form"
-              onSubmit={downloadFonts}
-            >
-              <input
-                type="text"
-                id="url"
-                name="url"
-                required={true}
-                placeholder="https://use.typekit.net/qwertyu.css"
-              />
-              <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-              </button>
-            </form>
-            {notice && (
-              <p
-                className={styles.notice}
-                dangerouslySetInnerHTML={{ __html: notice }}
-              />
-            )}
-          </div>
+
+          <input
+            type="text"
+            required={true}
+            placeholder="https://use.typekit.net/qwertyu.css"
+            onChange={(e) => setStylesheet(e.target.value)}
+            style={{ marginTop: "2rem" }}
+          />
+          <button onClick={downloadFonts}>Download</button>
+
+          <p
+            className={styles.notice}
+            style={{ visibility: notice ? "visible" : "hidden" }}
+            dangerouslySetInnerHTML={{ __html: notice || "hi" }}
+          />
         </div>
 
         <div className={styles.guide}>
@@ -220,6 +177,7 @@ export default function AdobeFontsDL() {
               <a
                 href="https://helpx.adobe.com/fonts/using/activate-fonts-desktop.html"
                 target="_blank"
+                rel="noreferrer noopener"
               >
                 here
               </a>
@@ -246,7 +204,7 @@ export default function AdobeFontsDL() {
             </ol>
           </Guide>
         </div>
-        
+
         <div className={styles.footer}>
           Copyright 2022 - Ash "Monty" -{" "}
           <a
