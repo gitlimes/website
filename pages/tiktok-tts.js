@@ -10,7 +10,7 @@ const fallbackVoices = require("../fallbackVoices.json");
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
-import styles from "../styles/TikTokTTS.module.css";
+import styles from "../styles/stuffitempage.module.css";
 
 import { saveAs } from "file-saver";
 

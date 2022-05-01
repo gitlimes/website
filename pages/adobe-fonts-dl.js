@@ -8,7 +8,7 @@ import classNames from "classnames";
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
-import styles from "../styles/TikTokTTS.module.css";
+import styles from "../styles/stuffitempage.module.css";
 
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
