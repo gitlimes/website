@@ -132,7 +132,7 @@ div.contact {
 }
 .contact .list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
 }
 .contactCard {
@@ -161,6 +161,9 @@ div.contact {
 }
 .contactCard.twitter {
   background-color: #1d9bf0;
+}
+.contactCard.mastodon {
+  background-color: #3088D4;
 }
 .contactCard.mail {
   background-color: var(--accent);
@@ -206,23 +209,7 @@ div.contact {
   }
 
   .contact .list {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  .contactCard.github {
-    grid-column: 1 / span 2;
-  }
-  .contactCard.discord {
-    grid-column: 3 / span 2;
-  }
-  .contactCard.twitter {
-    grid-column: 5 / span 2;
-  }
-  .contactCard.mail {
-    grid-column: 1 / span 3;
-  }
-  .contactCard.kofi {
-    grid-column: 4 / span 3;
+    grid-template-columns: repeat(3, 2fr);
   }
 }
 
@@ -250,29 +237,13 @@ div.contact {
 
 @media screen and (max-width: 600px) {
   .contact .list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contactCard.github,
-  .contactCard.twitter {
-    grid-column: 1 / span 1;
-  }
-  .contactCard.discord,
-  .contactCard.mail {
-    grid-column: 2 / span 1;
-  }
-  .contactCard.kofi {
-    grid-column: 1 / span 2;
+    grid-template-columns: repeat(2, 3fr);
   }
 }
 
 @media screen and (max-width: 540px) {
   .contact .list {
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .contactCard {
-    grid-column: 1 / span 1 !important;
   }
 
   .hero .text h1 {
