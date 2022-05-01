@@ -6,6 +6,13 @@
       "link": "https://github.com/ashmonty/discord-md-badge"
     },
     {
+      "title": "TikTok TTS",
+      "caption": "A page that allows you to read text in TikTok's Text To Speech voices and download the audio as an mp3.",
+      "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
+      "link": "/tiktok-tts",
+      "samePage": true
+    },
+    {
       "title": "Adobe Fonts downloader",
       "caption": "A page to download .otf fonts from any Adobe Fonts Web Project/Typekit URL. <br>I made this because I wanted to install some fonts from there system-wide, but Adobe doesn't let you do that on Linux, but only on Windows/macOS. Bruh.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
@@ -23,11 +30,6 @@
       "caption": "A Next.js-based recreation of Windows 9X. Currently an early WIP, so expect bugs. <i>Many</i> bugs.",
       "repo": "https://github.com/ashmonty/binbows",
       "link": "https://binbows.ashmonty.com/"
-    },
-    {
-      "title": "Neofetch but it's always Arch",
-      "caption": "This version of neofetch always returns Arch, on any system. Don't ask me why I did this, but also don't expect any better from me.",
-      "link": "https://github.com/ashmonty/neofetch-but-its-always-arch"
     }
   ]
 }
