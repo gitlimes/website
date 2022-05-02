@@ -210,6 +210,7 @@ export default function TikTokTTS() {
             placeholder="Type the text to be read"
             rows="3"
             onChange={(e) => setText(e.target.value)}
+            maxLength="300"
           />
           <button
             className={styles.button}
