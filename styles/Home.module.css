@@ -24,7 +24,7 @@
   flex-shrink: 0;
   border-radius: 100%;
   background: no-repeat center/cover
-    url(../public/assets/images/i-actually-like-this-one.jpg)
+    url(../public/assets/images/the-only-picture-of-me-outside.jpg)
     /*, var(--accent)*/;
   overflow: hidden;
 }
