@@ -72,8 +72,7 @@ div.about p {
 }
 
 div.about .sideImg {
-  background: no-repeat center/cover
-    url(/assets/images/hehe-im-high-get-it.jpg);
+  background: no-repeat center/cover url(/assets/images/hehe-im-high-get-it.jpg);
   border-radius: 1rem;
   display: flex;
   justify-content: center;
@@ -163,13 +162,13 @@ div.contact {
   background-color: #1d9bf0;
 }
 .contactCard.mastodon {
-  background-color: #3088D4;
+  background-color: #3088d4;
 }
 .contactCard.mail {
   background-color: var(--accent);
 }
-.contactCard.kofi {
-  background-color: #ff5e5b;
+.contactCard.buymeacoffee {
+  background-color: #bd5ffe;
 }
 .contactCard svg {
   padding-right: 0.5rem;
