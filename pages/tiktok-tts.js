@@ -105,9 +105,19 @@ export default function TikTokTTS() {
   const customDropdownStyles = {
     option: (provided, state) => ({
       ...provided,
-      background:
-        (state.isSelected && "var(--accent)") ||
-        (state.isFocused && "rgba(0,0,0,0)"),
+      background: state.isSelected ? "var(--accent)" : "rgba(0,0,0,0)",
+
+      ":active, :active:hover": {
+        background: "var(--accent)",
+        color: "#fff",
+      },
+
+      ":hover": {
+        background: state.isSelected
+          ? "var(--accent)"
+          : "rgba(var(--accentrgb), 0.75)",
+        color: "#fff",
+      },
     }),
     control: (provided, state) => ({
       ...provided,
