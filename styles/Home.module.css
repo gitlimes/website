@@ -154,10 +154,12 @@ div.contact {
   left: 0;
   box-shadow: 0 0 0 var(--secondary);
 }
+/*
 .contactCard:hover {
   top: -0.2rem;
   left: -0.2rem;
   box-shadow: 1px 1px 0 var(--background), 0.2rem 0.2rem 0 var(--secondary);
+}*/
 .contactCard.github {
   background-color: #171515;
 }
