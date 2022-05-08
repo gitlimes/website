@@ -52,6 +52,13 @@
   font-family: inherit;
   color: inherit;
   resize: none;
+  background: #fff;
+}
+[data-theme="dark"] .floatingContainer > textarea,
+[data-theme="dark"] .floatingContainer > input[type="text"] {
+  box-shadow: none;
+  background: rgba(var(--secondaryrgb), 0.15);
+  color: #fff;
 }
 .floatingContainer > textarea::placeholder,
 .floatingContainer > input[type="text"]::placeholder {
@@ -78,6 +85,10 @@
   padding: 9px;
   font-size: inherit;
   font-family: inherit;
+}
+[data-theme="dark"] .floatingContainer > button {
+  color: var(--background);
+  box-shadow: none;
 }
 .floatingContainer > button:hover {
   background: rgba(var(--accentrgb), 0.85);

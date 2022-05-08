@@ -16,8 +16,8 @@
 :root[data-theme="dark"] {
   --accent: #ffb56b;
   --accentrgb: 255, 181, 107;
-  --secondary: #bc76aa;
-  --secondaryrgb: 188, 118, 170;
+  --secondary: #DDBBD5;
+  --secondaryrgb: 221, 187, 213;
   --background: #271322;
   --backgroundrgb: 39, 19, 34;
 }
