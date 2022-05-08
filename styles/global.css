@@ -13,6 +13,15 @@
   --border: none;
 }
 
+:root[data-theme="dark"] {
+  --accent: #ffb56b;
+  --accentrgb: 255, 181, 107;
+  --secondary: #bc76aa;
+  --secondaryrgb: 188, 118, 170;
+  --background: #271322;
+  --backgroundrgb: 39, 19, 34;
+}
+
 /*@import url('https://rsms.me/inter/inter.css');*/
 html,
 body {
@@ -47,6 +56,7 @@ html::-webkit-scrollbar-thumb {
   background: var(--secondary);
   border-radius: 12px;
   border: 3px solid var(--background);
+  transition: all 0.2s ease-in-out;
 }
 html::-webkit-scrollbar-thumb:hover {
   background: var(--accent);

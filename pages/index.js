@@ -31,7 +31,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ cards }) {
+export default function Home({ cards, darkMode, setDarkMode }) {
   let timestampArray = [];
   let oldTimestamp = 0;
 
@@ -97,6 +97,8 @@ export default function Home({ cards }) {
     }, 19000);
   }
 
+  //console.log(document.querySelector("body").dataset.darkMode)
+
   return (
     <div>
       <Head>
@@ -105,7 +107,7 @@ export default function Home({ cards }) {
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
-        <Navbar home="true" />
+        <Navbar home="true" darkMode={darkMode} setDarkMode={setDarkMode} />
         <div className={styles.hero}>
           <div className={styles.imgBg} id="imgBg" />{" "}
           <div className={styles.text} id="hero-text">

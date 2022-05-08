@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   padding: 0;
   margin: auto;
   font-size: large;
@@ -10,9 +10,17 @@
 }
 
 .navbar .item {
-  margin: 2rem 1.5rem;
-  align-items: center;
+  margin: 2.5rem 3rem 0 0;
   transition: margin 100ms;
+}
+
+.navbar .darkModeToggle {
+  margin: 2.5rem 0 0 auto;
+  cursor: pointer;
+}
+
+.navbar .darkModeToggle:hover {
+  color: var(--accent);
 }
 
 .navbar .item a:hover {
@@ -26,6 +34,9 @@
 
 @media screen and (max-width: 768px) {
   .navbar .item {
-    margin: 1.2rem;
+    margin: 1.5rem 2rem 0 0;
+  }
+  .navbar .darkModeToggle {
+    margin: 1.5rem 0 0 auto;
   }
 }

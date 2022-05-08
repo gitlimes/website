@@ -90,6 +90,10 @@ div.stuff {
   color: var(--background);
   transition: height 200ms;
 }
+[data-theme="dark"] div.stuff  {
+  background: rgba(var(--secondaryrgb), 0.3);
+  color: var(--secondary);
+}
 div.stuff > * {
   margin: auto;
   width: 90vw;
@@ -105,6 +109,9 @@ div.stuff p {
 }
 div.stuff span.stuff {
   color: var(--secondary);
+}
+[data-theme="dark"] div.stuff span.stuff {
+  color: var(--accent);
 }
 div.stuff .list {
   display: grid;
@@ -140,7 +147,7 @@ div.contact {
   align-items: center;
   padding: 0.5rem;
   border-radius: 6px;
-  color: var(--background);
+  color: #fff;
   transition: all 75ms;
   position: relative;
   top: 0;
@@ -167,6 +174,11 @@ div.contact {
 .contactCard.mail {
   background-color: var(--accent);
 }
+
+[data-theme="dark"] .contactCard.mail {
+  background-color: var(--secondary);
+}
+
 .contactCard.buymeacoffee {
   background-color: #bd5ffe;
 }
