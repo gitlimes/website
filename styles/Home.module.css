@@ -154,6 +154,12 @@ div.contact {
   left: 0;
   box-shadow: 0 0 0 var(--secondary);
 }
+[data-theme="dark"] .contactCard {
+  background-color: rgba(var(--secondaryrgb), 0.15) !important;
+}
+[data-theme="dark"] .contactCard:hover {
+  background-color: rgba(var(--secondaryrgb), 0.35) !important;
+}
 /*
 .contactCard:hover {
   top: -0.2rem;
@@ -175,11 +181,6 @@ div.contact {
 .contactCard.mail {
   background-color: var(--accent);
 }
-
-[data-theme="dark"] .contactCard.mail {
-  background-color: var(--secondary);
-}
-
 .contactCard.buymeacoffee {
   background-color: #bd5ffe;
 }
