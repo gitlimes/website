@@ -148,40 +148,42 @@ div.contact {
   padding: 0.5rem;
   border-radius: 6px;
   color: #fff;
-  transition: all 75ms;
+  transition: all 200ms;
   position: relative;
   top: 0;
   left: 0;
   box-shadow: 0 0 0 var(--secondary);
+  background-color: rgba(var(--secondaryrgb), 0.75);
 }
 [data-theme="dark"] .contactCard {
-  background-color: rgba(var(--secondaryrgb), 0.15) !important;
+  background-color: rgba(var(--secondaryrgb), 0.15);
 }
+/*
 [data-theme="dark"] .contactCard:hover {
   background-color: rgba(var(--secondaryrgb), 0.35) !important;
 }
-/*
+
 .contactCard:hover {
   top: -0.2rem;
   left: -0.2rem;
   box-shadow: 1px 1px 0 var(--background), 0.2rem 0.2rem 0 var(--secondary);
 }*/
-.contactCard.github {
+.contactCard.github:hover {
   background-color: #171515;
 }
-.contactCard.discord {
+.contactCard.discord:hover {
   background-color: #5865f2;
 }
-.contactCard.twitter {
+.contactCard.twitter:hover {
   background-color: #1d9bf0;
 }
-.contactCard.mastodon {
+.contactCard.mastodon:hover {
   background-color: #3088d4;
 }
-.contactCard.mail {
+.contactCard.mail:hover {
   background-color: var(--accent);
 }
-.contactCard.buymeacoffee {
+.contactCard.buymeacoffee:hover {
   background-color: #bd5ffe;
 }
 .contactCard svg {
