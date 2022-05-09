@@ -14,9 +14,9 @@
 }
 
 :root[data-theme="dark"] {
-  --accent: #ffb56b;
-  --accentrgb: 255, 181, 107;
-  --secondary: #DDBBD5;
+  --accent: #ff6b6b;
+  --accentrgb: 255, 107, 107;
+  --secondary: #ddbbd5;
   --secondaryrgb: 221, 187, 213;
   --background: #271322;
   --backgroundrgb: 39, 19, 34;
