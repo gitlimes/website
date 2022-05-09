@@ -7,9 +7,9 @@ export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    // if there is no value in localStorage, we set it to false
+    // if there is no value in localStorage, we set it
     if (!localStorage.getItem("darkMode")) {
-      localStorage.setItem("darkMode", false);
+      localStorage.setItem("darkMode", true);
     }
     // we set the state to the value in localStorage
     setDarkMode(localStorage.getItem("darkMode") === "true");
