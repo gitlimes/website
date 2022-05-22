@@ -14,13 +14,7 @@ import styles from "../styles/stuffitempage.module.css";
 
 import { saveAs } from "file-saver";
 
-export default function TikTokTTS() {
-  const [voiceList, setVoiceList] = useState([]);
-  const [notice, setNotice] = useState("");
-  const [selectedVoice, setSelectedVoice] = useState(null);
-  const [text, setText] = useState();
-  const [voiceBlob, setVoiceBlob] = useState();
-
+export async function getServerSideProps() {
   async function getVoices() {
     // we fetch the voice options from oscie's repo (thanks oscie), and we parse them to json
     const rawVoicesFetch = await fetch(
@@ -100,7 +94,20 @@ export default function TikTokTTS() {
     }
   }
 
-  getVoices().then(setVoiceList);
+  const voices = await getVoices();
+
+  return {
+    props: {
+      voices,
+    },
+  };
+}
+
+export default function TikTokTTS({ voices }) {
+  const [notice, setNotice] = useState("");
+  const [selectedVoice, setSelectedVoice] = useState(null);
+  const [text, setText] = useState();
+  const [voiceBlob, setVoiceBlob] = useState();
 
   const customDropdownStyles = {
     option: (provided, state) => ({
@@ -204,8 +211,7 @@ export default function TikTokTTS() {
 
           <CreatableSelect
             className={styles.select}
-            options={voiceList}
-            isLoading={!voiceList}
+            options={voices}
             noOptionsMessage={() => "No results"}
             placeholder="Select a voice"
             menuPlacement="top"
