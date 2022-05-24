@@ -14,13 +14,7 @@ import styles from "../styles/stuffitempage.module.css";
 
 import { saveAs } from "file-saver";
 
-export default function TikTokTTS({ darkMode, setDarkMode }) {
-  const [voiceList, setVoiceList] = useState([]);
-  const [notice, setNotice] = useState("");
-  const [selectedVoice, setSelectedVoice] = useState(null);
-  const [text, setText] = useState();
-  const [voiceBlob, setVoiceBlob] = useState();
-
+export async function getServerSideProps() {
   async function getVoices() {
     // we fetch the voice options from oscie's repo (thanks oscie), and we parse them to json
     const rawVoicesFetch = await fetch(
@@ -100,97 +94,59 @@ export default function TikTokTTS({ darkMode, setDarkMode }) {
     }
   }
 
-  getVoices().then(setVoiceList);
+  const voices = await getVoices();
+
+  return {
+    props: {
+      voices,
+    },
+  };
+}
+
+export default function TikTokTTS({ voices }) {
+  const [notice, setNotice] = useState("");
+  const [selectedVoice, setSelectedVoice] = useState(null);
+  const [text, setText] = useState();
+  const [voiceBlob, setVoiceBlob] = useState();
 
   const customDropdownStyles = {
-    light: {
-      option: (provided, state) => ({
-        ...provided,
-        background: state.isSelected ? "var(--accent)" : "rgba(0,0,0,0)",
+    option: (provided, state) => ({
+      ...provided,
+      background: state.isSelected ? "var(--accent)" : "rgba(0,0,0,0)",
 
-        ":active, :active:hover": {
-          background: "var(--accent)",
-          color: "#fff",
-        },
-
-        ":hover": {
-          background: state.isSelected
-            ? "var(--accent)"
-            : "rgba(var(--accentrgb), 0.75)",
-          color: "#fff",
-        },
-      }),
-      control: (provided, state) => ({
-        ...provided,
-        background: "#fff",
-        boxShadow: state.selectProps.menuIsOpen
-          ? "0px 2px 4px 2px rgba(var(--secondaryrgb), 0.1), 0 0 0 2px var(--accent) !important"
-          : "0px 2px 4px 2px rgba(var(--secondaryrgb), 0.1)",
-        borderColor: "rgba(0,0,0,0) !important",
-        outline: "none !important",
-      }),
-      input: (provided, _state) => ({
-        ...provided,
-        color: "var(--secondary) !important",
-      }),
-      placeholder: (provided, _state) => ({
-        ...provided,
-        color: "rgba(var(--secondaryrgb), 0.8) !important",
-      }),
-      singleValue: (provided, _state) => ({
-        ...provided,
-        color: "var(--secondary) !important",
-      }),
-    },
-    dark: {
-      menu: (provided, state) => ({
-        ...provided,
-        background: "#422c3d", // if anyone knows how to fix this and use the css vars, please do
+      ":active, :active:hover": {
+        background: "var(--accent)",
         color: "#fff",
-      }),
-      groupHeading: (provided, state) => ({
-        ...provided,
-        color: "#ffffffaa",
-      }),
-      option: (provided, state) => ({
-        ...provided,
-        background: state.isSelected ? "var(--accent)" : "rgba(0,0,0,0)",
-        color: state.isSelected ? "var(--background)" : "#fff",
+      },
 
-        ":active, :active:hover": {
-          background: "var(--accent)",
-          color: "var(--background)",
-        },
-
-        ":hover": {
-          background: state.isSelected
-            ? "var(--accent)"
-            : "rgba(var(--accentrgb), 0.75)",
-          color: "var(--background)",
-        },
-      }),
-      control: (provided, state) => ({
-        ...provided,
-        background: "rgba(var(--secondaryrgb), 0.15)",
-        boxShadow: state.selectProps.menuIsOpen
-          ? "0 0 0 2px var(--accent) !important"
-          : "none",
-        borderColor: "rgba(0,0,0,0) !important",
-        outline: "none !important",
-      }),
-      input: (provided, _state) => ({
-        ...provided,
+      ":hover": {
+        background: state.isSelected
+          ? "var(--accent)"
+          : "rgba(var(--accentrgb), 0.75)",
         color: "#fff",
-      }),
-      placeholder: (provided, _state) => ({
-        ...provided,
-        color: "rgba(var(--secondaryrgb), 0.8)",
-      }),
-      singleValue: (provided, _state) => ({
-        ...provided,
-        color: "#fff",
-      }),
-    },
+      },
+    }),
+    control: (provided, state) => ({
+      ...provided,
+      background: "#fff",
+      boxShadow: state.selectProps.menuIsOpen
+        ? "0px 2px 4px 2px rgba(var(--secondaryrgb), 0.1), 0 0 0 2px var(--accent) !important"
+        : "0px 2px 4px 2px rgba(var(--secondaryrgb), 0.1)",
+      borderColor: "rgba(0,0,0,0) !important",
+      outline: "none !important",
+    }),
+    input: (provided, _state) => ({
+      ...provided,
+      color: "var(--secondary) !important",
+    }),
+    placeholder: (provided, _state) => ({
+      ...provided,
+      color: "rgba(var(--secondaryrgb), 0.8) !important",
+    }),
+    singleValue: (provided, _state) => ({
+      ...provided,
+      color: "var(--secondary) !important",
+    }),
   };
 
   async function getAudio() {
@@ -255,17 +211,14 @@ export default function TikTokTTS({ darkMode, setDarkMode }) {
 
           <CreatableSelect
             className={styles.select}
-            options={voiceList}
-            isLoading={!voiceList}
+            options={voices}
             noOptionsMessage={() => "No results"}
             placeholder="Select a voice"
             menuPlacement="top"
             formatCreateLabel={(inputValue) =>
               `Try voice [${inputValue}] (untested)`
             }
-            styles={
-              darkMode ? customDropdownStyles.dark : customDropdownStyles.light
-            }
+            styles={customDropdownStyles}
             onChange={setSelectedVoice}
           />
           <textarea
