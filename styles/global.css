@@ -22,6 +22,23 @@
   --backgroundrgb: 39, 19, 34;
 }
 
+@keyframes refresh {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.refresh {
+  animation: 0.5s ease-in 1 refresh;
+}
+
 /*@import url('https://rsms.me/inter/inter.css');*/
 html,
 body {
@@ -37,6 +54,8 @@ body {
   background: var(--background);
   scroll-behavior: smooth;
   font-size: 17px;
+
+  transition: background 500ms;
 }
 
 /* Scrollbar styling - Firefox */

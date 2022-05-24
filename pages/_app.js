@@ -15,11 +15,19 @@ export default function App({ Component, pageProps }) {
     setDarkMode(localStorage.getItem("darkMode") === "true");
   }, []);
 
-  function setThemeAttr() {
-    document
-      .querySelector("html")
-      .setAttribute("data-theme", darkMode ? "dark" : "light");
+  async function setThemeAttr() {
+    document.querySelector("body").classList.add("refresh");
+    setTimeout(function () {
+      document
+        .querySelector("html")
+        .setAttribute("data-theme", darkMode ? "dark" : "light");
+    }, 250);
+
     localStorage.setItem("darkMode", darkMode);
+
+    setTimeout(function () {
+      document.querySelector("body").classList.remove("refresh");
+    }, 500);
   }
 
   // we set the data-theme attribute to the body element
