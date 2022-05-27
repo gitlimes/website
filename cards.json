@@ -1,6 +1,11 @@
 {
   "cards": [
     {
+      "title": "microsoftgithub.com",
+      "caption": "A website that lets you create legit-looking GitHub links that rickroll the visitor.",
+      "link": "https://www.microsoftgithub.com/"
+    },
+    {
       "title": "Discord Markdown Badge",
       "caption": "An SVG badge that shows your Discord username and presence. ${mdbUserCount} people use it, so it must be somewhat good. I think.",
       "link": "https://github.com/ashmonty/discord-md-badge"
@@ -14,7 +19,7 @@
     },
     {
       "title": "Adobe Fonts dl",
-      "caption": "A page that lets you download .otf fonts from any Adobe Fonts Web Project/Typekit URL. <br>Made this 'cause adobe only allows system-wide installation of fonts on Windows and macOS, but I use Linux.",
+      "caption": "A page that lets you download .otf fonts from any Adobe Fonts Web Project/Typekit URL.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
       "link": "/adobe-fonts-dl",
       "samePage": true
@@ -30,6 +35,11 @@
       "caption": "A Next.js-based recreation of Windows 9X. Currently an early WIP, so expect bugs. <i>Many</i> bugs.",
       "repo": "https://github.com/ashmonty/binbows",
       "link": "https://binbows.ashmonty.com/"
+    },
+    {
+      "title": "Neofetch but it's always Arch",
+      "caption": "This version of neofetch always returns Arch, on any system. Don't ask me why I did this, but also don't expect any better from me.",
+      "link": "https://github.com/ashmonty/neofetch-but-its-always-arch"
     }
   ]
 }
