@@ -1,3 +1,5 @@
+// TODO: fix animation running on page load
+
 import { useState, useEffect } from "react";
 
 import "../styles/global.css";
