@@ -8,6 +8,8 @@ export default function App({ Component, pageProps }) {
   // we set the state to the darkMode value from localStorage
   const [darkMode, setDarkMode] = useState(true);
 
+  let isFirstLoad = true;
+
   useEffect(() => {
     // if there is no value in localStorage, we set it
     if (!localStorage.getItem("darkMode")) {
@@ -17,8 +19,15 @@ export default function App({ Component, pageProps }) {
     setDarkMode(localStorage.getItem("darkMode") === "true");
   }, []);
 
-  async function setThemeAttr() {
-    document.querySelector("body").classList.add("refresh");
+  async function setThemeAttr(first) {
+    if (isFirstLoad || first) {
+      document.querySelector("body").classList.add("refresh");
+      setTimeout(function () {
+        document.querySelector("body").classList.remove("refresh");
+      }, 500);
+
+      isFirstLoad = false
+    }
     setTimeout(function () {
       document
         .querySelector("html")
@@ -26,10 +35,6 @@ export default function App({ Component, pageProps }) {
     }, 250);
 
     localStorage.setItem("darkMode", darkMode);
-
-    setTimeout(function () {
-      document.querySelector("body").classList.remove("refresh");
-    }, 500);
   }
 
   // we set the data-theme attribute to the body element
@@ -39,7 +44,7 @@ export default function App({ Component, pageProps }) {
   }, [darkMode]);
 
   useEffect(() => {
-    setThemeAttr();
+    setThemeAttr(true);
   });
 
   return (

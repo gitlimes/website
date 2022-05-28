@@ -124,13 +124,13 @@ export default function Home({ cards, darkMode, setDarkMode }) {
           <div>
             <h1>Who?</h1>
             <p>
-              I'm Ash, an 18 year old who likes to make{" "}
+              I'm Ash, an 18 year old who makes{" "}
               <span className="stuff">stuff™</span>!
             </p>
             <p>
-              I enjoy playing the piano and I'm learning to play the guitar, but
-              nothing will ever top my kazoo playing skills. I also love
-              tinkering with stuff, which is why I am an Arch Linux user. Yes,{" "}
+              I play the piano and I'm learning the guitar, but nothing will
+              ever top my kazoo playing skills. I love tinkering with stuff,
+              which is why I am an Arch Linux user. Yes, I'm gonna say it:{" "}
               <i>I use Arch, btw.</i>
             </p>
             <p>
@@ -146,8 +146,8 @@ export default function Home({ cards, darkMode, setDarkMode }) {
                   Pretendo Network April Fools' joke of 2022
                 </a>
               </Link>
-              . What? You think it isn't funny? Well, too bad. This is my about
-              me, I'll boast my funniness whenever I like.
+              . What was that? You don't find it funny? Well, too bad. This is
+              my about me, I can write anything I want.
             </p>
           </div>
           <div className={styles.sideImg} />
@@ -155,14 +155,9 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 
         <div className={styles.stuff} id="stuff">
           <h1>
-            Ok, but what exactly is <span className={styles.stuff}>stuff™</span>
-            ?
+            <span className={styles.stuff}>Stuff™?</span> What's that?
           </h1>
-          <p>
-            Anything I do, really. At the moment it's mainly web dev stuff, but
-            who knows, I might put up something else here in the future{" "}
-            <i>(foreshadowing)</i>
-          </p>
+          <p>Anything I do. As of now. it's mostly web projects.</p>
 
           <div className={styles.list} id="stufflist">
             {cards.map((card, index) => {
