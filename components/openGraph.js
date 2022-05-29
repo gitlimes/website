@@ -1,6 +1,8 @@
+import Head from "next/head";
+
 export default function OpenGraph() {
   return (
-    <head>
+    <Head>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -42,12 +44,15 @@ export default function OpenGraph() {
       <meta property="og:description" content="I make stuff™ in JavaScript." />
       <meta property="og:url" content="https://ashmonty.com/" />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content="https://ashmonty.com/assets/images/twimg.png" />
+      <meta
+        property="og:image"
+        content="https://ashmonty.com/assets/images/twimg.png"
+      />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://ashmonty.com/assets/images/twimg.png" />
-      {/* Google SEO */}
-      <meta name="description" content="I make stuff™ in JavaScript." />
-      <meta name="robots" content="index, follow" />
-    </head>
+      <meta
+        name="twitter:image"
+        content="https://ashmonty.com/assets/images/twimg.png"
+      />
+    </Head>
   );
 }

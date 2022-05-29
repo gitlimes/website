@@ -184,7 +184,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               className={cardStyles.card}
               href="https://github.com/ashmonty?tab=repositories"
               onMouseOut={(e) => mouseLeave(e)}
-              id={`stuffCard-5`}
+              id="stuffCard-7"
             >
               View more
               <svg

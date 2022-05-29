@@ -38,6 +38,7 @@ body {
   scroll-behavior: smooth;
   font-size: 17px;
   z-index: -1;
+  font-display: swap;
 
   transition: background 500ms;
 }

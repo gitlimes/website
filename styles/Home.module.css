@@ -24,7 +24,7 @@
   height: 20rem;
   flex-shrink: 0;
   border-radius: 100%;
-  background: no-repeat center/cover url(../public/assets/images/succshi.jpg)
+  background: no-repeat center/cover url(../public/assets/images/succshi.webp)
     /*, var(--accent)*/;
   overflow: hidden;
 }
@@ -65,7 +65,7 @@ div.about p {
   font-weight: bold;
 }
 div.about .sideImg {
-  background: no-repeat center/cover url(/assets/images/hehe-im-high-get-it.jpg);
+  background: no-repeat center/cover url(/assets/images/hehe-im-high-get-it.webp);
   border-radius: 1rem;
   display: flex;
   justify-content: center;
