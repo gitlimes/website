@@ -1,8 +1,6 @@
-import Head from "next/head";
-
 export default function OpenGraph() {
   return (
-    <Head>
+    <>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -53,6 +51,6 @@ export default function OpenGraph() {
         name="twitter:image"
         content="https://ashmonty.com/assets/images/twimg.png"
       />
-    </Head>
+    </>
   );
 }
