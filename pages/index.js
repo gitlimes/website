@@ -310,16 +310,16 @@ export default function Home({ cards, darkMode, setDarkMode }) {
             </a>
           </div>
         </div>
-      </div>
-      <div className={styles.footer}>
-        Copyright 2022 - Ash "Monty" -{" "}
-        <a
-          href="https://github.com/ashmonty/website"
-          target="_blank"
-          rel="noopener"
-        >
-          Source code
-        </a>
+        <div className={styles.footer}>
+          Copyright 2022 - Ash "Monty" -{" "}
+          <a
+            href="https://github.com/ashmonty/website"
+            target="_blank"
+            rel="noopener"
+          >
+            Source code
+          </a>
+        </div>
       </div>
     </div>
   );

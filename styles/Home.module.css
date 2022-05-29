@@ -1,5 +1,6 @@
 .wrapper {
-  width: 100vw;
+  width: 90vw;
+  max-width: var(--width);
   margin: auto;
   color: var(--secondary);
 }
@@ -23,8 +24,7 @@
   height: 20rem;
   flex-shrink: 0;
   border-radius: 100%;
-  background: no-repeat center/cover
-    url(../public/assets/images/the-only-picture-of-me-outside.jpg)
+  background: no-repeat center/cover url(../public/assets/images/succshi.jpg)
     /*, var(--accent)*/;
   overflow: hidden;
 }
@@ -52,70 +52,65 @@
 /* About */
 
 div.about {
-  margin: auto;
-  width: 90vw;
-  max-width: var(--width);
   color: var(--secondary);
-
   display: grid;
   grid-template-columns: 4fr 3fr;
   gap: 5rem;
 }
-
 div.about p {
   margin: 0.8rem 0;
 }
-
 .link {
   color: var(--accent);
   font-weight: bold;
 }
-
 div.about .sideImg {
   background: no-repeat center/cover url(/assets/images/hehe-im-high-get-it.jpg);
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 14rem;
+  min-height: 16rem;
 }
 
 /* Stuff */
 
 div.stuff {
+  position: relative;
   padding: 3rem 0;
   margin: 6rem 0;
   text-align: center;
-  background: var(--accent);
+  /*background: var(--accent);*/
   color: var(--background);
   transition: height 200ms;
 }
 [data-theme="dark"] div.stuff {
-  position: relative;
-  background: rgba(var(--secondaryrgb), 0.15);
   color: var(--secondary);
 }
-[data-theme="dark"] div.stuff::before {
+div.stuff::before {
   content: "";
   position: absolute;
   z-index: -1;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 40rem;
-  background: linear-gradient(165deg, rgba(var(--accentrgb), 0.2) 5%, transparent 50%);
+  left: min(calc((-100vw + var(--width)) / 2), -5vw); /* competitive css */
+  width: 100vw;
+  height: 100%;
+  background: var(--accent);
 }
-div.stuff > * {
-  margin: auto;
-  width: 90vw;
-  max-width: var(--width);
+[data-theme="dark"] div.stuff::before {
+  background: linear-gradient(
+      165deg,
+      rgba(var(--accentrgb), 0.2) 5%,
+      transparent 50%
+    ),
+    rgba(var(--secondaryrgb), 0.15);
 }
 div.stuff h1 {
-  margin-top: 0;
+  margin: 0;
   margin-bottom: 1rem;
 }
 div.stuff p {
-  margin: 0 auto;
+  margin: 0;
   margin-bottom: 1.5rem;
 }
 div.stuff span.stuff {
@@ -127,7 +122,7 @@ div.stuff span.stuff {
 div.stuff .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.1rem;
+  gap: 1.2rem;
   padding-top: 1rem;
   color: var(--secondary);
 }
@@ -137,14 +132,8 @@ svg.viewMore {
 
 /* Contact */
 
-div.contact {
-  margin: auto;
-  width: 90vw;
-  max-width: var(--width);
-}
-
 .contact p {
-  margin-top: 0;
+  margin: 0;
   margin-bottom: 1.5rem;
 }
 .contact .list {
@@ -163,22 +152,15 @@ div.contact {
   position: relative;
   top: 0;
   left: 0;
-  box-shadow: 0 0 0 var(--secondary);
-  background-color: rgba(var(--secondaryrgb), 0.75);
+  background-color: rgba(var(--accentrgb), 0.75);
 }
 [data-theme="dark"] .contactCard {
   background-color: rgba(var(--secondaryrgb), 0.15);
+  color: var(--secondary);
 }
-/*
 [data-theme="dark"] .contactCard:hover {
-  background-color: rgba(var(--secondaryrgb), 0.35) !important;
+  color: #fff;
 }
-
-.contactCard:hover {
-  top: -0.2rem;
-  left: -0.2rem;
-  box-shadow: 1px 1px 0 var(--background), 0.2rem 0.2rem 0 var(--secondary);
-}*/
 .contactCard.github:hover {
   background-color: #171515;
 }
@@ -202,13 +184,17 @@ div.contact {
   fill: #fff;
   height: 1.5rem;
 }
+[data-theme="dark"] .contactCard svg {
+  fill: var(--secondary);
+}
+[data-theme="dark"] .contactCard:hover svg {
+  fill: #fff;
+}
 
 .footer {
   margin: 4rem auto 2rem;
   width: fit-content;
-  max-width: var(--width);
 }
-
 .footer a:hover {
   color: var(--accent);
   text-decoration: underline;
