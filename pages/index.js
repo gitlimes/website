@@ -19,11 +19,16 @@ export async function getServerSideProps() {
   const _statsJSON = await _statsFetch.json();
   const stats = _statsJSON;
 
+  const microsoftgithubStatsFetch = await fetch(
+    "https://microsoftgithub.com/api/stats"
+  );
+  const microsoftgithubStatsJson = await microsoftgithubStatsFetch.json();
+  const microsoftgithubStats = microsoftgithubStatsJson.rickrolled;
+
   const cards = JSON.parse(
-    JSON.stringify(rawcards.cards).replace(
-      "${mdbUserCount}",
-      stats.discordmdbadge.usercount
-    )
+    JSON.stringify(rawcards.cards)
+      .replace("${mdbUserCount}", stats.discordmdbadge.usercount)
+      .replace("${microsoftgithubusers}", microsoftgithubStats.users)
   );
 
   return {

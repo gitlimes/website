@@ -1,8 +1,8 @@
 {
   "cards": [
     {
-      "title": "microsoftgithub.com",
-      "caption": "A website that lets you create legit-looking GitHub links that rickroll the visitor.",
+      "title": "microsoft​github​.com",
+      "caption": "A website that lets you create legit-looking GitHub links that rickroll the visitor. So far it rickrolled ${microsoftgithubusers} people, can you believe it‽",
       "link": "https://www.microsoftgithub.com/"
     },
     {
