@@ -9,7 +9,7 @@ import rawcards from "/cards.json";
 
 import { renderToString } from "react-dom/server";
 import LoadingBar from "../components/eastereggs/LoadingBar";
-import FakeCAPTCHA from "../components/eastereggs/FakeCAPTCHA";
+import NotARickroll from "../components/eastereggs/NotARickroll";
 
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
@@ -69,7 +69,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
     let avrg = sum / n;
 
     // If the average is less than 100, then it's a bug.
-    if (avrg < 100) {
+    if (avrg < 200) {
       cardBug(e);
     }
 
@@ -84,7 +84,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
     if (!element.className.includes("disabledCard"))
       element.className += " disabledCard";
     disabledCards += 1;
-    if (disabledCards === 6) {
+    if (disabledCards === 4 /* all the cards is too much */) {
       loadingBarEasterEgg(e);
     }
 
@@ -97,7 +97,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
     document.querySelector("#stuff").innerHTML = renderToString(<LoadingBar />);
     setTimeout(function () {
       document.querySelector("#stuff").innerHTML = renderToString(
-        <FakeCAPTCHA />
+        <NotARickroll />
       );
     }, 19000);
   }

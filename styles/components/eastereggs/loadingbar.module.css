@@ -18,6 +18,10 @@
   animation: loading 18s forwards 1;
 }
 
+[data-theme="dark"] .loadingbar::after {
+  background-color: var(--secondary);
+}
+
 @keyframes loading {
   0% {
     width: 0%;
