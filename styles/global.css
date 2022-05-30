@@ -38,8 +38,6 @@ body {
   scroll-behavior: smooth;
   font-size: 17px;
   z-index: -1;
-
-  transition: background 500ms;
 }
 
 [data-theme="dark"] body::before {

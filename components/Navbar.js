@@ -16,7 +16,10 @@ export default function Navbar({ darkMode, setDarkMode }) {
       </li>
       <li
         className={styles.darkModeToggle}
-        onClick={() => setDarkMode(!darkMode)}
+        onClick={() => {
+          document.querySelector("body").style.transition = "background 250ms";
+          setDarkMode(!darkMode);
+        }}
       >
         {darkMode ? (
           <svg
