@@ -108,7 +108,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
     <div>
       <Head>
         <title>Ash "Monty"</title>
-        <OpenGraph />
+        <OpenGraph darkMode={darkMode} />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
