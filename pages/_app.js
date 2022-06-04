@@ -12,14 +12,8 @@ export default function App({ Component, pageProps }) {
     if (!localStorage.getItem("darkMode")) {
       localStorage.setItem("darkMode", true);
     }
-
-    const newTheme = localStorage.getItem("darkMode") === "true";
     // we set the state to the value in localStorage
-    setDarkMode(newTheme);
-
-    document
-      .querySelector("html")
-      .setAttribute("data-theme", newTheme ? "dark" : "light");
+    setDarkMode(localStorage.getItem("darkMode") === "true");
   }, []);
 
   // runs on every theme change
