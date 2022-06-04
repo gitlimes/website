@@ -28,7 +28,7 @@ export async function getServerSideProps() {
   const cards = JSON.parse(
     JSON.stringify(rawcards.cards)
       .replace("${mdbUserCount}", stats.discordmdbadge.usercount)
-      .replace("${microsoftgithubusers}", microsoftgithubStats.users)
+      .replace("${microsoftgithubusers}", `${microsoftgithubStats.kusers}k`)
   );
 
   return {
