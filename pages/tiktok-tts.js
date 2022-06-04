@@ -43,7 +43,9 @@ export async function getServerSideProps() {
 
     // remove empty lines
     const emptyLineRegex = /\| *\| *\|/;
-    rawVoices = rawVoices.filter((line) => !line.match(emptyLineRegex));
+    rawVoices = rawVoices.filter(
+      (line) => !line.match(emptyLineRegex) && line !== ""
+    );
 
     /* split each line into the columns, and clean it up.
        then, assign it to a { label, value } object in the voicelist array
@@ -66,6 +68,9 @@ export async function getServerSideProps() {
     const disneyVoices = voiceList.filter((voice) =>
       voice.label?.includes("Disney")
     );
+    const singingVoices = voiceList.filter((voice) =>
+      voice.label?.includes("singing")
+    );
     const otherVoices = voiceList.filter(
       (voice) =>
         !voice.label?.includes("English") && !voice.label?.includes("Disney")
@@ -74,6 +79,7 @@ export async function getServerSideProps() {
     // create the final voiceList object
     voiceList = [
       { label: "English", options: englishVoices },
+      { label: "Singing", options: singingVoices },
       {
         label: "Disney",
         options: disneyVoices,
@@ -176,7 +182,7 @@ export default function TikTokTTS({ voices, darkMode }) {
       }),
       menu: (provided, state) => ({
         ...provided,
-        background: "#422c3d"
+        background: "#422c3d",
       }),
       input: (provided, _state) => ({
         ...provided,
@@ -262,7 +268,9 @@ export default function TikTokTTS({ voices, darkMode }) {
             formatCreateLabel={(inputValue) =>
               `Try voice [${inputValue}] (untested)`
             }
-            styles={darkMode ? customDropdownStyles.dark : customDropdownStyles.light}
+            styles={
+              darkMode ? customDropdownStyles.dark : customDropdownStyles.light
+            }
             onChange={setSelectedVoice}
           />
           <textarea
