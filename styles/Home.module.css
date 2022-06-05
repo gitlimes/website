@@ -19,13 +19,11 @@
   justify-content: center;
   margin: 6rem auto;
 }
-.hero .imgBg {
+.hero .imgWrapper {
   width: 20rem;
   height: 20rem;
   flex-shrink: 0;
   border-radius: 100%;
-  background: no-repeat center/cover url(../public/assets/images/me2022.webp)
-    /*, var(--accent)*/;
   overflow: hidden;
 }
 .hero .text {
@@ -64,13 +62,12 @@ div.about p {
   color: var(--accent);
   font-weight: bold;
 }
-div.about .sideImg {
-  background: no-repeat center/cover url(/assets/images/hehe-im-high-get-it.webp);
+div.about .imgWrapper {
   border-radius: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 16rem;
+  height: 16rem;
+  overflow: hidden;
 }
 
 /* Stuff */
@@ -216,7 +213,7 @@ svg.viewMore {
     grid-template-columns: 1fr;
   }
 
-  div.about .sideImg {
+  div.about .imgWrapper {
     display: none;
   }
 

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import Navbar from "../components/Navbar";
 import StuffCard from "../components/stuffCard";
@@ -13,6 +14,9 @@ import NotARickroll from "../components/eastereggs/NotARickroll";
 
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
+
+import mainPic from "../public/assets/images/me2022.webp";
+import secondaryPic from "../public/assets/images/hehe-im-high-get-it.webp"
 
 export async function getServerSideProps() {
   const _statsFetch = await fetch("https://www.ashmonty.com/api/stats");
@@ -114,7 +118,13 @@ export default function Home({ cards, darkMode, setDarkMode }) {
       <div className={styles.wrapper} id="wrapper">
         <Navbar home="true" darkMode={darkMode} setDarkMode={setDarkMode} />
         <div className={styles.hero}>
-          <div className={styles.imgBg} id="imgBg" />{" "}
+          <div className={styles.imgWrapper}>
+            <Image
+              src={mainPic}
+              layout="responsive"
+              placeholder="blur"
+            />
+          </div>
           <div className={styles.text} id="hero-text">
             <h1>
               Hey, I'm <span>Ash</span>!
@@ -155,7 +165,13 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               my about me, I can write anything I want.
             </p>
           </div>
-          <div className={styles.sideImg} />
+          <div className={styles.imgWrapper}>
+            <Image
+              src={secondaryPic}
+              layout="intrinsic"
+              placeholder="blur"
+            />
+          </div>
         </div>
 
         <div className={styles.stuff} id="stuff">
