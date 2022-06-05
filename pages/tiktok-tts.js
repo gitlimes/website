@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { useState } from "react";
-import classNames from "classnames";
 
-import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 
-const fallbackVoices = require("../fallbackVoices.json");
+const fallbackVoices = require("../public/assets/json/tiktokVoices.json");
 
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
@@ -62,8 +60,9 @@ export async function getServerSideProps() {
     });
 
     // create the different voice categories
-    const englishVoices = voiceList.filter((voice) =>
-      voice.label?.includes("English")
+    const englishVoices = voiceList.filter(
+      (voice) =>
+        voice.label?.includes("English") || voice.label?.includes("Narrator")
     );
     const disneyVoices = voiceList.filter((voice) =>
       voice.label?.includes("Disney")
@@ -73,7 +72,10 @@ export async function getServerSideProps() {
     );
     const otherVoices = voiceList.filter(
       (voice) =>
-        !voice.label?.includes("English") && !voice.label?.includes("Disney")
+        !voice.label?.includes("English") &&
+        !voice.label?.includes("Disney") &&
+        !voice.label?.includes("Narrator") &&
+        !voice.label?.includes("singing")
     );
 
     // create the final voiceList object
