@@ -111,7 +111,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
   return (
     <div>
       <Head>
-        <title>Ash "Monty"</title>
+        <title>ash</title>
         <OpenGraph darkMode={darkMode} />
       </Head>
 
@@ -327,7 +327,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
           </div>
         </div>
         <div className={styles.footer}>
-          Copyright 2022 - Ash "Monty" -{" "}
+          Copyright 2022 - ash -{" "}
           <a
             href="https://github.com/ashmonty/website"
             target="_blank"

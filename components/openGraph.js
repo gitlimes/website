@@ -32,9 +32,9 @@ export default function OpenGraph({ darkMode }) {
       />
       <meta name="theme-color" content={ darkMode ? "#271322" : "#FF6B6B" } />
       {/* OpenGraph & Twitter stuff */}
-      <meta property="og:site_name" content={`Ash "Monty"`} />
-      <meta property="og:title" content={`Ash "Monty"`} />
-      <meta property="twitter:title" content={`Ash "Monty"`} />
+      <meta property="og:site_name" content={`ash`} />
+      <meta property="og:title" content={`ash`} />
+      <meta property="twitter:title" content={`ash`} />
       <meta
         property="twitter:description"
         content="I make stuff™ in JavaScript."

@@ -137,7 +137,7 @@ export default function AdobeFontsDL() {
   return (
     <div>
       <Head>
-        <title>Adobe Fonts dl | Ash "Monty"</title>
+        <title>Adobe Fonts dl | ash</title>
         <OpenGraph />
       </Head>
 
@@ -206,7 +206,7 @@ export default function AdobeFontsDL() {
         </div>
 
         <div className={styles.footer}>
-          Copyright 2022 - Ash "Monty" -{" "}
+          Copyright 2022 - ash -{" "}
           <a
             href="https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js"
             target="_blank"

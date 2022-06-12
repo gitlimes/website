@@ -246,7 +246,7 @@ export default function TikTokTTS({ voices, darkMode }) {
   return (
     <div>
       <Head>
-        <title>TikTok TTS | Ash "Monty"</title>
+        <title>TikTok TTS | ash</title>
         <OpenGraph />
       </Head>
 
@@ -384,7 +384,7 @@ export default function TikTokTTS({ voices, darkMode }) {
         </div>
 
         <div className={styles.footer}>
-          Copyright 2022 - Ash "Monty" -{" "}
+          Copyright 2022 - ash -{" "}
           <a
             href="https://github.com/ashmonty/website/blob/main/pages/tiktok-tts.js"
             target="_blank"
