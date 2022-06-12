@@ -40,16 +40,16 @@ export default function OpenGraph({ darkMode }) {
         content="I make stuff™ in JavaScript."
       />
       <meta property="og:description" content="I make stuff™ in JavaScript." />
-      <meta property="og:url" content="https://ashmonty.com/" />
+      <meta property="og:url" content="https://ashm.dev/" />
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://ashmonty.com/assets/images/twimg.png"
+        content="https://ashm.dev/assets/images/twimg.png"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:image"
-        content="https://ashmonty.com/assets/images/twimg.png"
+        content="https://ashm.dev/assets/images/twimg.png"
       />
     </>
   );
