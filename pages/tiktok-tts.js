@@ -159,17 +159,17 @@ export default function TikTokTTS({ voices, darkMode }) {
     dark: {
       option: (provided, state) => ({
         ...provided,
-        background: state.isSelected ? "var(--accent)" : "rgba(0,0,0,0)",
+        background: state.isSelected ? "var(--altaccent)" : "rgba(0,0,0,0)",
 
         ":active, :active:hover": {
-          background: "var(--accent)",
+          background: "var(--altaccent)",
           color: "#fff",
         },
 
         ":hover": {
           background: state.isSelected
-            ? "var(--accent)"
-            : "rgba(var(--accentrgb), 0.75)",
+            ? "var(--altaccent)"
+            : "rgba(var(--altaccentrgb), 0.75)",
           color: "#fff",
         },
       }),
@@ -184,7 +184,7 @@ export default function TikTokTTS({ voices, darkMode }) {
       }),
       menu: (provided, state) => ({
         ...provided,
-        background: "#422c3d",
+        background: "#483e55",
       }),
       input: (provided, _state) => ({
         ...provided,

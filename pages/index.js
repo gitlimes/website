@@ -131,7 +131,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               Hey, I'm <span>ash</span>!
             </h1>
             <p id="hero-caption">
-              I make <span className="stuff">stuff™</span>, I think.
+              I make <span className="stuff">stuff™</span>.
             </p>
           </div>
         </div>

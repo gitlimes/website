@@ -14,11 +14,13 @@
 }
 
 :root[data-theme="dark"] {
-  --accent: #ff6b6b;
-  --accentrgb: 255, 107, 107;
+  --accent: #ead94c;
+  --accentrgb: 234, 217, 76;
+  --altaccent: #ab7bcc;
+  --altaccentrgb: 171, 123, 204;
   --secondary: #ddbbd5;
   --secondaryrgb: 221, 187, 213;
-  --background: #271322;
+  --background: #2e283e;
   --backgroundrgb: 39, 19, 34;
 }
 
@@ -50,7 +52,7 @@ body {
   height: 100vh;
   background: linear-gradient(
     195deg,
-    rgba(var(--accentrgb), 0.2) 5%,
+    rgba(var(--altaccentrgb), 0.2) 5%,
     transparent 50%
   );
 }

@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.navbar .darkModeToggle:hover {
+.navbar .darkModeToggle:hover svg {
   color: var(--accent);
 }
 

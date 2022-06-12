@@ -97,7 +97,7 @@ div.stuff::before {
 [data-theme="dark"] div.stuff::before {
   background: linear-gradient(
       165deg,
-      rgba(var(--accentrgb), 0.2) 5%,
+      rgba(var(--altaccentrgb), 0.2) 5%,
       transparent 50%
     ),
     rgba(var(--secondaryrgb), 0.15);
