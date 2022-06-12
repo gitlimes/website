@@ -6,13 +6,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
   return (
     <ul className={styles.navbar} id="navbar">
       <li className={styles.item}>
-        <Link href="/">Ash</Link>
+        <Link href="/">ash</Link>
       </li>
       <li className={styles.item}>
-        <Link href="#stuff">Stuff™</Link>
+        <Link href="#stuff">stuff™</Link>
       </li>
       <li className={styles.item}>
-        <Link href="#contact">Contact</Link>
+        <Link href="#contact">contact</Link>
       </li>
       <li
         className={styles.darkModeToggle}

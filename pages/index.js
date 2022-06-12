@@ -15,7 +15,7 @@ import NotARickroll from "../components/eastereggs/NotARickroll";
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
-import mainPic from "../public/assets/images/me2022.webp";
+import mainPic from "../public/assets/images/me3.webp";
 import secondaryPic from "../public/assets/images/hehe-im-high-get-it.webp"
 
 export async function getServerSideProps() {
@@ -127,7 +127,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
           </div>
           <div className={styles.text} id="hero-text">
             <h1>
-              Hey, I'm <span>Ash</span>!
+              Hey, I'm <span>ash</span>!
             </h1>
             <p id="hero-caption">
               I make <span className="stuff">stuff™</span>, I think.
@@ -139,7 +139,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
           <div>
             <h1>Who?</h1>
             <p>
-              I'm Ash, an 18 year old who makes{" "}
+              I'm ash, an 18 year old who makes{" "}
               <span className="stuff">stuff™</span>!
             </p>
             <p>
