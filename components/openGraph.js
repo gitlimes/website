@@ -30,7 +30,7 @@ export default function OpenGraph({ darkMode }) {
         name="msapplication-config"
         content="/assets/favicons/browserconfig.xml"
       />
-      <meta name="theme-color" content={ darkMode ? "#271322" : "#FF6B6B" } />
+      <meta name="theme-color" content="#ab7bcc" />
       {/* OpenGraph & Twitter stuff */}
       <meta property="og:site_name" content={`ash`} />
       <meta property="og:title" content={`ash`} />
