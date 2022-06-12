@@ -18,7 +18,7 @@
   max-width: 95vw;
   max-height: 95vh;
   box-sizing: border-box;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 .dialog .window h1 {
