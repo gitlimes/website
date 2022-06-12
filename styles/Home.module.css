@@ -135,7 +135,7 @@ svg.viewMore {
 }
 .contact .list {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
 }
 .contactCard {
@@ -218,7 +218,16 @@ svg.viewMore {
   }
 
   .contact .list {
-    grid-template-columns: repeat(3, 2fr);
+    grid-template-columns: repeat(6, 2fr);
+  }
+  .contact .list .contactCard:nth-child(1),
+  .contact .list .contactCard:nth-child(2),
+  .contact .list .contactCard:nth-child(3) {
+    grid-column: span 2;
+  }
+  .contact .list .contactCard:nth-child(4),
+  .contact .list .contactCard:nth-child(5) {
+    grid-column: span 3;
   }
 }
 
@@ -246,15 +255,14 @@ svg.viewMore {
 
 @media screen and (max-width: 600px) {
   .contact .list {
-    grid-template-columns: repeat(2, 3fr);
+    grid-template-columns: 1fr;
+  }
+  .contact .list .contactCard {
+    grid-column: span 1 !important;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .contact .list {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   .hero .text h1 {
     font-size: 3em;
   }

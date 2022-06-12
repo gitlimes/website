@@ -16,7 +16,7 @@ import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
 import mainPic from "../public/assets/images/me3.webp";
-import secondaryPic from "../public/assets/images/hehe-im-high-get-it.webp"
+import secondaryPic from "../public/assets/images/hehe-im-high-get-it.webp";
 
 export async function getServerSideProps() {
   const _statsFetch = await fetch("https://ashm.dev/api/stats");
@@ -121,6 +121,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
           <div className={styles.imgWrapper}>
             <Image
               src={mainPic}
+              alt="A picture showing me, smiling to the camera in a white jumper"
               layout="responsive"
               placeholder="blur"
             />
@@ -170,6 +171,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               src={secondaryPic}
               layout="intrinsic"
               placeholder="blur"
+              alt="A picture showing me, sitting on some tall rocks, wearing a beige montgomery and a pair of jeans"
             />
           </div>
         </div>
@@ -261,7 +263,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               ashm#9398
             </a>
             <a
-              href="https://twitter.com/ashmmonty"
+              href="https://twitter.com/ashmlnt"
               target="_blank"
               rel="noopener"
               className={styles.contactCard + " " + styles.twitter}
@@ -276,6 +278,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               </svg>
               ashmlnt
             </a>
+            {/*
             <a
               rel="me"
               href="https://mas.to/@ashmonty"
@@ -292,6 +295,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               </svg>
               ashmonty
             </a>
+          */}
             <a
               href="mailto:hey@ashm.dev"
               target="_blank"
