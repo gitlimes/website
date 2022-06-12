@@ -112,7 +112,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
     <div>
       <Head>
         <title>ash</title>
-        <OpenGraph darkMode={darkMode} />
+        <OpenGraph />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">
