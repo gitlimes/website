@@ -123,7 +123,6 @@ export default function Home({ cards, darkMode, setDarkMode }) {
               src={mainPic}
               alt="A picture showing me, smiling to the camera in a white jumper"
               layout="responsive"
-              placeholder="blur"
             />
           </div>
           <div className={styles.text} id="hero-text">
@@ -170,7 +169,6 @@ export default function Home({ cards, darkMode, setDarkMode }) {
             <Image
               src={secondaryPic}
               layout="intrinsic"
-              placeholder="blur"
               alt="A picture showing me, sitting on some tall rocks, wearing a beige montgomery and a pair of jeans"
             />
           </div>
