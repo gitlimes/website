@@ -38,7 +38,7 @@ export default function AdobeFontsDL() {
   };
 
   // various regexes
-  const styleSheetURLRegex = /https:\/\/use.typekit.net\/.*\.css/g;
+  const styleSheetURLRegex = /https:\/\/use\.typekit\.net\/.*\.css/g;
   const stylesheetIDRegex = /.{7}/g;
 
   const fontUrlRegex =
@@ -124,7 +124,7 @@ export default function AdobeFontsDL() {
     // after generating the zip file, download it
     generateZip.then(() => {
       const extractStyleSheetIDRegex =
-        /(?<=https:\/\/use.typekit.net\/)(.{7})(?=\.css)/g;
+        /(?<=https:\/\/use\.typekit\.net\/)(.{7})(?=\.css)/g;
       stylesheetID = stylesheetID || cssUrl.match(extractStyleSheetIDRegex);
 
       fontZip
