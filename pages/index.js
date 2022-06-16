@@ -140,12 +140,12 @@ export default function Home({ cards, darkMode, setDarkMode }) {
             <h1>Who?</h1>
             <p>
               I'm ash, an 18 year old who makes{" "}
-              <span className="stuff">stuff™</span>!
+              <span className="stuff">stuff™</span>! But before I tell you what <span className="stuff">stuff™</span> is, here's a little about me!
             </p>
             <p>
-              I play the piano and I'm learning the guitar, but nothing will
+              I love playing the piano and I'm learning to play the guitar, but nothing will
               ever top my kazoo playing skills. I love tinkering with stuff,
-              which is why I am an Arch Linux user. Yes, I'm gonna say it:{" "}
+              which is why I am an Arch Linux user. Yes, you heard me:{" "}
               <i>I use Arch, btw.</i>
             </p>
             <p>
