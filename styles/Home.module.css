@@ -25,6 +25,8 @@
   flex-shrink: 0;
   border-radius: 100%;
   overflow: hidden;
+  background: var(--altaccent, var(--accent));
+  user-select: none;
 }
 .hero .text {
   margin-left: 4rem;

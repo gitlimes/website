@@ -119,11 +119,12 @@ export default function Home({ cards, darkMode, setDarkMode }) {
         <Navbar home="true" darkMode={darkMode} setDarkMode={setDarkMode} />
         <div className={styles.hero}>
           <div className={styles.imgWrapper}>
-            <Image
+          <img src="/assets/images/medrsvg.svg" alt="A drawing of me" />
+            {/*<Image
               src={mainPic}
               alt="A picture showing me, smiling to the camera in a white jumper"
               layout="responsive"
-            />
+            />*/}
           </div>
           <div className={styles.text} id="hero-text">
             <h1>
