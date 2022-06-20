@@ -4,31 +4,37 @@ export default function OpenGraph({ darkMode }) {
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="/assets/favicons/apple-touch-icon.png"
+        href="/assets/favicons/apple-touch-icon.png?v=20220620"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/assets/favicons/favicon-32x32.png"
+        href="/assets/favicons/favicon-32x32.png?v=20220620"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/assets/favicons/favicon-16x16.png"
+        href="/assets/favicons/favicon-16x16.png?v=20220620"
       />
-      <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+      <link
+        rel="manifest"
+        href="/assets/favicons/site.webmanifest?v=20220620"
+      />
       <link
         rel="mask-icon"
-        href="/assets/favicons/safari-pinned-tab.svg"
-        color="#5bbad5"
+        href="/assets/favicons/safari-pinned-tab.svg?v=20220620"
+        color="#ab7bcc"
       />
-      <link rel="shortcut icon" href="/assets/favicons/favicon.ico" />
+      <link
+        rel="shortcut icon"
+        href="/assets/favicons/favicon.ico?v=20220620"
+      />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta
         name="msapplication-config"
-        content="/assets/favicons/browserconfig.xml"
+        content="/assets/favicons/browserconfig.xml?v=20220620"
       />
       <meta name="theme-color" content="#ab7bcc" />
       {/* OpenGraph & Twitter stuff */}
