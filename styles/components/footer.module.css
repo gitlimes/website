@@ -1,0 +1,9 @@
+.footer {
+  width: 100%;
+  text-align: center;
+  margin: 4rem 0 2rem;
+}
+.footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}

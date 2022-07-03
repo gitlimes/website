@@ -8,6 +8,8 @@ import classNames from "classnames";
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
+import Footer from "../components/Footer";
+
 import styles from "../styles/stuffitempage.module.css";
 
 import JSZip from "jszip";
@@ -205,16 +207,7 @@ export default function AdobeFontsDL() {
           </Guide>
         </div>
 
-        <div className={styles.footer}>
-          Copyright 2022 - ash -{" "}
-          <a
-            href="https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js"
-            target="_blank"
-            rel="noopener"
-          >
-            Source code
-          </a>
-        </div>
+        <Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js"/>
       </div>
     </div>
   );

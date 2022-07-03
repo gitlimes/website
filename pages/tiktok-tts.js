@@ -8,6 +8,8 @@ const fallbackVoices = require("../public/assets/json/tiktokVoices.json");
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
+import Footer from "../components/Footer";
+
 import styles from "../styles/stuffitempage.module.css";
 
 import { saveAs } from "file-saver";
@@ -383,16 +385,7 @@ export default function TikTokTTS({ voices, darkMode }) {
           </Guide>
         </div>
 
-        <div className={styles.footer}>
-          Copyright 2022 - ash -{" "}
-          <a
-            href="https://github.com/ashmonty/website/blob/main/pages/tiktok-tts.js"
-            target="_blank"
-            rel="noopener"
-          >
-            Source code
-          </a>
-        </div>
+        <Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/tiktok-tts.js"/>
       </div>
     </div>
   );

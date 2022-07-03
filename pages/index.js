@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import StuffCard from "../components/stuffCard";
 import OpenGraph from "../components/openGraph";
+import Footer from "../components/Footer";
 
 import rawcards from "/cards.json";
 
@@ -119,7 +120,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
         <Navbar home="true" darkMode={darkMode} setDarkMode={setDarkMode} />
         <div className={styles.hero}>
           <div className={styles.imgWrapper}>
-          <img src="/assets/images/me-drawing.svg" alt="A drawing of me" />
+            <img src="/assets/images/me-drawing.svg" alt="A drawing of me" />
             {/*<Image
               src={mainPic}
               alt="A picture showing me, smiling to the camera in a white jumper"
@@ -141,13 +142,15 @@ export default function Home({ cards, darkMode, setDarkMode }) {
             <h1>Who?</h1>
             <p>
               I'm ash, an 18 year old who makes{" "}
-              <span className="stuff">stuff™</span>! But before I tell you what <span className="stuff">stuff™</span> is, here's a little about me!
+              <span className="stuff">stuff™</span>! But before I tell you what{" "}
+              <span className="stuff">stuff™</span> is, here's a little about
+              me!
             </p>
             <p>
-              I love playing the piano and I'm learning to play the guitar, but nothing will
-              ever top my kazoo playing skills. I love tinkering with stuff,
-              which is why I am an Arch Linux user. Yes, you heard me:{" "}
-              <i>I use Arch, btw.</i>
+              I love playing the piano and I'm learning to play the guitar, but
+              nothing will ever top my kazoo playing skills. I love tinkering
+              with stuff, which is why I am an Arch Linux user. Yes, you heard
+              me: <i>I use Arch, btw.</i>
             </p>
             <p>
               I am very funny, especially when sleep deprived, as can be seen
@@ -329,16 +332,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
             </a>
           </div>
         </div>
-        <div className={styles.footer}>
-          Copyright 2022 - ash -{" "}
-          <a
-            href="https://github.com/ashmonty/website"
-            target="_blank"
-            rel="noopener"
-          >
-            Source code
-          </a>
-        </div>
+        <Footer />
       </div>
     </div>
   );
