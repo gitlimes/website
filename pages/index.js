@@ -16,8 +16,7 @@ import NotARickroll from "../components/eastereggs/NotARickroll";
 import styles from "../styles/Home.module.css";
 import cardStyles from "../styles/components/stuffcard.module.css";
 
-import mainPic from "../public/assets/images/me3.webp";
-import secondaryPic from "../public/assets/images/hehe-im-high-get-it.webp";
+import secondaryPic from "../public/assets/images/blahaj-dev.png";
 
 export async function getServerSideProps() {
   const _statsFetch = await fetch("https://ashm.dev/api/stats");
