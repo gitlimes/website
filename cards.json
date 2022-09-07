@@ -11,10 +11,10 @@
       "link": "https://github.com/ashmonty/discord-md-badge"
     },
     {
-      "title": "TikTok TTS",
-      "caption": "A page that allows you to read text in TikTok's Text To Speech voices and download the audio as an mp3.",
-      "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
-      "link": "/tiktok-tts",
+      "title": "Twitter 64",
+      "caption": "A page that lets you \"tweet\" from Twitter for Nintendo™ 64",
+      "repo": "https://github.com/ashmonty/website/blob/main/pages/twitter64/index.js",
+      "link": "/twitter64",
       "samePage": true
     },
     {
