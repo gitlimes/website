@@ -145,6 +145,10 @@ button.styled:hover {
   padding: 24px;
   margin-top: 2rem;
 }
+[data-theme="light"] .fakeTweet {
+  background-color: #DABEEF;
+  color: #694BD2;
+}
 .fakeTweet .tweetHeader {
   display: flex;
   flex-flow: row nowrap;
@@ -167,6 +171,10 @@ button.styled:hover {
 }
 .fakeTweet .tweetContent {
   color: #F1E4EF;
+}
+[data-theme="light"] .fakeTweet .tweetContent,
+[data-theme="light"] .fakeTweet .tweetHeader .text p.name {
+  color: var(--secondary);
 }
 .fakeTweet .tweetInfo {
   margin-bottom: 0;
