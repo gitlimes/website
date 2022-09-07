@@ -7,7 +7,7 @@ export default function Guide({ icon, children }) {
   const [open, setopen] = useState(false);
   return (
     <div className={styles.guideWrapper}>
-      <button className={styles.icon} onClick={() => setopen(!open)}>
+      <button className={styles.icon} onClick={() => setopen(!open)} aria-label="Guide">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

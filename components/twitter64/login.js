@@ -7,7 +7,7 @@ export default function Login({ authUrl }) {
     <a href="https://twitter.com/ashmlnt/status/1567461559668035584?s=20&t=LgFqtP7Lg3suPr0GzSmd8w" referrerPolicy="no-referrer">
       <div className={styles.fakeTweet}>
         <div className={styles.tweetHeader}>
-          <img src="https://cdn.discordapp.com/avatars/406125028065804289/4fef71772bccad4a8511784b80416b10.png?size=256" />
+          <img alt="Profile picture of my Twitter account" src="https://cdn.discordapp.com/avatars/406125028065804289/4fef71772bccad4a8511784b80416b10.png?size=256" />
           <div className={styles.text}>
             <p className={styles.name}>ash</p>
             <p className={styles.username}>@ashmlnt</p>
