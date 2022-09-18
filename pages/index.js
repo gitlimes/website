@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { Fragment } from "react"; 
 
 import Navbar from "../components/Navbar";
 import StuffCard from "../components/stuffCard";
@@ -187,20 +188,19 @@ export default function Home({ cards, darkMode, setDarkMode }) {
           </h1>
           <div className={styles.infiniteScrollWrapper}>
             <span className={styles.infiniteScroll}>
-              {Array.apply(null, { length: 20 }).map(() => (
-                <>
-                  <span className={styles.stuff}>Stuff™</span> is the very
-                  fabric of reality.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is everything.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is nothing.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is the beginning.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is the end.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is the ἀρχή.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is the shape.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is the matter.{" "}
-                  <span className={styles.stuff}>Stuff™</span> is the ἄπειρον.{" "}
-                  
-                </>
+              {Array.apply(null, { length: 20 }).map((_e, i) => (
+                <Fragment key={`${i}`}>
+                  <span className={styles.stuff} key={`${i}0`}>Stuff™</span> is the very fabric{" "}
+                  of reality.{" "}
+                  <span className={styles.stuff} key={`${i}1`}>Stuff™</span> is everything.{" "}
+                  <span className={styles.stuff} key={`${i}2`}>Stuff™</span> is nothing.{" "}
+                  <span className={styles.stuff} key={`${i}3`}>Stuff™</span> is the beginning.{" "}
+                  <span className={styles.stuff} key={`${i}4`}>Stuff™</span> is the end.{" "}
+                  <span className={styles.stuff} key={`${i}5`}>Stuff™</span> is the ἀρχή.{" "}
+                  <span className={styles.stuff} key={`${i}6`}>Stuff™</span> is the shape.{" "}
+                  <span className={styles.stuff} key={`${i}7`}>Stuff™</span> is the matter.{" "}
+                  <span className={styles.stuff} key={`${i}8`}>Stuff™</span> is the ἄπειρον.{" "}
+                </Fragment>
               ))}
             </span>
           </div>
