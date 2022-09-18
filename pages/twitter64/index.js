@@ -74,26 +74,12 @@ export default function Home({ loggedIn, authUrl, accessToken }) {
             <Tweet accessToken={accessToken} setNotice={setNotice} />
           )}
 
-          {notice === "success" ? (
-            <p className={styles.notice}>
-              Done! Make sure to check out the{" "}
-              <span
-                style={{ cursor: "pointer", color: "var(--accent)" }}
-                onClick={() =>
-                  document.querySelector("#credits button").click()
-                }
-              >
-                awesome people who made this possible
-              </span>
-              !
-            </p>
-          ) : (
-            <p
-              className={styles.notice}
-              style={{ visibility: notice ? "visible" : "hidden" }}
-              dangerouslySetInnerHTML={{ __html: notice || "hi" }}
-            />
-          )}
+          <p
+            className={styles.notice}
+            style={{ visibility: notice ? "visible" : "hidden" }}
+            dangerouslySetInnerHTML={{ __html: notice || "hi" }}
+          />
+          
         </div>
 
         <Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/twitter64/index.js" />
