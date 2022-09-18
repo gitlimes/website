@@ -42,7 +42,7 @@
   appearance: none;
   border: none;
 
-  background: var(--altaccent);
+  background: var(--accent);
   color: var(--background);
 
   font-size: 1.5rem;

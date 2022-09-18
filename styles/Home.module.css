@@ -7,29 +7,39 @@
 .wrapper h1 {
   font-family: var(--primary-font);
   margin-bottom: 1rem;
+  font-size: 3rem;
 }
 .wrapper p {
   font-family: var(--secondary-font);
 }
 
+.link {
+  color: var(--accent);
+  font-weight: bold;
+}
+
 /* Hero */
 
 .hero {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5rem;
   justify-content: center;
-  margin: 6rem auto;
+  align-items: center;
+  margin: 9rem auto;
 }
 .hero .imgWrapper {
-  width: 20rem;
-  height: 20rem;
-  flex-shrink: 0;
+  width: 22rem;
+  height: 22rem;
   border-radius: 100%;
   overflow: hidden;
-  background: var(--altaccent, var(--accent));
-  user-select: none;
+  background: var(--accent);
+  margin: auto;
+}
+[data-theme="dark"] .hero .imgWrapper {
+  background: var(--secondary);
 }
 .hero .text {
-  margin-left: 4rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -44,31 +54,35 @@
   color: var(--accent);
 }
 .hero .text p {
-  font-size: 2.5rem;
-  margin: 0;
+  font-size: 3rem;
+  margin:  0.75rem 0 0;
   transition: font-size 200ms;
 }
 
 /* About */
+div.aboutWrapper {
+  margin: 9rem 0;
+}
 
 div.about {
   color: var(--secondary);
   display: grid;
-  grid-template-columns: 4fr 3fr;
-  gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  height: fit-content;
+  gap: 6rem;
 }
 div.about p {
-  margin: 0.8rem 0;
+  margin: 1.5rem 0;
 }
-.link {
-  color: var(--accent);
-  font-weight: bold;
+
+div.about .paragraph {
+  height: fit-content;
 }
+
 div.about .imgWrapper {
+  position: relative;
   border-radius: 1rem;
-  display: flex;
   align-items: center;
-  height: 18rem;
   overflow: hidden;
 }
 
@@ -76,8 +90,7 @@ div.about .imgWrapper {
 
 div.stuff {
   position: relative;
-  padding: 6rem 0;
-  margin: 6rem 0;
+  padding: 8rem 0;
   text-align: center;
   /*background: var(--accent);*/
   color: var(--background);
@@ -99,22 +112,36 @@ div.stuff::before {
 [data-theme="dark"] div.stuff::before {
   background: linear-gradient(
       165deg,
-      rgba(var(--altaccentrgb), 0.2) 5%,
+      rgba(var(--accentrgb), 0.2) 5%,
       transparent 50%
     ),
     rgba(var(--secondaryrgb), 0.15);
 }
 div.stuff h1 {
   margin: 0;
-  margin-bottom: 1rem;
-}
-div.stuff p {
-  margin: 0;
   margin-bottom: 1.5rem;
+}
+div.stuff div.infiniteScrollWrapper {
+  position: relative;
+  margin-bottom: 4rem;
+}
+div.stuff span.infiniteScroll {
+  position: absolute;
+  top: 0;
+  left: -200vw;
+  width: fit-content;
+  white-space: nowrap;
+  margin: 0;
+  animation: infiniteScroll 180s linear infinite;
+}
+@keyframes infiniteScroll { 
+	0% { transform: translate3d(0); } 
+	100% { transform: translate3d(calc(100% / -3), 0, 0); }
 }
 div.stuff span.stuff {
   color: var(--secondary);
 }
+
 [data-theme="dark"] div.stuff span.stuff {
   color: var(--accent);
 }
@@ -130,6 +157,9 @@ svg.viewMore {
 }
 
 /* Contact */
+div.contact {
+  margin: 6rem 0;
+}
 
 .contact p {
   margin: 0;
@@ -192,14 +222,11 @@ svg.viewMore {
 
 @media screen and (max-width: 1278px) {
   .hero {
-    flex-flow: column;
+    grid-auto-flow: row;
     align-items: center;
+    justify-content: center;
     padding-top: 0;
     margin: 3rem auto;
-  }
-  .hero .text {
-    margin-top: 1rem;
-    text-align: center;
   }
 
   div.about {
@@ -236,7 +263,6 @@ svg.viewMore {
 
   .hero .text {
     margin: 0;
-    margin-top: 24px;
   }
   .hero .text h1 {
     font-size: 4em;
@@ -247,11 +273,28 @@ svg.viewMore {
 }
 
 @media screen and (max-width: 600px) {
+  .hero {
+    gap: 2.5rem;
+  }
   .contact .list {
     grid-template-columns: 1fr;
   }
   .contact .list .contactCard {
     grid-column: span 1 !important;
+  }
+  .hero .imgWrapper {
+    width: max(50vw, 256px);
+    height: max(50vw, 256px);
+  }
+
+  div.aboutWrapper {
+    margin: 6rem 0;
+  }
+  div.stuff {
+    padding: 6rem 0;
+  }
+  div.contact {
+    margin: 4rem 0;
   }
 }
 
@@ -261,5 +304,17 @@ svg.viewMore {
   }
   .hero .text p {
     font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  div.aboutWrapper {
+    margin: 4rem 0;
+  }
+  div.stuff {
+    padding: 4rem 0;
+  }
+  div.contact {
+    margin: 3rem 0;
   }
 }

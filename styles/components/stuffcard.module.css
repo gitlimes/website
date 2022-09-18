@@ -1,7 +1,7 @@
 .card {
   background: var(--background);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 2.5rem;
   text-align: left;
   transition: 150ms;
   box-shadow: 0 0 0 var(--secondary);
@@ -19,6 +19,7 @@
 .card h2 {
   margin-bottom: 1rem;
   font-family: var(--primary-font);
+  font-size: 2rem;
 }
 
 .card:last-child {
@@ -37,7 +38,7 @@
 
 @media screen and (max-width: 768px) {
   .card {
-    padding: 24px;
+    padding: 2rem;
   }
 
   .card:last-child {
@@ -46,5 +47,11 @@
 
   .card.hideOnMobile {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 2rem;
   }
 }

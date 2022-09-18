@@ -145,15 +145,15 @@ export default function TikTokTTS({ voices, darkMode }) {
         borderColor: "rgba(0,0,0,0) !important",
         outline: "none !important",
       }),
-      input: (provided, _state) => ({
+      input: (provided) => ({
         ...provided,
         color: "var(--secondary) !important",
       }),
-      placeholder: (provided, _state) => ({
+      placeholder: (provided) => ({
         ...provided,
         color: "rgba(var(--secondaryrgb), 0.8) !important",
       }),
-      singleValue: (provided, _state) => ({
+      singleValue: (provided) => ({
         ...provided,
         color: "var(--secondary) !important",
       }),
@@ -161,17 +161,17 @@ export default function TikTokTTS({ voices, darkMode }) {
     dark: {
       option: (provided, state) => ({
         ...provided,
-        background: state.isSelected ? "var(--altaccent)" : "rgba(0,0,0,0)",
+        background: state.isSelected ? "var(--accent)" : "rgba(0,0,0,0)",
 
         ":active, :active:hover": {
-          background: "var(--altaccent)",
+          background: "var(--accent)",
           color: "#fff",
         },
 
         ":hover": {
           background: state.isSelected
-            ? "var(--altaccent)"
-            : "rgba(var(--altaccentrgb), 0.75)",
+            ? "var(--accent)"
+            : "rgba(var(--accentrgb), 0.75)",
           color: "#fff",
         },
       }),
@@ -184,19 +184,19 @@ export default function TikTokTTS({ voices, darkMode }) {
         borderColor: "rgba(0,0,0,0) !important",
         outline: "none !important",
       }),
-      menu: (provided, state) => ({
+      menu: (provided) => ({
         ...provided,
-        background: "#483e55",
+        background: "#2f3159",
       }),
-      input: (provided, _state) => ({
+      input: (provided) => ({
         ...provided,
         color: "var(--secondary) !important",
       }),
-      placeholder: (provided, _state) => ({
+      placeholder: (provided) => ({
         ...provided,
         color: "rgba(var(--secondaryrgb), 0.8) !important",
       }),
-      singleValue: (provided, _state) => ({
+      singleValue: (provided) => ({
         ...provided,
         color: "var(--secondary) !important",
       }),

@@ -120,68 +120,90 @@ export default function Home({ cards, darkMode, setDarkMode }) {
         <div className={styles.hero}>
           <div className={styles.imgWrapper}>
             <img src="/assets/images/me-drawing.svg" alt="A drawing of me" />
-            {/*<Image
-              src={mainPic}
-              alt="A picture showing me, smiling to the camera in a white jumper"
-              layout="responsive"
-            />*/}
           </div>
           <div className={styles.text} id="hero-text">
             <h1>
               Hey, I'm <span>ash</span>!
             </h1>
             <p id="hero-caption">
-              I make <span className="stuff">stuff™</span>.
+              I make <span className="stuff">stuff™</span>
             </p>
           </div>
         </div>
 
-        <div className={styles.about} id="about">
-          <div>
-            <h1>Who?</h1>
-            <p>
-              I'm ash, an 18 year old who makes{" "}
-              <span className="stuff">stuff™</span>! But before I tell you what{" "}
-              <span className="stuff">stuff™</span> is, here's a little about
-              me!
-            </p>
-            <p>
-              I love playing the piano and I'm learning to play the guitar, but
-              nothing will ever top my kazoo playing skills. I love tinkering
-              with stuff, which is why I am an Arch Linux user. Yes, you heard
-              me: <i>I use Arch, btw.</i>
-            </p>
-            <p>
-              I am very funny, especially when sleep deprived, as can be seen
-              from the{" "}
-              <Link
-                href="https://pretendo.network/nso-legacy-pack"
-                target="_blank"
-                rel="noopener noreferrer"
-                passHref
-              >
-                <a className={styles.link}>
-                  Pretendo Network April Fools' joke of 2022
-                </a>
-              </Link>
-              . What was that? You don't find it funny? Well, too bad. This is
-              my about me, I can write anything I want.
-            </p>
-          </div>
-          <div className={styles.imgWrapper}>
-            <Image
-              src={secondaryPic}
-              layout="intrinsic"
-              alt="A picture showing me, sitting on some tall rocks, wearing a beige montgomery and a pair of jeans"
-            />
+        <div className={styles.aboutWrapper} id="about">
+          <h1>Who?</h1>
+          <div className={styles.about}>
+            <div className={styles.paragraph}>
+              <p>
+                I'm ash, an 18 year old who makes{" "}
+                <span className="stuff">stuff™</span>!<br />
+                What <i>is</i> <span className="stuff">stuff™</span>? I'll tell
+                you in a sec, but first: let me waste some of your time with
+                some personal information that you're probably going to forget
+                in the next 5 to 10 seconds!
+              </p>
+              <p>
+                I love playing the piano, despite not really being that good at
+                it, but I make up for it by being quite possibly the best kazoo
+                player to ever exist on this cruel Earth. I also love tinkering
+                with stuff, which is why I am an Arch Linux user. Yes, you heard
+                me: <i>I use Arch, btw.</i>
+              </p>
+              <p>
+                As you may have realized by now, I am excruciatingly funny
+                (especially when sleep deprived)! Such funniness can be seen in
+                the{" "}
+                <Link
+                  href="https://pretendo.network/nso-legacy-pack"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  passHref
+                >
+                  <a className={styles.link}>
+                    Pretendo Network April Fools' joke of 2022
+                  </a>
+                </Link>
+                . What? You don't find it that funny? Damn, too bad. This is my
+                about me, I'll write what I want.
+              </p>
+            </div>
+            <div className={styles.imgWrapper}>
+              <Image
+                src={secondaryPic}
+                layout="fill"
+                objectFit="cover"
+                alt="A picture of a Blåhaj (a stuffed shark plush from IKEA) wearing headphones and sitting at a desk. The shark appears to be working on some code on their main monitor, and they have this website open on their secondary monitor"
+              />
+            </div>
           </div>
         </div>
 
         <div className={styles.stuff} id="stuff">
           <h1>
-            <span className={styles.stuff}>Stuff™?</span> What's that?
+            <span className={styles.stuff}>Stuff™</span>.{" "}
+            <span className={styles.stuff}>Stuff™</span>?{" "}
+            <span className={styles.stuff}>Stuff™</span>!
           </h1>
-          <p>Anything I do. As of now. it's mostly web projects.</p>
+          <div className={styles.infiniteScrollWrapper}>
+            <span className={styles.infiniteScroll}>
+              {Array.apply(null, { length: 20 }).map(() => (
+                <>
+                  <span className={styles.stuff}>Stuff™</span> is the very
+                  fabric of reality.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is everything.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is nothing.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is the beginning.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is the end.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is the ἀρχή.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is the shape.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is the matter.{" "}
+                  <span className={styles.stuff}>Stuff™</span> is the ἄπειρον.{" "}
+                  
+                </>
+              ))}
+            </span>
+          </div>
 
           <div className={styles.list} id="stufflist">
             {cards.map((card, index) => {

@@ -7,24 +7,21 @@
   --secondaryrgb: 37, 22, 89;
   --background: #f6effb;
   --backgroundrgb: 246, 239, 251;
-  --primary-font: "Poppins", sans-serif;
-  --secondary-font: "museo-sans-rounded", sans-serif;
+  --primary-font:  azo-sans-web, sans-serif;
+  --secondary-font: objektiv-mk2, sans-serif;
   --radius: 100%;
   --border: none;
 }
 
 :root[data-theme="dark"] {
-  --accent: #ead94c;
-  --accentrgb: 234, 217, 76;
-  --altaccent: #ab7bcc;
-  --altaccentrgb: 171, 123, 204;
-  --secondary: #ddbbd5;
-  --secondaryrgb: 221, 187, 213;
-  --background: #2e283e;
-  --backgroundrgb: 46, 40, 62;
+  --accent: #FF5DA2;
+  --accentrgb:  255, 93, 162;
+  --secondary: #BC8CF2;
+  --secondaryrgb: 188, 140, 242;
+  --background: #16213E;
+  --backgroundrgb: 22, 33, 62;
 }
 
-/*@import url('https://rsms.me/inter/inter.css');*/
 html,
 body {
   position: relative;
@@ -52,7 +49,7 @@ body {
   height: 100vh;
   background: linear-gradient(
     195deg,
-    rgba(var(--altaccentrgb), 0.2) 5%,
+    rgba(var(--accentrgb), 0.2) 5%,
     transparent 50%
   );
 }
@@ -91,6 +88,11 @@ a {
 
 ::selection {
   background: var(--secondary);
+  color: var(--background);
+}
+
+[data-theme="dark"] ::selection {
+  background: var(--accent);
   color: var(--background);
 }
 
