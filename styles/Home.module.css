@@ -70,6 +70,7 @@ div.about {
   grid-template-columns: 1fr 1fr;
   height: fit-content;
   gap: 6rem;
+  margin-top: 2rem;
 }
 div.about p {
   margin: 1.5rem 0;
@@ -77,6 +78,12 @@ div.about p {
 
 div.about .paragraph {
   height: fit-content;
+}
+div.about .paragraph p:first-child {
+  margin-top: 0;
+}
+div.about .paragraph p:last-child {
+  margin-bottom: 0;
 }
 
 div.about .imgWrapper {
