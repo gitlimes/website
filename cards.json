@@ -18,10 +18,10 @@
       "samePage": true
     },
     {
-      "title": "Wii U error gen",
-      "caption": "Here you can render an error dialog from a Wii U. Because, duh, who doesn't wanna do that.",
-      "repo": "https://github.com/ashmonty/website/blob/main/pages/twitter64/index.js",
-      "link": "/wiiu",
+      "title": "Wii U/3DS error gen",
+      "caption": "Here you can render an error dialog from a Wii U or 3DS. Because, duh, who doesn't wanna do that.",
+      "repo": "https://github.com/ashmonty/website/blob/main/pages/api/errorgen",
+      "link": "/errors",
       "samePage": true
     },
     {
