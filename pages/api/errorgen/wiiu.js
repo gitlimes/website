@@ -33,15 +33,15 @@ export default async function stats(req, res) {
 	}
 
 	GlobalFonts.registerFromPath(
-		"public/assets/fonts/rodin/FOTRodin Pro DB.otf",
+		`${__dirname}/../../../../../public/assets/fonts/rodin/FOTRodin Pro DB.otf`,
 		"Rodin Bold"
 	);
 
-	await loadImage("public/assets/images/wiiu_errorcode_base.png").then(
-		(image) => {
-			ctx.drawImage(image, 0, 0);
-		}
-	);
+	await loadImage(
+		`${__dirname}/../../../../../public/assets/images/wiiu_errorcode_base.png`
+	).then((image) => {
+		ctx.drawImage(image, 0, 0);
+	});
 
 	ctx.font = '40px "Rodin Bold"';
 	ctx.textAlign = "center";
@@ -59,11 +59,11 @@ export default async function stats(req, res) {
 		61
 	);
 
-	await loadImage("public/assets/images/wiiu_errorcode_fade.png").then(
-		(image) => {
-			ctx.drawImage(image, 0, 0);
-		}
-	);
+	await loadImage(
+		`${__dirname}/../../../../../public/assets/images/wiiu_errorcode_fade.png`
+	).then((image) => {
+		ctx.drawImage(image, 0, 0);
+	});
 
 	ctx.fillText(renderText.button, 473.5, 530.5, 500);
 
