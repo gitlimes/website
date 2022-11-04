@@ -10,7 +10,7 @@ export default async function stats(req, res) {
 			serialNumber,
 		},
 	} = req;
-	const { createCanvas, loadImage, registerFont } = require("canvas");
+	const { createCanvas, loadImage, GlobalFonts } = require("@napi-rs/canvas");
 	const canvas = createCanvas(947, 595);
 	const ctx = canvas.getContext("2d");
 
@@ -32,9 +32,10 @@ export default async function stats(req, res) {
 		}
 	}
 
-	registerFont("public/assets/fonts/rodin/FOTRodin Pro DB.otf", {
-		family: "Rodin Bold",
-	});
+	GlobalFonts.registerFromPath(
+		"public/assets/fonts/rodin/FOTRodin Pro DB.otf",
+		"Rodin Bold"
+	);
 
 	await loadImage("public/assets/images/wiiu_errorcode_base.png").then(
 		(image) => {
