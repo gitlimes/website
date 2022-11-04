@@ -18,6 +18,13 @@
       "samePage": true
     },
     {
+      "title": "Wii U error gen",
+      "caption": "Here you can render an error dialog from a Wii U. Because, duh, who doesn't wanna do that.",
+      "repo": "https://github.com/ashmonty/website/blob/main/pages/twitter64/index.js",
+      "link": "/wiiu",
+      "samePage": true
+    },
+    {
       "title": "Adobe Fonts dl",
       "caption": "A page that lets you download .otf fonts from any Adobe Fonts Web Project/Typekit URL.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
@@ -29,12 +36,6 @@
       "caption": "Implemented the blog, the locale stuff™, the Mii editor (unreleased), the homepage redesign, including the infinite scrolling :0",
       "repo": "https://github.com/PretendoNetwork/website",
       "link": "https://pretendo.network"
-    },
-    {
-      "title": "Binbows 98",
-      "caption": "A Next.js-based recreation of Windows 9X. Currently an early WIP, so expect bugs. <i>Many</i> bugs.",
-      "repo": "https://github.com/ashmonty/binbows",
-      "link": "https://binbows.ashm.dev/"
     },
     {
       "title": "Neofetch but it's always Arch",
