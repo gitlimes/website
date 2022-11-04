@@ -10,4 +10,14 @@ module.exports = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/WIIU',
+        destination: '/wiiu',
+        permanent: true,
+      },
+    ]
+  },
+
 };

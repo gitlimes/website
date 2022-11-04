@@ -55,6 +55,7 @@ input[type="text"].styled {
   color: inherit;
   resize: none;
   background: #fff;
+  box-sizing: border-box;
 }
 [data-theme="dark"] .floatingContainer > textarea,
 [data-theme="dark"] .floatingContainer > input[type="text"],
@@ -178,6 +179,24 @@ button.styled:hover {
 }
 .fakeTweet .tweetInfo {
   margin-bottom: 0;
+}
+
+.elWithSideIcon {
+  display: grid;
+  grid-template-columns: 36px auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.elWithSideIcon > textarea.styled,
+.elWithSideIcon > input[type="text"] {
+  margin-top: 0;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 150ms;
 }
 
 @media screen and (max-width: 768px) {
