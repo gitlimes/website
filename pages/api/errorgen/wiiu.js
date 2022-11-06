@@ -21,7 +21,7 @@ export default async function stats(req, res) {
 		supportInfo: `${supportHeader || "Support Information"}\n① ${
 			version || "5.5.5 E"
 		}\n② ${model || "WUP-101(03)"}\n③ ${
-			serialNumber || "ASHM.DEV/WIIU"
+			serialNumber || "ASHM.DEV/ERRORS"
 		}\n④ offscreen`,
 	};
 

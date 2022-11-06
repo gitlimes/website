@@ -7,8 +7,8 @@ export default function Document() {
         {/* Google SEO */}
         <meta name="description" content="I make stuff™ in JavaScript." />
         <meta name="robots" content="index, follow" />
-        <link rel="preconnect" href="https://use.typekit.net" crossOrigin />
-        <link rel="preconnect" href="https://p.typekit.net" crossOrigin />
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="true" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="true" />
 
         <link rel="stylesheet" href="https://use.typekit.net/mbh0dyp.css" />
       </Head>

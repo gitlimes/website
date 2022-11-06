@@ -4,10 +4,10 @@ export default function Login({ authUrl }) {
   const tweetTime = new Date("2022-09-07T10:35:32.000Z");
 
   return (
-    <a href="https://twitter.com/ashmdotdev/status/1567461559668035584?s=20&t=LgFqtP7Lg3suPr0GzSmd8w" referrerPolicy="no-referrer">
+    <a href="https://twitter.com/ashmdotdev/status/1567461559668035584?s=20&t=LgFqtP7Lg3suPr0GzSmd8w" referrerPolicy="no-referrer" target="_blank" >
       <div className={styles.fakeTweet}>
         <div className={styles.tweetHeader}>
-          <img alt="Profile picture of my Twitter account" src="https://cdn.discordapp.com/avatars/406125028065804289/4fef71772bccad4a8511784b80416b10.png?size=256" />
+        <img src="/assets/images/me-drawing.svg" alt="A drawing of me" style={{background: "var(--secondary)"}}/>
           <div className={styles.text}>
             <p className={styles.name}>ash</p>
             <p className={styles.username}>@ashmdotdev</p>

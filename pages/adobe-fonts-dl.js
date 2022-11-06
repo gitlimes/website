@@ -140,7 +140,25 @@ export default function AdobeFontsDL() {
     <div>
       <Head>
         <title>Adobe Fonts dl | ash</title>
-        <OpenGraph />
+        <meta property="og:title" content="Adobe Fonts dl | ash" />
+				<meta property="twitter:title" content="Adobe Fonts dl | ash" />
+				<meta
+					property="og:description"
+					content="Download fonts from any Web Project."
+				/>
+				<meta
+					property="twitter:description"
+					content="Download fonts from any Web Project!"
+				/>
+				<meta
+					property="og:image"
+					content="https://ashm.dev/assets/images/twimg.png"
+				/>
+				<meta
+					name="twitter:image"
+					content="https://ashm.dev/assets/images/twimg.png"
+				/>
+				<OpenGraph />
       </Head>
 
       <div className={styles.wrapper} id="wrapper">

@@ -18,19 +18,13 @@ export default function OpenGraph() {
         sizes="16x16"
         href="/assets/favicons/favicon-16x16.png?v=220918"
       />
-      <link
-        rel="manifest"
-        href="/assets/favicons/site.webmanifest?v=220918"
-      />
+      <link rel="manifest" href="/assets/favicons/site.webmanifest?v=220918" />
       <link
         rel="mask-icon"
         href="/assets/favicons/safari-pinned-tab.svg?v=220918"
         color="#ab7bcc"
       />
-      <link
-        rel="shortcut icon"
-        href="/assets/favicons/favicon.ico?v=220918"
-      />
+      <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=220918" />
       <meta name="msapplication-TileColor" content="#ff5da2" />
       <meta
         name="msapplication-config"
@@ -39,24 +33,9 @@ export default function OpenGraph() {
       <meta name="theme-color" content="#ff5da2" />
       {/* OpenGraph & Twitter stuff */}
       <meta property="og:site_name" content={`ash`} />
-      <meta property="og:title" content={`ash`} />
-      <meta property="twitter:title" content={`ash`} />
-      <meta
-        property="twitter:description"
-        content="I make stuff™ in JavaScript."
-      />
-      <meta property="og:description" content="I make stuff™ in JavaScript." />
       <meta property="og:url" content="https://ashm.dev/" />
       <meta property="og:type" content="website" />
-      <meta
-        property="og:image"
-        content="https://ashm.dev/assets/images/twimg.png"
-      />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:image"
-        content="https://ashm.dev/assets/images/twimg.png"
-      />
     </>
   );
 }

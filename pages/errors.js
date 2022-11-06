@@ -22,6 +22,24 @@ export default function WiiUerrgen() {
 		<div>
 			<Head>
 				<title>Console error gen | ash</title>
+				<meta property="og:title" content="Console error gen | ash" />
+				<meta property="twitter:title" content="Console error gen | ash" />
+				<meta
+					property="og:description"
+					content="Render a custom Wii U/3DS error dialog!"
+				/>
+				<meta
+					property="twitter:description"
+					content="Render a custom Wii U/3DS error dialog!"
+				/>
+				<meta
+					property="og:image"
+					content="https://ashm.dev/api/errorgen/3ds?header=ashm.dev%2Ferrors&caption=Render%20a%20custom%20Wii%20U%2F3DS%20error%20dialog!&button=Cool!"
+				/>
+				<meta
+					name="twitter:image"
+					content="https://ashm.dev/api/errorgen/3ds?header=ashm.dev%2Ferrors&caption=Render%20a%20custom%20Wii%20U%2F3DS%20error%20dialog!&button=Cool!"
+				/>
 				<OpenGraph />
 			</Head>
 
