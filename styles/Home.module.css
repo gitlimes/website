@@ -174,7 +174,7 @@ div.contact {
 }
 .contact .list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
 .contactCard {
@@ -207,7 +207,7 @@ div.contact {
   background-color: #1d9bf0;
 }
 .contactCard.mastodon:hover {
-  background-color: #3088d4;
+  background-color: #6364FF;
 }
 .contactCard.mail:hover {
   background-color: var(--accent);
@@ -243,23 +243,14 @@ div.contact {
   div.about .imgWrapper {
     display: none;
   }
-
-  .contact .list {
-    grid-template-columns: repeat(6, 2fr);
-  }
-  .contact .list .contactCard:nth-child(1),
-  .contact .list .contactCard:nth-child(2),
-  .contact .list .contactCard:nth-child(3) {
-    grid-column: span 2;
-  }
-  .contact .list .contactCard:nth-child(4),
-  .contact .list .contactCard:nth-child(5) {
-    grid-column: span 3;
-  }
 }
 
 @media screen and (max-width: 768px) {
   div.stuff .list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact .list {
     grid-template-columns: 1fr;
   }
 
@@ -283,9 +274,7 @@ div.contact {
   .hero {
     gap: 2.5rem;
   }
-  .contact .list {
-    grid-template-columns: 1fr;
-  }
+
   .contact .list .contactCard {
     grid-column: span 1 !important;
   }
