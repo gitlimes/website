@@ -4,13 +4,13 @@ export default function Login({ authUrl }) {
   const tweetTime = new Date("2022-09-07T10:35:32.000Z");
 
   return (
-    <a href="https://twitter.com/grayasash/status/1567461559668035584?s=20&t=LgFqtP7Lg3suPr0GzSmd8w" referrerPolicy="no-referrer" target="_blank" >
+    <a href="https://twitter.com/ash0x808080/status/1567461559668035584?s=20&t=LgFqtP7Lg3suPr0GzSmd8w" referrerPolicy="no-referrer" target="_blank" >
       <div className={styles.fakeTweet}>
         <div className={styles.tweetHeader}>
         <img src="/assets/images/me-drawing.svg" alt="A drawing of me" style={{background: "var(--secondary)"}}/>
           <div className={styles.text}>
             <p className={styles.name}>ash</p>
-            <p className={styles.username}>@grayasash</p>
+            <p className={styles.username}>@ash0x808080</p>
           </div>
         </div>
         <p className={styles.tweetContent}>
