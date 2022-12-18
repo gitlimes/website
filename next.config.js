@@ -10,4 +10,23 @@ module.exports = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/repo",
+        destination: "https://github.com/ashmonty/website",
+        permanent: false,
+      },
+      {
+        source: "/masto",
+        destination: "https://tech.lgbt/@ashg",
+        permanent: false,
+      },
+      {
+        source: "/mastodon",
+        destination: "https://tech.lgbt/@ashg",
+        permanent: false,
+      },
+    ];
+  },
 };
