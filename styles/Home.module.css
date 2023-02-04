@@ -174,7 +174,7 @@ div.contact {
 }
 .contact .list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
 }
 .contactCard {
@@ -227,6 +227,23 @@ div.contact {
   fill: #fff;
 }
 
+.contactCard:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+.contactCard:nth-child(2) {
+  grid-column: 3 / span 2;
+}
+.contactCard:nth-child(3) {
+  grid-column: 5 / span 2;
+}
+.contactCard:nth-child(4) {
+  grid-column: 1 / span 3;
+}
+.contactCard:nth-child(5) {
+  grid-column: 4 / span 3;
+}
+
+
 @media screen and (max-width: 1278px) {
   .hero {
     grid-auto-flow: row;
@@ -268,6 +285,10 @@ div.contact {
   .hero .text p {
     font-size: 2.3em;
   }
+
+  .contact .list .contactCard {
+    grid-column: span 1 !important;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -275,9 +296,6 @@ div.contact {
     gap: 2.5rem;
   }
 
-  .contact .list .contactCard {
-    grid-column: span 1 !important;
-  }
   .hero .imgWrapper {
     width: max(50vw, 256px);
     height: max(50vw, 256px);

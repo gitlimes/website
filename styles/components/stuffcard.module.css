@@ -27,6 +27,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  grid-column: 1 / span 2;
 }
 
 .card:hover {
@@ -43,6 +44,7 @@
 
   .card:last-child {
     font-size: 1.25rem;
+    grid-column: 1 / span 1;
   }
 
   .card.hideOnMobile {

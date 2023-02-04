@@ -2,44 +2,37 @@
   "cards": [
     {
       "title": "microsoft​github​.com",
-      "caption": "A website that lets you create legit-looking GitHub links that rickroll the visitor. So far it rickrolled ${microsoftgithubusers} people, can you believe it‽",
+      "caption": "create legit-looking github links that rickroll the visitor when clicked; apparently ${microsoftgithubusers} users have already been rickrolled; oh god, what have i done.",
       "link": "https://microsoftgithub.com/usage"
     },
     {
-      "title": "Discord Markdown Badge",
-      "caption": "An SVG badge that shows your Discord username and presence. ${mdbUserCount} people use it, so it must be somewhat good. I think.",
+      "title": "discord-md-badge",
+      "caption": "a customizable discord badge for your github profile/repo readmes; ${mdbUserCount} people use it, so it must be somewhat good... right?",
       "link": "https://github.com/ashmonty/discord-md-badge"
     },
     {
-      "title": "Wii U/3DS error gen",
-      "caption": "Here you can render an error dialog from a Wii U or 3DS. Because, duh, who doesn't wanna do that.",
+      "title": "errors",
+      "caption": "render an error dialog from a Wii U or 3DS, because, duh, who doesn't wanna do that.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/api/errorgen",
       "link": "/errors",
       "samePage": true
     },
     {
-      "title": "Twitter 64",
-      "caption": "A page that lets you \"tweet\" from Twitter for Nintendo™ 64",
-      "repo": "https://github.com/ashmonty/website/blob/main/pages/twitter64/index.js",
-      "link": "/twitter64",
-      "samePage": true
-    },
-    {
-      "title": "Adobe Fonts dl",
-      "caption": "A page that lets you download .otf fonts from any Adobe Fonts Web Project/Typekit URL.",
+      "title": "adobe-fonts-dl",
+      "caption": "download .otf fonts from any adobe fonts web project/typekit url.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
       "link": "/adobe-fonts-dl",
       "samePage": true
     },
     {
-      "title": "Pretendo Network",
-      "caption": "Implemented the blog, the locale stuff™, the Mii editor (unreleased), the homepage redesign, including the infinite scrolling :0",
+      "title": "pretendo-network",
+      "caption": "basically, i did some stuff on the website: navbar, footer, account page, login page, blog, mii editor... yeah i think that's all.",
       "repo": "https://github.com/PretendoNetwork/website",
       "link": "https://pretendo.network"
     },
     {
-      "title": "Neofetch but it's always Arch",
-      "caption": "This version of neofetch always returns Arch, on any system. Don't ask me why I did this, but also don't expect any better from me.",
+      "title": "neofetch-but-its-always-arch",
+      "caption": "neofetch, but it returns arch regardless of your os or distro; i suppose it's pretty self-explanatory.",
       "link": "https://github.com/ashmonty/neofetch-but-its-always-arch"
     }
   ]
