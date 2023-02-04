@@ -203,9 +203,6 @@ div.contact {
 .contactCard.discord:hover {
   background-color: #5865f2;
 }
-.contactCard.twitter:hover {
-  background-color: #1d9bf0;
-}
 .contactCard.mastodon:hover {
   background-color: #6364FF;
 }
