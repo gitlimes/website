@@ -5,6 +5,7 @@ import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
 import Footer from "../components/Footer";
 import { saveAs } from "file-saver";
+import { Fragment } from "react";
 
 import classNames from "classnames";
 
@@ -111,8 +112,8 @@ export default function SpinMii() {
 							"blink",
 							"frustrated",
 							"wink_left",
-						].map((expression) => (
-							<>
+						].map((expression, i) => (
+							<Fragment key={i}>
 								<input
 									type="radio"
 									id={expression}
@@ -125,7 +126,7 @@ export default function SpinMii() {
 										.replace("_", " ")
 										.replace(expression[0], expression[0].toUpperCase())}
 								</label>
-							</>
+							</Fragment>
 						))}
 					</fieldset>
 

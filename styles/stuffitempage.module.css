@@ -263,6 +263,10 @@ button.styled:hover {
   .floatingContainer {
     text-align: left;
   }
+
+  .floatingContainer > fieldset.four {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 600px) {
