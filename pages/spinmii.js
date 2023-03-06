@@ -134,6 +134,7 @@ export default function SpinMii() {
 							className={classNames(styles.styled, {
 								[styles.loading]: loading,
 							})}
+							style={{ marginTop: "2rem" }}
 							onClick={(e) => {
 								e.preventDefault();
 								downloadRender();

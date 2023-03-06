@@ -123,8 +123,12 @@ button.styled:hover {
   padding: 0;
   display: grid;
   border-radius: 4px;
-  background: rgba(var(--secondaryrgb), 0.15);
   overflow: hidden;
+  gap: 2px;
+}
+
+.floatingContainer > fieldset > label {
+  background: rgba(var(--secondaryrgb), 0.15);
 }
 
 .floatingContainer > fieldset input[type="radio"] {
