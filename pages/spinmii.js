@@ -187,6 +187,7 @@ export default function SpinMii() {
 							position: "absolute",
 							top: "0",
 							right: "calc(24px + 1rem)",
+							maxWidth: "calc(90vw - 24px - 1rem)"
 						}}
 					>
 						<Guide icon="help">
