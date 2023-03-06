@@ -3,6 +3,9 @@ import Link from "next/link";
 import styles from "../styles/components/navbar.module.css";
 
 export default function Navbar({ darkMode, setDarkMode }) {
+
+  setDarkMode(true); //always set to dark mode because i hate y'all
+
   return (
     <ul className={styles.navbar} id="navbar">
       <li className={styles.item}>
@@ -14,7 +17,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
       <li className={styles.item}>
         <Link href="#contact">contact</Link>
       </li>
-      <li
+      {/*<li
         className={styles.darkModeToggle}
         onClick={() => {
           document.querySelector("body").style.transition = "background 250ms";
@@ -58,7 +61,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         )}
-      </li>
+      </li>*/}
     </ul>
   );
 }
