@@ -33,10 +33,10 @@ export default async function stats(req, res) {
 	const canvas = createCanvas(512, 512);
 	const ctx = canvas.getContext("2d");
 
-	for (let i = 0; i < 36; i++) {
+	for (let i = 0; i < 18; i++) {
 		ctx.clearRect(0, 0, 512, 512);
 
-		const frame = generateRenderUrl(i * 10);
+		const frame = generateRenderUrl(i * 20);
 		await loadImage(frame).then((image) => {
 			ctx.drawImage(image, 0, 0);
 		});
@@ -52,7 +52,7 @@ export default async function stats(req, res) {
 			palette,
 			transparent: true,
 			transparentIndex,
-			delay: 50,
+			delay: 75,
 		});
 	}
 
