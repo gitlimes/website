@@ -23,7 +23,10 @@ export default function WiiUerrgen() {
 			<Head>
 				<title>Console error gen | limes.pink</title>
 				<meta property="og:title" content="Console error gen | limes.pink" />
-				<meta property="twitter:title" content="Console error gen | limes.pink" />
+				<meta
+					property="twitter:title"
+					content="Console error gen | limes.pink"
+				/>
 				<meta
 					property="og:description"
 					content="Render a custom Wii U/3DS error dialog!"
@@ -257,6 +260,7 @@ export default function WiiUerrgen() {
 						href={renderURL}
 						target="_blank"
 						className={!header || !caption || !button ? styles.disabled : null}
+						rel="noopener noreferrer"
 					>
 						<button className={styles.styled}>Render</button>
 					</a>
