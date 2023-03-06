@@ -16,12 +16,23 @@
 }
 
 .guide {
-  background: var(--accent);
+  background: var(--secondary);
   color: var(--background);
-  width: fit-content;
+  width: 480px;
   max-width: calc(90vw - 4rem);
   padding: 2rem;
   margin-top: 0.7rem;
   border-radius: 1.5rem;
   box-shadow: 0px 0px 0px 1000vw rgba(var(--backgroundrgb), 0.7);
+}
+
+.guide code {
+  display: inline-block;
+  background: var(--background);
+  color: var(--secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
+  margin-top: 0.1rem;
+  max-width: 100%;
+  overflow-x: scroll;
 }
