@@ -34,11 +34,11 @@ export default function WiiUerrgen() {
 				/>
 				<meta
 					property="og:image"
-					content="https://ashm.dev/api/errorgen/3ds?header=ashm.dev%2Ferrors&caption=Render%20a%20custom%20Wii%20U%2F3DS%20error%20dialog!&button=Cool!"
+					content="https://limes.pink/api/errorgen/3ds?header=limes.pink%2Ferrors&caption=Render%20a%20custom%20Wii%20U%2F3DS%20error%20dialog!&button=Cool!"
 				/>
 				<meta
 					name="twitter:image"
-					content="https://ashm.dev/api/errorgen/3ds?header=ashm.dev%2Ferrors&caption=Render%20a%20custom%20Wii%20U%2F3DS%20error%20dialog!&button=Cool!"
+					content="https://limes.pink/api/errorgen/3ds?header=limes.pink%2Ferrors&caption=Render%20a%20custom%20Wii%20U%2F3DS%20error%20dialog!&button=Cool!"
 				/>
 				<OpenGraph />
 			</Head>

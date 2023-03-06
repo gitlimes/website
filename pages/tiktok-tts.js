@@ -262,11 +262,11 @@ export default function TikTokTTS({ voices, darkMode }) {
 				/>
 				<meta
 					property="og:image"
-					content="https://ashm.dev/assets/images/twimg.png"
+					content="https://limes.pink/assets/images/twimg.png"
 				/>
 				<meta
 					name="twitter:image"
-					content="https://ashm.dev/assets/images/twimg.png"
+					content="https://limes.pink/assets/images/twimg.png"
 				/>
 				<OpenGraph />
 			</Head>

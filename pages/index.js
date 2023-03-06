@@ -20,7 +20,7 @@ import cardStyles from "../styles/components/stuffcard.module.css";
 import secondaryPic from "../public/assets/images/blahaj-dev.png";
 
 export async function getServerSideProps() {
-  const _statsFetch = await fetch("https://ashm.dev/api/stats");
+  const _statsFetch = await fetch("https://limes.pink/api/stats");
   const _statsJSON = await _statsFetch.json();
   const stats = _statsJSON;
 
