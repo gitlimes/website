@@ -21,9 +21,9 @@ export default function WiiUerrgen() {
 	return (
 		<div>
 			<Head>
-				<title>Console error gen | ash</title>
-				<meta property="og:title" content="Console error gen | ash" />
-				<meta property="twitter:title" content="Console error gen | ash" />
+				<title>Console error gen | limes.pink</title>
+				<meta property="og:title" content="Console error gen | limes.pink" />
+				<meta property="twitter:title" content="Console error gen | limes.pink" />
 				<meta
 					property="og:description"
 					content="Render a custom Wii U/3DS error dialog!"

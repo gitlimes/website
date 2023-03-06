@@ -32,7 +32,7 @@ export default function OpenGraph() {
       />
       <meta name="theme-color" content="#ff5da2" />
       {/* OpenGraph & Twitter stuff */}
-      <meta property="og:site_name" content={`ash`} />
+      <meta property="og:site_name" content={`limes.pink`} />
       <meta property="og:url" content="https://limes.pink/" />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />

@@ -11,6 +11,13 @@
       "link": "https://github.com/ashmonty/discord-md-badge"
     },
     {
+      "title": "spinmii",
+      "caption": "make your mii spin 360° to your heart's content!",
+      "repo": "https://github.com/ashmonty/website/blob/main/pages/api/spinmii.js",
+      "link": "/spinmii",
+      "samePage": true
+    },
+    {
       "title": "errors",
       "caption": "render an error dialog from a Wii U or 3DS, because, duh, who doesn't wanna do that.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/api/errorgen",
@@ -29,11 +36,6 @@
       "caption": "basically, i did some stuff on the website: navbar, footer, account page, login page, blog, mii editor... yeah i think that's all.",
       "repo": "https://github.com/PretendoNetwork/website",
       "link": "https://pretendo.network"
-    },
-    {
-      "title": "neofetch-but-its-always-arch",
-      "caption": "neofetch, but it returns arch regardless of your os or distro; i suppose it's pretty self-explanatory.",
-      "link": "https://github.com/ashmonty/neofetch-but-its-always-arch"
     }
   ]
 }

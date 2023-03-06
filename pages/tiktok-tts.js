@@ -249,9 +249,9 @@ export default function TikTokTTS({ voices, darkMode }) {
 	return (
 		<div>
 			<Head>
-				<title>TikTok TTS | ash</title>
-				<meta property="og:title" content="TikTok TTS | ash" />
-				<meta property="twitter:title" content="TikTok TTS | ash" />
+				<title>TikTok TTS | limes.pink</title>
+				<meta property="og:title" content="TikTok TTS | limes.pink" />
+				<meta property="twitter:title" content="TikTok TTS | limes.pink" />
 				<meta
 					property="og:description"
 					content="Read text in TikTok's Text To Speech voices. (Indefinitely broken)"

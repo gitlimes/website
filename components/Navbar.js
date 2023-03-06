@@ -9,7 +9,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
   return (
     <ul className={styles.navbar} id="navbar">
       <li className={styles.item}>
-        <Link href="/">ash</Link>
+        <Link href="/">limes.pink</Link>
       </li>
       <li className={styles.item}>
         <Link href="#stuff">stuff™</Link>

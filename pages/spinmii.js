@@ -18,9 +18,9 @@ export default function SpinMii() {
 	return (
 		<div>
 			<Head>
-				<title>SpinMii</title>
-				<meta property="og:title" content="spinmii | ash" />
-				<meta property="twitter:title" content="spinmii | ash" />
+				<title>SpinMii | limes.pink</title>
+				<meta property="og:title" content="spinmii | limes.pink" />
+				<meta property="twitter:title" content="spinmii | limes.pink" />
 				<meta
 					property="og:description"
 					content="Make your mii spin 360° to your heart's content!"
@@ -184,7 +184,7 @@ export default function SpinMii() {
 					</div>
 				</div>
 
-				<Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/api/spinmii.js" />
+				<Footer sourceCodeOverride="https://github.com/limes.pinkmonty/website/blob/main/pages/api/spinmii.js" />
 			</div>
 		</div>
 	);

@@ -112,7 +112,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
   return (
     <div>
       <Head>
-        <title>ash</title>
+        <title>limes.pink</title>
         <OpenGraph />
       </Head>
 
