@@ -4,16 +4,33 @@ import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
 import Footer from "../components/Footer";
+import { saveAs } from "file-saver";
+
+import classNames from "classnames";
 
 import styles from "../styles/stuffitempage.module.css";
 
 export default function SpinMii() {
 	const [axis, setAxis] = useState("y");
+	const [expression, setExpression] = useState("normal");
 	const [miiData, setmiiData] = useState("");
+	const [loading, setLoading] = useState(false);
 
 	const renderURL = `/api/spinmii?data=${encodeURIComponent(
 		miiData
-	)}&axis=${encodeURIComponent(axis)}`;
+	)}&axis=${encodeURIComponent(axis)}&expression=${encodeURIComponent(
+		expression
+	)}`;
+
+	const downloadRender = () => {
+		setLoading(true);
+		fetch(renderURL)
+			.then((res) => res.blob())
+			.then((blob) => {
+				saveAs(blob, "spinmii.gif");
+				setLoading(false);
+			});
+	};
 
 	return (
 		<div>
@@ -31,11 +48,11 @@ export default function SpinMii() {
 				/>
 				<meta
 					property="og:image"
-					content="https:/limes.pink/api//spinmii?data=dfe5ecbabfbcc6cc040e0c141c202b363b3940474c53626a818c93a1a7aed5bac2cad6c7cbdfe3f7ff020907081020&axis=y"
+					content="https:/limes.pink/assets/images/spinmii.gif"
 				/>
 				<meta
 					name="twitter:image"
-					content="https:/limes.pink/api//spinmii?data=dfe5ecbabfbcc6cc040e0c141c202b363b3940474c53626a818c93a1a7aed5bac2cad6c7cbdfe3f7ff020907081020&axis=y"
+					content="https:/limes.pink/assets/images/spinmii.gif"
 				/>
 				<OpenGraph />
 			</Head>
@@ -77,12 +94,53 @@ export default function SpinMii() {
 						<label htmlFor="z">Z</label>
 					</fieldset>
 
-					<a
-						href={renderURL}
-						target="_blank"
-						className={!miiData ? styles.disabled : null}
+					<label htmlFor="expressions" style={{ marginTop: "1.5rem" }}>
+						Expression
+					</label>
+					<fieldset
+						name="expressions"
+						className={styles.four}
+						onChange={(e) => setExpression(e.target.value)}
 					>
-						<button className={styles.styled}>Render</button>
+						{[
+							"normal",
+							"smile",
+							"anger",
+							"sorrow",
+							"surprise",
+							"blink",
+							"frustrated",
+							"wink_left",
+						].map((expression) => (
+							<>
+								<input
+									type="radio"
+									id={expression}
+									name="expression"
+									value={expression}
+									defaultChecked={expression === "normal"}
+								/>
+								<label htmlFor={expression}>
+									{expression
+										.replace("_", " ")
+										.replace(expression[0], expression[0].toUpperCase())}
+								</label>
+							</>
+						))}
+					</fieldset>
+
+					<a target="_blank" className={!miiData ? styles.disabled : null}>
+						<button
+							className={classNames(styles.styled, {
+								[styles.loading]: loading,
+							})}
+							onClick={(e) => {
+								e.preventDefault();
+								downloadRender();
+							}}
+						>
+							{loading ? "Rendering..." : "Render"}
+						</button>
 					</a>
 				</div>
 
@@ -123,7 +181,11 @@ export default function SpinMii() {
 					</div>
 					<div
 						id="help"
-						style={{ position: "absolute", top: "0", right: "calc(24px + 1rem)" }}
+						style={{
+							position: "absolute",
+							top: "0",
+							right: "calc(24px + 1rem)",
+						}}
 					>
 						<Guide icon="help">
 							<h2>

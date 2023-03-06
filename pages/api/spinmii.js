@@ -1,9 +1,14 @@
-const { GIFEncoder, quantize, applyPalette, nearestColorIndex } = require("gifenc");
+const {
+	GIFEncoder,
+	quantize,
+	applyPalette,
+	nearestColorIndex,
+} = require("gifenc");
 const { createCanvas, loadImage } = require("@napi-rs/canvas");
 
 export default async function stats(req, res) {
 	const {
-		query: { data, axis },
+		query: { data, axis, expression },
 	} = req;
 
 	const generateRenderUrl = (degrees) => {
@@ -24,7 +29,9 @@ export default async function stats(req, res) {
 				break;
 		}
 
-		return `https://studio.mii.nintendo.com/miis/image.png?type=face&expression=normal&width=512&bgColor=13173300&clothesColor=default${cameraRotate}&characterXRotate=0&characterYRotate=0&characterZRotate=0&lightXDirection=0&lightYDirection=0&lightZDirection=0&lightDirectionMode=none&instanceCount=1&instanceRotationMode=model&data=${encodeURIComponent(
+		return `https://studio.mii.nintendo.com/miis/image.png?type=face&expression=${encodeURIComponent(
+			expression || normal
+		)}&width=512&bgColor=13173300&clothesColor=default${cameraRotate}&characterXRotate=0&characterYRotate=0&characterZRotate=0&lightXDirection=0&lightYDirection=0&lightZDirection=0&lightDirectionMode=none&instanceCount=1&instanceRotationMode=model&data=${encodeURIComponent(
 			data
 		)}`;
 	};
@@ -63,6 +70,7 @@ export default async function stats(req, res) {
 	res.writeHead(200, {
 		"Content-Type": "image/gif",
 		"Content-Length": gifBuffer.length,
+		"Content-Disposition": "attachment; filename=spinmii.gif",
 	});
 	res.end(gifBuffer);
 }
