@@ -111,11 +111,11 @@ export default function SpinMii() {
 				<meta property="twitter:title" content="spinmii | limes.pink" />
 				<meta
 					property="og:description"
-					content="Make your mii spin 360° to your heart's content!"
+					content="Make your mii spin 360°, 'cause why not I suppose."
 				/>
 				<meta
 					property="twitter:description"
-					content="Make your mii spin 360° to your heart's content!"
+					content="Make your mii spin 360°, 'cause why not I suppose."
 				/>
 				<meta
 					property="og:image"
@@ -136,7 +136,7 @@ export default function SpinMii() {
 						<h1>
 							Spin<span className="accented">Mii</span>
 						</h1>
-						<p>Make your mii spin 360° to your heart's content!</p>
+						<p>Make your mii spin 360°, 'cause why not I suppose.</p>
 					</div>
 
 					<label htmlFor="miiData">

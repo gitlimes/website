@@ -12,7 +12,7 @@
     },
     {
       "title": "spinmii",
-      "caption": "make your mii spin 360° to your heart's content!",
+      "caption": "make your mii spin 360°, 'cause why not I suppose.",
       "repo": "https://github.com/ashmonty/website/blob/main/pages/api/spinmii.js",
       "link": "/spinmii",
       "samePage": true
