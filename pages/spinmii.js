@@ -13,7 +13,6 @@ const {
 	applyPalette,
 	nearestColorIndex,
 } = require("gifenc");
-const { createCanvas, loadImage } = require("canvas");
 
 import classNames from "classnames";
 
@@ -54,21 +53,28 @@ export default function SpinMii() {
 		};
 
 		const gif = GIFEncoder();
-		const canvas = createCanvas(512, 512);
+
+		const canvas = document.createElement("canvas");
+		canvas.width = 512;
+		canvas.height = 512;
 		const ctx = canvas.getContext("2d");
 
-		const frames = 18;
+		const frames = 24;
 
 		for (let i = 0; i < frames; i++) {
 			ctx.clearRect(0, 0, 512, 512);
 
 			const frame = `https://corsproxy.io/?${encodeURIComponent(
-				generateRenderUrl((i * 360) / frames)
+				generateRenderUrl(Math.round((i * 360) / frames))
 			)}`;
-			await loadImage(frame, { crossOrigin: "anonymous" }).then((image) => {
-				ctx.drawImage(image, 0, 0);
-				setLoadPercent(Math.round(((i + 1) / frames) * 100));
-			});
+			const img = new Image();
+			img.crossOrigin = "anonymous";
+			img.src = frame;
+			await img.decode();
+
+			ctx.drawImage(img, 0, 0);
+			setLoadPercent(Math.round(((i + 1) / frames) * 100));
+
 			const { data, width, height } = ctx.getImageData(0, 0, 512, 512);
 
 			const format = "rgba4444";
