@@ -7,6 +7,14 @@ import Footer from "../components/Footer";
 import { saveAs } from "file-saver";
 import { Fragment } from "react";
 
+const {
+	GIFEncoder,
+	quantize,
+	applyPalette,
+	nearestColorIndex,
+} = require("gifenc");
+const { createCanvas, loadImage } = require("canvas");
+
 import classNames from "classnames";
 
 import styles from "../styles/stuffitempage.module.css";
@@ -16,22 +24,78 @@ export default function SpinMii() {
 	const [expression, setExpression] = useState("normal");
 	const [miiData, setmiiData] = useState("");
 	const [loading, setLoading] = useState(false);
+	const [loadPercent, setLoadPercent] = useState(0);
 
-	const renderURL = `/api/spinmii?data=${encodeURIComponent(
-		miiData
-	)}&axis=${encodeURIComponent(axis)}&expression=${encodeURIComponent(
-		expression
-	)}`;
-
-	const downloadRender = () => {
+	async function render() {
 		setLoading(true);
-		fetch(renderURL)
-			.then((res) => res.blob())
-			.then((blob) => {
-				saveAs(blob, "spinmii.gif");
-				setLoading(false);
+		const generateRenderUrl = (degrees) => {
+			let cameraRotate = "";
+
+			switch (axis) {
+				case "x":
+					cameraRotate = `&cameraXRotate=${degrees}&cameraYRotate=0&cameraZRotate=0`;
+					break;
+				case "y":
+					cameraRotate = `&cameraXRotate=0&cameraYRotate=${degrees}&cameraZRotate=0`;
+					break;
+				case "z":
+					cameraRotate = `&cameraXRotate=0&cameraYRotate=0&cameraZRotate=${degrees}`;
+					break;
+				default:
+					cameraRotate = `&cameraXRotate=0&cameraYRotate=0&cameraZRotate=0`;
+					break;
+			}
+
+			return `https://studio.mii.nintendo.com/miis/image.png?type=face&expression=${encodeURIComponent(
+				expression || normal
+			)}&width=512&bgColor=13173300&clothesColor=default${cameraRotate}&characterXRotate=0&characterYRotate=0&characterZRotate=0&lightXDirection=0&lightYDirection=0&lightZDirection=0&lightDirectionMode=none&instanceCount=1&instanceRotationMode=model&data=${encodeURIComponent(
+				miiData
+			)}`;
+		};
+
+		const gif = GIFEncoder();
+		const canvas = createCanvas(512, 512);
+		const ctx = canvas.getContext("2d");
+
+		const frames = 18;
+
+		for (let i = 0; i < frames; i++) {
+			ctx.clearRect(0, 0, 512, 512);
+
+			const frame = `https://corsproxy.io/?${encodeURIComponent(
+				generateRenderUrl((i * 360) / frames)
+			)}`;
+			await loadImage(frame, { crossOrigin: "anonymous" }).then((image) => {
+				ctx.drawImage(image, 0, 0);
+				setLoadPercent(Math.round(((i + 1) / frames) * 100));
 			});
-	};
+			const { data, width, height } = ctx.getImageData(0, 0, 512, 512);
+
+			const format = "rgba4444";
+
+			const palette = quantize(data, 256, { format });
+			const index = applyPalette(data, palette, format);
+
+			const transparentIndex = nearestColorIndex(palette, [0, 0, 0, 0]);
+			gif.writeFrame(index, width, height, {
+				palette,
+				transparent: true,
+				transparentIndex,
+				delay: 75,
+			});
+		}
+
+		gif.finish();
+
+		const gifBuffer = gif.bytes();
+
+		const blob = new Blob([gifBuffer], { type: "image/gif" });
+
+		setLoading(false);
+		setLoadPercent(0);
+
+		saveAs(blob, "spinmii.gif");
+	}
 
 	return (
 		<div>
@@ -135,10 +199,10 @@ export default function SpinMii() {
 							className={classNames(styles.styled, {
 								[styles.loading]: loading,
 							})}
-							style={{ marginTop: "2rem" }}
+							style={{ marginTop: "2rem", "--load-percentage": loadPercent }}
 							onClick={(e) => {
 								e.preventDefault();
-								downloadRender();
+								render();
 							}}
 						>
 							{loading ? "Rendering..." : "Render"}
@@ -187,7 +251,7 @@ export default function SpinMii() {
 							position: "absolute",
 							top: "0",
 							right: "calc(24px + 1rem)",
-							maxWidth: "calc(90vw - 24px - 1rem)"
+							maxWidth: "calc(90vw - 24px - 1rem)",
 						}}
 					>
 						<Guide icon="help">
