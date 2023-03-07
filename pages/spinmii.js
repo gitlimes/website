@@ -24,6 +24,8 @@ export default function SpinMii() {
 	const [miiData, setmiiData] = useState("");
 	const [loading, setLoading] = useState(false);
 	const [loadPercent, setLoadPercent] = useState(0);
+	const [frames, setFrames] = useState(24);
+	const [delay, setDelay] = useState(75);
 
 	async function render() {
 		setLoading(true);
@@ -59,8 +61,6 @@ export default function SpinMii() {
 		canvas.height = 512;
 		const ctx = canvas.getContext("2d");
 
-		const frames = 24;
-
 		for (let i = 0; i < frames; i++) {
 			ctx.clearRect(0, 0, 512, 512);
 
@@ -87,7 +87,7 @@ export default function SpinMii() {
 				palette,
 				transparent: true,
 				transparentIndex,
-				delay: 75,
+				delay,
 			});
 		}
 
@@ -146,6 +146,7 @@ export default function SpinMii() {
 					<input
 						type="text"
 						required={true}
+						value={miiData}
 						placeholder="Mii Studio data-params"
 						onChange={(e) => setmiiData(e.target.value)}
 					/>
@@ -199,6 +200,40 @@ export default function SpinMii() {
 							</Fragment>
 						))}
 					</fieldset>
+
+					<details style={{ marginTop: "1.5rem" }}>
+						<summary style={{ cursor: "pointer" }}>Advanced</summary>
+						<div className={styles.sideBySide}>
+							<div>
+								<label htmlFor="frames" style={{ marginTop: "1.5rem" }}>
+									Number of frames
+								</label>
+								<input
+									type="number"
+									min="1"
+									max="360"
+									placeholder="Frames"
+									className={styles.styled}
+									value={frames}
+									onChange={(e) => setFrames(e.target.value)}
+								/>
+							</div>
+							<div>
+								<label htmlFor="timePerFrame" style={{ marginTop: "1.5rem" }}>
+									Time per frame (ms)
+								</label>
+								<input
+									type="number"
+									min="1"
+									max="1000"
+									placeholder="Time per frame"
+									value={delay}
+									className={styles.styled}
+									onChange={(e) => setDelay(e.target.value)}
+								/>
+							</div>
+						</div>
+					</details>
 
 					<a target="_blank" className={!miiData ? styles.disabled : null}>
 						<button

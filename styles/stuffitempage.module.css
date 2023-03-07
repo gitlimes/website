@@ -41,7 +41,8 @@
 .floatingContainer > textarea,
 .floatingContainer > input[type="text"],
 textarea.styled,
-input[type="text"].styled {
+input[type="text"].styled,
+input[type="number"].styled {
   box-sizing: border-box;
   margin-top: 1rem;
   width: 100%;
@@ -60,7 +61,8 @@ input[type="text"].styled {
 [data-theme="dark"] .floatingContainer > textarea,
 [data-theme="dark"] .floatingContainer > input[type="text"],
 [data-theme="dark"] textarea.styled,
-[data-theme="dark"] input[type="text"].styled {
+[data-theme="dark"] input[type="text"].styled,
+[data-theme="dark"] input[type="number"].styled {
   box-shadow: none;
   background: rgba(var(--secondaryrgb), 0.15);
   color: #fff;
@@ -68,13 +70,15 @@ input[type="text"].styled {
 .floatingContainer > textarea::placeholder,
 .floatingContainer > input[type="text"]::placeholder,
 textarea.styled::placeholder,
-input[type="text"].styled::placeholder {
+input[type="text"].styled::placeholder,
+input[type="number"].styled::placeholder {
   color: rgba(var(--secondaryrgb), 0.8);
 }
 .floatingContainer > textarea:focus,
 .floatingContainer > input[type="text"]:focus,
 textarea.styled:focus,
-input[type="text"].styled:focus {
+input[type="text"].styled:focus,
+input[type="number"].styled:focus {
   outline: none;
   box-shadow: 0px 2px 4px 2px rgba(var(--secondaryrgb), 0.1),
     0 0 0 2px var(--accent);
@@ -173,6 +177,17 @@ button.styled:hover {
 .floatingContainer > fieldset input[type="radio"]:checked + label {
   background: var(--secondary);
   color: var(--background);
+}
+
+.sideBySide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.sideBySide > div {
+  display: flex;
+  flex-direction: column;
 }
 
 .floatingContainer > fieldset.three {
