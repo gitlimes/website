@@ -1,11 +1,10 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect, Fragment } from "react";
 import GoHome from "../components/GoHome";
 import Guide from "../components/Guide";
 import OpenGraph from "../components/openGraph";
 import Footer from "../components/Footer";
 import { saveAs } from "file-saver";
-import { Fragment } from "react";
 
 const {
 	GIFEncoder,
@@ -23,9 +22,19 @@ export default function SpinMii() {
 	const [expression, setExpression] = useState("normal");
 	const [miiData, setmiiData] = useState("");
 	const [loading, setLoading] = useState(false);
-	const [loadPercent, setLoadPercent] = useState(0);
+	const [loadProgress, setLoadProgress] = useState(0);
 	const [frames, setFrames] = useState(24);
 	const [delay, setDelay] = useState(75);
+
+	useEffect(() => {
+		if (miiData) {
+			localStorage.setItem("miiData", miiData);
+		}
+	}, [miiData]);
+
+	useEffect(() => {
+		setmiiData(localStorage.getItem("miiData"));
+	}, []);
 
 	async function render() {
 		setLoading(true);
@@ -73,7 +82,7 @@ export default function SpinMii() {
 			await img.decode();
 
 			ctx.drawImage(img, 0, 0);
-			setLoadPercent(Math.round(((i + 1) / frames) * 100));
+			setLoadProgress((i + 1) / frames);
 
 			const { data, width, height } = ctx.getImageData(0, 0, 512, 512);
 
@@ -98,7 +107,7 @@ export default function SpinMii() {
 		const blob = new Blob([gifBuffer], { type: "image/gif" });
 
 		setLoading(false);
-		setLoadPercent(0);
+		setLoadProgress(0);
 
 		saveAs(blob, "spinmii.gif");
 	}
@@ -240,13 +249,17 @@ export default function SpinMii() {
 							className={classNames(styles.styled, {
 								[styles.loading]: loading,
 							})}
-							style={{ marginTop: "2rem", "--load-percentage": loadPercent }}
+							style={{ marginTop: "2rem", "--load-progress": loadProgress }}
 							onClick={(e) => {
 								e.preventDefault();
 								render();
 							}}
 						>
-							{loading ? "Rendering..." : "Render"}
+							<p>
+								{loading
+									? `Rendering... ${(loadProgress * 100).toFixed(2)}%`
+									: "Render"}
+							</p>
 						</button>
 					</a>
 				</div>

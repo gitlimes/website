@@ -3,6 +3,10 @@
   flex-flow: column;
 }
 
+.guideWrapper * {
+  box-sizing: border-box;
+}
+
 .icon {
   appearance: none;
   border: none;
@@ -18,7 +22,7 @@
 .guide {
   background: var(--secondary);
   color: var(--background);
-  width: 480px;
+  width: 600px;
   max-width: calc(90vw - 4rem);
   padding: 2rem;
   margin-top: 0.7rem;
