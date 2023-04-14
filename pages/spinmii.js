@@ -109,7 +109,11 @@ export default function SpinMii() {
 		setLoading(false);
 		setLoadProgress(0);
 
-		saveAs(blob, "spinmii.gif");
+		// here we generate a pseudorandom filename
+		const secretNumber = parseInt(miiData, 16) / (8 * 9 * 9 * 13 * 1 * 19 * 8 * 9 * 6 * 25 * 15 * 21 * 18 * 5 * 18 * 5 * 1 * 4 * 9 * 14 * 7 * 20 * 8 * 9 * 19 * 9 * 23 * 15 * 21 * 12 * 4 * 12 * 9 * 11 * 5 * 20 * 15 * 12 * 5 * 20 * 25 * 15 * 21 * 11 * 14 * 15 * 23 * 20 * 8 * 1 * 20 * 9 * 1 * 13 * 22 * 5 * 18 * 25 * 20 * 18 * 1 * 14 * 19) * axis.charCodeAt(0) * expression.charCodeAt(0) * expression.charCodeAt(1) * frames * delay;
+		const secretString = parseInt(BigInt(secretNumber).toString().padEnd(24, "0").substring(0, 24)).toString(16).replace(/0+$/, '');
+
+		saveAs(blob, `spinmii.limes.pink-${secretString}.gif`);
 	}
 
 	return (
