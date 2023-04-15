@@ -281,12 +281,11 @@ export default function SpinMii() {
 										rel="noreferrer noopener"
 										style={{ fontWeight: "bold" }}
 									>
-										le hacker !
+										NovaLeHacker
 									</a>
 									<img
-										src="/assets/images/le hacker!.png"
-										alt="A drawing of le hacker! with a red circle and arrows pointing at their face. Top right, text that reads: 'the dumbass who had the idea'"
-										style={{ width: "100%" }}
+										src="/assets/images/NovaLeHacker.png"
+										alt="A drawing of NovaLeHacker with a red circle and arrows pointing at their face. Text reads: 'the idiot who had the idea'"
 									/>
 								</li>
 								<li>
