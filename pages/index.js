@@ -144,7 +144,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 					<div className={styles.about}>
 						<div className={styles.paragraph}>
 							<p>
-								I'm ash, an 18 year old who makes{" "}
+								I'm ash, a 19 year old who makes{" "}
 								<span className="stuff">stuff™</span>!<br />
 								What <i>is</i> <span className="stuff">stuff™</span>? I'll tell
 								you in a sec, but first: let me waste some of your time with
