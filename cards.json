@@ -8,26 +8,26 @@
     {
       "title": "discord-md-badge",
       "caption": "a customizable discord badge for your github profile/repo readmes; it served 11 million requests from may '22 to may '23... holy cannoli, that's 30k requests per day!! thank you for using this, y'all!",
-      "link": "https://github.com/ashmonty/discord-md-badge"
+      "link": "https://github.com/gitlimes/discord-md-badge"
     },
     {
       "title": "spinmii",
       "caption": "make your mii spin 360°, 'cause why not I suppose.",
-      "repo": "https://github.com/ashmonty/website/blob/main/pages/api/spinmii.js",
+      "repo": "https://github.com/gitlimes/website/blob/main/pages/api/spinmii.js",
       "link": "/spinmii",
       "samePage": true
     },
     {
       "title": "errors",
       "caption": "render an error dialog from a Wii U or 3DS, because, duh, who doesn't wanna do that.",
-      "repo": "https://github.com/ashmonty/website/blob/main/pages/api/errorgen",
+      "repo": "https://github.com/gitlimes/website/blob/main/pages/api/errorgen",
       "link": "/errors",
       "samePage": true
     },
     {
       "title": "adobe-fonts-dl",
       "caption": "download .otf fonts from any adobe fonts web project/typekit url.",
-      "repo": "https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js",
+      "repo": "https://github.com/gitlimes/website/blob/main/pages/adobe-fonts-dl.js",
       "link": "/adobe-fonts-dl",
       "samePage": true
     },

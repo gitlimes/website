@@ -370,7 +370,7 @@ export default function SpinMii() {
 					</div>
 				</div>
 
-				<Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/api/spinmii.js" />
+				<Footer sourceCodeOverride="https://github.com/gitlimes/website/blob/main/pages/api/spinmii.js" />
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@ export default function Footer({ sourceCodeOverride }) {
     <footer className={styles.footer}>
       Copyright 2023 - ash -{" "}
       <a
-        href={sourceCodeOverride || "https://github.com/ashmonty/website"}
+        href={sourceCodeOverride || "https://github.com/gitlimes/website"}
         target="_blank"
         rel="noopener"
       >

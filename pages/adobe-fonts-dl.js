@@ -225,7 +225,7 @@ export default function AdobeFontsDL() {
           </Guide>
         </div>
 
-        <Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/adobe-fonts-dl.js"/>
+        <Footer sourceCodeOverride="https://github.com/gitlimes/website/blob/main/pages/adobe-fonts-dl.js"/>
       </div>
     </div>
   );

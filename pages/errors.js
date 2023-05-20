@@ -266,7 +266,7 @@ export default function WiiUerrgen() {
 					</a>
 				</div>
 
-				<Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/api/errorgen/" />
+				<Footer sourceCodeOverride="https://github.com/gitlimes/website/blob/main/pages/api/errorgen/" />
 			</div>
 		</div>
 	);

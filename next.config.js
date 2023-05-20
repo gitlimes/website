@@ -13,7 +13,7 @@ module.exports = {
     return [
       {
         source: "/repo",
-        destination: "https://github.com/ashmonty/website",
+        destination: "https://github.com/gitlimes/website",
         permanent: false,
       },
       {

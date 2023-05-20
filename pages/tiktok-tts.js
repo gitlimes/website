@@ -407,7 +407,7 @@ export default function TikTokTTS({ voices, darkMode }) {
 					</Guide>
 				</div>
 
-				<Footer sourceCodeOverride="https://github.com/ashmonty/website/blob/main/pages/tiktok-tts.js" />
+				<Footer sourceCodeOverride="https://github.com/gitlimes/website/blob/main/pages/tiktok-tts.js" />
 			</div>
 
 			<div
