@@ -28,4 +28,12 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/(e|E)(r|R)(r|R)(o|O)(r|R)(s|S)',
+        destination: '/errors',
+      }
+    ]
+  }
 };
