@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
+import { toHumanString } from 'human-readable-numbers';
 
 import Navbar from "../components/Navbar";
 import StuffCard from "../components/stuffCard";
@@ -20,9 +21,21 @@ import cardStyles from "../styles/components/stuffcard.module.css";
 import secondaryPic from "../public/assets/images/blahaj-dev.png";
 
 export async function getServerSideProps() {
-	const _statsFetch = await fetch("https://limes.pink/api/stats");
-	const _statsJSON = await _statsFetch.json();
-	const stats = _statsJSON;
+	let mdbadgeStats;
+	try {
+		const _mdbadgeStatsFetch = await fetch("https://stats.limes.pink/mdbadge")
+		const _mdbadgeStatsJSON = await _mdbadgeStatsFetch.json();
+		mdbadgeStats = _mdbadgeStatsJSON;
+	} catch (e) {
+		console.log("https://stats.limes.pink/mdbadge unreachable, using data from 1686579266")
+		// data captured on unix epoch 1686579266
+		mdbadgeStats = {
+			"user": 789653,
+			"server": 12271292,
+			"total": 13060945,
+			"sourceCode": "https://github.com/gitlimes/vercel-stats"
+		}
+	}
 
 	const microsoftgithubStatsFetch = await fetch(
 		"https://microsoftgithub.com/api/stats"
@@ -32,7 +45,8 @@ export async function getServerSideProps() {
 
 	const cards = JSON.parse(
 		JSON.stringify(rawcards.cards)
-			.replace("${mdbUserCount}", stats.discordmdbadge.usercount)
+			.replace("${requests}", toHumanString(mdbadgeStats.total))
+			.replace("${dailyrequests}", toHumanString(mdbadgeStats.total / 365))
 			.replace("${microsoftgithubusers}", `${microsoftgithubStats.kusers}k`)
 	);
 

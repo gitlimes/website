@@ -15,6 +15,7 @@
     "file-saver": "^2.0.5",
     "gifenc": "^1.0.3",
     "html-react-parser": "^1.4.0",
+    "human-readable-numbers": "^0.9.5",
     "jszip": "^3.9.1",
     "next": "^12.1.0",
     "next-absolute-url": "^1.2.2",
