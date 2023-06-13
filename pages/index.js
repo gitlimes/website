@@ -136,8 +136,8 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 					<div className={styles.imgWrapper}>
 						<a href="/spinmii" target="_blank" rel="noreferrer noopener">
 							<img
-								src="/assets/images/spinmii.gif"
-								alt="A spinning mii"
+								src="/assets/images/transspinmii.gif"
+								alt="My mii, spinning in front of a trans flag background."
 								width="100%"
 								height="100%"
 							/>
