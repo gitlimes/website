@@ -7,7 +7,7 @@
     },
     {
       "title": "discord-md-badge",
-      "caption": "a customizable discord badge for your github profile/repo readmes. it served ${requests} requests in the last 365 days... holy cannoli, that's ${dailyrequests} requests every day! thanks y'all!!",
+      "caption": "a customizable badge that shows your Discord account, a server invite, or a bot account; it served ${requests} requests in the last 365 days... holy cannoli, that's ${dailyrequests} requests every day! thanks y'all!!",
       "link": "https://github.com/gitlimes/discord-md-badge"
     },
     {
