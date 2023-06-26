@@ -30,7 +30,8 @@
   grid-column: 1 / span 2;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
   top: -0.5rem;
   left: -0.5rem;
   box-shadow: 1rem 1rem 0 var(--secondary);

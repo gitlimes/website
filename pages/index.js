@@ -27,14 +27,16 @@ export async function getServerSideProps() {
 		const _mdbadgeStatsJSON = await _mdbadgeStatsFetch.json();
 		mdbadgeStats = _mdbadgeStatsJSON;
 	} catch (e) {
-		console.log("https://stats.limes.pink/mdbadge unreachable, using data from 1686579266")
-		// data captured on unix epoch 1686579266
 		mdbadgeStats = {
-			"user": 789653,
-			"server": 12271292,
-			"total": 13060945,
-			"sourceCode": "https://github.com/gitlimes/vercel-stats"
+			"user": 823886,
+			"server": 12822312,
+			"total": 13646198,
+			"sourceCode": "https://github.com/gitlimes/vercel-stats",
+			"cached": true,
+			"cachedOn": 1687396766
 		}
+
+		console.log(`https://stats.limes.pink/mdbadge unreachable, using data from ${mdbadgeStats?.cachedOn}`)
 	}
 
 	const microsoftgithubStatsFetch = await fetch(
@@ -210,7 +212,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 					<div className={styles.infiniteScrollWrapper}>
 						<span className={styles.infiniteScroll}>
 							{Array.apply(null, { length: 20 }).map((_e, i) => (
-								<Fragment key={`${i}`}>
+								<span key={`${i}`} aria-hidden={i}>
 									<span className={styles.stuff} key={`${i}0`}>
 										Stuff™
 									</span>{" "}
@@ -247,7 +249,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 										Stuff™
 									</span>{" "}
 									is the ἄπειρον.{" "}
-								</Fragment>
+								</span>
 							))}
 						</span>
 					</div>
@@ -286,6 +288,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 								strokeLinecap="round"
 								strokeLinejoin="round"
 								className={styles.viewMore}
+								alt=""
 							>
 								<line x1="5" y1="12" x2="19" y2="12"></line>
 								<polyline points="12 5 19 12 12 19"></polyline>
