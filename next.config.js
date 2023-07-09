@@ -26,6 +26,11 @@ module.exports = {
         destination: "https://tech.lgbt/@ashg",
         permanent: false,
       },
+      {
+        source: '/.well-known/webfinger/:path*',
+        destination: 'https://fedi.limes.pink/.well-known/webfinger/:path*',
+        permanent: false
+      }
     ];
   },
   async rewrites() {
