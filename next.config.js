@@ -18,18 +18,23 @@ module.exports = {
       },
       {
         source: "/masto",
-        destination: "https://tech.lgbt/@ashg",
+        destination: "https://fedi.limes.pink/@limes",
         permanent: false,
       },
       {
         source: "/mastodon",
-        destination: "https://tech.lgbt/@ashg",
+        destination: "https://fedi.limes.pink/@limes",
+        permanent: false,
+      },
+      {
+        source: "/fedi",
+        destination: "https://fedi.limes.pink/@limes",
         permanent: false,
       },
       {
         source: '/.well-known/webfinger/:path*',
         destination: 'https://fedi.limes.pink/.well-known/webfinger/:path*',
-        permanent: false
+        permanent: true
       }
     ];
   },
