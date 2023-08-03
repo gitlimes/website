@@ -14,15 +14,15 @@
     "cookies": "^0.8.0",
     "file-saver": "^2.0.5",
     "gifenc": "^1.0.3",
-    "html-react-parser": "^1.4.0",
+    "html-react-parser": "^4.2.0",
     "human-readable-numbers": "^0.9.5",
     "jszip": "^3.9.1",
-    "next": "^12.1.0",
     "next-absolute-url": "^1.2.2",
-    "nextjs-redirect": "^5.0.2",
-    "node-fetch": "^3.2.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-select": "^5.3.0"
+    "nextjs-redirect": "^6.0.1",
+    "node-fetch": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.4",
+    "sharp": "^0.32.4"
   }
 }

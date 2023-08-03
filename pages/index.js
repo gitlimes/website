@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
-import { toHumanString } from 'human-readable-numbers';
+import { toHumanString } from "human-readable-numbers";
 
 import Navbar from "../components/Navbar";
 import StuffCard from "../components/stuffCard";
@@ -23,20 +23,24 @@ import secondaryPic from "../public/assets/images/blahaj-dev.png";
 export async function getServerSideProps() {
 	let mdbadgeStats;
 	try {
-		const _mdbadgeStatsFetch = await fetch("https://stats.limesquash.limes.pink/dcbadge")
+		const _mdbadgeStatsFetch = await fetch(
+			"https://stats.limesquash.limes.pink/dcbadge"
+		);
 		const _mdbadgeStatsJSON = await _mdbadgeStatsFetch.json();
 		mdbadgeStats = _mdbadgeStatsJSON;
 	} catch (e) {
 		mdbadgeStats = {
-			"user": 803443,
-			"server": 13047542,
-			"total": 13850985,
-			"sourceCode": "https://github.com/gitlimes/vercel-stats",
-			"cached": true,
-			"cachedOn": 1688917961
-		  }
+			user: 803443,
+			server: 13047542,
+			total: 13850985,
+			sourceCode: "https://github.com/gitlimes/vercel-stats",
+			cached: true,
+			cachedOn: 1688917961,
+		};
 
-		console.log(`https://stats.limesquash.limes.pink/dcbadge unreachable, using data from ${mdbadgeStats?.cachedOn}`)
+		console.log(
+			`https://stats.limesquash.limes.pink/dcbadge unreachable, using data from ${mdbadgeStats?.cachedOn}`
+		);
 	}
 
 	const microsoftgithubStatsFetch = await fetch(
@@ -182,11 +186,9 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 									href="https://pretendo.network/nso-legacy-pack"
 									target="_blank"
 									rel="noopener noreferrer"
-									passHref
+									className={styles.link}
 								>
-									<a className={styles.link}>
-										Pretendo Network April Fools' joke of 2022
-									</a>
+									Pretendo Network April Fools' joke of 2022
 								</Link>
 								. What? You don't find it that funny? Damn, too bad. This is my
 								about me, I'll write what I want.
@@ -198,6 +200,9 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 								layout="fill"
 								objectFit="cover"
 								alt="A picture of a Blåhaj (a stuffed shark plush from IKEA) wearing headphones and sitting at a desk. The shark appears to be working on some code on their main monitor, and they have this website open on their secondary monitor"
+								sizes="40vw"
+								placeholder="blur"
+								quality={74}
 							/>
 						</div>
 					</div>
