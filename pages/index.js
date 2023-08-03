@@ -146,6 +146,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 								alt="My mii, spinning in front of a trans flag background."
 								width="100%"
 								height="100%"
+								loading="lazy"
 							/>
 						</a>
 					</div>
