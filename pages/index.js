@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Fragment } from "react";
 import { toHumanString } from "human-readable-numbers";
 
@@ -130,7 +130,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 	//console.log(document.querySelector("body").dataset.darkMode)
 
 	return (
-		<div>
+        <div>
 			<Head>
 				<title>limes.pink</title>
 				<OpenGraph />
@@ -196,14 +196,15 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 						</div>
 						<div className={styles.imgWrapper}>
 							<Image
-								src={secondaryPic}
-								layout="fill"
-								objectFit="cover"
-								alt="A picture of a Blåhaj (a stuffed shark plush from IKEA) wearing headphones and sitting at a desk. The shark appears to be working on some code on their main monitor, and they have this website open on their secondary monitor"
-								sizes="40vw"
-								placeholder="blur"
-								quality={74}
-							/>
+                                src={secondaryPic}
+                                alt="A picture of a Blåhaj (a stuffed shark plush from IKEA) wearing headphones and sitting at a desk. The shark appears to be working on some code on their main monitor, and they have this website open on their secondary monitor"
+                                placeholder="blur"
+                                quality={74}
+                                fill
+                                sizes="40vw"
+                                style={{
+                                    objectFit: "cover"
+                                }} />
 						</div>
 					</div>
 				</div>
@@ -393,5 +394,5 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 				<Footer />
 			</div>
 		</div>
-	);
+    );
 }
