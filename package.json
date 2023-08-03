@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8080"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "@napi-rs/canvas": "^0.1.30",
