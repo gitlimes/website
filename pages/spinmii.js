@@ -282,11 +282,12 @@ export default function SpinMii() {
 										style={{ fontWeight: "bold" }}
 									>
 										NovaLeHacker
-									</a>
+									</a> (pictured below), for having the original idea 
 									<img
 										src="/assets/images/NovaLeHacker.png"
-										alt="A drawing of NovaLeHacker with a red circle and arrows pointing at their face. Text reads: 'the idiot who had the idea'"
+										alt="A drawing showing NovaLeHacker wearing cool sunglasses; she is smiling."
 									/>
+									
 								</li>
 								<li>
 									<a
