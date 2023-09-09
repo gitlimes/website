@@ -140,15 +140,13 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 				<Navbar home="true" darkMode={darkMode} setDarkMode={setDarkMode} />
 				<div className={styles.hero}>
 					<div className={styles.imgWrapper}>
-						<a href="/spinmii" target="_blank" rel="noreferrer noopener">
 							<img
-								src="/assets/images/transspinmii.gif"
-								alt="My mii, spinning in front of a trans flag background."
+								src="/assets/images/fursona_stilldefinitelynotafurrythough.png"
+								alt="A doodle of my fursona, a doe with long pink hair, sitting at a laptop. She is wearing heart shaped shades, with a trans flag reflected on the lenses."
 								width="100%"
 								height="100%"
 								loading="lazy"
 							/>
-						</a>
 					</div>
 					<div className={styles.text} id="hero-text">
 						<h1>
