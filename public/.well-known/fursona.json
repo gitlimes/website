@@ -1,0 +1,19 @@
+{
+    "sonas": [
+        {
+            "name": "Ash",
+            "pronouns": "She/They/It",
+            "gender": "Transfem",
+            "species": "Doe",
+            "description": "A doe with long pink hair, and light beige fur. She's a developer, a nerd, and also a dork!",
+            "avatar": "https://limes.pink/assets/images/fursona_stilldefinitelynotafurrythough.png",
+            "age": 19,
+            "birthdate": "2004-04-13T12:00:00+00:00",
+            "colors": [
+                "#ff89bb",
+                "#edcca7",
+                "#eddcc8"
+            ]
+        }
+    ]
+}

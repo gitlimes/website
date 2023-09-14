@@ -34,6 +34,11 @@ module.exports = {
         source: '/.well-known/webfinger/:path*',
         destination: 'https://fedi.limes.pink/.well-known/webfinger/:path*',
         permanent: true
+      },
+      {
+        source: '/.well-known/fursona',
+        destination: '/.well-known/fursona.json',
+        permanent: true
       }
     ];
   },
