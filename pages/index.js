@@ -174,8 +174,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 								I love playing the piano, despite not really being that good at
 								it, but I make up for it by being quite possibly the best kazoo
 								player to ever exist on this cruel Earth. I also love tinkering
-								with stuff, which is why I am an Arch Linux user. Yes, you heard
-								me: <i>I use Arch, btw.</i>
+								with stuff, which is why I use linux
 							</p>
 							<p>
 								As you may have realized by now, I am excruciatingly funny
