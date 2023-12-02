@@ -130,7 +130,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 	//console.log(document.querySelector("body").dataset.darkMode)
 
 	return (
-        <div>
+		<div>
 			<Head>
 				<title>limes.pink</title>
 				<OpenGraph />
@@ -140,13 +140,14 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 				<Navbar home="true" darkMode={darkMode} setDarkMode={setDarkMode} />
 				<div className={styles.hero}>
 					<div className={styles.imgWrapper}>
-							<img
-								src="/assets/images/fursona_stilldefinitelynotafurrythough.png"
-								alt="A doodle of my fursona, a doe with long pink hair, sitting at a laptop. She is wearing heart shaped shades, with a trans flag reflected on the lenses."
-								width="100%"
-								height="100%"
-								loading="lazy"
-							/>
+						<img
+							src="/assets/images/fursona_stilldefinitelynotafurrythough.png"
+							alt="A doodle of my fursona, a doe with long pink hair, sitting at a laptop. She is wearing heart shaped shades, with a trans flag reflected on the lenses."
+							width="100%"
+							height="100%"
+							loading="lazy"
+							style={{ imageRendering: "pixelated" }}
+						/>
 					</div>
 					<div className={styles.text} id="hero-text">
 						<h1>
@@ -194,15 +195,16 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 						</div>
 						<div className={styles.imgWrapper}>
 							<Image
-                                src={secondaryPic}
-                                alt="A picture of a Blåhaj (a stuffed shark plush from IKEA) wearing headphones and sitting at a desk. The shark appears to be working on some code on their main monitor, and they have this website open on their secondary monitor"
-                                placeholder="blur"
-                                quality={74}
-                                fill
-                                sizes="40vw"
-                                style={{
-                                    objectFit: "cover"
-                                }} />
+								src={secondaryPic}
+								alt="A picture of a Blåhaj (a stuffed shark plush from IKEA) wearing headphones and sitting at a desk. The shark appears to be working on some code on their main monitor, and they have this website open on their secondary monitor"
+								placeholder="blur"
+								quality={74}
+								fill
+								sizes="40vw"
+								style={{
+									objectFit: "cover",
+								}}
+							/>
 						</div>
 					</div>
 				</div>
@@ -392,5 +394,5 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 				<Footer />
 			</div>
 		</div>
-    );
+	);
 }
