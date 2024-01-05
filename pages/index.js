@@ -146,7 +146,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 							width="100%"
 							height="100%"
 							loading="lazy"
-							style={{ imageRendering: "pixelated" }}
+							/*style={{ imageRendering: "pixelated" }}*/
 						/>
 					</div>
 					<div className={styles.text} id="hero-text">
