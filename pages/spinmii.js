@@ -73,7 +73,7 @@ export default function SpinMii() {
 		for (let i = 0; i < frames; i++) {
 			ctx.clearRect(0, 0, 512, 512);
 
-			const frame = `https://corsproxy.org/?${encodeURIComponent(
+			const frame = `https://corsproxy.io/?${encodeURIComponent(
 				generateRenderUrl(Math.round((i * 360) / frames))
 			)}`;
 			const img = new Image();
