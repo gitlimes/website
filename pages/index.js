@@ -164,7 +164,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 					<div className={styles.about}>
 						<div className={styles.paragraph}>
 							<p>
-								I'm ash, a 19 year old who makes{" "}
+								I'm ash, a 20 year old gal who makes{" "}
 								<span className="stuff">stuff™</span>!<br />
 								What <i>is</i> <span className="stuff">stuff™</span>? I'll tell
 								you in a sec, but first: let me waste some of your time with
@@ -175,7 +175,7 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 								I love playing the piano, despite not really being that good at
 								it, but I make up for it by being quite possibly the best kazoo
 								player to ever exist on this cruel Earth. I also love tinkering
-								with stuff, which is why I use linux
+								with stuff, which is why I use linux.
 							</p>
 							<p>
 								As you may have realized by now, I am excruciatingly funny
