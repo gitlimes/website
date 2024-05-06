@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 module.exports = {
   i18n: {
     locales: ["en"],
@@ -8,6 +10,7 @@ module.exports = {
     config.resolve.fallback = { fs: false, path: false };
     return config;
   },
+  assetPrefix: isProd ? 'https://cdn.limes.pink' : undefined,
   async redirects() {
     return [
       {
