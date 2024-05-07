@@ -141,8 +141,8 @@ export default function Home({ cards, darkMode, setDarkMode }) {
 				<div className={styles.hero}>
 					<div className={styles.imgWrapper}>
 						<img
-							src="/assets/images/fursona_stilldefinitelynotafurrythough.png"
-							alt="A doodle of my fursona, a doe with long pink hair, sitting at a laptop. She is wearing heart shaped shades, with a trans flag reflected on the lenses."
+							src="/assets/images/pinklime.png"
+							alt="A vector drawing of a pink lime on a pink background. The line art is white."
 							width="100%"
 							height="100%"
 							loading="lazy"
