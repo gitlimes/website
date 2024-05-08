@@ -55,7 +55,7 @@
 }
 .hero .text p {
   font-size: 3rem;
-  margin:  0.75rem 0 0;
+  margin: 0.75rem 0 0;
   transition: font-size 200ms;
 }
 
@@ -141,9 +141,13 @@ div.stuff span.infiniteScroll {
   margin: 0;
   animation: infiniteScroll 180s linear infinite;
 }
-@keyframes infiniteScroll { 
-	0% { transform: translate3d(0); } 
-	100% { transform: translate3d(calc(100% / -3), 0, 0); }
+@keyframes infiniteScroll {
+  0% {
+    transform: translate3d(0);
+  }
+  100% {
+    transform: translate3d(calc(100% / -3), 0, 0);
+  }
 }
 div.stuff span.stuff {
   color: var(--secondary);
@@ -204,13 +208,16 @@ div.contact {
   background-color: #5865f2;
 }
 .contactCard.mastodon:hover {
-  background-color: #6364FF;
+  background-color: #6364ff;
 }
 .contactCard.mail:hover {
   background-color: var(--accent);
 }
 .contactCard.buymeacoffee:hover {
   background-color: #bd5ffe;
+}
+.contactCard.liberapay:hover {
+  background-color: #f6c915;
 }
 .contactCard svg {
   padding-right: 0.5rem;
@@ -239,7 +246,6 @@ div.contact {
 .contactCard:nth-child(5) {
   grid-column: 4 / span 3;
 }
-
 
 @media screen and (max-width: 1278px) {
   .hero {
