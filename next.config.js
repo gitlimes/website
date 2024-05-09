@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   i18n: {
@@ -10,7 +10,7 @@ module.exports = {
     config.resolve.fallback = { fs: false, path: false };
     return config;
   },
-  assetPrefix: isProd ? 'https://cdn.limes.pink' : undefined,
+  assetPrefix: isProd ? "https://cdn.limes.pink" : undefined,
   async redirects() {
     return [
       {
@@ -24,6 +24,11 @@ module.exports = {
         permanent: false,
       },
       {
+        source: "/rickroll",
+        destination: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        permanent: false,
+      },
+      {
         source: "/mastodon",
         destination: "https://fedi.limes.pink/@limes",
         permanent: false,
@@ -34,23 +39,23 @@ module.exports = {
         permanent: false,
       },
       {
-        source: '/.well-known/webfinger/:path*',
-        destination: 'https://fedi.limes.pink/.well-known/webfinger/:path*',
-        permanent: true
+        source: "/.well-known/webfinger/:path*",
+        destination: "https://fedi.limes.pink/.well-known/webfinger/:path*",
+        permanent: true,
       },
       {
-        source: '/.well-known/fursona',
-        destination: '/.well-known/fursona.json',
-        permanent: true
-      }
+        source: "/.well-known/fursona",
+        destination: "/.well-known/fursona.json",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
     return [
       {
-        source: '/(e|E)(r|R)(r|R)(o|O)(r|R)(s|S)',
-        destination: '/errors',
-      }
-    ]
-  }
+        source: "/(e|E)(r|R)(r|R)(o|O)(r|R)(s|S)",
+        destination: "/errors",
+      },
+    ];
+  },
 };
