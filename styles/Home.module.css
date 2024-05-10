@@ -204,6 +204,9 @@ div.contact {
 .contactCard.github:hover {
   background-color: #171515;
 }
+.contactCard.matrix:hover {
+  background-color: #000;
+}
 .contactCard.discord:hover {
   background-color: #5865f2;
 }
@@ -231,20 +234,17 @@ div.contact {
   fill: #fff;
 }
 
-.contactCard:nth-child(1) {
+.contactCard:nth-child(1),
+.contactCard:nth-child(4) {
   grid-column: 1 / span 2;
 }
-.contactCard:nth-child(2) {
+.contactCard:nth-child(2),
+.contactCard:nth-child(5) {
   grid-column: 3 / span 2;
 }
-.contactCard:nth-child(3) {
+.contactCard:nth-child(3),
+.contactCard:nth-child(6) {
   grid-column: 5 / span 2;
-}
-.contactCard:nth-child(4) {
-  grid-column: 1 / span 3;
-}
-.contactCard:nth-child(5) {
-  grid-column: 4 / span 3;
 }
 
 @media screen and (max-width: 1278px) {
@@ -262,6 +262,19 @@ div.contact {
 
   div.about .imgWrapper {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contactCard:nth-child(1),
+  .contactCard:nth-child(3),
+  .contactCard:nth-child(5) {
+    grid-column: 1 / span 3;
+  }
+  .contactCard:nth-child(2),
+  .contactCard:nth-child(4),
+  .contactCard:nth-child(6) {
+    grid-column: 4 / span 3;
   }
 }
 
