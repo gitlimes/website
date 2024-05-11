@@ -22,26 +22,15 @@ import secondaryPic from "../public/assets/images/blahaj-dev.png";
 
 export async function getServerSideProps() {
 	let mdbadgeStats;
-	try {
-		const _mdbadgeStatsFetch = await fetch(
-			"https://stats.limesquash.limes.pink/dcbadge"
-		);
-		const _mdbadgeStatsJSON = await _mdbadgeStatsFetch.json();
-		mdbadgeStats = _mdbadgeStatsJSON;
-	} catch (e) {
-		mdbadgeStats = {
-			user: 803443,
-			server: 13047542,
-			total: 13850985,
-			sourceCode: "https://github.com/gitlimes/vercel-stats",
-			cached: true,
-			cachedOn: 1688917961,
-		};
 
-		console.log(
-			`https://stats.limesquash.limes.pink/dcbadge unreachable, using data from ${mdbadgeStats?.cachedOn}`
-		);
-	}
+	mdbadgeStats = {
+		user: 803443,
+		server: 13047542,
+		total: 13850985,
+		sourceCode: "https://github.com/gitlimes/vercel-stats",
+		cached: true,
+		cachedOn: 1688917961,
+	};
 
 	const microsoftgithubStatsFetch = await fetch(
 		"https://microsoftgithub.com/api/stats"
