@@ -6,19 +6,6 @@ export default function App({ Component, pageProps }) {
 	// we set the state to the darkMode value from localStorage
 	const [darkMode, setDarkMode] = useState(true);
 
-	useEffect(() => {
-		const _mtm = (window._mtm = window._mtm || []);
-		_mtm.push({ "mtm.startTime": new Date().getTime(), event: "mtm.Start" });
-		(function () {
-			const d = document,
-				g = d.createElement("script"),
-				s = d.getElementsByTagName("script")[0];
-			g.async = true;
-			g.src = "https://matomo.limes.pink/js/container_8X80wgnH.js";
-			s.parentNode.insertBefore(g, s);
-		})();
-	});
-
 	// setup
 	useEffect(() => {
 		// if there is no value in localStorage, we set it
