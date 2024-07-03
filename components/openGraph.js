@@ -30,6 +30,7 @@ export default function OpenGraph() {
         name="msapplication-config"
         content="/assets/favicons/browserconfig.xml?v=220918"
       />
+      <meta name="fediverse:creator" content="@limes@limes.pink" />
       <meta name="theme-color" content="#ff5da2" />
       {/* OpenGraph & Twitter stuff */}
       <meta property="og:site_name" content={`limes.pink`} />
