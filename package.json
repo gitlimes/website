@@ -22,6 +22,7 @@
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
 		"globals": "^15.14.0",
+		"phosphor-svelte": "^3.0.1",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
 		"svelte": "^5.0.0",
@@ -31,7 +32,11 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@inlang/paraglide-sveltekit": "^0.15.5"
+		"@fontsource-variable/space-grotesk": "^5.1.1",
+		"@fontsource/space-mono": "^5.1.2",
+		"@inlang/paraglide-sveltekit": "^0.15.5",
+		"gifenc": "https://github.com/mattdesl/gifenc.git",
+		"keyv": "^5.2.3"
 	},
 	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
