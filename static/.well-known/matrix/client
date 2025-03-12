@@ -1,0 +1,15 @@
+{
+    "cc.etke.synapse-admin": {
+        "asManagedUsers": [],
+        "menu": [],
+        "restrictBaseUrl": [
+            "https://matrix.limes.pink"
+        ]
+    },
+    "m.homeserver": {
+        "base_url": "https://matrix.limes.pink"
+    },
+    "org.matrix.msc3575.proxy": {
+        "url": "https://matrix.limes.pink/sliding-sync"
+    }
+}
