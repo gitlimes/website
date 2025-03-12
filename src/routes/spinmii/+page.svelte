@@ -146,6 +146,8 @@
 <svelte:head>
 	<title>{m.stuff_spinmii_t()} - limes.pink</title>
 	<meta name="description" content={m.spinmii_c()} />
+	<meta name="og:description" content={m.spinmii_c()} />
+	<meta name="twitter:description" content={m.spinmii_c()} />
 	<meta property="og:image" content="https:/limes.pink/img/spinmii.gif" />
 	<meta name="theme-color" content="#ce60f2" />
 </svelte:head>

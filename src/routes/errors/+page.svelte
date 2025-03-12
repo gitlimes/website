@@ -25,8 +25,10 @@
 <svelte:head>
 	<title>{m.stuff_errors_t()} - limes.pink</title>
 	<meta name="description" content={m.errors_c()} />
+	<meta name="og:description" content={m.errors_c()} />
+	<meta name="twitter:description" content={m.errors_c()} />
 	<meta property="og:image" content="https:/limes.pink/img/errors_en.png" />
-	<meta name="theme-color" content="#ce60f2" />
+	<meta name="theme-color" content="#00b5f2" />
 </svelte:head>
 
 <div class="wrapper">
