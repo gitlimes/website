@@ -44,4 +44,5 @@ User-agent: Timpibot
 User-agent: VelenPublicWebCrawler
 User-agent: Webzio-Extended
 User-agent: YouBot
+Allow: /sitemap.xml
 Disallow: /
