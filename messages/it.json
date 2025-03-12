@@ -56,5 +56,8 @@
 	"spinmii_help_done": "Fatto! La console stamperà i data-params del tuo mii: copiali e incollali nel form in questa pagina!",
 	"render": "Render",
 	"download": "Download",
-	"errors_c": "crea una schermata di errore della Wii U o 2DS/3DS."
+	"errors_c": "crea una schermata di errore della Wii U o 2DS/3DS.",
+	"meta_error_header": "Codice Errore",
+	"meta_error_message": "Se il problema persiste, manda una mail ad aiuto@limes.pink.",
+	"meta_error_button": "Torna alla home"
 }

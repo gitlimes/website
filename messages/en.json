@@ -56,5 +56,8 @@
 	"spinmii_help_done": "Done! The console will output your mii's data-params: copy it and paste it in the form on this page!",
 	"render": "Render",
 	"download": "Download",
-	"errors_c": "render a fake Wii U or 2DS/3DS error screen."
+	"errors_c": "render a fake Wii U or 2DS/3DS error screen.",
+	"meta_error_header": "Error Code",
+	"meta_error_message": "If the problem persists, send an email to help@limes.pink.",
+	"meta_error_button": "Go home"
 }

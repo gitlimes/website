@@ -69,6 +69,8 @@ body {
 	letter-spacing: var(--letter-spacing);
 	font-size: var(--desktop-font-size);
 	margin: 0;
+	height: 100%;
+	width: 100%;
 }
 * {
 	box-sizing: border-box;
