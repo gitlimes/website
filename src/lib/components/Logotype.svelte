@@ -17,7 +17,7 @@
 		fill={fillColor}
 		xml:space="preserve"
 		style="white-space: pre"
-		font-family="Space Grotesk"
+		font-family="Space Grotesk Variable"
 		font-size="24"
 		font-weight="bold"
 		letter-spacing="-0.05em"
