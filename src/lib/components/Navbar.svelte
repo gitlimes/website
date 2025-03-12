@@ -8,7 +8,9 @@
 <header>
 	<nav>
 		<ul>
-			<li class="logo"><a href="/"><Logotype size={'1.25em'} /></a></li>
+			<li class="logo">
+				<a href="/"><Logotype size="1.25em" fillColor="var(--text-on-gradient)" /></a>
+			</li>
 			<li><a href="/#stuff">{m.stuff()}</a></li>
 			<li><a href="/#contact">{m.contact()}</a></li>
 
@@ -27,6 +29,7 @@
 		gap: 2rem;
 		margin: 0;
 		padding: 0;
+		color: var(--text-on-gradient);
 	}
 
 	li {

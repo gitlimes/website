@@ -229,7 +229,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 		gap: 2rem;
 	}
 
@@ -263,7 +262,7 @@
 	.form {
 		display: flex;
 		flex-flow: column;
-		color: #fff;
+		color: var(--text);
 		margin-left: 3rem;
 		min-width: 16rem;
 	}

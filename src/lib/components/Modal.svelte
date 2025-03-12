@@ -21,7 +21,7 @@
 >
 	<div>
 		{@render header?.()}
-		{#if header}<hr />{/if}
+		{#if header()}<hr />{/if}
 		{@render children?.()}
 		<hr />
 		<Button onclick={() => dialog.close()}>Ok</Button>
@@ -37,6 +37,11 @@
 		background: #242424;
 		color: var(--text-color);
 	}
+	@media (prefers-color-scheme: light) {
+		dialog {
+			background-color: #fff;
+		}
+	}
 	hr {
 		color: rgba(0, 0, 0, 0);
 	}
@@ -45,7 +50,6 @@
 	}
 	dialog > div {
 		padding: 1em;
-
 	}
 	dialog[open] {
 		animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);

@@ -74,6 +74,7 @@
 		background: var(--card-bg-pink);
 		border-radius: 0.5rem;
 		padding: 2rem;
+		border: var(--card-border, none);
 	}
 	.textwrap h2 {
 		font-size: 2rem;

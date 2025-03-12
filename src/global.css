@@ -27,6 +27,7 @@
 	--letter-spacing: -2.5%;
 	--text-color: #d6d6d6;
 	--text-muted: #939191;
+	--text-on-gradient: #262424;
 	--desktop-max-width: 1400px;
 
 	--desktop-font-size: 24px;
@@ -35,6 +36,30 @@
 	--mobile-font-size: 12px;
 	--medium-max-width: 80%;
 	--mobile-max-width: 90%;
+
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--card-bg-pink: #fff;
+		--input-bg-pink: #fff;
+		--input-bg-purple: #fff;
+		--input-bg-blue: #fff;
+		--card-border: 1px solid #ccc;
+		--input-border: var(--card-border);
+
+		/* background colors */
+		--bg-pink: #fef;
+		--bg-green: #efe;
+		--bg-blue: #eef;
+		--bg-purple: #fef;
+
+		--text-color: #000;
+		--text-muted: #999;
+		--text-on-gradient: #262424;
+	}
+	/* TODO. SELECTION COLOR */
 }
 
 html,

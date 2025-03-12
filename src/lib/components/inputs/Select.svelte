@@ -24,7 +24,7 @@
 	select {
 		appearance: none;
 		background: var(--input-bg, var(--input-bg-pink));
-		border: none;
+		border: var(--input-border, none);
 		padding: 0.3rem 0.5rem;
 		border-radius: 4px;
 		color: inherit;
@@ -65,6 +65,11 @@
 		right: 0;
 		top: 0;
 		pointer-events: none;
+	}
+	@media (prefers-color-scheme: light) {
+		.caretwrapper {
+			color: #fff;
+		}
 	}
 
 	.caretwrapper.small {

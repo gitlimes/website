@@ -38,6 +38,11 @@
 		background: var(--accent, var(--pink));
 		font-weight: 700;
 	}
+	@media (prefers-color-scheme: light) {
+		input[type='radio']:checked + label {
+			color: #fff;
+		}
+	}
 	/* fake focus */
 	input[type='radio']:focus + label {
 		outline: 1px solid #fff;
@@ -69,5 +74,6 @@
 		padding: 0.16rem;
 		border-radius: 4px;
 		background: var(--input-bg, var(--input-bg-pink));
+		border: var(--input-border, none);
 	}
 </style>

@@ -28,7 +28,7 @@
 	input {
 		appearance: none;
 		background: var(--input-bg, var(--input-bg-pink));
-		border: none;
+		border: var(--input-border, none);
 		padding: 0.3rem 0.5rem;
 		border-radius: 4px;
 		color: inherit;
@@ -90,6 +90,11 @@
 	.caretwrapper button span {
 		position: relative;
 		top: -2px;
+	}
+	@media (prefers-color-scheme: light) {
+		.caretwrapper button span {
+			color: #fff;
+		}
 	}
 
 	.caretwrapper.small {

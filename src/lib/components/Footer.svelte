@@ -10,7 +10,7 @@
 </script>
 
 <footer class="hero-footer">
-	<Logotype height="4rem" width="auto" />
+	<Logotype height="4rem" width="auto" fillColor="var(--text-on-gradient)" />
 
 	<div>
 		<p>
@@ -27,6 +27,7 @@
 		display: flex;
 		align-items: center;
 		gap: 2rem;
+		color: var(--text-on-gradient);
 	}
 
 	.hero-footer > :global(svg),

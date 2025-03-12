@@ -305,7 +305,7 @@
 	.form {
 		display: flex;
 		flex-flow: column;
-		color: #fff;
+		color: var(--text);
 	}
 	.form > * {
 		margin-bottom: 0.8rem;
@@ -363,6 +363,7 @@
 		display: block;
 		padding: 0.3rem 0.5rem;
 		background: #000;
+		color: #fff;
 		font-family: var(--monospace-font);
 		border-radius: 4px;
 	}
