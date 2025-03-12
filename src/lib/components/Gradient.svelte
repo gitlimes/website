@@ -47,7 +47,6 @@
 	});
 </script>
 
-<!-- TODO: add fallback -->
 <canvas width={32} height={32} {...props} class="gradient" alt="" bind:this={canvas}></canvas>
 
 <style>

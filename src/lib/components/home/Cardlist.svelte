@@ -101,10 +101,6 @@
 		justify-content: center;
 		border-radius: 0.5rem;
 	}
-	/* TODO: REMOVE 
-	.imgwrap {
-		display: none;
-	}*/
 
 	.card.spinmii .imgwrap {
 		padding: 0;
