@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- i used https://developers.google.com/search/docs/specialty/international/localized-versions#sitemap as reference. hopefully it's good -->
+
+    <!-- en -->
+    <url>
+        <loc>https://limes.pink/</loc>
+        <priority>1.00</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://limes.pink/it" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://limes.pink/" />
+    </url>
+    <url>
+        <loc>https://limes.pink/errors</loc>
+        <priority>0.80</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://limes.pink/it/errori" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://limes.pink/errors" />
+    </url>
+    <url>
+        <loc>https://limes.pink/spinmii</loc>
+        <priority>0.80</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://limes.pink/it/ruotamii" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://limes.pink/spinmii" />
+    </url>
+
+    <!-- it -->
+    <url>
+        <loc>https://limes.pink/it</loc>
+        <priority>1.00</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://limes.pink/it" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://limes.pink/" />
+    </url>
+    <url>
+        <loc>https://limes.pink/it/errori</loc>
+        <priority>0.80</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://limes.pink/it/errori" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://limes.pink/errors" />
+    </url>
+    <url>
+        <loc>https://limes.pink/it/ruotamii</loc>
+        <priority>0.80</priority>
+        <xhtml:link rel="alternate" hreflang="it" href="https://limes.pink/it/ruotamii" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://limes.pink/spinmii" />
+    </url>
+
+</urlset>
