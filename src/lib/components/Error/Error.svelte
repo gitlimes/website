@@ -35,11 +35,11 @@
 		await rodinMedium.load();
 		document.fonts.add(rodinMedium);
 
-		const Agatho_Narrow = new FontFace('Agatho_Narrow', 'url(/res/errors/Agatho_Narrow.otf)', {
+		const Greco = new FontFace('Greco', 'url(/res/errors/Greco.ttf)', {
 			weight: 'normal'
 		});
-		await Agatho_Narrow.load();
-		document.fonts.add(Agatho_Narrow);
+		await Greco.load();
+		document.fonts.add(Greco);
 
 		fontsLoaded = true;
 	});
@@ -76,9 +76,10 @@
 					/*loadImage('/res/errors/dev/ref_3ds.png').then((img) => {
 						ctx.drawImage(img, 0, 0);
 					});*/
-					/*loadImage('/res/errors/dev/ref_wii.png').then((img) => {
+					/*
+					loadImage('/res/errors/dev/ref_wii.png').then((img) => {
 						ctx.drawImage(img, 0, 0);
-					});*/
+					})*/
 				}
 			});
 		}
@@ -89,7 +90,7 @@
 		if (!area) return;
 
 		ctx.font = `${area.fontSize}px ${area.fontFamily}`;
-		ctx.textAlign = area.textAlign;
+		ctx.textAlign = area?.textAlign || "left";
 		ctx.fillStyle = area.fill;
 
 		const lines = getLines(ctx, text, area.w);
@@ -229,9 +230,9 @@
 	/>
 	<link
 		rel="preload"
-		href="/res/errors/Agatho_Narrow.otf"
+		href="/res/errors/Greco.otf"
 		as="font"
-		type="font/otf"
+		type="font/ttf"
 		crossorigin="anonymous"
 	/>
 </svelte:head>

@@ -4,25 +4,23 @@
 		"h": 810
 	},
 	"bodyArea": {
-		"x": 180,
-		"y": 54,
-		"w": 816,
-		"h": 536,
+		"x": 175,
+		"y": 60,
+		"w": 826,
+		"h": 512,
 		"fill": "#646464",
-		"fontSize": 60,
-		"fontFamily": "Agatho_Narrow",
-		"lineHeight": 1.37,
+		"fontSize": 56,
+		"fontFamily": "Greco",
+		"lineHeight": 1.41,
 		"maxLines": 7,
 		"textAlign": "center",
-		"alignContent": "center",
-		"evenVerticalOffset": -4,
-		"oddVerticalOffset": 0
+		"alignContent": "center"
 
 	},
 	"buttonArea": {
 		"x": 400,
 		"y": 651,
-		"w": 384,
+		"w": 376,
 		"fill": "#646464",
 		"fontSize": 52,
 		"fontFamily": "Rodin",
