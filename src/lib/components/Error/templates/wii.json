@@ -5,17 +5,19 @@
 	},
 	"bodyArea": {
 		"x": 180,
-		"y": 48,
+		"y": 54,
 		"w": 816,
 		"h": 536,
 		"fill": "#646464",
-		"fontSize": 56,
+		"fontSize": 60,
 		"fontFamily": "Agatho_Narrow",
-		"lineHeight": 1.41,
+		"lineHeight": 1.37,
 		"maxLines": 7,
 		"textAlign": "center",
 		"alignContent": "center",
-		"evenVerticalOffset": 0
+		"evenVerticalOffset": -4,
+		"oddVerticalOffset": 0
+
 	},
 	"buttonArea": {
 		"x": 400,

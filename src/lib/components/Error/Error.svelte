@@ -35,7 +35,7 @@
 		await rodinMedium.load();
 		document.fonts.add(rodinMedium);
 
-		const Agatho_Narrow = new FontFace('Agatho_Condensed', 'url(/res/errors/Agatho_Narrow.otf)', {
+		const Agatho_Narrow = new FontFace('Agatho_Narrow', 'url(/res/errors/Agatho_Narrow.otf)', {
 			weight: 'normal'
 		});
 		await Agatho_Narrow.load();
