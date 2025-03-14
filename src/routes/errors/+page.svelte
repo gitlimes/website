@@ -6,7 +6,7 @@
 	import Input from '$lib/components/inputs/Input.svelte';
 	import Textarea from '$lib/components/inputs/Textarea.svelte';
 
-	import Error from '$lib/components/Error.svelte';
+	import Error from '$lib/components/Error/Error.svelte';
 
 	import Button from '$lib/components/inputs/Button.svelte';
 
@@ -38,67 +38,70 @@
 				<h1>{m.stuff_errors_t()}</h1>
 				<p>{m.errors_c()}</p>
 			</div>
-			<div class="editor {gameConsole === 'wiiu' ? 'wiiu' : 'threeds'}">
+			<div class="editor {gameConsole === '3ds' ? 'threeds' : gameConsole}">
 				<form class="form">
 					<div class="inputgroup">
 						<label for="gameConsole"><GameController size="2rem" weight="fill" /></label>
 
 						<RadioHorizontal
 							options={[
-								{ n: '2DS / 3DS', v: '3ds' },
+								{ n: 'Wii', v: 'wii' },
+								{ n: '3DS', v: '3ds' },
 								{ n: 'Wii U', v: 'wiiu' }
 							]}
 							bind:group={gameConsole}
 							id="gameConsole"
 						/>
 					</div>
-					<div class="inputgroup">
-						<label for="header"
-							>{#if gameConsole === 'wiiu'}<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 24 18"
-									height="1.5rem"
-								>
-									<path
-										d="M24 4H0V2.5A2.5 2.5 0 0 1 2.5 0h19A2.5 2.5 0 0 1 24 2.5V4z"
-										style="fill: var(--accent)"
-									/>
-									<path
-										d="M21.5 18h-19A2.5 2.5 0 0 1 0 15.5V4h24v11.5a2.5 2.5 0 0 1-2.5 2.5z"
+					{#if gameConsole !== 'wii'}
+						<div class="inputgroup">
+							<label for="header"
+								>{#if gameConsole === 'wiiu'}<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 18"
+										height="1.5rem"
+									>
+										<path
+											d="M24 4H0V2.5A2.5 2.5 0 0 1 2.5 0h19A2.5 2.5 0 0 1 24 2.5V4z"
+											style="fill: var(--accent)"
+										/>
+										<path
+											d="M21.5 18h-19A2.5 2.5 0 0 1 0 15.5V4h24v11.5a2.5 2.5 0 0 1-2.5 2.5z"
+											style="fill: var(--input-bg)"
+										/>
+										<rect
+											x="2"
+											y="12"
+											width="20"
+											height="4"
+											rx="1"
+											ry="1"
+											style="fill: var(--input-bg)"
+										/>
+									</svg>{:else if gameConsole === '3ds'}<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 24 18"
+										height="1.5rem"
 										style="fill: var(--input-bg)"
-									/>
-									<rect
-										x="2"
-										y="12"
-										width="20"
-										height="4"
-										rx="1"
-										ry="1"
-										style="fill: var(--input-bg)"
-									/>
-								</svg>{:else if gameConsole === '3ds'}<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 24 18"
-									height="1.5rem"
-									style="fill: var(--input-bg)"
-								>
-									<path style="fill: var(--input-bg)" d="M0 4h24v10H0z" />
-									<path d="M0 14h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-3z" />
-									<path
-										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
-										transform="rotate(180 12 2)"
-										style="fill: var(--accent)"
-									/>
-								</svg>{/if}</label
-						>
-						<Input
-							bind:value={header}
-							id="header"
-							ariaLabel="header"
-							placeholder="Error Code 123-4567"
-							required
-						/>
-					</div>
+									>
+										<path style="fill: var(--input-bg)" d="M0 4h24v10H0z" />
+										<path d="M0 14h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-3z" />
+										<path
+											d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
+											transform="rotate(180 12 2)"
+											style="fill: var(--accent)"
+										/>
+									</svg>{/if}</label
+							>
+							<Input
+								bind:value={header}
+								id="header"
+								ariaLabel="header"
+								placeholder="Error Code 123-4567"
+								required
+							/>
+						</div>
+					{/if}
 
 					<div class="inputgroup">
 						<label for="bodyinput"
@@ -135,6 +138,28 @@
 									<path
 										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
 										transform="rotate(180 12 2)"
+										style="fill: var(--input-bg)"
+									/>
+								</svg>{:else if gameConsole === 'wii'}<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 18"
+									height="1.5rem"
+								>
+									<path
+										d="M24 4H0V2.5A2.5 2.5 0 0 1 2.5 0h19A2.5 2.5 0 0 1 24 2.5V4z"
+										style="fill: var(--accent)"
+									/>
+									<path
+										d="M21.5 18h-19A2.5 2.5 0 0 1 0 15.5V4h24v11.5a2.5 2.5 0 0 1-2.5 2.5z"
+										style="fill: var(--accent)"
+									/>
+									<rect
+										x="6"
+										y="12"
+										width="12"
+										height="4"
+										rx="2"
+										ry="2"
 										style="fill: var(--input-bg)"
 									/>
 								</svg>{/if}</label
@@ -185,6 +210,28 @@
 										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
 										transform="rotate(180 12 2)"
 										style="fill: var(--input-bg)"
+									/>
+								</svg>{:else if gameConsole === 'wii'}<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 18"
+									height="1.5rem"
+								>
+									<path
+										d="M24 4H0V2.5A2.5 2.5 0 0 1 2.5 0h19A2.5 2.5 0 0 1 24 2.5V4z"
+										style="fill: var(--input-bg)"
+									/>
+									<path
+										d="M21.5 18h-19A2.5 2.5 0 0 1 0 15.5V4h24v11.5a2.5 2.5 0 0 1-2.5 2.5z"
+										style="fill: var(--input-bg)"
+									/>
+									<rect
+										x="6"
+										y="12"
+										width="12"
+										height="4"
+										rx="2"
+										ry="2"
+										style="fill: var(--accent)"
 									/>
 								</svg>{/if}</label
 						>
@@ -254,6 +301,9 @@
 
 	.formwrapper .threeds :global(canvas) {
 		width: 20rem;
+	}
+	.formwrapper .wii :global(canvas) {
+		width: 21.778rem;
 	}
 
 	.canvaswrapper {

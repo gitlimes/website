@@ -14,7 +14,7 @@
 	"stuff_limespics_t": "limes.pics",
 	"stuff_limespics_c": "Al momento account Instagram e Bluesky dove posto le mie fotografie.",
 	"stuff_errors_t": "errori",
-	"stuff_errors_c": "Qui puoi renderizzare una finta schermata di errore della Wii U o 2DS/3DS.\n\nPerché il mondo ne aveva proprio bisogno.",
+	"stuff_errors_c": "Qui puoi renderizzare una finta schermata di errore di varie console.\n\nPerché il mondo ne aveva proprio bisogno.",
 	"stuff_spinmii_t": "ruotamii",
 	"stuff_spinmii_c": "Questo fa fare una giravolta al tuo Mii.\n\nDi nuovo, perché il mondo ne aveva proprio bisogno.",
 	"stuff_limespink_t": "limes.pink",
@@ -56,7 +56,7 @@
 	"spinmii_help_done": "Fatto! La console stamperà i data-params del tuo mii: copiali e incollali nel form in questa pagina!",
 	"render": "Render",
 	"download": "Download",
-	"errors_c": "crea una schermata di errore della Wii U o 2DS/3DS.",
+	"errors_c": "crea una finta schermata di errore.",
 	"meta_error_header": "Codice Errore",
 	"meta_error_message": "Se il problema persiste, manda una mail ad aiuto@limes.pink.",
 	"meta_error_button": "Torna alla home"

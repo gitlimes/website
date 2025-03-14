@@ -1,0 +1,30 @@
+{
+	"canvasArea": {
+		"w": 1176,
+		"h": 810
+	},
+	"bodyArea": {
+		"x": 180,
+		"y": 48,
+		"w": 816,
+		"h": 536,
+		"fill": "#646464",
+		"fontSize": 56,
+		"fontFamily": "Agatho_Narrow",
+		"lineHeight": 1.41,
+		"maxLines": 7,
+		"textAlign": "center",
+		"alignContent": "center",
+		"evenVerticalOffset": 0
+	},
+	"buttonArea": {
+		"x": 400,
+		"y": 651,
+		"w": 384,
+		"fill": "#646464",
+		"fontSize": 52,
+		"fontFamily": "Rodin",
+		"textAlign": "center"
+	},
+	"baseImageUrl": "/res/errors/wii_base.png"
+}

@@ -14,88 +14,32 @@
 	 */
 	let canvas;
 
-	const templateWiiU = {
-		canvasArea: {
-			w: 947,
-			h: 595
-		},
-		headerArea: {
-			x: 50,
-			y: 14,
-			w: 847,
-			fill: '#fff',
-			fontSize: 40,
-			textAlign: 'center'
-		},
-		bodyArea: {
-			x: 91,
-			y: 100,
-			w: 765,
-			fill: '#1e1e1e',
-			fontSize: 37,
-			lineHeight: 1.64,
-			maxLines: 6,
-			textAlign: 'center'
-		},
-		buttonArea: {
-			x: 210,
-			y: 490,
-			w: 519,
-			fill: '#1e1e1e',
-			fontSize: 40,
-			textAlign: 'center'
-		},
-		baseImageUrl: '/res/errors/wiiu_base.png',
-		fadeImageUrl: '/res/errors/wiiu_fade.png'
+	import * as templateWiiU from './templates/wiiu.json';
+	import * as template3DS from './templates/3ds.json';
+	import * as templateWii from './templates/wii.json';
+
+	const templates = {
+		wiiu: templateWiiU,
+		'3ds': template3DS,
+		wii: templateWii
 	};
 
-	const template3DS = {
-		canvasArea: {
-			w: 960,
-			h: 720
-		},
-		headerArea: {
-			x: 14,
-			y: 6,
-			w: 934,
-			fill: '#fff',
-			fontSize: 52,
-			textAlign: 'left'
-		},
-		bodyArea: {
-			x: 16,
-			y: 92,
-			w: 928,
-			h: 531,
-			fill: '#1e1e1e',
-			fontSize: 44,
-			lineHeight: 1.365,
-			maxLines: 9,
-			textAlign: 'left',
-			alignContent: 'center'
-		},
-		buttonArea: {
-			x: 10,
-			y: 646,
-			w: 940,
-			fill: '#1e1e1e',
-			fontSize: 52,
-			textAlign: 'center'
-		},
-		baseImageUrl: '/res/errors/3ds_base.png',
-		fadeImageUrl: ''
-	};
-
-	let template = $derived(gameConsole === 'wiiu' ? templateWiiU : template3DS);
+	let template = $derived(templates[gameConsole]);
 
 	let fontsLoaded = $state(false);
 
 	onMount(async () => {
-		const rodinMedium = new FontFace('Rodin', 'url(/res/errors/rodin_600.otf)', {
+		const rodinMedium = new FontFace('Rodin', 'url(/res/errors/Rodin.otf)', {
 			weight: 'normal'
 		});
 		await rodinMedium.load();
 		document.fonts.add(rodinMedium);
+
+		const Agatho_Narrow = new FontFace('Agatho_Condensed', 'url(/res/errors/Agatho_Narrow.otf)', {
+			weight: 'normal'
+		});
+		await Agatho_Narrow.load();
+		document.fonts.add(Agatho_Narrow);
 
 		fontsLoaded = true;
 	});
@@ -132,6 +76,9 @@
 					/*loadImage('/res/errors/dev/ref_3ds.png').then((img) => {
 						ctx.drawImage(img, 0, 0);
 					});*/
+					/*loadImage('/res/errors/dev/ref_wii.png').then((img) => {
+						ctx.drawImage(img, 0, 0);
+					});*/
 				}
 			});
 		}
@@ -139,7 +86,9 @@
 
 	// utility function which renders the text
 	function printTextArea(ctx, area, text) {
-		ctx.font = `${area.fontSize}px Rodin`;
+		if (!area) return;
+
+		ctx.font = `${area.fontSize}px ${area.fontFamily}`;
 		ctx.textAlign = area.textAlign;
 		ctx.fillStyle = area.fill;
 
@@ -161,7 +110,9 @@
 
 			// aligns the text to the background stripes
 			if (lineCount % 2 === 1) {
-				startY += 4.71;
+				startY += area?.oddVerticalOffset || 0;
+			} else {
+				startY += area?.evenVerticalOffset || 0;
 			}
 
 			for (let i = 0; i < Math.min(lines.length, area.maxLines || 2); i++) {
@@ -243,6 +194,13 @@
 <svelte:head>
 	<link
 		rel="preload"
+		href="/res/errors/wii_base.png"
+		as="image"
+		type="image/png"
+		crossorigin="anonymous"
+	/>
+	<link
+		rel="preload"
 		href="/res/errors/3ds_base.png"
 		as="image"
 		type="image/png"
@@ -264,7 +222,14 @@
 	/>
 	<link
 		rel="preload"
-		href="/res/errors/rodin_600.otf"
+		href="/res/errors/Rodin.otf"
+		as="font"
+		type="font/otf"
+		crossorigin="anonymous"
+	/>
+	<link
+		rel="preload"
+		href="/res/errors/Agatho_Narrow.otf"
 		as="font"
 		type="font/otf"
 		crossorigin="anonymous"

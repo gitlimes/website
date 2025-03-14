@@ -1,0 +1,39 @@
+{
+	"canvasArea": {
+		"w": 960,
+		"h": 720
+	},
+	"headerArea": {
+		"x": 14,
+		"y": 6,
+		"w": 934,
+		"fill": "#fff",
+		"fontSize": 52,
+		"fontFamily": "Rodin",
+		"textAlign": "left"
+	},
+	"bodyArea": {
+		"x": 16,
+		"y": 92,
+		"w": 928,
+		"h": 531,
+		"fill": "#1e1e1e",
+		"fontSize": 44,
+		"fontFamily": "Rodin",
+		"lineHeight": 1.365,
+		"maxLines": 9,
+		"textAlign": "left",
+		"alignContent": "center",
+		"oddVerticalOffset": 4.71
+	},
+	"buttonArea": {
+		"x": 10,
+		"y": 646,
+		"w": 940,
+		"fill": "#1e1e1e",
+		"fontSize": 52,
+		"fontFamily": "Rodin",
+		"textAlign": "center"
+	},
+	"baseImageUrl": "/res/errors/3ds_base.png"
+}

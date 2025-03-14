@@ -2,19 +2,19 @@
 	import { page } from '$app/state';
 	import * as m from '$lib/paraglide/messages.js';
 
-	import Error from '$lib/components/Error.svelte';
+	import Error from '$lib/components/Error/Error.svelte';
 </script>
 
 <div class="errorwrapper">
 	<a
 		href="/"
-		alt={`${m.meta_error_header()}: HTTP-${page.status}, ${page.error.message}. ${m.meta_error_message()} ${m.meta_error_button()}?`}
-		title={`${m.meta_error_header()}: HTTP-${page.status}, ${page.error.message}. ${m.meta_error_message()} ${m.meta_error_button()}?`}
+		alt={`${m.meta_error_header()}: ${page.status}, ${page.error.message}. ${m.meta_error_message()} ${m.meta_error_button()}?`}
+		title={`${m.meta_error_header()}: ${page.status}, ${page.error.message}. ${m.meta_error_message()} ${m.meta_error_button()}?`}
 	>
 		<Error
-			gameConsole="wiiu"
-			header={`${m.meta_error_header()}: HTTP-${page.status}`}
-			body={`${page.error.message}\n\n${m.meta_error_message()}`}
+			gameConsole="wii"
+			header={``}
+			body={`${m.meta_error_header()}: ${page.status} ${page.error.message}\n\n${m.meta_error_message()}`}
 			button={m.meta_error_button()}
 		/>
 	</a>

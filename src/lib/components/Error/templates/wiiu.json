@@ -1,0 +1,37 @@
+{
+	"canvasArea": {
+		"w": 947,
+		"h": 595
+	},
+	"headerArea": {
+		"x": 50,
+		"y": 14,
+		"w": 847,
+		"fill": "#fff",
+		"fontSize": 40,
+        "fontFamily": "Rodin",
+		"textAlign": "center"
+	},
+	"bodyArea": {
+		"x": 91,
+		"y": 100,
+		"w": 765,
+		"fill": "#1e1e1e",
+		"fontSize": 37,
+        "fontFamily": "Rodin",
+		"lineHeight": 1.64,
+		"maxLines": 6,
+		"textAlign": "center"
+	},
+	"buttonArea": {
+		"x": 210,
+		"y": 490,
+		"w": 519,
+		"fill": "#1e1e1e",
+		"fontSize": 40,
+        "fontFamily": "Rodin",
+		"textAlign": "center"
+	},
+	"baseImageUrl": "/res/errors/wiiu_base.png",
+	"fadeImageUrl": "/res/errors/wiiu_fade.png"
+}
