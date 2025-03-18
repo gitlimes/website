@@ -185,7 +185,7 @@
 			.reduce((a, b) => a + b, 1)
 			.toString(16);
 
-		const filenameGibberish = headerHex + bodyHex + gameConsole[0] + buttonHex;
+		const filenameGibberish = headerHex + bodyHex + gameConsole[gameConsole.length - 1] + buttonHex;
 
 		anchor.download = `errors.limes.pink-${filenameGibberish}.png`;
 		anchor.click();
