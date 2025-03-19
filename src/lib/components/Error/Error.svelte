@@ -230,7 +230,7 @@
 	/>
 	<link
 		rel="preload"
-		href="/res/errors/Greco.otf"
+		href="/res/errors/Greco.ttf"
 		as="font"
 		type="font/ttf"
 		crossorigin="anonymous"
