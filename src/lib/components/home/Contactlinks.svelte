@@ -27,7 +27,7 @@
 		<h2>
 			<DiscordLogo size="1em" aria-label="discord" />
 			<a
-				href="https://discord.com/users/406125028065804289"
+				href="https://discord.gg/GghPVAKMKs"
 				target="_blank"
 				rel="noreferrer noopener">@limes.pink</a
 			>
