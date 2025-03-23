@@ -6,7 +6,7 @@
 
 	const cards = [
 		{ n: 'msgithub', l: 'https://microsoftgithub.com/usage' },
-		{ n: 'dcbadge', l: 'https://github.com/gitlimes/discord-md-badge' },
+		{ n: 'dcbadge', l: 'https://github.com/gitlimes/dcbadge' },
 		{ n: 'errors', l: '/errors', i: `errors_${currentLang}.png` },
 		{ n: 'spinmii', l: '/spinmii', i: 'spinmii.gif' },
 		{ n: 'limespics', l: 'https://limes.pics' },

@@ -28,7 +28,7 @@ export const load: PageServerLoad = async () => {
 
 	if (!stuffStats.dcbadge) {
 		try {
-			const response = await fetch(`https://api.github.com/repos/gitlimes/discord-md-badge`);
+			const response = await fetch(`https://api.github.com/repos/gitlimes/dcbadge`);
 
 			if (!response.ok) {
 				throw new Error('Network error');
