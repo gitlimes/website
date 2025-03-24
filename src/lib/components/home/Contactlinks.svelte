@@ -79,7 +79,7 @@
 	<div>
 		<h2>
 			<TipJar size="1em" aria-label="ko-fi" />
-			<a href="https://ko-fi.com/pinklimes " target="_blank" rel="noreferrer noopener">@pinklimes</a
+			<a href="https://ko-fi.com/limesdotpink" target="_blank" rel="noreferrer noopener">@limesdotpink</a
 			>
 		</h2>
 		<p>{m.contact_donate()}</p>
