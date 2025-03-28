@@ -59,5 +59,8 @@
 	"errors_c": "crea una finta schermata di errore.",
 	"meta_error_header": "Codice Errore",
 	"meta_error_message": "Se il problema persiste, manda una mail ad aiuto@limes.pink.",
-	"meta_error_button": "Torna alla home"
+	"meta_error_button": "Torna alla home",
+	"trainexperience_h": "Questa non è la pagina che stavi cercando...",
+	"trainexperience_c": "Salve! Sembra che qualcunə di Trenitalia abbia dimenticato di rinnovare questo dominio, e io l'ho preso. Mentre aspetti il tuo treno, sentiti liberə di visitare il mio sito web!"
+
 }

@@ -8,9 +8,16 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Gradient from '$lib/components/Gradient.svelte';
 
+	import Modal from '$lib/components/Modal.svelte';
+
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	import { page } from '$app/state';
+
+	let from = page.url.searchParams.get('from');
+	let trainexperience = $state(from === 'italiantrainexperience.com');
 </script>
 
 <div class="aniwrapper" id="aniwrapper">
@@ -46,6 +53,13 @@
 	</div>
 </div>
 
+{#if trainexperience}
+	<Modal bind:showModal={trainexperience}>
+		<h1 class="modal">{m.trainexperience_h()}</h1>
+		<p>{m.trainexperience_c()}</p>
+	</Modal>
+{/if}
+
 <style>
 	.aniwrapper,
 	.footer {
@@ -79,6 +93,10 @@
 	h1 {
 		color: var(--pink);
 	}
+	h1.modal {
+		font-size: 2rem;
+		margin-top:0
+	}
 
 	@media screen and (max-width: 600px) {
 		.section {
@@ -86,7 +104,7 @@
 		}
 
 		.section.contact {
-		padding: 2.5rem 0 5rem;
-	}
+			padding: 2.5rem 0 5rem;
+		}
 	}
 </style>

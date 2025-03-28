@@ -59,5 +59,7 @@
 	"errors_c": "render a fake error screen.",
 	"meta_error_header": "Error Code",
 	"meta_error_message": "If the problem persists, send an email to help@limes.pink.",
-	"meta_error_button": "Go home"
+	"meta_error_button": "Go home",
+	"trainexperience_h": "This isn't the page you were looking for...",
+	"trainexperience_c": "Hi! It seems that someone at Trenitalia forgot to renew this domain, and I've snatched it up. While you wait for your train, feel free to check out my website!"
 }
