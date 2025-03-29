@@ -295,20 +295,6 @@
 <svelte:head>
 	<link
 		rel="preload"
-		href="/res/errors/wii_base.png"
-		as="image"
-		type="image/png"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/res/errors/3ds_base.png"
-		as="image"
-		type="image/png"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
 		href="/res/errors/wiiu_base.png"
 		as="image"
 		type="image/png"
@@ -323,35 +309,7 @@
 	/>
 	<link
 		rel="preload"
-		href="/res/errors/switch_base.png"
-		as="image"
-		type="image/png"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/res/errors/switch_btn.png"
-		as="image"
-		type="image/png"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
 		href="/res/errors/Rodin.otf"
-		as="font"
-		type="font/otf"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/res/errors/Greco.ttf"
-		as="font"
-		type="font/ttf"
-		crossorigin="anonymous"
-	/>
-	<link
-		rel="preload"
-		href="/res/errors/UDShinGoNT.otf"
 		as="font"
 		type="font/otf"
 		crossorigin="anonymous"
