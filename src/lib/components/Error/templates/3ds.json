@@ -23,7 +23,7 @@
 		"lineHeight": 1.365,
 		"maxLines": 9,
 		"textAlign": "left",
-		"alignContent": "center",
+		"verticalAlign": "center",
 		"oddVerticalOffset": 4.71
 	},
 	"buttonArea": {

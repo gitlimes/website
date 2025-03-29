@@ -2,7 +2,7 @@
 	import Minifooter from '$lib/components/Minifooter.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 
-	import RadioHorizontal from '$lib/components/inputs/RadioHorizontal.svelte';
+	import Select from '$lib/components/inputs/Select.svelte';
 	import Input from '$lib/components/inputs/Input.svelte';
 	import Textarea from '$lib/components/inputs/Textarea.svelte';
 
@@ -12,7 +12,11 @@
 
 	import { GameController } from 'phosphor-svelte';
 
-	let gameConsole = $state('wiiu');
+	import { page } from '$app/state';
+
+	let consoleQuery = page.url.searchParams.get('console');
+
+	let gameConsole = $state(consoleQuery || 'wiiu');
 	let header = $state('Error Code 123-4567');
 	let body = $state(
 		'Whoopsies! You have been permanently banned from Nintendo Network.\nYou got games on your phone?'
@@ -43,13 +47,14 @@
 					<div class="inputgroup">
 						<label for="gameConsole"><GameController size="2rem" weight="fill" /></label>
 
-						<RadioHorizontal
+						<Select
 							options={[
 								{ n: 'Wii', v: 'wii' },
 								{ n: '3DS', v: '3ds' },
-								{ n: 'Wii U', v: 'wiiu' }
+								{ n: 'Wii U', v: 'wiiu' },
+								{ n: 'Switch', v: 'switch' }
 							]}
-							bind:group={gameConsole}
+							bind:value={gameConsole}
 							id="gameConsole"
 						/>
 					</div>
@@ -78,7 +83,7 @@
 											ry="1"
 											style="fill: var(--input-bg)"
 										/>
-									</svg>{:else if gameConsole === '3ds'}<svg
+									</svg>{:else if gameConsole === '3ds' || gameConsole === 'switch'}<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 18"
 										height="1.5rem"
@@ -127,7 +132,7 @@
 										ry="1"
 										style="fill: var(--input-bg)"
 									/>
-								</svg>{:else if gameConsole === '3ds'}<svg
+								</svg>{:else if gameConsole === '3ds' || gameConsole === 'switch'}<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 18"
 									height="1.5rem"
@@ -198,7 +203,7 @@
 										ry="1"
 										style="fill: var(--accent)"
 									/>
-								</svg>{:else if gameConsole === '3ds'}<svg
+								</svg>{:else if gameConsole === '3ds' || gameConsole === 'switch'}<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 18"
 									height="1.5rem"
@@ -304,6 +309,11 @@
 	}
 	.formwrapper .wii :global(canvas) {
 		width: 21.778rem;
+	}
+
+	.formwrapper .switch :global(canvas) {
+		width: 23.873rem;
+		height: auto;
 	}
 
 	.canvaswrapper {

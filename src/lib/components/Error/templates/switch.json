@@ -1,0 +1,42 @@
+{
+	"canvasArea": {
+		"w": 1170,
+		"h": 1080
+	},
+	"headerArea": {
+		"x": 98,
+		"y": 80,
+		"w": 974,
+		"fill": "#C3C3C5",
+		"fontSize": 26,
+		"fontFamily": "UDShinGoNT",
+		"textAlign": "left"
+	},
+	"bodyArea": {
+		"x": 98,
+		"y": 163,
+		"w": 970,
+		"h": 256,
+		"fill": "#f4f4f4",
+		"fontSize": 36,
+		"fontFamily": "UDShinGoNT",
+		"lineHeight": 1.5,
+		"maxLines": 16,
+		"textAlign": "left",
+		"centerTextBox": true,
+		"emptyLineOffset": -0.6,
+		"cropMarginY": 69
+	},
+	"buttonArea": {
+		"x": 98,
+		"bottomOffset": -84,
+		"w": 974,
+		"h": 121,
+		"fill": "#f4f4f4",
+		"fontSize": 36,
+		"fontFamily": "UDShinGoNT",
+		"textAlign": "center"
+	},
+	"baseImageUrl": "/res/errors/switch_base.png",
+	"buttonImageUrl": "/res/errors/switch_btn.png"
+}
