@@ -56,7 +56,9 @@
 		if (fontsLoaded) {
 			const ctx = canvas.getContext('2d');
 
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			// fix for the switch button, prevents it from leaving a trail when adding lines. not redrawing the entire canvas to avoid flicker
+			ctx.clearRect(0, 0, 6, canvas.height);
+			ctx.clearRect(canvas.width - 6, 0, 6, canvas.height);
 
 			// workaround to get this to actually reload when state changes
 			const _deps = [header, body, button, supportInfo, gameConsole];
