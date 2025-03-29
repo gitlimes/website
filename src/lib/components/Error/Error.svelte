@@ -56,6 +56,8 @@
 		if (fontsLoaded) {
 			const ctx = canvas.getContext('2d');
 
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 			// workaround to get this to actually reload when state changes
 			const _deps = [header, body, button, supportInfo, gameConsole];
 
