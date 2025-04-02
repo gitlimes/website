@@ -12,7 +12,7 @@
 	aria-label="limes.pink"
 	{...props}
 >
-	<rect x="0" y="-2.5" width={!hero ? '135' : '140'} height="24.1" fill={bgColor} />
+	<rect x="0" y="-2.5" width="135" height="24.1" fill={bgColor} />
 	<text
 		fill={fillColor}
 		xml:space="preserve"
