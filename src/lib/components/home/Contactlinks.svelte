@@ -63,8 +63,8 @@
 	<div>
 		<h2>
 			<InstagramLogo size="1em" aria-label="instagram" />
-			<a href="https://www.instagram.com/limeverdi/" target="_blank" rel="noreferrer noopener"
-				>@limeverdi</a
+			<a href="https://www.instagram.com/limes.pink/" target="_blank" rel="noreferrer noopener"
+				>@limes.pink</a
 			>
 		</h2>
 		<p>{m.contact_instagram()}</p>
