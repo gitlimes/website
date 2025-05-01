@@ -35,6 +35,7 @@
 		"@fontsource-variable/space-grotesk": "^5.1.1",
 		"@fontsource/space-mono": "^5.1.2",
 		"@inlang/paraglide-sveltekit": "^0.15.5",
+		"@supabase/supabase-js": "^2.49.4",
 		"gifenc": "https://github.com/mattdesl/gifenc.git",
 		"keyv": "^5.2.3"
 	},

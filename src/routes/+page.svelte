@@ -18,6 +18,8 @@
 
 	let from = page.url.searchParams.get('from');
 	let trainexperience = $state(from === 'italiantrainexperience.com');
+
+	console.log("stats:\n", data)
 </script>
 
 <div class="aniwrapper" id="aniwrapper">
@@ -56,7 +58,7 @@
 {#if trainexperience}
 	<Modal bind:showModal={trainexperience}>
 		<h1 class="modal">{m.trainexperience_h()}</h1>
-		<p>{m.trainexperience_c()}</p>
+		<p>{m.trainexperience_c({val: data.ite})}</p>
 	</Modal>
 {/if}
 

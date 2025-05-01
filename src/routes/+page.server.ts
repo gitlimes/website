@@ -1,13 +1,16 @@
 import type { PageServerLoad } from './$types';
 
+import { supabase } from '$lib/server/supabaseClient';
+
 // key-value store to cache requests
 import Keyv from 'keyv';
 const keyv = new Keyv<number>({ ttl: 1000 * 60 * 30 });
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ url }) => {
 	const stuffStats = {
 		dcbadge: await keyv.get('dcbadge'),
-		msgithub: await keyv.get('msgithub')
+		msgithub: await keyv.get('msgithub'),
+		ite: undefined
 	};
 
 	if (!stuffStats.msgithub) {
@@ -40,6 +43,29 @@ export const load: PageServerLoad = async () => {
 			stuffStats.dcbadge = data.stargazers_count;
 		} catch (error) {
 			console.error('Error while fetching dcbadge stats:', error);
+		}
+	}
+
+	if (url.searchParams.get('from') === 'italiantrainexperience.com') {
+		try {
+			await supabase.rpc('increment_page_view', {
+				page_slug: 'ite-redirect'
+			});
+		} catch (e) {
+			console.log('looks like supabase died.', e);
+		}
+
+		try {
+			const iteStats = await supabase
+				.from('pages')
+				.select('view_count')
+				.filter('slug', 'eq', 'ite-redirect');
+
+			const iteViewCount = iteStats?.data?.[0]?.['view_count'];
+
+			stuffStats.ite = iteViewCount;
+		} catch (e) {
+			console.log('looks like supabase died.', e);
 		}
 	}
 
