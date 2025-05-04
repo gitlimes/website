@@ -101,7 +101,7 @@
 
 <h1 style:color="var(--green)">{m.photo_header()}</h1>
 
-<div class="linkwrapper photos">
+<div class="linkwrapper photos" id="pics">
 	<div class="doublewidth">
 		<h2>
 			<span>
