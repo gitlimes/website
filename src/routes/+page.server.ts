@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const stuffStats = {
 		dcbadge: await keyv.get('dcbadge'),
 		msgithub: await keyv.get('msgithub'),
-		ite: undefined
+		ite: -1
 	};
 
 	if (!stuffStats.msgithub) {
@@ -52,7 +52,7 @@ export const load: PageServerLoad = async ({ url }) => {
 				page_slug: 'ite-redirect'
 			});
 		} catch (e) {
-			console.log('looks like supabase died.', e);
+			console.log('[ increment_page_view ]: Supabase dead, or no config provided.', e);
 		}
 
 		try {
@@ -65,7 +65,7 @@ export const load: PageServerLoad = async ({ url }) => {
 
 			stuffStats.ite = iteViewCount;
 		} catch (e) {
-			console.log('looks like supabase died.', e);
+			console.log('[ get viewcount ]: Supabase dead, or no config provided.', e);
 		}
 	}
 
