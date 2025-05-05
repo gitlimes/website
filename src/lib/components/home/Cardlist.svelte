@@ -85,8 +85,16 @@
 	a {
 		transition: color 200ms;
 	}
-	a:hover {
+	a:hover,
+	a:focus {
 		color: #fff;
+	}
+
+	@media (prefers-color-scheme: light) {
+		a:hover,
+		a:focus {
+			color: #291523;
+		}
 	}
 
 	.imgwrap {
