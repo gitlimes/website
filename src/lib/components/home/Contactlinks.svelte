@@ -7,7 +7,9 @@
 		MatrixLogo,
 		InstagramLogo,
 		Envelope,
-		TipJar
+		TipJar,
+		TumblrLogo
+
 	} from 'phosphor-svelte';
 
 	import * as m from '$lib/paraglide/messages.js';
@@ -51,6 +53,15 @@
 	</div>
 	<div>
 		<h2>
+			<TumblrLogo size="1em" aria-label="tumblr" />
+			<a href="https://limesdotpink.tumblr.com/" target="_blank" rel="noreferrer noopener"
+				>@limesdotpink</a
+			>
+		</h2>
+		<p>{m.contact_tumblr()}</p>
+	</div>
+	<div>
+		<h2>
 			<MatrixLogo size="1em" aria-label="matrix" />
 			<a href="https://matrix.to/#/@limes:limes.pink" target="_blank" rel="noreferrer noopener"
 				>@limes:limes.pink</a
@@ -88,7 +99,7 @@
 		</h2>
 		<p>{m.contact_email()}</p>
 	</div>
-	<div>
+	<div class="doublewidth">
 		<h2>
 			<TipJar size="1em" aria-label="ko-fi" />
 			<a href="https://ko-fi.com/limesdotpink" target="_blank" rel="noreferrer noopener"
@@ -113,8 +124,13 @@
 				><InstagramLogo size="1em" aria-label="instagram" />
 				<a href="htps://instagram.com/limes.pics" target="_blank" rel="noreferrer noopener"
 					>@limes.pics</a
-				></span
+				>{' / '}</span
+			><span>
+				<TumblrLogo size="1em" aria-label="tumblr" />
+			<a href="https://limesdotpics.tumblr.com/" target="_blank" rel="noreferrer noopener"
+				>@limesdotpics</a
 			>
+			</span>
 		</h2>
 		<p>{m.photos_social_only_notice()}</p>
 	</div>
