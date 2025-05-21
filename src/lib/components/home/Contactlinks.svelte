@@ -120,11 +120,6 @@
 				<a href="https://bsky.app/profile/limes.pics" target="_blank" rel="noreferrer noopener"
 					>@limes.pics</a
 				>{' / '}</span
-			><span
-				><InstagramLogo size="1em" aria-label="instagram" />
-				<a href="htps://instagram.com/limes.pics" target="_blank" rel="noreferrer noopener"
-					>@limes.pics</a
-				>{' / '}</span
 			><span>
 				<TumblrLogo size="1em" aria-label="tumblr" />
 			<a href="https://limesdotpics.tumblr.com/" target="_blank" rel="noreferrer noopener"
