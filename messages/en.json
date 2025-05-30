@@ -1,6 +1,5 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-
 	"stuff": "stuff™",
 	"contact": "contact me",
 	"hero_maker": "maker of ",
@@ -64,5 +63,6 @@
 	"meta_error_message": "If the problem persists, send an email to help@limes.pink.",
 	"meta_error_button": "Go home",
 	"trainexperience_h": "This isn't the page you were looking for...",
-	"trainexperience_c": "Hi! It seems that someone at Trenitalia forgot to renew this domain, and I've snatched it up. While you wait for your train, feel free to check out my website!"
+	"trainexperience_c": "Hi! It seems that someone at Trenitalia forgot to renew this domain, and I've snatched it up. While you wait for your train, feel free to check out my website!",
+	"hello_world": "Hello, {name} from en!"
 }

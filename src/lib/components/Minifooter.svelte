@@ -2,6 +2,7 @@
 	import Logotype from './Logotype.svelte';
 	
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
+	import { localizeHref } from '$lib/paraglide/runtime';
 
 	import * as m from '$lib/paraglide/messages.js';
 
@@ -18,7 +19,7 @@
 		<p>
 			© {year}
 			<a
-				href="/"
+				href={localizeHref("/")}
 				onmouseover={() => (hover = true)}
 				onfocus={() => (hover = true)}
 				onmouseout={() => (hover = false)}

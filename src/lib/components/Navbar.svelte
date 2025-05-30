@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Logotype from '$lib/components/Logotype.svelte';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
+	import { localizeHref } from '$lib/paraglide/runtime';
 
 	import * as m from '$lib/paraglide/messages.js';
 </script>
@@ -9,10 +10,10 @@
 	<nav>
 		<ul>
 			<li class="logo">
-				<a href="/"><Logotype size="1.25em" fillColor="var(--text-on-gradient)" /></a>
+				<a href={localizeHref("/")}><Logotype size="1.25em" fillColor="var(--text-on-gradient)" /></a>
 			</li>
-			<li><a href="/#stuff">{m.stuff()}</a></li>
-			<li><a href="/#contact">{m.contact()}</a></li>
+			<li><a href={localizeHref("/#stuff")}>{m.stuff()}</a></li>
+			<li><a href={localizeHref("/#contact")}>{m.contact()}</a></li>
 
 			<li class="lang-select">
 				<LanguageSwitcher />

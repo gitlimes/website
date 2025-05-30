@@ -1,14 +1,14 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
-	import { languageTag } from '$lib/paraglide/runtime';
+	import { getLocale } from "$lib/paraglide/runtime";
+	import { localizeHref } from '$lib/paraglide/runtime';
 
-	const currentLang = languageTag();
 
 	const cards = [
 		{ n: 'msgithub', l: 'https://microsoftgithub.com/usage' },
 		{ n: 'dcbadge', l: 'https://github.com/gitlimes/dcbadge' },
-		{ n: 'errors', l: '/errors', i: `errors_${currentLang}.png` },
-		{ n: 'spinmii', l: '/spinmii', i: 'spinmii.gif' },
+		{ n: 'errors', l: localizeHref('/errors'), i: `errors_${getLocale()}.png` },
+		{ n: 'spinmii', l: localizeHref('/spinmii'), i: 'spinmii.gif' },
 		{ n: 'limespics', l: 'https://limes.pics' },
 		{ n: 'limespink', l: '/' },
 		{ n: 'pretendo', l: 'https://pretendo.network' }

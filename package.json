@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
+		"@inlang/paraglide-js": "2.0.13",
 		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/kit": "^2.20.6",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
@@ -34,10 +35,11 @@
 	"dependencies": {
 		"@fontsource-variable/space-grotesk": "^5.1.1",
 		"@fontsource/space-mono": "^5.1.2",
-		"@inlang/paraglide-sveltekit": "^0.15.5",
+		"@inlang/paraglide-js": "^2.0.0",
 		"@supabase/supabase-js": "^2.49.4",
 		"gifenc": "https://github.com/mattdesl/gifenc.git",
-		"keyv": "^5.2.3"
+		"keyv": "^5.2.3",
+		"svelte-hidden-email": "^1.0.1"
 	},
 	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
