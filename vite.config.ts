@@ -25,6 +25,20 @@ export default defineConfig({
                     ]
                 },
                 {
+                    pattern: '/it/errori',
+                    localized: [
+                        ["it", "/it/errori"],
+                        ["en", "/errors"],
+                    ]
+                },
+                                 {
+                    pattern: '/it/ruotamii',
+                    localized: [
+                        ["it", "/it/ruotamii"],
+                        ["en", "/spinmii"],
+                    ]
+                },
+                {
                     pattern: "/:path(.*)?",
                     localized: [
                         ["it", "/it/:path(.*)?"],
