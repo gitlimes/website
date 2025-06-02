@@ -27,15 +27,15 @@ export default defineConfig({
                 {
                     pattern: '/it/errori',
                     localized: [
-                        ["it", "/it/errori"],
                         ["en", "/errors"],
+                        ["it", "/it/errori"]
                     ]
                 },
-                                 {
+                {
                     pattern: '/it/ruotamii',
                     localized: [
-                        ["it", "/it/ruotamii"],
                         ["en", "/spinmii"],
+                        ["it", "/it/ruotamii"]
                     ]
                 },
                 {
