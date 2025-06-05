@@ -16,7 +16,7 @@
 
 	let consoleQuery = page.url.searchParams.get('console');
 
-	let gameConsole = $state(consoleQuery || 'wiiu');
+	let gameConsole = $state(consoleQuery || 'switch2');
 	let header = $state('Error Code 123-4567');
 	let body = $state(
 		'Whoopsies! You have been permanently banned from Nintendo Network.\nYou got games on your phone?'
@@ -52,7 +52,8 @@
 								{ n: 'Wii', v: 'wii' },
 								{ n: '3DS', v: '3ds' },
 								{ n: 'Wii U', v: 'wiiu' },
-								{ n: 'Switch', v: 'switch' }
+								{ n: 'Switch', v: 'switch' },
+								{ n: 'Switch 2', v: 'switch2' }
 							]}
 							bind:value={gameConsole}
 							id="gameConsole"
@@ -83,7 +84,7 @@
 											ry="1"
 											style="fill: var(--input-bg)"
 										/>
-									</svg>{:else if gameConsole === '3ds' || gameConsole === 'switch'}<svg
+									</svg>{:else}<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 18"
 										height="1.5rem"
@@ -132,19 +133,6 @@
 										ry="1"
 										style="fill: var(--input-bg)"
 									/>
-								</svg>{:else if gameConsole === '3ds' || gameConsole === 'switch'}<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 24 18"
-									height="1.5rem"
-									style="fill: var(--input-bg)"
-								>
-									<path style="fill: var(--accent)" d="M0 4h24v10H0z" />
-									<path d="M0 14h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-3z" />
-									<path
-										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
-										transform="rotate(180 12 2)"
-										style="fill: var(--input-bg)"
-									/>
 								</svg>{:else if gameConsole === 'wii'}<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 18"
@@ -165,6 +153,19 @@
 										height="4"
 										rx="2"
 										ry="2"
+										style="fill: var(--input-bg)"
+									/>
+								</svg>{:else}<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 18"
+									height="1.5rem"
+									style="fill: var(--input-bg)"
+								>
+									<path style="fill: var(--accent)" d="M0 4h24v10H0z" />
+									<path d="M0 14h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-3z" />
+									<path
+										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
+										transform="rotate(180 12 2)"
 										style="fill: var(--input-bg)"
 									/>
 								</svg>{/if}</label
@@ -203,19 +204,6 @@
 										ry="1"
 										style="fill: var(--accent)"
 									/>
-								</svg>{:else if gameConsole === '3ds' || gameConsole === 'switch'}<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 24 18"
-									height="1.5rem"
-									style="fill: var(--accent)"
-								>
-									<path style="fill: var(--input-bg)" d="M0 4h24v10H0z" />
-									<path d="M0 14h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-3z" />
-									<path
-										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
-										transform="rotate(180 12 2)"
-										style="fill: var(--input-bg)"
-									/>
 								</svg>{:else if gameConsole === 'wii'}<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 18"
@@ -237,6 +225,19 @@
 										rx="2"
 										ry="2"
 										style="fill: var(--accent)"
+									/>
+								</svg>{:else}<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 18"
+									height="1.5rem"
+									style="fill: var(--accent)"
+								>
+									<path style="fill: var(--input-bg)" d="M0 4h24v10H0z" />
+									<path d="M0 14h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1v-3z" />
+									<path
+										d="M0 0h24v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V0z"
+										transform="rotate(180 12 2)"
+										style="fill: var(--input-bg)"
 									/>
 								</svg>{/if}</label
 						>

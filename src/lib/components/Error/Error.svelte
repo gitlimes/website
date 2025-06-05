@@ -18,12 +18,14 @@
 	import * as template3DS from './templates/3ds.json';
 	import * as templateWii from './templates/wii.json';
 	import * as templateSwitch from './templates/switch.json';
+	import * as templateSwitch2 from './templates/switch2.json';
 
 	const templates = {
 		wiiu: templateWiiU,
 		'3ds': template3DS,
 		wii: templateWii,
-		switch: templateSwitch
+		switch: templateSwitch,
+		switch2: templateSwitch2
 	};
 
 	let template = $derived(templates[gameConsole]);
@@ -76,7 +78,10 @@
 					gameConsole === 'wiiu' ? body + supportInfo : body
 				);
 
-				const newHeight = finalTextY + template.bodyArea?.cropMarginY + template.buttonArea?.h;
+				const newHeight =
+					Math.max(finalTextY || 0, template.bodyArea?.minHeight || 0) +
+					template.bodyArea?.cropMarginY +
+					template.buttonArea?.h;
 
 				if (template.bodyArea?.cropMarginY) {
 					cropCanvas(canvas, ctx, null, newHeight);
@@ -107,6 +112,11 @@
 						editedButtonArea.y = canvas.height + template.buttonArea.bottomOffset;
 
 						printTextArea(ctx, editedButtonArea, button);
+
+						/*
+						loadImage('/res/errors/dev/ref_switch2.png').then((img) => {
+							ctx.drawImage(img, 0, 0);
+						});*/
 					});
 				} else {
 					printTextArea(ctx, template.buttonArea, button);
@@ -299,21 +309,21 @@
 <svelte:head>
 	<link
 		rel="preload"
-		href="/res/errors/wiiu_base.png"
+		href="/res/errors/switch2_base.png"
 		as="image"
 		type="image/png"
 		crossorigin="anonymous"
 	/>
 	<link
 		rel="preload"
-		href="/res/errors/wiiu_fade.png"
+		href="/res/errors/switch2_btn.png"
 		as="image"
 		type="image/png"
 		crossorigin="anonymous"
 	/>
 	<link
 		rel="preload"
-		href="/res/errors/Rodin.otf"
+		href="/res/errors/UDShinGoNT.otf"
 		as="font"
 		type="font/otf"
 		crossorigin="anonymous"

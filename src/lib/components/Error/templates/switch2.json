@@ -1,0 +1,42 @@
+{
+	"canvasArea": {
+		"w": 1084,
+		"h": 1080
+	},
+	"headerArea": {
+		"x": 81,
+		"y": 42,
+		"w": 974,
+		"fill": "#fff",
+		"fontSize": 33,
+		"fontFamily": "UDShinGoNT",
+		"textAlign": "left"
+	},
+	"bodyArea": {
+		"x": 90,
+		"y": 182,
+		"w": 640,
+		"h": 256,
+		"fill": "#fff",
+		"fontSize": 28,
+		"fontFamily": "UDShinGoNT",
+		"lineHeight": 1.5,
+		"maxLines": 16,
+		"textAlign": "left",
+		"emptyLineOffset": -0.2,
+		"cropMarginY": 80,
+		"minHeight": 334
+	},
+	"buttonArea": {
+		"x": 81,
+		"bottomOffset": -80,
+		"w": 922,
+		"h": 121,
+		"fill": "#f4f4f4",
+		"fontSize": 30,
+		"fontFamily": "UDShinGoNT",
+		"textAlign": "center"
+	},
+	"baseImageUrl": "/res/errors/switch2_base.png",
+	"buttonImageUrl": "/res/errors/switch2_btn.png"
+}
