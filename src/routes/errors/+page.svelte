@@ -31,7 +31,6 @@
 	<meta name="description" content={m.errors_c()} />
 	<meta name="og:description" content={m.errors_c()} />
 	<meta name="twitter:description" content={m.errors_c()} />
-	<meta property="og:image" content="https:/limes.pink/img/errors_en.png" />
 	<meta name="theme-color" content="#00b5f2" />
 </svelte:head>
 
@@ -317,6 +316,11 @@
 		height: auto;
 	}
 
+	.formwrapper .switch2 :global(canvas) {
+		width: 22rem;
+		height: auto;
+	}
+
 	.canvaswrapper {
 		display: flex;
 		transition: width 200ms;
@@ -381,6 +385,11 @@
 
 		.formwrapper .wiiu :global(canvas),
 		.formwrapper .threeds :global(canvas) {
+			width: 100%;
+			height: auto;
+		}
+
+		.formwrapper .switch2 :global(canvas) {
 			width: 100%;
 			height: auto;
 		}
