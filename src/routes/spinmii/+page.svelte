@@ -145,11 +145,16 @@
 
 <svelte:head>
 	<title>{m.stuff_spinmii_t()} - limes.pink</title>
+	<meta property="og:title" content="{m.stuff_spinmii_t()} - limes.pink" />
+	<meta property="twitter:title" content="{m.stuff_spinmii_t()} - limes.pink" />
 	<meta name="description" content={m.spinmii_c()} />
-	<meta name="og:description" content={m.spinmii_c()} />
-	<meta name="twitter:description" content={m.spinmii_c()} />
+	<meta property="twitter:description" content={m.spinmii_c()} />
+	<meta property="og:description" content={m.spinmii_c()} />
 	<meta property="og:image" content="https:/limes.pink/img/spinmii.gif" />
-	<meta name="theme-color" content="#ce60f2" />
+	<meta property="twitter:image" content="https:/limes.pink/img/spinmii.gif" />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:image:alt" content="" />
+	<meta property="og:image:alt" content="" />
 </svelte:head>
 
 <div class="wrapper">

@@ -22,6 +22,20 @@
 	console.log("stats:\n", data)
 </script>
 
+<svelte:head>
+	<title>limes.pink</title>
+	<meta property="og:title" content="limes.pink" />
+	<meta property="twitter:title" content="limes.pink" />
+	<meta name="description" content="Maker of stuff™, destroyer of code." />
+	<meta property="twitter:description" content="Maker of stuff™, destroyer of code." />
+	<meta property="og:description" content="Maker of stuff™, destroyer of code." />
+	<meta property="og:image" content="https://limes.pink/img/social.png" />
+	<meta property="twitter:image" content="https://limes.pink/img/social.png" />
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:image:alt" content="" />
+	<meta property="og:image:alt" content="" />
+</svelte:head>
+
 <div class="aniwrapper" id="aniwrapper">
 	<Gradient />
 	<div class="navwrapper section">
