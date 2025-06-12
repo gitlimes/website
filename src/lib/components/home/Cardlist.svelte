@@ -86,7 +86,8 @@
 			box-shadow 200ms;
 	}
 
-	.card:hover {
+	.card:hover,
+	.card:focus {
 		box-shadow: inset 0 0 0 0.25rem var(--card-accent, var(--pink));
 		transform: scale(1.05);
 	}
