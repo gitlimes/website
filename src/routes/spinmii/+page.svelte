@@ -324,7 +324,7 @@
 		background: none;
 		border: none;
 		padding: none;
-		border-radius: none;
+		/*border-radius: none;*/
 		color: inherit;
 		font-size: inherit;
 		font-family: inherit;
@@ -367,7 +367,7 @@
 		background: #000;
 		color: #fff;
 		font-family: var(--monospace-font);
-		border-radius: 4px;
+		/*border-radius: 4px;*/
 	}
 
 	div.text > * {

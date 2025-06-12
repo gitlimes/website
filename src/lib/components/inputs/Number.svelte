@@ -30,7 +30,7 @@
 		background: var(--input-bg, var(--input-bg-pink));
 		border: var(--input-border, none);
 		padding: 0.3rem 0.5rem;
-		border-radius: 4px;
+		/*border-radius: 4px;*/
 		color: inherit;
 		font-size: inherit;
 		font-family: inherit;
@@ -65,7 +65,7 @@
 		background: var(--accent, var(--pink));
 		height: calc(100% - 0.3rem);
 		margin: 0.16rem;
-		border-radius: 2px;
+		/*border-radius: 2px;*/
 		aspect-ratio: 1;
 		right: 0;
 		top: 0;
@@ -78,7 +78,7 @@
 		width: 100%;
 		height: 50%;
 		padding-bottom: 2px;
-		border-radius: 2px;
+		/*border-radius: 2px;*/
 		cursor: pointer;
 	}
 	.caretwrapper button:hover {

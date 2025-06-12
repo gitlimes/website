@@ -11,7 +11,7 @@
 		{ n: 'errors', l: '/errors', i: `errors_${currentLang}.svg` },
 		{ n: 'spinmii', l: '/spinmii', i: 'spinmii.gif' },
 		{ n: 'limespics', l: 'https://limes.pics' },
-		{ n: 'limespink', l: '/' },
+		{ n: 'limespink', l: '/' }
 		/*{ n: 'pretendo', l: 'https://pretendo.network' }*/
 	];
 
@@ -20,21 +20,21 @@
 
 <div class="cardswrap">
 	{#each cards as card}
-		<div class="card {card.n}">
+		<a class="card {card.n}"
+			href={card.l}
+			target={card.l.startsWith('https://') ? '_blank' : '_self'}
+			rel="noreferrer noopener"
+		>
 			<div class="textwrap">
 				<h2 style:color="var(--card-t-{card.n})">
-					<a
-						href={card.l}
-						target={card.l.startsWith('https://') ? '_blank' : '_self'}
-						rel="noreferrer noopener">{(m as any)[`stuff_${card.n}_t`]()}</a
-					>
+					{(m as any)[`stuff_${card.n}_t`]()}
 				</h2>
 				<p>{(m as any)[`stuff_${card.n}_c`]({ val: stats?.[card.n] })}</p>
 			</div>
 			<div class="imgwrap" style:background="var(--card-img-bg-{card.n})">
 				<img src={card.i ? `/img/${card.i}` : `/img/${card.n}.svg`} alt="" />
 			</div>
-		</div>
+		</a>
 	{/each}
 </div>
 
@@ -75,9 +75,18 @@
 		grid-template-columns: subgrid;
 
 		background: var(--card-bg-pink);
-		border-radius: 0.5rem;
+		/*border-radius: 0.5rem;*/
 		padding: 2rem;
 		border: var(--card-border, none);
+		box-shadow: inset 0 0 0 0 var(--pink);
+		transition:
+			transform 200ms,
+			box-shadow 200ms;
+	}
+
+	.card:hover {
+		box-shadow: inset 0 0 0 0.25rem var(--pink);
+		transform: scale(1.05);
 	}
 	.textwrap h2 {
 		font-size: 2rem;
@@ -87,10 +96,12 @@
 	}
 	a {
 		transition: color 200ms;
+		text-decoration: none;
 	}
 	a:hover,
 	a:focus {
 		color: #fff;
+		
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -110,7 +121,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 0.5rem;
+		/*border-radius: 0.5rem;*/
 	}
 
 	.card.spinmii .imgwrap {

@@ -296,7 +296,7 @@
 
 	.formwrapper :global(canvas) {
 		height: 15rem;
-		border-radius: 4px;
+		/*border-radius: 4px;*/
 		transition: width 150ms;
 	}
 

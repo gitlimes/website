@@ -10,7 +10,7 @@
 		background: var(--accent, var(--pink));
 		border: none;
 		padding: 0.3rem 0.5rem;
-		border-radius: 4px;
+		/*border-radius: 4px;*/
 		color: #fff;
 		/*color: inherit;*/
 		font-size: inherit;

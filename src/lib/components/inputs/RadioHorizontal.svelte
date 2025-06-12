@@ -31,7 +31,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: calc(2rem - 0.3rem);
-		border-radius: 2px;
+		/*border-radius: 2px;*/
 		cursor: pointer;
 	}
 	input[type='radio']:checked + label {
@@ -72,7 +72,7 @@
 		grid-auto-columns: 1fr;
 		grid-auto-flow: column;
 		padding: 0.16rem;
-		border-radius: 4px;
+		/*border-radius: 4px;*/
 		background: var(--input-bg, var(--input-bg-pink));
 		border: var(--input-border, none);
 	}
