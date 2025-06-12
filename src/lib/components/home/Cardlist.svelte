@@ -20,13 +20,15 @@
 
 <div class="cardswrap">
 	{#each cards as card}
-		<a class="card {card.n}"
+		<a
+			class="card {card.n}"
+			style="--card-accent: var(--card-t-{card.n})"
 			href={card.l}
 			target={card.l.startsWith('https://') ? '_blank' : '_self'}
 			rel="noreferrer noopener"
 		>
 			<div class="textwrap">
-				<h2 style:color="var(--card-t-{card.n})">
+				<h2>
 					{(m as any)[`stuff_${card.n}_t`]()}
 				</h2>
 				<p>{(m as any)[`stuff_${card.n}_c`]({ val: stats?.[card.n] })}</p>
@@ -42,7 +44,7 @@
 	:root {
 		/* card image background colors */
 		--card-img-bg-msgithub: #0d1117;
-		--card-img-bg-nint: #ff1111;
+		--card-img-bg-nint: #ff3333;
 		--card-img-bg-dcbadge: #0c1a2f;
 		--card-img-bg-limespics: var(--green);
 		--card-img-bg-errors: #99bfcc;
@@ -51,7 +53,7 @@
 		--card-img-bg-pretendo: #1b1f3b;
 
 		--card-t-msgithub: #aa8ed6;
-		--card-t-nint: #ff1111;
+		--card-t-nint: #ff3333;
 		--card-t-dcbadge: #a0a8f8;
 		--card-t-limespics: var(--green);
 		--card-t-errors: var(--blue);
@@ -78,14 +80,14 @@
 		/*border-radius: 0.5rem;*/
 		padding: 2rem;
 		border: var(--card-border, none);
-		box-shadow: inset 0 0 0 0 var(--pink);
+		box-shadow: inset 0 0 0 0 var(--card-accent, var(--pink));
 		transition:
 			transform 200ms,
 			box-shadow 200ms;
 	}
 
 	.card:hover {
-		box-shadow: inset 0 0 0 0.25rem var(--pink);
+		box-shadow: inset 0 0 0 0.25rem var(--card-accent, var(--pink));
 		transform: scale(1.05);
 	}
 	.textwrap h2 {
@@ -93,6 +95,7 @@
 		margin: 0 0 1rem;
 		text-decoration: underline;
 		grid-column: 1;
+		color: var(--card-accent);
 	}
 	a {
 		transition: color 200ms;
@@ -101,7 +104,6 @@
 	a:hover,
 	a:focus {
 		color: #fff;
-		
 	}
 
 	@media (prefers-color-scheme: light) {
