@@ -10,7 +10,7 @@
 	"stuff_msgithub_t": "microsoftgithub.com",
 	"stuff_msgithub_c": "Ho comprato il dominio microsoftgithub.com e lo uso per rickrollare la gente. Fin ora, {val}mila visitatori sono caduti vittima di questa roba. Per aggiungere a questo conteggio, rimpiazza 'github.com' in un URL di GitHub o GitHub Gist con 'microsoftgithub.com' >:)",
 	"stuff_nint_t": "nintendo.uk.net",
-	"stuff_nint_c": "Come sopra, ma per la Nintendo. {val}k rickroll fino ad ora.\nSai cosa fare, rimpiazza 'nintendo.com' con 'nintendo.uk.net' >:)",
+	"stuff_nint_c": "Come sopra, ma per la Nintendo. {val}mila rickroll fino ad ora.\nSai cosa fare, rimpiazza 'nintendo.com' con 'nintendo.uk.net' >:)",
 	"stuff_dcbadge_t": "dcbadge",
 	"stuff_dcbadge_c": "Un badge personalizzabile per il tuo account/bot o server Discord che mostra info come stato online o numero di membri.\n\nIl mio progetto più di successo dopo microsoftgithub.com, con {val} stelle su GitHub!",
 	"stuff_limespics_t": "limes.pics",
