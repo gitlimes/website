@@ -6,12 +6,13 @@
 
 	const cards = [
 		{ n: 'msgithub', l: 'https://microsoftgithub.com/usage' },
+		{ n: 'nint', l: 'https://nintendo.uk.net/usage' },
 		{ n: 'dcbadge', l: 'https://github.com/gitlimes/dcbadge' },
-		{ n: 'errors', l: '/errors', i: `errors_${currentLang}.png` },
+		{ n: 'errors', l: '/errors', i: `errors_${currentLang}.svg` },
 		{ n: 'spinmii', l: '/spinmii', i: 'spinmii.gif' },
 		{ n: 'limespics', l: 'https://limes.pics' },
 		{ n: 'limespink', l: '/' },
-		{ n: 'pretendo', l: 'https://pretendo.network' }
+		/*{ n: 'pretendo', l: 'https://pretendo.network' }*/
 	];
 
 	const { stats } = $props();
@@ -31,7 +32,7 @@
 				<p>{(m as any)[`stuff_${card.n}_c`]({ val: stats?.[card.n] })}</p>
 			</div>
 			<div class="imgwrap" style:background="var(--card-img-bg-{card.n})">
-				<img src={card.i ? `/img/${card.i}` : `/img/${card.n}.png`} alt="" />
+				<img src={card.i ? `/img/${card.i}` : `/img/${card.n}.svg`} alt="" />
 			</div>
 		</div>
 	{/each}
@@ -41,6 +42,7 @@
 	:root {
 		/* card image background colors */
 		--card-img-bg-msgithub: #0d1117;
+		--card-img-bg-nint: #ff1111;
 		--card-img-bg-dcbadge: #0c1a2f;
 		--card-img-bg-limespics: var(--green);
 		--card-img-bg-errors: #99bfcc;
@@ -49,6 +51,7 @@
 		--card-img-bg-pretendo: #1b1f3b;
 
 		--card-t-msgithub: #aa8ed6;
+		--card-t-nint: #ff1111;
 		--card-t-dcbadge: #a0a8f8;
 		--card-t-limespics: var(--green);
 		--card-t-errors: var(--blue);

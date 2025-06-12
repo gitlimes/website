@@ -10,6 +10,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const stuffStats = {
 		dcbadge: await keyv.get('dcbadge'),
 		msgithub: await keyv.get('msgithub'),
+		nint: await keyv.get('nint'),
 		ite: -1
 	};
 
@@ -43,6 +44,22 @@ export const load: PageServerLoad = async ({ url }) => {
 			stuffStats.dcbadge = data.stargazers_count;
 		} catch (error) {
 			console.error('Error while fetching dcbadge stats:', error);
+		}
+	}
+
+	if (!stuffStats.nint) {
+		try {
+			const response = await fetch(`https://nintendo.uk.net/api/stats`);
+
+			if (!response.ok) {
+				throw new Error('Network error');
+			}
+			const data = await response.json();
+
+			await keyv.set('nint', data.rickrolled.kusers); // cache for 30 minutes
+			stuffStats.nint = data.rickrolled.kusers;
+		} catch (error) {
+			console.error('Error while fetching nint stats:', error);
 		}
 	}
 

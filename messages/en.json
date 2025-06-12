@@ -9,6 +9,8 @@
 	"stuff_header": "stuff™. stuff™? stuff™!",
 	"stuff_msgithub_t": "microsoftgithub.com",
 	"stuff_msgithub_c": "I own the domain microsoftgithub.com, and use it to rickroll people. So far, {val}k people have fallen victim to this thing. To add to this count, replace the 'github.com' portion of any GitHub or GitHub Gist URL with 'microsoftgithub.com' >:)",
+	"stuff_nint_t": "nintendo.uk.net",
+	"stuff_nint_c": "Same as above, but for Nintendo. {val}k rickrolls so far.\nYou know the drill, just replace 'nintendo.com' with 'nintendo.uk.net' >:)",
 	"stuff_dcbadge_t": "dcbadge",
 	"stuff_dcbadge_c": "A customizable badge for your Discord account/bot or server, displaying info such as online status or member count.\n\nMy most successful project after microsoftgithub.com, with {val} stars on GitHub!",
 	"stuff_limespics_t": "limes.pics",
