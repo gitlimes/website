@@ -16,7 +16,7 @@
 		"x": 90,
 		"y": 182,
 		"w": 640,
-		"h": 256,
+		"h": 130,
 		"fill": "#fff",
 		"fontSize": 28,
 		"fontFamily": "UDShinGoNT",
@@ -25,7 +25,9 @@
 		"textAlign": "left",
 		"emptyLineOffset": -0.2,
 		"cropMarginY": 80,
-		"minHeight": 334
+		"minHeight": 334,
+		"verticalAlign": "center",
+		"fixedMinStartY": true
 	},
 	"buttonArea": {
 		"x": 81,

@@ -59,8 +59,8 @@
 			const ctx = canvas.getContext('2d');
 
 			// fix for the switch button, prevents it from leaving a trail when adding lines. not redrawing the entire canvas to avoid flicker
-			ctx.clearRect(0, 0, 6, canvas.height);
-			ctx.clearRect(canvas.width - 6, 0, 6, canvas.height);
+			ctx.clearRect(0, 0, 8, canvas.height);
+			ctx.clearRect(canvas.width - 8, 0, 8, canvas.height);
 
 			// workaround to get this to actually reload when state changes
 			const _deps = [header, body, button, supportInfo, gameConsole];
@@ -72,7 +72,7 @@
 				printTextArea(ctx, template.headerArea, header);
 
 				// body text
-				const finalTextY = printTextArea(
+				let finalTextY = printTextArea(
 					ctx,
 					template.bodyArea,
 					gameConsole === 'wiiu' ? body + supportInfo : body
@@ -223,12 +223,18 @@
 			const areaOccupiedByText = area?.fontSize * area.lineHeight * lineCount;
 			let startY = area.y + (area.h - areaOccupiedByText) / 2;
 
+			if (area?.fixedMinStartY) {
+				startY = Math.max(startY, area.y)
+			}
+
 			// aligns the text to the background stripes
 			if (lineCount % 2 === 1) {
 				startY += area?.oddVerticalOffset || 0;
 			} else {
 				startY += area?.evenVerticalOffset || 0;
 			}
+
+			let finalTextY = 0;
 
 			for (let i = 0; i < Math.min(lines.length, area.maxLines || 2); i++) {
 				ctx.fillText(
@@ -237,7 +243,14 @@
 					startY + area?.fontSize + i * area?.fontSize * (area?.lineHeight || 1),
 					area.w
 				);
+
+				finalTextY =
+					area.y +
+					area?.fontSize +
+					i * area?.fontSize * (area?.lineHeight || 1);
 			}
+
+			return finalTextY
 		}
 	}
 
