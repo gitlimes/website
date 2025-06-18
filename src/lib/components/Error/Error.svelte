@@ -4,8 +4,13 @@
 		header,
 		body,
 		button,
+		qr,
 		supportInfo = '\n\nSupport Information\n① 5.5.5 E\n② WUP-101(03)\n③ LIMES.PINK/ERRORS' /* only used for Wii U */
 	} = $props();
+
+	// TODO: switch from x,y to left, right, top and bottom
+
+	import { qrcanvas } from 'qrcanvas';
 
 	import { onMount } from 'svelte';
 
@@ -59,14 +64,14 @@
 			const ctx = canvas.getContext('2d');
 
 			// fix for the switch button, prevents it from leaving a trail when adding lines. not redrawing the entire canvas to avoid flicker
-			ctx.clearRect(0, 0, 8, canvas.height);
-			ctx.clearRect(canvas.width - 8, 0, 8, canvas.height);
+			ctx?.clearRect(0, 0, 8, canvas.height);
+			ctx?.clearRect(canvas.width - 8, 0, 8, canvas.height);
 
 			// workaround to get this to actually reload when state changes
-			const _deps = [header, body, button, supportInfo, gameConsole];
+			const _deps = [header, body, button, supportInfo, qr, gameConsole];
 
 			loadImage(template.baseImageUrl).then((img) => {
-				ctx.drawImage(img, 0, 0);
+				ctx?.drawImage(img, 0, 0);
 
 				// header text
 				printTextArea(ctx, template.headerArea, header);
@@ -86,7 +91,7 @@
 				if (template.bodyArea?.cropMarginY) {
 					cropCanvas(canvas, ctx, null, newHeight);
 
-					ctx.clearRect(
+					ctx?.clearRect(
 						0,
 						canvas.height - template.buttonArea?.h + 8,
 						canvas.width,
@@ -96,7 +101,7 @@
 
 				if (template.fadeImageUrl) {
 					loadImage(template.fadeImageUrl).then((img) => {
-						ctx.drawImage(img, 0, 0);
+						ctx?.drawImage(img, 0, 0);
 
 						printTextArea(ctx, template.buttonArea, button);
 
@@ -106,12 +111,21 @@
 					});
 				} else if (template.buttonImageUrl) {
 					loadImage(template.buttonImageUrl).then((img) => {
-						ctx.drawImage(img, 0, canvas.height - img.height);
+						ctx?.drawImage(img, 0, canvas.height - img.height);
 
 						const editedButtonArea = template.buttonArea;
 						editedButtonArea.y = canvas.height + template.buttonArea.bottomOffset;
 
 						printTextArea(ctx, editedButtonArea, button);
+
+						if (template?.qrArea) {
+							const qrCanvas = qrcanvas({
+								data: qr
+							});
+					
+
+							ctx?.drawImage(qrCanvas, canvas.width - template.qrArea.right - template.qrArea.w, canvas.height - template.qrArea.bottom - template.qrArea.h, template.qrArea.w, template.qrArea.h)
+						}
 
 						/*
 						loadImage('/res/errors/dev/ref_switch2.png').then((img) => {
@@ -148,7 +162,7 @@
 		tempCanvas.height = canvas.height;
 
 		// draw the old canvas onto the temp canvas
-		tempCtx.drawImage(canvas, 0, 0);
+		tempCtx?.drawImage(canvas, 0, 0);
 
 		// resize old canvas to new size
 		canvas.width = newWidth || canvas.width;
@@ -224,7 +238,7 @@
 			let startY = area.y + (area.h - areaOccupiedByText) / 2;
 
 			if (area?.fixedMinStartY) {
-				startY = Math.max(startY, area.y)
+				startY = Math.max(startY, area.y);
 			}
 
 			// aligns the text to the background stripes
@@ -244,13 +258,10 @@
 					area.w
 				);
 
-				finalTextY =
-					area.y +
-					area?.fontSize +
-					i * area?.fontSize * (area?.lineHeight || 1);
+				finalTextY = area.y + area?.fontSize + i * area?.fontSize * (area?.lineHeight || 1);
 			}
 
-			return finalTextY
+			return finalTextY;
 		}
 	}
 

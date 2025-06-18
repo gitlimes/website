@@ -39,6 +39,12 @@
 		"fontFamily": "UDShinGoNT",
 		"textAlign": "center"
 	},
+	"qrArea": {
+		"right": 113,
+		"bottom": 221,
+		"w": 123,
+		"h": 123
+	},
 	"baseImageUrl": "/res/errors/switch2_base.png",
 	"buttonImageUrl": "/res/errors/switch2_btn.png"
 }

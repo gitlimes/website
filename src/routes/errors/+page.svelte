@@ -10,7 +10,7 @@
 
 	import Button from '$lib/components/inputs/Button.svelte';
 
-	import { GameController } from 'phosphor-svelte';
+	import { GameController, QrCode } from 'phosphor-svelte';
 
 	import { page } from '$app/state';
 
@@ -22,6 +22,7 @@
 		'Whoopsies! You have been permanently banned from Nintendo Network.\nYou got games on your phone?'
 	);
 	let button = $state('OK');
+	let qr = $state('https://www.nintendo.uk.net/en-gb/Support/Nintendo-Switch/How-to-Find-Error-Code-Information-and-Support-1513788.html');
 
 	let errorDownload;
 </script>
@@ -255,12 +256,26 @@
 						/>
 					</div>
 
+					{#if gameConsole === 'switch2'}
+						<div class="inputgroup">
+							<label for="qrinput"><QrCode size="2rem" /></label>
+
+							<Input
+								bind:value={qr}
+								id="qrinput"
+								placeholder="https://support.nintendo.uk.net/"
+								ariaLabel="qrinput"
+								required
+							/>
+						</div>
+					{/if}
+
 					<Button disabled={!header || !body || !button} onclick={() => errorDownload.download()}
 						>{m.download()}</Button
 					>
 				</form>
 				<div class="canvaswrapper">
-					<Error {gameConsole} {header} {body} {button} bind:this={errorDownload} />
+					<Error {gameConsole} {header} {body} {button} {qr} bind:this={errorDownload} />
 				</div>
 			</div>
 		</div>
