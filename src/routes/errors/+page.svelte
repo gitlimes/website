@@ -21,7 +21,7 @@
 	let body = $state(
 		'Whoopsies! You have been permanently banned from Nintendo Network.\nYou got games on your phone?'
 	);
-	let button = $state('OK');
+	let button = $state('What?');
 	let qr = $state('https://www.nintendo.uk.net/en-gb/Support/Nintendo-Switch/How-to-Find-Error-Code-Information-and-Support-1513788.html');
 
 	let errorDownload;
