@@ -119,12 +119,30 @@
 						printTextArea(ctx, editedButtonArea, button);
 
 						if (template?.qrArea) {
-							const qrCanvas = qrcanvas({
-								data: qr
-							});
-					
+							loadImage(template.qrBaseUrl).then((img) => {
+								ctx.drawImage(
+									img,
+									canvas.width - template.qrBase.w - template.qrBase.right,
+									(canvas.height - template.qrBase.h) / 2 - template.qrBase.verticalAlignOffset
+								);
 
-							ctx?.drawImage(qrCanvas, canvas.width - template.qrArea.right - template.qrArea.w, canvas.height - template.qrArea.bottom - template.qrArea.h, template.qrArea.w, template.qrArea.h)
+								const qrCanvas = qrcanvas({
+									data: qr
+								});
+
+								const qrCodePos = {
+									x: canvas.width - template.qrArea.right - template.qrArea.w,
+									y: -1,
+									w: template.qrArea.w,
+									h: template.qrArea.h
+								};
+
+								if (template.qrArea?.verticalAlign === 'center') {
+									qrCodePos.y = (canvas.height - qrCodePos.h) / 2 + template.qrArea.verticalAlignOffset;
+								}
+
+								ctx?.drawImage(qrCanvas, qrCodePos.x, qrCodePos.y, qrCodePos.w, qrCodePos.h);
+							});
 						}
 
 						/*
@@ -341,6 +359,13 @@
 	<link
 		rel="preload"
 		href="/res/errors/switch2_btn.png"
+		as="image"
+		type="image/png"
+		crossorigin="anonymous"
+	/>
+		<link
+		rel="preload"
+		href="/res/errors/switch2_qr.png"
 		as="image"
 		type="image/png"
 		crossorigin="anonymous"

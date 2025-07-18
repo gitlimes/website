@@ -39,12 +39,21 @@
 		"fontFamily": "UDShinGoNT",
 		"textAlign": "center"
 	},
+	"qrBase": {
+		"w": 220,
+		"h": 183,
+		"right": 64,
+		"verticalAlign": "center",
+		"verticalAlignOffset": -3
+	},
 	"qrArea": {
 		"right": 113,
-		"bottom": 221,
+		"verticalAlign": "center",
+		"verticalAlignOffset": -15,
 		"w": 123,
 		"h": 123
 	},
 	"baseImageUrl": "/res/errors/switch2_base.png",
-	"buttonImageUrl": "/res/errors/switch2_btn.png"
+	"buttonImageUrl": "/res/errors/switch2_btn.png",
+	"qrBaseUrl": "/res/errors/switch2_qr.png"
 }
