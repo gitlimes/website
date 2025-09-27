@@ -19,7 +19,7 @@
 		</p>
 		<p>{m.footer_text()}</p>
 	</div>
-	<Gradient />
+	<!-- <Gradient /> -->
 </footer>
 
 <style>
@@ -28,6 +28,7 @@
 		align-items: center;
 		gap: 2rem;
 		color: var(--text-on-gradient);
+		background: var(--pink);
 	}
 
 	.hero-footer > :global(svg),

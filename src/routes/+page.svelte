@@ -37,7 +37,7 @@
 </svelte:head>
 
 <div class="aniwrapper" id="aniwrapper">
-	<Gradient />
+	<!-- <Gradient /> -->
 	<div class="navwrapper section">
 		<div class="inner">
 			<Navbar />
@@ -80,7 +80,7 @@
 	.aniwrapper,
 	.footer {
 		position: relative;
-		/*background: var(--pink);*/
+		background: var(--pink);
 		color: var(--bg-pink);
 	}
 	.aniwrapper .inner {
