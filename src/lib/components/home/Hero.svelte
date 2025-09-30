@@ -21,9 +21,10 @@
 	*/
 
 	span.pink {
-		background: var(--pink);
+		color: var(--pink);
+		background: var(--text-on-gradient);
 
-		display: inline-block;
+		/*display: inline-block;*/
 		height: 1em;
 	}
 
