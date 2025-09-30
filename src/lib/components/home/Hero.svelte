@@ -6,7 +6,7 @@
 
 <div>
 	<h1>
-		<span class="logotype"><Logotype size="1.25em" hero fillColor="var(--text-on-gradient)" /></span
+		<span class="logotype"><Logotype size="1.25em" hero fillColor="var(--pink)" bgColor="var(--text-on-gradient)" /></span
 		><br />
 		{m.hero_maker()}<span><span class="pink">{m.stuff()}</span>,</span><br />
 		{m.hero_destroyer()}<span><span class="pink">&lt;{m.hero_code()} /&gt;</span>.</span>
@@ -21,11 +21,21 @@
 	*/
 
 	span.pink {
+		position: relative;
 		color: var(--pink);
-		background: var(--text-on-gradient);
+		
+	}
 
-		/*display: inline-block;*/
-		height: 1em;
+	span.pink::before {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 80%;
+		width: 100%;
+		top: 10%;
+		left: 0;
+		background: var(--text-on-gradient);
+		z-index: -1;
 	}
 
 	span.logotype {
@@ -39,7 +49,7 @@
 
 	h1 {
 		margin: 2rem 0;
-		line-height: 1.5;
+		line-height: 1.25;
 		color: var(--text-on-gradient);
 	}
 </style>
