@@ -28,8 +28,9 @@
 	--text-color: #d6d6d6;
 	--text-muted: #939191;
 	--text-on-gradient: #262424;
-	--desktop-max-width: 1400px;
+	--desktop-max-width: 1800px;
 
+	--beeg-font-size: 32px;
 	--desktop-font-size: 24px;
 	--tablet-font-size: 20px;
 	--phablet-font-size: 16px;
@@ -67,7 +68,7 @@ body {
 	color: var(--text-color);
 	font-family: var(--regular-font);
 	letter-spacing: var(--letter-spacing);
-	font-size: var(--desktop-font-size);
+	font-size: var(--beeg-font-size);
 	margin: 0;
 	height: 100%;
 	width: 100%;
@@ -87,6 +88,16 @@ a:hover {
 ::selection {
 	background: #0f0;
 	color: #000;
+}
+
+@media screen and (max-width: 2000px) {
+	:root {
+		--desktop-max-width: 1400px;
+	}
+	html,
+	body {
+		font-size: var(--desktop-font-size);
+	}
 }
 
 @media screen and (max-width: 1400px) {
