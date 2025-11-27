@@ -20,12 +20,7 @@
 </div>
 
 <style>
-	/*
-	div {
-		min-height: 100vh;
-	}
-	*/
-
+	
 	span.pink {
 		position: relative;
 		color: var(--pink);
@@ -45,7 +40,7 @@
 
 	span.logotype {
 		position: relative;
-		bottom: -0.75rem;
+		bottom: -1.35rem;
 	}
 
 	span {
