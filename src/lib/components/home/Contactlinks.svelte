@@ -9,7 +9,6 @@
 		Envelope,
 		TipJar,
 		TumblrLogo
-
 	} from 'phosphor-svelte';
 
 	import * as m from '$lib/paraglide/messages.js';
@@ -122,9 +121,9 @@
 				>{' / '}</span
 			><span>
 				<TumblrLogo size="1em" aria-label="tumblr" />
-			<a href="https://limesdotpics.tumblr.com/" target="_blank" rel="noreferrer noopener"
-				>@limesdotpics</a
-			>
+				<a href="https://limesdotpics.tumblr.com/" target="_blank" rel="noreferrer noopener"
+					>@limesdotpics</a
+				>
 			</span>
 		</h2>
 		<p>{m.photos_social_only_notice()}</p>

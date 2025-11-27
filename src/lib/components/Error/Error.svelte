@@ -138,7 +138,8 @@
 								};
 
 								if (template.qrArea?.verticalAlign === 'center') {
-									qrCodePos.y = (canvas.height - qrCodePos.h) / 2 + template.qrArea.verticalAlignOffset;
+									qrCodePos.y =
+										(canvas.height - qrCodePos.h) / 2 + template.qrArea.verticalAlignOffset;
 								}
 
 								ctx?.drawImage(qrCanvas, qrCodePos.x, qrCodePos.y, qrCodePos.w, qrCodePos.h);
@@ -363,7 +364,7 @@
 		type="image/png"
 		crossorigin="anonymous"
 	/>
-		<link
+	<link
 		rel="preload"
 		href="/res/errors/switch2_qr.png"
 		as="image"

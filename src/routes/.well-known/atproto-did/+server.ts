@@ -1,3 +1,3 @@
 export function GET() {
-    return new Response("did:plc:4hvfudiuyuwyhbtwcakljvit")
+	return new Response('did:plc:4hvfudiuyuwyhbtwcakljvit');
 }

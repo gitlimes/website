@@ -9,7 +9,7 @@
 		"w": 847,
 		"fill": "#fff",
 		"fontSize": 40,
-        "fontFamily": "Rodin",
+		"fontFamily": "Rodin",
 		"textAlign": "center"
 	},
 	"bodyArea": {
@@ -18,7 +18,7 @@
 		"w": 765,
 		"fill": "#1e1e1e",
 		"fontSize": 37,
-        "fontFamily": "Rodin",
+		"fontFamily": "Rodin",
 		"lineHeight": 1.64,
 		"maxLines": 6,
 		"textAlign": "center"
@@ -29,7 +29,7 @@
 		"w": 519,
 		"fill": "#1e1e1e",
 		"fontSize": 40,
-        "fontFamily": "Rodin",
+		"fontFamily": "Rodin",
 		"textAlign": "center"
 	},
 	"baseImageUrl": "/res/errors/wiiu_base.png",

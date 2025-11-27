@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { localizeHref } from '$lib/paraglide/runtime';
+
 	import Logotype from '$lib/components/Logotype.svelte';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
 
@@ -11,8 +13,8 @@
 			<li class="logo">
 				<a href="/"><Logotype size="1.25em" fillColor="var(--text-on-gradient)" /></a>
 			</li>
-			<li><a href="/#stuff">{m.stuff()}</a></li>
-			<li><a href="/#contact">{m.contact()}</a></li>
+			<li><a href={localizeHref('/#stuff')}>{m.stuff()}</a></li>
+			<li><a href={localizeHref('/#contact')}>{m.contact()}</a></li>
 
 			<li class="lang-select">
 				<LanguageSwitcher />

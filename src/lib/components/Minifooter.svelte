@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logotype from './Logotype.svelte';
-	
+
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
 
 	import * as m from '$lib/paraglide/messages.js';

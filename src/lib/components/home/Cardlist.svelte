@@ -1,17 +1,17 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages.js';
-	import { languageTag } from '$lib/paraglide/runtime';
+	import { getLocale, localizeHref } from '$lib/paraglide/runtime';
 
-	const currentLang = languageTag();
+	const currentLang = getLocale();
 
 	const cards = [
 		{ n: 'msgithub', l: 'https://microsoftgithub.com/usage' },
 		{ n: 'nint', l: 'https://nintendo.uk.net/usage' },
 		{ n: 'dcbadge', l: 'https://github.com/gitlimes/dcbadge' },
-		{ n: 'errors', l: '/errors', i: `errors_${currentLang}.svg` },
-		{ n: 'spinmii', l: '/spinmii', i: 'spinmii.gif' },
+		{ n: 'errors', l: localizeHref('/errors'), i: `errors_${currentLang}.svg` },
+		{ n: 'spinmii', l: localizeHref('/spinmii'), i: 'spinmii.gif' },
 		{ n: 'limespics', l: 'https://limes.pics' },
-		{ n: 'limespink', l: '/' }
+		{ n: 'limespink', l: localizeHref('/') }
 		/*{ n: 'pretendo', l: 'https://pretendo.network' }*/
 	];
 
@@ -32,7 +32,14 @@
 					{(m as any)[`stuff_${card.n}_t`]()}
 				</h2>
 				<!-- quick and dirty fix for supabase dying, i am way to tired to do this properly and my website isn't mission critical -->
-				<p>{(m as any)[`stuff_${card.n}_c`]({ val: stats?.[card.n] }).replaceAll(". undefinedk", ". Way too many").replaceAll("undefinedk", "way too many").replaceAll(". undefinedmila", ". Troppi").replaceAll("undefinedmila", "troppi")}</p>
+				<p>
+					{(m as any)
+						[`stuff_${card.n}_c`]({ val: stats?.[card.n] })
+						.replaceAll('. undefinedk', '. Way too many')
+						.replaceAll('undefinedk', 'way too many')
+						.replaceAll('. undefinedmila', '. Troppi')
+						.replaceAll('undefinedmila', 'troppi')}
+				</p>
 			</div>
 			<div class="imgwrap" style:background="var(--card-img-bg-{card.n})">
 				<img src={card.i ? `/img/${card.i}` : `/img/${card.n}.svg`} alt="" />

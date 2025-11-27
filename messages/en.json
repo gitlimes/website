@@ -1,6 +1,5 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-
 	"stuff": "stuff™",
 	"contact": "contact me",
 	"hero_maker": "maker of ",
@@ -24,7 +23,7 @@
 	"stuff_pretendo_t": "pretendo.network",
 	"stuff_pretendo_c": "I developed some parts of the website; if anything looks out of place, it's probably my fault.\n\nI also handle miscellaneous design work.",
 	"contact_header": "where to find me...",
-	"photo_header": "...and my photos",
+	"photo_header": "...and my photos.",
 	"contact_github": "Home of my code, also contains some extra stuff™ that wasn't relevant enough to put here.",
 	"contact_discord": "Main chat platform to find me on.",
 	"contact_microblog": "Yeah, I microblog 😎. The content I post is virtually the same between Bluesky and fedi.",

@@ -1,6 +1,5 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-
 	"stuff": "roba™",
 	"contact": "contatti",
 	"hero_maker": "faccio ",
@@ -24,7 +23,7 @@
 	"stuff_pretendo_t": "pretendo.network",
 	"stuff_pretendo_c": "Ho sviluppato parti del sito; se qualcosa sembra fuori posto, probabilmente è colpa mia.\n\nMi occupo anche di design vari.",
 	"contact_header": "dove trovare me...",
-	"photo_header": "...e le mie foto",
+	"photo_header": "...e le mie foto.",
 	"contact_github": "Casa del mio codice, contiene anche della roba™ extra che non era abbastanza rilevante da essere messa qui.",
 	"contact_discord": "La principale piattaforma di messaggistica dove potermi trovare.",
 	"contact_microblog": "Sì, microbloggo 😎. I miei post sono praticamente identici tra Bluesky e fedi.",
@@ -67,5 +66,4 @@
 	"meta_error_button": "Torna indietro",
 	"trainexperience_h": "Questa non è la pagina che stavi cercando...",
 	"trainexperience_c": "Salve! Sembra che qualcunə di Trenitalia abbia dimenticato di rinnovare questo dominio, e io l'ho preso. Mentre aspetti il tuo treno, sentiti liberə di visitare il mio sito web!"
-
 }

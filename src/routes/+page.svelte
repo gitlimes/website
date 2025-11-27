@@ -19,7 +19,7 @@
 	let from = page.url.searchParams.get('from');
 	let trainexperience = $state(from === 'italiantrainexperience.com');
 
-	console.log("stats:\n", data)
+	console.log('stats:\n', data);
 </script>
 
 <svelte:head>
@@ -72,7 +72,7 @@
 {#if trainexperience}
 	<Modal bind:showModal={trainexperience}>
 		<h1 class="modal">{m.trainexperience_h()}</h1>
-		<p>{m.trainexperience_c({val: data.ite})}</p>
+		<p>{m.trainexperience_c({ val: data.ite })}</p>
 	</Modal>
 {/if}
 
@@ -111,7 +111,7 @@
 	}
 	h1.modal {
 		font-size: 2rem;
-		margin-top:0
+		margin-top: 0;
 	}
 
 	@media screen and (max-width: 600px) {

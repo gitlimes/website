@@ -23,7 +23,7 @@
 	}
 
 	button:disabled {
-		opacity: .4;
+		opacity: 0.4;
 		cursor: not-allowed;
 	}
 </style>
