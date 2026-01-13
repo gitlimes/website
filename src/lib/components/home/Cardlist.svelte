@@ -117,6 +117,8 @@
 		transform: skewX(70deg) translate(1px, -0.5px);
 		transform-origin: top left;
 		transition: height 200ms;
+
+		pointer-events: none;
 	}
 	.card:hover::before,
 	.card:focus::before {
@@ -136,6 +138,8 @@
 		transform: skewY(20deg) translate(-0.5px, 0);
 		transform-origin: top left;
 		transition: width 200ms;
+
+		pointer-events: none;
 	}
 	.card:hover::after,
 	.card:focus::after {
