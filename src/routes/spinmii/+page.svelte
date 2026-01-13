@@ -227,7 +227,7 @@
 					</div>
 				{/if}
 				<Button disabled={!dataparams} onclick={renderMii}
-					>Download {loading ? `(${loading}%)` : ''}</Button
+					>{m.download()} {loading ? `(${loading}%)` : ''}</Button
 				>
 			</form>
 		</div>

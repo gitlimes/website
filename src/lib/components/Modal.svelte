@@ -24,7 +24,7 @@
 		{#if header()}<hr />{/if}
 		{@render children?.()}
 		<hr />
-		<Button onclick={() => dialog.close()}>Ok</Button>
+		<Button onclick={() => dialog.close()}>ok</Button>
 	</div>
 </dialog>
 
