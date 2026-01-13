@@ -81,6 +81,9 @@
 		display: grid;
 		gap: 2rem;
 
+		position: relative;
+		z-index: 2;
+
 		grid-column: 1 / 3;
 		grid-template-columns: subgrid;
 
@@ -97,8 +100,48 @@
 	.card:hover,
 	.card:focus {
 		box-shadow: inset 0 0 0 0.25rem var(--card-accent, var(--pink));
-		transform: scale(1.05);
+		transform: scale(1.02);
 	}
+
+	.card::before {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background: color-mix(in oklab, var(--card-accent, var(--pink)) 50%, var(--bg-pink));
+
+		width: 100%;
+		height: 0;
+		z-index: -1;
+
+		transform: skewX(70deg) translate(1px, -0.5px);
+		transform-origin: top left;
+		transition: height 200ms;
+	}
+	.card:hover::before,
+	.card:focus::before {
+		height: max(100vw, 100vh);
+	}
+	.card::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 100%;
+		background: var(--card-accent, var(--pink));
+
+		width: 0;
+		height: 100%;
+		z-index: -1;
+
+		transform: skewY(20deg) translate(-0.5px, 0);
+		transform-origin: top left;
+		transition: width 200ms;
+	}
+	.card:hover::after,
+	.card:focus::after {
+		width: max(100vw, 100vh);
+	}
+
 	.textwrap h2 {
 		font-size: 2rem;
 		margin: 0 0 1rem;
