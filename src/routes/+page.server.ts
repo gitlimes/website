@@ -8,9 +8,9 @@ const keyv = new Keyv<number>({ ttl: 1000 * 60 * 30 });
 
 export const load: PageServerLoad = async ({ url }) => {
 	const stuffStats = {
-		dcbadge: await keyv.get('dcbadge'),
-		msgithub: await keyv.get('msgithub'),
-		nint: await keyv.get('nint'),
+		dcbadge: await keyv.get('dcbadge') || 265,
+		msgithub: await keyv.get('msgithub') || 412,
+		nint: await keyv.get('nint') || 73,
 		ite: -1
 	};
 

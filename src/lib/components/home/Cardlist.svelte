@@ -10,8 +10,8 @@
 		{ n: 'dcbadge', l: 'https://github.com/gitlimes/dcbadge' },
 		{ n: 'errors', l: localizeHref('/errors'), i: `errors_${currentLang}.svg` },
 		{ n: 'spinmii', l: localizeHref('/spinmii'), i: 'spinmii.gif' },
-		{ n: 'limespics', l: 'https://limes.pics' },
-		{ n: 'limespink', l: localizeHref('/') }
+		{ n: 'limespics', l: '#pics' }
+		/* { n: 'limespink', l: localizeHref('/') } */
 		/*{ n: 'pretendo', l: 'https://pretendo.network' }*/
 	];
 
@@ -69,7 +69,7 @@
 
 	.cardswrap {
 		display: grid;
-		grid-template-rows: repeat(7, 1fr);
+		grid-template-rows: repeat(6, 1fr);
 		grid-template-columns: auto 1fr;
 		gap: 2rem;
 	}

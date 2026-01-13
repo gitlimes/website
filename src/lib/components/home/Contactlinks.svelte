@@ -50,6 +50,7 @@
 		</h2>
 		<p>{m.contact_microblog()}</p>
 	</div>
+	<!--
 	<div>
 		<h2>
 			<TumblrLogo size="1em" aria-label="tumblr" />
@@ -59,6 +60,7 @@
 		</h2>
 		<p>{m.contact_tumblr()}</p>
 	</div>
+	-->
 	<div>
 		<h2>
 			<MatrixLogo size="1em" aria-label="matrix" />
@@ -68,6 +70,7 @@
 		</h2>
 		<p>{m.contact_matrix()}</p>
 	</div>
+
 	<div>
 		<h2>
 			<svg
@@ -98,7 +101,7 @@
 		</h2>
 		<p>{m.contact_email()}</p>
 	</div>
-	<div class="doublewidth">
+	<div>
 		<h2>
 			<TipJar size="1em" aria-label="ko-fi" />
 			<a href="https://ko-fi.com/limesdotpink" target="_blank" rel="noreferrer noopener"
@@ -109,9 +112,9 @@
 	</div>
 </div>
 
-<h1 style:color="var(--green)">{m.photo_header()}</h1>
+<h1 style:color="var(--green)" id="pics">{m.photo_header()}</h1>
 
-<div class="linkwrapper photos" id="pics">
+<div class="linkwrapper photos">
 	<div class="doublewidth">
 		<h2>
 			<span>
