@@ -9,7 +9,7 @@
 		{ n: 'nint', l: 'https://nintendo.uk.net/usage' },
 		{ n: 'dcbadge', l: 'https://github.com/gitlimes/dcbadge' },
 		{ n: 'errors', l: localizeHref('/errors'), i: `errors_${currentLang}.svg` },
-		{ n: 'spinmii', l: localizeHref('/spinmii'), i: 'spinmii.gif' },
+		{ n: 'spinmii', l: localizeHref('/spinmii'), i: 'spinmii.webp' },
 		{ n: 'limespics', l: '#pics' }
 		/* { n: 'limespink', l: localizeHref('/') } */
 		/*{ n: 'pretendo', l: 'https://pretendo.network' }*/

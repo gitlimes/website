@@ -150,8 +150,8 @@
 	<meta name="description" content={m.spinmii_c()} />
 	<meta property="twitter:description" content={m.spinmii_c()} />
 	<meta property="og:description" content={m.spinmii_c()} />
-	<meta property="og:image" content="https:/limes.pink/img/spinmii.gif" />
-	<meta property="twitter:image" content="https:/limes.pink/img/spinmii.gif" />
+	<meta property="og:image" content="https:/limes.pink/img/spinmii.webp" />
+	<meta property="twitter:image" content="https:/limes.pink/img/spinmii.webp" />
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:image:alt" content="" />
 	<meta property="og:image:alt" content="" />
